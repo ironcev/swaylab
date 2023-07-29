@@ -1,0 +1,6 @@
+[project]
+authors = ["Igor Rončević"]
+license = "MIT"
+name = "plays"
+entry = "main.sw"
+implicit-std = false
