@@ -1,6 +1,6 @@
 # Description
 
-Examples used while working on [Give more helpful error when shadowing const #4587](https://github.com/FuelLabs/sway/issues/4587).
+Examples used while working on [Give more helpful error when shadowing const](https://github.com/FuelLabs/sway/issues/4587).
 
 # References
 

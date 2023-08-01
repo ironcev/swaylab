@@ -1,6 +1,6 @@
 # Description
 
-Examples used while working on [Support multi-span errors and warnings #21](https://github.com/FuelLabs/sway/issues/21).
+Examples used while working on [Support multi-span errors and warnings](https://github.com/FuelLabs/sway/issues/21).
 
 # References
 
