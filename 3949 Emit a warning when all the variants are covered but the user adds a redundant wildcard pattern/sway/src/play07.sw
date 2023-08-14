@@ -31,9 +31,26 @@ enum Enum {
 }
 
 pub fn play() -> () {
-    let e1 = Enum::A;
+    let e0 = Enum::A;
 
-    let _x = match e1 {
+    let _x = match e0 {
+        _ => 0,
+    };
+
+    let e1_1 = Enum::A;
+
+    let _x = match e1_1 {
+        _ => 0,
+        Enum::A => 0,
+        Enum::B => 0,
+        Enum::C => 0,
+        Enum::D => 0,
+        Enum::E(_) => 0,
+    };
+
+    let e1_2 = Enum::A;
+
+    let _x = match e1_2 {
         Enum::A => 0,
         Enum::B => 0,
         _ => 0,
@@ -46,9 +63,23 @@ pub fn play() -> () {
         _ => 0,
     };
 
-    let e2 = Enum::A;
+    let e2_1 = Enum::A;
 
-    let _x = match e2 {
+    let _x = match e2_1 {
+        x => { 
+            poke(x);
+            0
+        },
+        Enum::A => 0,
+        Enum::B => 0,
+        Enum::C => 0,
+        Enum::D => 0,
+        Enum::E(_) => 0,
+    };
+
+    let e2_2 = Enum::A;
+
+    let _x = match e2_2 {
         Enum::A => 0,
         Enum::B => 0,
         x => { 
@@ -64,6 +95,34 @@ pub fn play() -> () {
         Enum::E(_) => 0,
         x => { 
             poke(x);
+            0
+        },
+        _ => 0,
+    };
+
+    let e2_3 = Enum::A;
+
+    let _x = match e2_3 {
+        Enum::A => 0,
+        Enum::B => 0,
+        Enum::C => 0,
+        Enum::D => 0,
+        x => { 
+            poke(x);
+            0
+        },
+        Enum::E(_) => 0,
+    };
+
+    let e2_4 = Enum::A;
+
+    let _x = match e2_4 {
+        Enum::A => 0,
+        Enum::B => 0,
+        Enum::C => 0,
+        Enum::D => 0,
+        y => { 
+            poke(y);
             0
         },
         _ => 0,
