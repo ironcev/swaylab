@@ -52,13 +52,17 @@ mod lib;
 // mod play04;
 // mod play05;
 // mod play05A;
-// mod play05B;
+mod play05B;
 // mod play05C;
 // mod play06;
 // mod play07;
 // mod play08;
 
+use lib::LIB_X as LIB_Y;
+
 fn main() -> () {
+    const LIB_Y = 0;
+
     // before_lib_x();
     // after_lib_x();
 
@@ -74,9 +78,9 @@ fn main() -> () {
     // ::play02::play();
     // ::play02A::play();
     // ::play03::play();
-    ::play04::play();
-    ::play05::play();
-    ::play05A::play();
+    // ::play04::play();
+    // ::play05::play();
+    // ::play05A::play();
     ::play05B::play();
     // ::play05C::play();
     // ::play06::play();
@@ -95,9 +99,9 @@ fn main() -> () {
     // use lib::LIB_X;
     // poke(LIB_X);
 
-    const LIB_X = 1;
-    use lib::LIB_X;
-    poke(LIB_X);
+    // const LIB_X = 1;
+    // use lib::LIB_X;
+    // poke(LIB_X);
 
     // poke(LIB_X);
 }
