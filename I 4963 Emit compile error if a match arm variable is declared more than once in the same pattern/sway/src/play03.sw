@@ -57,6 +57,27 @@ pub fn play() -> () {
         _ => 0,
     };
 
+    let t1 = (0, Struct::new(), 0);
+
+    let _x = match t1 {
+        (x, Struct { x, .. } | Struct { x, .. }, y) => y,
+        _ => 0,
+    };
+
+    let t2 = (0, Struct::new(), 0);
+
+    let _x = match t2 {
+        (0, Struct { x, y: x, .. } | Struct { x, .. }, x) => x,
+        _ => 0,
+    };
+
+    let t3 = (0, Struct::new(), 0);
+
+    let _x = match t3 {
+        (x, Struct { x, y: x, .. } | Struct { x, .. }, x) => x,
+        _ => 0,
+    };
+
     poke(Enum::A);
     poke(Enum::B);
     poke(Enum::C);
