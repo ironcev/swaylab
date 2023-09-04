@@ -56,11 +56,11 @@ pub fn play() -> () {
         (Struct { y, .. }, Struct { y, .. }) => y,
     };
 
-    let t1 = (false, Enum::A, Struct::new(), 0u64, 0u64);
+    let t1 = (false, Enum::A, Struct::new(), 0u64);
 
     let _x = match t1 {
-        (true, a_t1, a_t1, a_t1, a_t1) => a_t1,
-        (a_t1, a_t1, a_t1, a_t1, a_t1) => a_t1,
+        (true, a_t1, a_t1, a_t1) => a_t1,
+        (a_t1, a_t1, a_t1, a_t1) => a_t1,
     };
             
     let t2 = (false, Enum::A, Struct::new(), 0u64, 0u64);

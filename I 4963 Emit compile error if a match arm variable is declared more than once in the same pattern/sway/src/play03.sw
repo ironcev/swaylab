@@ -57,23 +57,30 @@ pub fn play() -> () {
         _ => 0,
     };
 
-    let t1 = (0, Struct::new(), 0);
+    let or5 = Struct::new();
+            
+    let _x = match or5 {
+        Struct { x, y: x, .. } | Struct { x, .. } => x,
+        _ => 0,
+    };
 
-    let _x = match t1 {
+    let or6 = (0, Struct::new(), 0);
+
+    let _x = match or6 {
         (x, Struct { x, .. } | Struct { x, .. }, y) => y,
         _ => 0,
     };
 
-    let t2 = (0, Struct::new(), 0);
+    let or7 = (0, Struct::new(), 0);
 
-    let _x = match t2 {
+    let _x = match or7 {
         (0, Struct { x, y: x, .. } | Struct { x, .. }, x) => x,
         _ => 0,
     };
 
-    let t3 = (0, Struct::new(), 0);
+    let or8 = (0, Struct::new(), 0);
 
-    let _x = match t3 {
+    let _x = match or8 {
         (x, Struct { x, y: x, .. } | Struct { x, .. }, x) => x,
         _ => 0,
     };
