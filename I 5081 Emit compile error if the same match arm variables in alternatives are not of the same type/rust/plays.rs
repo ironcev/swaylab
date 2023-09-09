@@ -1,11 +1,3 @@
-library;
-
-use ::lib::LibStruct;
-use ::lib::LibStructAlias;
-
-use ::lib::LibStruct as LibStructPlayAlias;
-use ::lib::LibStructAlias as LibStructAliasPlayAlias;
-
 struct Struct {
     x: bool,
     y: u64,
@@ -50,17 +42,13 @@ type Boolean = bool;
 type GenStructAliasBoolean = GenStruct<Boolean, Boolean>;
 
 enum Enum {
-    A: (bool),
-    B: (u64),
-    C: (Struct),
-    D: (StructAlias),
-    E: (GenStruct<bool, bool>),
-    F: (GenStructAliasBool),
-    G: (GenStructAliasBoolean),
-    H: (LibStruct),
-    I: (LibStructAlias),
-    J: (LibStructPlayAlias),
-    K: (LibStructAliasPlayAlias),
+    A(bool),
+    B(u64),
+    C(Struct),
+    D(StructAlias),
+    E(GenStruct<bool, bool>),
+    F(GenStructAliasBool),
+    G(GenStructAliasBoolean),
 }
 
 pub fn play() -> () {
@@ -126,30 +114,6 @@ pub fn play() -> () {
         _ => false,
     };
 
-    let e6_no_error = Enum::A(false);
-
-    // No error here.
-    let _x = match e6_no_error {
-        Enum::H(x) | Enum::I(x) => x.x,
-        _ => false,
-    };
-
-    let e7_no_error = Enum::A(false);
-
-    // No error here.
-    let _x = match e7_no_error {
-        Enum::I(x) | Enum::J(x) => x.x,
-        _ => false,
-    };
-
-    let e8_no_error = Enum::A(false);
-
-    // No error here.
-    let _x = match e8_no_error {
-        Enum::J(x) | Enum::K(x) => x.x,
-        _ => false,
-    };
-
     let t1 = (0u64, false, Struct::new(), Enum::A(true));
 
     let _x = match t1 {
@@ -170,28 +134,22 @@ pub fn play() -> () {
         _ => 0,
     };
 
-    let t4 = (0u8, 0u16, 0u32, 0u64, 0x0u256);
+    let t4 = (0u8, 0u16, 0u32, 0u64);
 
     let _x = match t4 {
-        (x, y, _, _, _) | (y, x, _, _, _) => x + y,
+        (x, y, _, _) | (y, x, _, _) => x + y,
     };
 
-    let t5 = (0u8, 0u16, 0u32, 0u64, 0x0u256);
+    let t5 = (0u8, 0u16, 0u32, 0u64);
 
     let _x = match t5 {
-        (_, x, y, _, _) | (_, y, x, _, _) => x + y,
+        (_, x, y, _) | (_, y, x, _) => x + y,
     };
 
-    let t6 = (0u8, 0u16, 0u32, 0u64, 0x0u256);
+    let t6 = (0u8, 0u16, 0u32, 0u64);
 
     let _x = match t6 {
-        (_, _, x, y, _) | (_, _, y, x, _) => x + y,
-    };
-
-    let t7 = (0u8, 0u16, 0u32, 0u64, 0x0u256);
-
-    let _x = match t7 {
-        (_, _, _, x, y) | (_, _, _, y, x) => x + y,
+        (_, _, x, y) | (_, _, y, x) => x + y,
     };
 
     poke(Enum::B(0));
@@ -200,19 +158,12 @@ pub fn play() -> () {
     poke(Enum::E(GenStruct::new(true,true)));
     poke(Enum::F(GenStruct::new(true,true)));
     poke(Enum::G(GenStruct::new(true,true)));
-    poke(Enum::H(LibStruct::new()));
-    poke(Enum::I(LibStruct::new()));
-    poke(Enum::J(LibStruct::new()));
-    poke(Enum::K(LibStruct::new()));
     poke(Struct::new().use_me());
     poke(StructAlias::new().use_me());
     poke(GenStruct::new(0, 0).use_me());
     poke(GenStructAliasBool::new(true, true).use_me());
     poke(GenStructAliasBoolean::new(true, true).use_me());
-    poke(LibStruct::new().use_me());
-    poke(LibStructAlias::new().use_me());
-    poke(LibStructPlayAlias::new().use_me());
-    poke(LibStructAliasPlayAlias::new().use_me());
 }
 
 fn poke<T>(_x: T) { }
+

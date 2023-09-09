@@ -1,5 +1,6 @@
 script;
 
+mod lib;
 mod play01;
 
 fn main() {
