@@ -49,6 +49,12 @@ type GenStructAliasBool = GenStruct<bool, bool>;
 type Boolean = bool;
 type GenStructAliasBoolean = GenStruct<Boolean, Boolean>;
 
+trait Supertrait { }
+trait Subtrait: Supertrait { }
+
+impl Supertrait for Struct { }
+impl Subtrait for Struct { }
+
 enum Enum {
     A: (bool),
     B: (u64),
@@ -61,6 +67,17 @@ enum Enum {
     I: (LibStructAlias),
     J: (LibStructPlayAlias),
     K: (LibStructAliasPlayAlias),
+}
+
+fn generics<A, B>(a: A, b: B)
+    where A: Supertrait,
+          B: Subtrait
+{
+    let gen = (a, b);
+
+    let _x = match gen {
+        (x, y) | (y, x) => 0,
+    };
 }
 
 pub fn play() -> () {
@@ -193,6 +210,8 @@ pub fn play() -> () {
     let _x = match t7 {
         (_, _, _, x, y) | (_, _, _, y, x) => x + y,
     };
+
+    generics(Struct::new(), Struct::new());
 
     poke(Enum::B(0));
     poke(Enum::C(Struct::new()));
