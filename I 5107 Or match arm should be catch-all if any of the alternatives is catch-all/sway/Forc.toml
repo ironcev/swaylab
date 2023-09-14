@@ -1,0 +1,8 @@
+[project]
+authors = ["Igor Rončević"]
+license = "MIT"
+name = "plays"
+
+[dependencies]
+core = { path = "../../../sway/sway-lib-core" }
+
