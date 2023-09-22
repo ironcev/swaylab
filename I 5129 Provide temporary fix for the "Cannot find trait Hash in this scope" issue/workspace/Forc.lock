@@ -1,0 +1,40 @@
+[[package]]
+name = "core"
+source = "path+from-root-AD80769CAE44474A"
+
+[[package]]
+name = "plays"
+source = "member"
+dependencies = [
+    "std",
+    "traits",
+    "types",
+    "usages",
+]
+
+[[package]]
+name = "std"
+source = "git+https://github.com/fuellabs/sway?tag=v0.46.0#e75f14b03636bc96751a6760304a1a6d3eb5937d"
+dependencies = ["core"]
+
+[[package]]
+name = "traits"
+source = "member"
+dependencies = ["std"]
+
+[[package]]
+name = "types"
+source = "member"
+dependencies = [
+    "std",
+    "traits",
+]
+
+[[package]]
+name = "usages"
+source = "member"
+dependencies = [
+    "std",
+    "traits",
+    "types",
+]

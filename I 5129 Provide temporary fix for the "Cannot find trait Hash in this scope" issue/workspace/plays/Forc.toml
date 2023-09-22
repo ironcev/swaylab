@@ -1,0 +1,10 @@
+[project]
+authors = ["Igor"]
+entry = "main.sw"
+license = "Apache-2.0"
+name = "plays"
+
+[dependencies]
+traits = { path = "../traits"}
+types = { path = "../types"}
+usages = { path = "../usages"}
