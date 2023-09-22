@@ -80,7 +80,7 @@ fn generics<A, B>(a: A, b: B)
     };
 }
 
-pub fn play() -> () {
+pub fn play() {
     let s1 = Struct::new();
 
     let _x = match s1 {
@@ -103,6 +103,18 @@ pub fn play() -> () {
 
     let _x = match s4 {
         Struct { x: a, y: b } | Struct { x: a, y: b } | Struct { x: b, y: a } => if b { 0 } else { a },
+    };
+
+    let s5 = Struct::new();
+
+    let _x = match s5 {
+        Struct { x, y } | x => if y { 0 } else { x },
+    };
+
+    let s6 = Struct::new();
+
+    let _x = match s6 {
+        Struct { x, y } | (x, y) => if y { 0 } else { x },
     };
 
     let e1 = Enum::A(false);

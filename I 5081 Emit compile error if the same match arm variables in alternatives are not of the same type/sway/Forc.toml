@@ -3,4 +3,7 @@ authors = ["Igor Rončević"]
 license = "MIT"
 name = "plays"
 entry = "main.sw"
-implicit-std = true
+
+[dependencies]
+core = { path = "../../../sway/sway-lib-core" }
+std = { path = "../../../sway/sway-lib-std" }
