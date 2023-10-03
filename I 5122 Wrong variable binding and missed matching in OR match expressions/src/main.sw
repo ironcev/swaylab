@@ -5,7 +5,8 @@ script;
 // mod play03;
 // mod play04;
 // mod play05;
-mod play06;
+// mod play06;
+mod play07;
 
 fn main() {
     // ::play01::play();
@@ -13,5 +14,6 @@ fn main() {
     // ::play03::play();
     // ::play04::play();
     // ::play05::play();
-    ::play06::play();
+    // ::play06::play();
+    ::play07::play();
 }
