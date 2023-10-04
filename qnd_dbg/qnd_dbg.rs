@@ -94,6 +94,9 @@ pub fn qnd_dbg_expression(expr: &TyExpression) {
             TyExpressionVariant::UnsafeDowncast { exp, variant, .. } => {
                 result.push_str(&format!("{indent}UnsafeDowncast({}, {})", build_expression(exp, Indent::default()), variant.span.as_str()))
             },
+            TyExpressionVariant::StructFieldAccess { prefix, field_to_access, .. } => {
+                result.push_str(&format!("{indent}{}.{}",build_expression(prefix, Indent::default()), field_to_access.name));
+            }
             TyExpressionVariant::TupleElemAccess { prefix, elem_to_access_num, .. } => {
                 result.push_str(&format!("{indent}{}.{elem_to_access_num}", build_expression(prefix, Indent::default())));
             }
@@ -127,5 +130,4 @@ pub fn qnd_dbg_expression(expr: &TyExpression) {
             write!(f, "{0:1$}", "", self.indent)
         }
     }
-}
-
+} 
