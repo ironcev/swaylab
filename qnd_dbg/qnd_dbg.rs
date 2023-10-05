@@ -1,5 +1,11 @@
+use crate::language::LazyOp;
+use crate::language::ty::VariableMutability;
+use crate::ty::TyAstNodeContent;
+use crate::ty::TyCodeBlock;
+use crate::ty::TyExpressionVariant;
 use crate::TypeId;
 use crate::semantic_analysis::TypeCheckContext;
+use crate::ty::TyExpression;
 
 pub fn qnd_dbg_implemented_traits_for_type(ctx: &TypeCheckContext, type_id: TypeId) {
     let trait_call_paths = ctx.namespace.implemented_traits.get_trait_names_for_type(ctx.engines, type_id);
@@ -29,7 +35,6 @@ pub fn qnd_dbg_use_synonyms(ctx: &TypeCheckContext) {
     }
 }
 
-use crate::ty::TyExpression;
 pub fn qnd_dbg_expression_tree(expr: &TyExpression) {
     println!("\n{:?}\n", expr);
 }
@@ -73,7 +78,7 @@ pub fn qnd_dbg_expression(expr: &TyExpression) {
                         },
                         TyAstNodeContent::Declaration(crate::ty::TyDecl::VariableDecl(var_decl)) => {
                             let mutable = match var_decl.mutability {
-                                ty::VariableMutability::Immutable => "",
+                                VariableMutability::Immutable => "",
                                 _ => "mut ",
                             };
                             result.push_str(&format!("\n{indent}let {mutable}{} = {};", var_decl.name, build_expression(&var_decl.body, Indent::default())))
@@ -96,10 +101,13 @@ pub fn qnd_dbg_expression(expr: &TyExpression) {
             },
             TyExpressionVariant::StructFieldAccess { prefix, field_to_access, .. } => {
                 result.push_str(&format!("{indent}{}.{}",build_expression(prefix, Indent::default()), field_to_access.name));
-            }
+            },
             TyExpressionVariant::TupleElemAccess { prefix, elem_to_access_num, .. } => {
                 result.push_str(&format!("{indent}{}.{elem_to_access_num}", build_expression(prefix, Indent::default())));
-            }
+            },
+            TyExpressionVariant::MatchExp { desugared, .. } => {
+                result.push_str(&format!("{}", build_expression(desugared, indent)));
+            },
            _ => result.push_str("NOT_SUPPORTED"),
         };
 
