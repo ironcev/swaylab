@@ -14,6 +14,18 @@ pub fn play() -> () {
         _ => 9999,
     };
 
+// First step (variables still not properly extracted):
+// if true {
+//     let x = __match_return_var_name_1.x;
+//     let x = __match_return_var_name_1.y;
+//     let x = __match_return_var_name_1.z;
+//     x
+// }
+// else {
+//     9999
+// }
+
+// Original:
 // if true {
 //     let x = __match_return_var_name_1.z;
 //     x

@@ -14,6 +14,23 @@ pub fn play() -> () {
         _ => 9999,
     };
 
+// First step (variables still not properly extracted):
+// if ((core::ops::eq(__match_return_var_name_1.y, 222)
+// && core::ops::eq(__match_return_var_name_1.z, 333))
+// || ((core::ops::eq(__match_return_var_name_1.x, 101)
+// && core::ops::eq(__match_return_var_name_1.z, 303))
+// || (core::ops::eq(__match_return_var_name_1.x, 101)
+// && core::ops::eq(__match_return_var_name_1.y, 202)))) {
+//     let x = __match_return_var_name_1.x;
+//     let x = __match_return_var_name_1.y;
+//     let x = __match_return_var_name_1.z;
+//     x
+// }
+// else {
+//     9999
+// }
+
+// Original;
 // if ((core::ops::eq(__match_return_var_name_1.x, 101)
 // || (core::ops::eq(__match_return_var_name_1.x, 101)
 // || core::ops::eq(__match_return_var_name_1.y, 222)))

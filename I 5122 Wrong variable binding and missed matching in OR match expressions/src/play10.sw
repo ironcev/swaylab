@@ -8,6 +8,20 @@ pub fn play() -> () {
         _ => 9999,
     };
 
+// First step (variables still not properly extracted):
+// if ((core::ops::eq(__match_return_var_name_1.0, 11)
+// && core::ops::eq(__match_return_var_name_1.1, 111))
+// || ((core::ops::eq(__match_return_var_name_1.0, 22)
+// && core::ops::eq(__match_return_var_name_1.1, 222))
+// || (core::ops::eq(__match_return_var_name_1.0, 33)
+// && core::ops::eq(__match_return_var_name_1.1, 333)))) {
+//     5555
+// }
+// else {
+//     9999
+// }
+
+// Original:
 // if ((core::ops::eq(__match_return_var_name_1.0, 33)
 // || (core::ops::eq(__match_return_var_name_1.0, 22)
 // || core::ops::eq(__match_return_var_name_1.0, 11)))

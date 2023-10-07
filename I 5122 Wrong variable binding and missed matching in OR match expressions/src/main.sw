@@ -16,10 +16,10 @@ mod lib;
 // mod play12;
 // mod play13;
 // mod play14;
-// mod play15;
+mod play15;
 // mod play16;
 // mod play17;
-mod play18;
+// mod play18;
 
 fn main() {
     // ::play01::play();
@@ -36,8 +36,8 @@ fn main() {
     // ::play12::play();
     // ::play13::play();
     // ::play14::play();
-    // ::play15::play();
+    ::play15::play();
     // ::play16::play();
     // ::play17::play();
-    ::play18::play();
+    // ::play18::play();
 }

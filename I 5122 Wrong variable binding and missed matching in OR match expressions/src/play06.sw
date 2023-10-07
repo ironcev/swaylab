@@ -14,6 +14,39 @@ pub fn play() -> () {
         _ => 222,
     };
 
+// First step (variables still not properly extracted):
+// if (
+//     (core::ops::eq(EnumTag(__match_return_var_name_1), 0)
+//     &&
+//     (
+//         core::ops::eq(UnsafeDowncast(__match_return_var_name_1, A: (u64, u64, u64)).0, 11)
+//         &&
+//         (
+//             core::ops::eq(UnsafeDowncast(__match_return_var_name_1, A: (u64, u64, u64)).1, 11)
+//             &&
+//             core::ops::eq(UnsafeDowncast(__match_return_var_name_1, A: (u64, u64, u64)).2, 11)
+//         )
+//     )
+//     )
+// ||
+//     ((core::ops::eq(EnumTag(__match_return_var_name_1), 1)
+//     && (core::ops::eq(UnsafeDowncast(__match_return_var_name_1, B: (u64, u64, u64)).0, 22)
+//     && (core::ops::eq(UnsafeDowncast(__match_return_var_name_1, B: (u64, u64, u64)).1, 22)
+//     && core::ops::eq(UnsafeDowncast(__match_return_var_name_1, B: (u64, u64, u64)).2, 22))))
+// ||
+//     (core::ops::eq(EnumTag(__match_return_var_name_1), 2)
+//     && (core::ops::eq(UnsafeDowncast(__match_return_var_name_1, C: (u64, u64, u64)).0, 33)
+//     && (core::ops::eq(UnsafeDowncast(__match_return_var_name_1, C: (u64, u64, u64)).1, 33)
+//     && core::ops::eq(UnsafeDowncast(__match_return_var_name_1, C: (u64, u64, u64)).2, 33))))))
+// {
+//     111
+// }
+// else
+// {
+//     222
+// }
+
+// Original:
 // if ((core::ops::eq(EnumTag(__match_return_var_name_1), 2)
 // || (core::ops::eq(EnumTag(__match_return_var_name_1), 1)
 // || core::ops::eq(EnumTag(__match_return_var_name_1), 0)))

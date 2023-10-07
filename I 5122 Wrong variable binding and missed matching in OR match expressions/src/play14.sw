@@ -35,6 +35,50 @@ pub fn play() -> () {
         _ => 9999,
     };
 
+// First step (variables still not properly extracted):
+// if (
+//     (
+//         (
+//             (core::ops::eq(__match_return_var_name_1.a.y, 201)
+//             &&
+//             core::ops::eq(__match_return_var_name_1.a.z, 301)
+//             )
+//             ||
+//             ((core::ops::eq(__match_return_var_name_1.a.x, 102)
+//             &&
+//             core::ops::eq(__match_return_var_name_1.a.z, 302)
+//             )
+//             ||
+//             (core::ops::eq(__match_return_var_name_1.a.x, 103)
+//             &&
+//             core::ops::eq(__match_return_var_name_1.a.y, 203)))
+//         )
+//         &&
+//         core::ops::eq(__match_return_var_name_1.y, 111)
+//     )
+// || (((core::ops::eq(__match_return_var_name_1.a.y, 201)
+// && core::ops::eq(__match_return_var_name_1.a.z, 301))
+// || ((core::ops::eq(__match_return_var_name_1.a.x, 102)
+// && core::ops::eq(__match_return_var_name_1.a.z, 302))
+// || (core::ops::eq(__match_return_var_name_1.a.x, 103)
+// && core::ops::eq(__match_return_var_name_1.a.y, 203))))
+// && core::ops::eq(__match_return_var_name_1.x, 111)))
+// {
+//     let a_x = __match_return_var_name_1.a.x;
+//     let a_x = __match_return_var_name_1.a.y;
+//     let a_x = __match_return_var_name_1.a.z;
+//     let b_x = __match_return_var_name_1.x;
+//     let a_x = __match_return_var_name_1.a.x;
+//     let a_x = __match_return_var_name_1.a.y;
+//     let a_x = __match_return_var_name_1.a.z;
+//     let b_x = __match_return_var_name_1.y;
+//     core::ops::add(a_x, b_x)
+// }
+// else {
+//     9999
+// }
+
+// Original:
 // if ((core::ops::eq(__match_return_var_name_1.a.x, 103)
 // || (core::ops::eq(__match_return_var_name_1.a.x, 102)
 // || (core::ops::eq(__match_return_var_name_1.a.x, 103)

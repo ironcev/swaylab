@@ -6,7 +6,7 @@ struct Struct {
 }
 
 pub fn play() -> () {
-//     let s = (0u64, 0u64);
+    let s = (0u64, 0u64);
 
 //     if let (_, x) = s {
 //         let _a = x + x;
