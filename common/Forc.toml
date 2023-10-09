@@ -1,0 +1,7 @@
+[project]
+authors = ["Igor Rončević"]
+entry = "lib.sw"
+license = "MIT"
+name = "common"
+
+[dependencies]

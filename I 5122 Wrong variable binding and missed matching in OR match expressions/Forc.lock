@@ -1,11 +1,19 @@
 [[package]]
+name = "common"
+source = "path+from-root-703560B24DD97299"
+dependencies = ["std"]
+
+[[package]]
 name = "core"
 source = "path+from-root-BD9159206068AEC6"
 
 [[package]]
 name = "plays"
 source = "member"
-dependencies = ["std"]
+dependencies = [
+    "common",
+    "std",
+]
 
 [[package]]
 name = "std"

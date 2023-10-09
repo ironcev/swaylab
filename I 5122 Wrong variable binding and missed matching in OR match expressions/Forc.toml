@@ -4,3 +4,6 @@ license = "MIT"
 name = "plays"
 entry = "main.sw"
 implicit-std = true
+
+[dependencies]
+common = { path = "../common" }

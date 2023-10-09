@@ -5,6 +5,19 @@ enum Enum {
     B: (),
 }
 
+enum EmptyEnum { }
+
+impl EmptyEnum {
+    fn match_me(self) -> Self {
+        let e = self;
+        match e { }
+
+        // // [Desugared match expression]
+        // if true ()
+        // else ()
+    }
+}
+
 pub fn play() -> () {
     let e = Enum::A;
 
