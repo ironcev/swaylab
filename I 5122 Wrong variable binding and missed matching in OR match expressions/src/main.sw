@@ -2,7 +2,7 @@ script;
 
 mod lib;
 
-mod play01;
+// mod play01;
 // mod play02;
 // mod play03;
 // mod play04;
@@ -21,9 +21,10 @@ mod play01;
 // mod play17;
 // mod play18;
 // mod play19;
+mod play20;
 
 fn main() {
-    ::play01::play();
+    // ::play01::play();
     // ::play02::play();
     // ::play03::play();
     // ::play04::play();
@@ -42,4 +43,5 @@ fn main() {
     // ::play17::play();
     // ::play18::play();
     // ::play19::play();
+    ::play20::play();
 }
