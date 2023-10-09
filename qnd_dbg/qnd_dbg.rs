@@ -68,6 +68,9 @@ pub fn qnd_dbg_expression(expr: &TyExpression) {
             },
             TyExpressionVariant::EnumTag { exp } => result.push_str(&format!("{indent}EnumTag({})", build_expression(exp, Indent::default()))),
             TyExpressionVariant::VariableExpression { name, ..} => result.push_str(&format!("{indent}{name}")),
+            TyExpressionVariant::ConstantExpression { const_decl, call_path, span } => {
+                result.push_str(&format!("{indent}CONST({}, {}, {})", span.as_str(), call_path.as_ref().map_or("<None>".to_string(), |cp| format!("{}", cp.clone())), const_decl.call_path))
+            },
             TyExpressionVariant::Literal(literal) => result.push_str(&format!("{literal}")),
             TyExpressionVariant::CodeBlock(TyCodeBlock { contents }) => {
                 result.push_str("{");
@@ -102,10 +105,19 @@ pub fn qnd_dbg_expression(expr: &TyExpression) {
             TyExpressionVariant::StructFieldAccess { prefix, field_to_access, .. } => {
                 result.push_str(&format!("{indent}{}.{}",build_expression(prefix, Indent::default()), field_to_access.name));
             },
+            TyExpressionVariant::Tuple { fields } => {
+                let fields = fields
+                    .iter()
+                    .map(|exp| build_expression(exp, Indent::default()))
+                    .collect::<Vec<String>>()
+                    .join(", ");
+                result.push_str(&format!("{indent}({fields})"));
+            },
             TyExpressionVariant::TupleElemAccess { prefix, elem_to_access_num, .. } => {
                 result.push_str(&format!("{indent}{}.{elem_to_access_num}", build_expression(prefix, Indent::default())));
             },
             TyExpressionVariant::MatchExp { desugared, .. } => {
+                result.push_str(&format!("{indent}// [Desugared match expression]\n"));
                 result.push_str(&format!("{}", build_expression(desugared, indent)));
             },
            _ => result.push_str("NOT_SUPPORTED"),
