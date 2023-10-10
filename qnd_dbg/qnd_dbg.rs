@@ -1,3 +1,4 @@
+use crate::Engines;
 use crate::language::LazyOp;
 use crate::language::ty::VariableMutability;
 use crate::ty::TyAstNodeContent;
@@ -39,34 +40,48 @@ pub fn qnd_dbg_expression_tree(expr: &TyExpression) {
     println!("\n{:?}\n", expr);
 }
 
-pub fn qnd_dbg_expression(expr: &TyExpression) {
-    print!("\n{}\n", build_expression(expr, Indent::default()));
+pub fn qnd_dbg_expression(engines: &Engines, expr: &TyExpression) {
+    print!("\n{}\n", build_expression(engines, expr, Indent::default()));
 
-    fn build_expression(expr: &TyExpression, indent: Indent) -> String {
+    fn build_expression(engines: &Engines, expr: &TyExpression, indent: Indent) -> String {
         let mut result = String::new();
 
         match &expr.expression {
             TyExpressionVariant::IfExp{condition, then, r#else} => {
-                result.push_str(&format!("{indent}if {} ", build_expression(condition, Indent::default())));
-                result.push_str(&format!("{}", build_expression(then, indent.inc())));
+                result.push_str(&format!("{indent}if {} ", build_expression(engines, condition, Indent::default())));
+                result.push_str(&format!("{}", build_expression(engines, then, indent.inc())));
                 if let Some(r#else) = r#else {
                     let else_body_indent = match r#else.expression {
                         TyExpressionVariant::CodeBlock { .. } => indent.inc(),
                         TyExpressionVariant::IfExp { .. } => Indent::default(),
                         _ => indent,
                     };
-                    result.push_str(&format!("\n{indent}else {}", build_expression(r#else, else_body_indent)));
+                    result.push_str(&format!("\n{indent}else {}", build_expression(engines, r#else, else_body_indent)));
                 }
             },
             TyExpressionVariant::FunctionApplication { call_path, arguments, ..} => {
                 let arguments = arguments
                     .iter()
-                    .map(|(_, exp)| build_expression(exp, Indent::default()))
+                    .map(|(_, exp)| build_expression(engines, exp, Indent::default()))
                     .collect::<Vec<String>>()
                     .join(", ");
                 result.push_str(&format!("{indent}{call_path}({arguments})"));
             },
-            TyExpressionVariant::EnumTag { exp } => result.push_str(&format!("{indent}EnumTag({})", build_expression(exp, Indent::default()))),
+            TyExpressionVariant::EnumTag { exp } => result.push_str(&format!("{indent}EnumTag({})", build_expression(engines, exp, Indent::default()))),
+            TyExpressionVariant::EnumInstantiation { enum_ref, variant_name, tag, contents, variant_instantiation_span, call_path_binding, call_path_decl } => {
+                let contents = contents
+                    .iter()
+                    .map(|exp| build_expression(engines, exp, Indent::default()))
+                    .collect::<Vec<String>>()
+                    .join(", ");
+                let contents = if contents.is_empty() {
+                        "".to_string()
+                    }
+                    else {
+                        format!("({contents})")
+                    };
+                result.push_str(&format!("{indent}{}{}", variant_name, contents));
+            }
             TyExpressionVariant::VariableExpression { name, ..} => result.push_str(&format!("{indent}{name}")),
             TyExpressionVariant::ConstantExpression { const_decl, call_path, span } => {
                 result.push_str(&format!("{indent}CONST({}, {}, {})", span.as_str(), call_path.as_ref().map_or("<None>".to_string(), |cp| format!("{}", cp.clone())), const_decl.call_path))
@@ -77,14 +92,14 @@ pub fn qnd_dbg_expression(expr: &TyExpression) {
                 for node in contents {
                     match &node.content {
                         TyAstNodeContent::ImplicitReturnExpression(exp) => {
-                            result.push_str(&format!("\n{indent}{}", build_expression(exp, Indent::default())))
+                            result.push_str(&format!("\n{indent}{}", build_expression(engines, exp, Indent::default())))
                         },
                         TyAstNodeContent::Declaration(crate::ty::TyDecl::VariableDecl(var_decl)) => {
                             let mutable = match var_decl.mutability {
                                 VariableMutability::Immutable => "",
                                 _ => "mut ",
                             };
-                            result.push_str(&format!("\n{indent}let {mutable}{} = {};", var_decl.name, build_expression(&var_decl.body, Indent::default())))
+                            result.push_str(&format!("\n{indent}let {mutable}{}: {} = {};", var_decl.name, engines.help_out(var_decl.return_type), build_expression(engines, &var_decl.body, Indent::default())))
                         }
                         _ => result.push_str("NOT_SUPPORTED"),
                     }
@@ -97,28 +112,28 @@ pub fn qnd_dbg_expression(expr: &TyExpression) {
                     LazyOp::Or => "||",
                 };
 
-                result.push_str(&format!("{indent}({}\n{operator} {})", build_expression(lhs, Indent::default()), build_expression(rhs, Indent::default())));
+                result.push_str(&format!("{indent}({}\n{operator} {})", build_expression(engines, lhs, Indent::default()), build_expression(engines, rhs, Indent::default())));
             },
             TyExpressionVariant::UnsafeDowncast { exp, variant, .. } => {
-                result.push_str(&format!("{indent}UnsafeDowncast({}, {})", build_expression(exp, Indent::default()), variant.span.as_str()))
+                result.push_str(&format!("{indent}UnsafeDowncast({}, {})", build_expression(engines, exp, Indent::default()), variant.span.as_str()))
             },
             TyExpressionVariant::StructFieldAccess { prefix, field_to_access, .. } => {
-                result.push_str(&format!("{indent}{}.{}",build_expression(prefix, Indent::default()), field_to_access.name));
+                result.push_str(&format!("{indent}{}.{}",build_expression(engines, prefix, Indent::default()), field_to_access.name));
             },
             TyExpressionVariant::Tuple { fields } => {
                 let fields = fields
                     .iter()
-                    .map(|exp| build_expression(exp, Indent::default()))
+                    .map(|exp| build_expression(engines, exp, Indent::default()))
                     .collect::<Vec<String>>()
                     .join(", ");
                 result.push_str(&format!("{indent}({fields})"));
             },
             TyExpressionVariant::TupleElemAccess { prefix, elem_to_access_num, .. } => {
-                result.push_str(&format!("{indent}{}.{elem_to_access_num}", build_expression(prefix, Indent::default())));
+                result.push_str(&format!("{indent}{}.{elem_to_access_num}", build_expression(engines, prefix, Indent::default())));
             },
             TyExpressionVariant::MatchExp { desugared, .. } => {
                 result.push_str(&format!("{indent}// [Desugared match expression]\n"));
-                result.push_str(&format!("{}", build_expression(desugared, indent)));
+                result.push_str(&format!("{}", build_expression(engines, desugared, indent)));
             },
            _ => result.push_str("NOT_SUPPORTED"),
         };
