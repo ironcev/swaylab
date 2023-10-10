@@ -68,7 +68,7 @@ pub fn qnd_dbg_expression(engines: &Engines, expr: &TyExpression) {
                 result.push_str(&format!("{indent}{call_path}({arguments})"));
             },
             TyExpressionVariant::EnumTag { exp } => result.push_str(&format!("{indent}EnumTag({})", build_expression(engines, exp, Indent::default()))),
-            TyExpressionVariant::EnumInstantiation { enum_ref, variant_name, tag, contents, variant_instantiation_span, call_path_binding, call_path_decl } => {
+            TyExpressionVariant::EnumInstantiation { enum_ref, variant_name, contents, .. } => {
                 let contents = contents
                     .iter()
                     .map(|exp| build_expression(engines, exp, Indent::default()))
@@ -80,7 +80,8 @@ pub fn qnd_dbg_expression(engines: &Engines, expr: &TyExpression) {
                     else {
                         format!("({contents})")
                     };
-                result.push_str(&format!("{indent}{}{}", variant_name, contents));
+                let enum_decl = engines.de().get_enum(enum_ref);
+                result.push_str(&format!("{indent}{}::{}{}", enum_decl.call_path.suffix, variant_name, contents));
             }
             TyExpressionVariant::VariableExpression { name, ..} => result.push_str(&format!("{indent}{name}")),
             TyExpressionVariant::ConstantExpression { const_decl, call_path, span } => {
