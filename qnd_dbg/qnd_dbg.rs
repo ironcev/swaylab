@@ -101,8 +101,9 @@ pub fn qnd_dbg_expression(engines: &Engines, expr: &TyExpression) {
                                 _ => "mut ",
                             };
                             result.push_str(&format!("\n{indent}let {mutable}{}: {} = {};", var_decl.name, engines.help_out(var_decl.return_type), build_expression(engines, &var_decl.body, Indent::default())))
-                        }
-                        _ => result.push_str("NOT_SUPPORTED"),
+                        },
+                        TyAstNodeContent::Expression(expression) => result.push_str(&format!("\n{}", build_expression(engines, expression, indent))),
+                        _ => result.push_str(&format!("\n{indent}[Unsupported TyAstNodeContent]")),
                     }
                 }
                 result.push_str(&format!("\n{}}}", indent.dec()));
@@ -136,7 +137,15 @@ pub fn qnd_dbg_expression(engines: &Engines, expr: &TyExpression) {
                 result.push_str(&format!("{indent}// [Desugared match expression]\n"));
                 result.push_str(&format!("{}", build_expression(engines, desugared, indent)));
             },
-           _ => result.push_str("NOT_SUPPORTED"),
+            TyExpressionVariant::IntrinsicFunction(intrinsic) => {
+                let arguments = intrinsic.arguments
+                    .iter()
+                    .map(|exp| build_expression(engines, exp, Indent::default()))
+                    .collect::<Vec<String>>()
+                    .join(", ");
+                result.push_str(&format!("{indent}__{}({arguments})", intrinsic.kind));
+            },
+            _ => result.push_str(&format!("\n{indent}[Unsupported TyExpressionVariant]")),
         };
 
         result
