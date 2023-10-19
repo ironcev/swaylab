@@ -19,6 +19,12 @@ pub fn play() -> () {
         Enum::A((_, _, x)) | Enum::B((_, x, _)) | Enum::C((x, _, _)) => x,
     };
 
+    let _x = match e {
+        Enum::A((1, 1, 1)) | Enum::B((2, 2, 2)) | Enum::C((3, 3, 3)) => 123,
+        Enum::A((_, _, x)) | Enum::B((_, x, _)) | Enum::C((x, _, _)) => x,
+        Enum::A((y, _, _)) | Enum::B((_, y, _)) | Enum::C((_, _, y)) => y,
+    };
+
 // First step (variables still not properly extracted):
 // if (core::ops::eq(EnumTag(__match_return_var_name_1), 0)
 // || (core::ops::eq(EnumTag(__match_return_var_name_1), 1)
