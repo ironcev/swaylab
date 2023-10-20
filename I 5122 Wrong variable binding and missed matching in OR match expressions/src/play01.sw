@@ -26,6 +26,18 @@ pub fn play() -> () {
         Enum::B => 222,
     };
 
+// Final:
+// if core::ops::eq(EnumTag(__matched_value_2), 0) {
+//     111
+// }
+// else if core::ops::eq(EnumTag(__matched_value_2), 1) {
+//     222
+// }
+// else {
+//     __revert(14757395258967588866)
+// }
+
+// Original:
 // if core::ops::eq(EnumTag(__match_return_var_name_1), 0) {
 //     111
 // }

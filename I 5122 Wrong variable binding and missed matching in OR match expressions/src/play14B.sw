@@ -42,6 +42,200 @@ pub fn play() -> () {
         _ => 9999,
     };
 
+// Final:
+// {
+//     let __matched_or_variant_index_1: u64 = if true {
+//             1
+//         }
+//         else if true {
+//             2
+//         }
+//         else if true {
+//             3
+//         }
+//         else {
+//             0
+//         };
+
+//     let __matched_or_variant_index_2: u64 = if core::ops::eq(EnumTag(__matched_value_1.a.e), 0) {
+//             1
+//         }
+//         else if core::ops::eq(EnumTag(__matched_value_1.a.e), 1) {
+//             2
+//         }
+//         else if core::ops::eq(EnumTag(__matched_value_1.a.e), 2) {
+//             3
+//         }
+//         else {
+//             0
+//         };
+
+//     let __matched_or_variant_index_3: u64 = if core::ops::eq(__matched_value_1.a.z, 301) {
+//             1
+//         }
+//         else if core::ops::eq(__matched_value_1.a.x, 102) {
+//             2
+//         }
+//         else if (core::ops::eq(__matched_value_1.a.x, 103)
+//         && (core::ops::eq(__matched_value_1.a.y, 203)
+//         && (core::ops::neq(__matched_or_variant_index_1, 0)
+//         && core::ops::neq(__matched_or_variant_index_2, 0)))) {
+//             3
+//         }
+//         else {
+//             0
+//         };
+
+//     let __matched_or_variant_index_4: u64 = if core::ops::eq(EnumTag(__matched_value_1.a.e), 0) {
+//             1
+//         }
+//         else if core::ops::eq(EnumTag(__matched_value_1.a.e), 1) {
+//             2
+//         }
+//         else if core::ops::eq(EnumTag(__matched_value_1.a.e), 2) {
+//             3
+//         }
+//         else {
+//             0
+//         };
+
+//     let __matched_or_variant_index_5: u64 = if (core::ops::eq(__matched_value_1.a.y, 201)
+//         && (core::ops::eq(__matched_value_1.a.z, 301)
+//         && core::ops::neq(__matched_or_variant_index_4, 0))) {
+//             1
+//         }
+//         else if core::ops::eq(__matched_value_1.a.x, 102) {
+//             2
+//         }
+//         else if core::ops::eq(__matched_value_1.a.y, 203) {
+//             3
+//         }
+//         else {
+//             0
+//         };
+
+//     let __matched_or_variant_index_6: u64 = if true {
+//             1
+//         }
+//         else if true {
+//             2
+//         }
+//         else if true {
+//             3
+//         }
+//         else {
+//             0
+//         };
+
+//     let __matched_or_variant_index_7: u64 = if (core::ops::neq(__matched_or_variant_index_3, 0)
+//         && core::ops::eq(__matched_value_1.y, 111)) {
+//             1
+//         }
+//         else if (core::ops::neq(__matched_or_variant_index_5, 0)
+//         && (core::ops::eq(__matched_value_1.x, 111)
+//         && core::ops::neq(__matched_or_variant_index_6, 0))) {
+//             2
+//         }
+//         else {
+//             0
+//         };
+
+//     if core::ops::neq(__matched_or_variant_index_7, 0) {
+//         let __matched_or_variant_variables_7: (u64, u64, u64) = if core::ops::eq(__matched_or_variant_index_7, 1) {
+//         let __matched_or_variant_variables_3: (u64, u64) = if core::ops::eq(__matched_or_variant_index_3, 1) {
+//         (__matched_value_1.a.x, __matched_value_1.a.y)
+//     }
+//     else if core::ops::eq(__matched_or_variant_index_3, 2) {
+//         (__matched_value_1.a.y, __matched_value_1.a.z)
+//     }
+//     else if core::ops::eq(__matched_or_variant_index_3, 3) {
+//         let __matched_or_variant_variables_1: (u64) = if core::ops::eq(__matched_or_variant_index_1, 1) {
+//         (__matched_value_1.a.z)
+//     }
+//     else if core::ops::eq(__matched_or_variant_index_1, 2) {
+//         (__matched_value_1.a.z)
+//     }
+//     else if core::ops::eq(__matched_or_variant_index_1, 3) {
+//         (__matched_value_1.a.z)
+//     }
+//     else {
+//         __revert(14757395258967588865)
+//     };
+//         let __matched_or_variant_variables_2: (u64) = if core::ops::eq(__matched_or_variant_index_2, 1) {
+//         (UnsafeDowncast(__matched_value_1.a.e, A: (u64))
+//     }
+//     else if core::ops::eq(__matched_or_variant_index_2, 2) {
+//         (UnsafeDowncast(__matched_value_1.a.e, B: (u64, u64)).1)
+//     }
+//     else if core::ops::eq(__matched_or_variant_index_2, 3) {
+//         (UnsafeDowncast(__matched_value_1.a.e, C: (u64, u64, u64)).2)
+//     }
+//     else {
+//         __revert(14757395258967588865)
+//     };
+//         (__matched_or_variant_variables_1.0, __matched_or_variant_variables_2.0)
+//     }
+//     else {
+//         __revert(14757395258967588865)
+//     };
+//         (__matched_or_variant_variables_3.0, __matched_or_variant_variables_3.1, __matched_value_1.x)
+//     }
+//     else if core::ops::eq(__matched_or_variant_index_7, 2) {
+//         let __matched_or_variant_variables_5: (u64, u64) = if core::ops::eq(__matched_or_variant_index_5, 1) {
+//         let __matched_or_variant_variables_4: (u64) = if core::ops::eq(__matched_or_variant_index_4, 1) {
+//         (UnsafeDowncast(__matched_value_1.a.e, A: (u64))
+//     }
+//     else if core::ops::eq(__matched_or_variant_index_4, 2) {
+//         (UnsafeDowncast(__matched_value_1.a.e, B: (u64, u64)).0)
+//     }
+//     else if core::ops::eq(__matched_or_variant_index_4, 3) {
+//         (UnsafeDowncast(__matched_value_1.a.e, C: (u64, u64, u64)).0)
+//     }
+//     else {
+//         __revert(14757395258967588865)
+//     };
+//         (__matched_or_variant_variables_4.0, __matched_value_1.a.x)
+//     }
+//     else if core::ops::eq(__matched_or_variant_index_5, 2) {
+//         (__matched_value_1.a.z, __matched_value_1.a.y)
+//     }
+//     else if core::ops::eq(__matched_or_variant_index_5, 3) {
+//         (__matched_value_1.a.x, __matched_value_1.a.z)
+//     }
+//     else {
+//         __revert(14757395258967588865)
+//     };
+//         let __matched_or_variant_variables_6: (u64) = if core::ops::eq(__matched_or_variant_index_6, 1) {
+//         (__matched_value_1.y)
+//     }
+//     else if core::ops::eq(__matched_or_variant_index_6, 2) {
+//         (__matched_value_1.y)
+//     }
+//     else if core::ops::eq(__matched_or_variant_index_6, 3) {
+//         (__matched_value_1.y)
+//     }
+//     else {
+//         __revert(14757395258967588865)
+//     };
+//         (__matched_or_variant_variables_6.0, __matched_or_variant_variables_5.0, __matched_or_variant_variables_5.1)
+//     }
+//     else {
+//         __revert(14757395258967588865)
+//     };
+//         let a_x: u64 = __matched_or_variant_variables_7.0;
+//         let a_y: u64 = __matched_or_variant_variables_7.1;
+//         let b_x: u64 = __matched_or_variant_variables_7.2;
+//         core::ops::add(core::ops::add(a_x, b_x), a_y)
+//     }
+//     else if true {
+//         9999
+//     }
+//     else {
+//         __revert(14757395258967588866)
+//     }
+// }
+
+
 // First step (variables still not properly extracted):
 // if (
 //     (

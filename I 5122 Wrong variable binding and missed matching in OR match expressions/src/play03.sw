@@ -13,6 +13,20 @@ pub fn play() -> () {
         Enum::B(x) => x,
     };
 
+// Final:
+// if core::ops::eq(EnumTag(__matched_value_1), 0) {
+//     let x: u64 = UnsafeDowncast(__matched_value_1, A: (u64);
+//     x
+// }
+// else if core::ops::eq(EnumTag(__matched_value_1), 1) {
+//     let x: u64 = UnsafeDowncast(__matched_value_1, B: (u64);
+//     x
+// }
+// else {
+//     __revert(14757395258967588866)
+// }
+
+// Original:
 // if core::ops::eq(EnumTag(__match_return_var_name_1), 0) {
 //     let x = UnsafeDowncast(__match_return_var_name_1, A);
 //     x

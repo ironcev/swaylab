@@ -17,6 +17,34 @@ pub fn play() -> () {
         Enum::B(_) => 2099,
     };
 
+// Final:
+// if (core::ops::eq(EnumTag(__matched_value_1), 0)
+// && core::ops::eq(UnsafeDowncast(__matched_value_1, A: (u64), 1)) {
+//     1011
+// }
+// else if (core::ops::eq(EnumTag(__matched_value_1), 1)
+// && core::ops::eq(UnsafeDowncast(__matched_value_1, B: (u64), 11)) {
+//     2011
+// }
+// else if (core::ops::eq(EnumTag(__matched_value_1), 0)
+// && core::ops::eq(UnsafeDowncast(__matched_value_1, A: (u64), 22)) {
+//     1022
+// }
+// else if (core::ops::eq(EnumTag(__matched_value_1), 1)
+// && core::ops::eq(UnsafeDowncast(__matched_value_1, B: (u64), 22)) {
+//     2022
+// }
+// else if core::ops::eq(EnumTag(__matched_value_1), 0) {
+//     1099
+// }
+// else if core::ops::eq(EnumTag(__matched_value_1), 1) {
+//     2099
+// }
+// else {
+//     __revert(14757395258967588866)
+// }
+
+// Original:
 // if core::ops::eq(EnumTag(__match_return_var_name_1), 0)
 // && core::ops::eq(UnsafeDowncast(__match_return_var_name_1, A), 1) {
 //     1011
