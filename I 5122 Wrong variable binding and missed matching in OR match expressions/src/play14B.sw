@@ -25,19 +25,19 @@ pub fn play() -> () {
 
     let _x = match s {
         StructB {
-            a: StructA { x: a_x, y: a_y, z: 301, e: _ }
+            a: StructA { x: a_x, y: a_y, z: 301, e: _ } /* 3 */
                 | StructA { x: 102, y: a_x, z: a_y, e: _ } 
-                | StructA { x: 103, y: 203, z: a_x | a_x | a_x, e: Enum::A(a_y) | Enum::B((_, a_y)) | Enum::C((_, _, a_y)) },
+                | StructA { x: 103, y: 203, z: a_x | a_x | a_x /* 1 */, e: Enum::A(a_y) | Enum::B((_, a_y)) | Enum::C((_, _, a_y)) /* 2 */},
             x: b_x,
             y: 111,
         }
-        | 
+        | /* 7 */
         StructB {
-            a: StructA { x: b_x, y: 201, z: 301, e: Enum::A(a_y) | Enum::B((a_y, _)) | Enum::C((a_y, _, _)) }
+            a: StructA { x: b_x, y: 201, z: 301, e: Enum::A(a_y) | Enum::B((a_y, _)) | Enum::C((a_y, _, _)) /* 4 */} /* 5 */
                 | StructA { x: 102, y: b_x, z: a_y, e: _ } 
                 | StructA { x: a_y, y: 203, z: b_x, e: _ },
             x: 111,
-            y: a_x | a_x | a_x,
+            y: a_x | a_x | a_x, /* 6 */
         } => a_x + b_x + a_y,
         _ => 9999,
     };
