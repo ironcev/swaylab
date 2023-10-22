@@ -27,7 +27,8 @@ mod lib;
 // mod play22;
 // mod play23;
 // mod play24;
-mod play25;
+// mod play25;
+mod play26;
 
 fn main() {
     // ::play01::play();
@@ -55,5 +56,6 @@ fn main() {
     // ::play22::play();
     // ::play23::play();
     // ::play24::play();
-    ::play25::play();
+    // ::play25::play();
+    ::play26::play();
 }

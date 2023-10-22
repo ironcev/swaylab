@@ -8,9 +8,9 @@ struct Struct {
 pub fn play() -> () {
     let s = (0u64, 0u64);
 
-//     if let (_, x) = s {
-//         let _a = x + x;
-//     };
+    if let (_, x) = s {
+        let _a = x + x;
+    };
 
 // // if true {
 // //     let x = s.1;
@@ -139,17 +139,17 @@ pub fn play() -> () {
 // //     }
 // // }
 
-    let _x = match test_struct() {
-        Struct { x, y:_ } => {
-            let _a = x + x;
-        },
-        Struct { x:_, y } => {
-            let _a = y * y;
-        },
-        Struct { x: k, y: j } => {
-            let _a = k * j;
-        }
-    };
+    // let _x = match test_struct() {
+    //     Struct { x, y:_ } => {
+    //         let _a = x + x;
+    //     },
+    //     Struct { x:_, y } => {
+    //         let _a = y * y;
+    //     },
+    //     Struct { x: k, y: j } => {
+    //         let _a = k * j;
+    //     }
+    // };
 
 // if true {
 //     let x = __match_return_var_name_1.x;
