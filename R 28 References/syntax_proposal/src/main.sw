@@ -196,6 +196,11 @@ fn pattern_matching() {
 /// Referencing parts of aggregates.
 /// Important when e.g. passing an array element to a function by reference. This cannot be done at the moment.
 /// Or returning a `Vec` element by reference to avoid copies.
+/// But in the latter case I am very reluctant and not sure if it is a good idea because we can end up with dangling references in that case.
+/// E.g., `Vec::get_ref(...)` returns a reference kept by caller and then `Vec;:clear()` call happens.
+/// In general, I would go for sematics and syntax of references that forbids dangling references which can always
+/// be ensured with non-dynamic aggregates like arrays. For `Vec` and other dynamic types we should see how to
+/// detect and avoid dangling references. But that's out of scope of this first sketch of the reference syntax and semantics. 
 struct C {
     a: A,
     t: (u64, u64)
