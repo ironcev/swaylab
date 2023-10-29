@@ -225,6 +225,11 @@ fn referencing_parts_of_aggregates() {
     let r_second_elem = &array[1];
 
     let x = r_first_elem.a.x + r_second_elem.a.x;
+
+    // We can use pattern matching/destructing to obtain a reference to a part.
+    let C { a: A { x }, t: (_, y) } = &c; // x and y are references to u64.
+
+    let x = *x * *y;
 }
 
 fn passing_to_functions() {
