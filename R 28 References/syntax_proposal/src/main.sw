@@ -350,3 +350,17 @@ fn references_and_constants_and_literals() {
     let x = *r_x; // Const evaluation detects x to be a constant.
     let x = *m_r_x; // x is not a constant.
 }
+
+
+/// References and type aliases.
+/// We can have references as type aliases.
+type RefToU64 = &u64;
+type RefToTupleOfRefs = &(&u64, &u64);
+
+fn references_and_type_aliases() {
+    let r: RefToU64 = &0u64;
+}
+
+fn ret_ref_to_u64() -> RefToU64 {
+    &0u64
+}
