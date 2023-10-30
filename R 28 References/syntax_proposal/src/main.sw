@@ -334,3 +334,19 @@ struct GenStruct<&T> {} // ERROR: Not allowed.
 struct GenStruct<T> {
     x: &T, // OK.
 }
+
+/// References and constants and literals.
+fn references_and_constants_and_literals() {
+    const X = 0u64;
+    let r_x = &X; // OK. r_x: &u64.
+    let r_m_x = &mut X; // ERROR.
+    let mut m_r_x = &X; // OK.
+
+    let r_x = &0u64; // OK. r_x: &u64.
+    let r_m_x = &mut 0u64; // ERROR.
+    let mut m_r_x = &0u64; // OK.
+
+    // Immutable references to constants should be considered in the const evaluation.
+    let x = *r_x; // Const evaluation detects x to be a constant.
+    let x = *m_r_x; // x is not a constant.
+}
