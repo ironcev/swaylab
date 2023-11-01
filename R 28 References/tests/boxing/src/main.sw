@@ -122,6 +122,20 @@ fn ptr_issue() -> u64 {
     42
 }
 
+#[test]
+fn ptr_issue_test() -> u64 {
+    let a = A { a: 11 };
+    let mut b = B { a: a, x: (11, 11) };
+
+    let mut ptr_b = ptr(b);
+
+    b.x.0 = 111;
+    assert(b.x.0 == 111);
+    // FAILS: b is not changed at all.
+    assert(ptr_b.read::<B>().x.0 == 111);
+
+    42
+}
 // #[inline(never)] // It fails regardless of `ptr<T>` being inlined or not.
 fn ptr<T>(t: T) -> raw_ptr {
     __addr_of(t)

@@ -8,6 +8,8 @@ script;
 // mod play02A;
 // mod play02B;
 // mod play02C;
+// mod play02D;
+mod play02E;
 // mod play03A;
 // mod play03B;
 // mod play03C;
@@ -18,7 +20,7 @@ script;
 // mod play05B;
 // mod play05C;
 // mod play05D;
-mod play05E;
+// mod play05E;
 
 fn main() -> u64 {
     // let _ = ::play01A::play();
@@ -29,6 +31,8 @@ fn main() -> u64 {
     // let _ = ::play02A::play();
     // let _ = ::play02B::play();
     // let _ = ::play02C::play();
+    // let _ = ::play02D::play();
+    let _ = ::play02E::play();
     // let _ = ::play03A::play();
     // let _ = ::play03B::play();
     // let _ = ::play03C::play();
@@ -41,7 +45,7 @@ fn main() -> u64 {
     // let _ = ::play05D::play();
     // ::play05D::play()
     // let _ = ::play05E::play();
-    ::play05E::play()
+    // ::play05E::play()
 
-    // 1111
+    1111
 }

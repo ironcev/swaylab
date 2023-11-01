@@ -8,6 +8,6 @@ source = "git+https://github.com/fuellabs/sway?tag=v0.46.1#512a3386f896118518830
 dependencies = ["core"]
 
 [[package]]
-name = "tuple_ref_semantics"
+name = "tuple_value_semantics"
 source = "member"
 dependencies = ["std"]
