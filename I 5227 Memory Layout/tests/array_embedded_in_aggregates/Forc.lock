@@ -1,0 +1,16 @@
+[[package]]
+name = "array_embedded_in_aggregates"
+source = "member"
+dependencies = [
+    "core",
+    "std",
+]
+
+[[package]]
+name = "core"
+source = "path+from-root-7959025959701E01"
+
+[[package]]
+name = "std"
+source = "path+from-root-7959025959701E01"
+dependencies = ["core"]

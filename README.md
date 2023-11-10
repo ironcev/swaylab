@@ -10,7 +10,11 @@ The distinguished folders in this repository are prefixed with:
 
 Folders without prefix are random explorations.
 
-Samples are by default written in Sway. When comparing behavior and features of different languages, samples in a particular language are stored into separate folder with the language name, e.g., _rust_, or _csharp_. Samples stored in _tests_ folder are meant to be copied over to Sway _e2e_vm_tests_ and executed as Sway tests.
+Samples are by default written in Sway. When comparing behavior and features of different languages, samples in a particular language are stored into separate folder with the language name, e.g., _rust_, or _csharp_.
+
+Samples stored in _tests_ folder are meant to be copied over to Sway _e2e_vm_tests_ and executed as Sway E2E tests.
+
+Samples stored in _forc_tests_ folder are meant to be run with `forc test`.
 
 # License
 
