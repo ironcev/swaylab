@@ -1,0 +1,7 @@
+[project]
+authors = ["Igor Rončević"]
+entry = "main.sw"
+license = "MIT"
+name = "revert"
+
+[dependencies]
