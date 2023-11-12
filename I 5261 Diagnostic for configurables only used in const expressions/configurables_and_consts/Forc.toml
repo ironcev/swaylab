@@ -1,0 +1,8 @@
+[project]
+authors = ["Igor Rončević"]
+entry = "main.sw"
+license = "MIT"
+name = "configurables_and_consts"
+
+[dependencies]
+std = { path = "../../../sway/sway-lib-std" }

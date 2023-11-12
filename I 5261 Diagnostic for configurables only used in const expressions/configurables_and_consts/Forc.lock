@@ -1,0 +1,13 @@
+[[package]]
+name = "configurables_and_consts"
+source = "member"
+dependencies = ["std"]
+
+[[package]]
+name = "core"
+source = "path+from-root-EC3A6D91B3F66C5A"
+
+[[package]]
+name = "std"
+source = "path+from-root-EC3A6D91B3F66C5A"
+dependencies = ["core"]
