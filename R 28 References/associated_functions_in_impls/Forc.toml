@@ -1,0 +1,7 @@
+[project]
+authors = ["Igor Rončević"]
+entry = "main.sw"
+license = "MIT"
+name = "associated_functions_in_impls"
+
+[dependencies]
