@@ -1,9 +1,9 @@
 script;
 
-// use std::hash::sha256;
+use std::hash::sha256;
 // use std::hash::Hash;
 
-use std::hash::*;
+// use std::hash::*;
 
 // use std::hash::Hash as MyHash;
 
