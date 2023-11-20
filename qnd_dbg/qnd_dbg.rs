@@ -1,3 +1,4 @@
+use crate::decl_engine::DeclEngine;
 use crate::language::ty::VariableMutability;
 use crate::language::LazyOp;
 use crate::semantic_analysis::TypeCheckContext;
@@ -7,6 +8,25 @@ use crate::ty::TyExpression;
 use crate::ty::TyExpressionVariant;
 use crate::Engines;
 use crate::TypeId;
+
+// To use this function, first add the `pretty_print_declared_traits` method to `impl DeclEngine`.
+pub fn qnd_dbg_declared_traits(de: &DeclEngine) {
+    println!("\n>> Declared traits");
+    //println!("\n{}", de.pretty_print_declared_traits());
+}
+
+    // Add this method to `impl DeclEngine`.
+    // pub fn pretty_print_declared_traits(&self) -> String {
+    //     let mut builder = String::new();
+    //     self.trait_slab.with_slice(|elems| {
+    //         let list = elems
+    //             .iter()
+    //             .map(|trait_decl| format!("{}", trait_decl.call_path));
+    //         let list = ListDisplay { list };
+    //         write!(builder, "\n{list}\n").unwrap();
+    //     });
+    //     builder
+    // }
 
 pub fn qnd_dbg_implemented_traits_for_type(ctx: &TypeCheckContext, type_id: TypeId) {
     let trait_call_paths = ctx
@@ -131,7 +151,7 @@ pub fn qnd_dbg_expression(engines: &Engines, expr: &TyExpression) {
                 const_decl.call_path
             )),
             TyExpressionVariant::Literal(literal) => result.push_str(&format!("{literal}")),
-            TyExpressionVariant::CodeBlock(TyCodeBlock { contents }) => {
+            TyExpressionVariant::CodeBlock(TyCodeBlock { contents, .. }) => {
                 result.push('{');
                 for node in contents {
                     match &node.content {
