@@ -11,13 +11,14 @@ script;
 // mod play05B;
 // mod play05C;
 // mod play06;
-mod play07A;
+// mod play07A;
 // mod play07B;
 // mod play07C;
 // mod play08A;
 // mod play08B;
 // mod play08C;
 // mod play09A;
+mod play10A;
 
 fn main() {
     // ::play01::play();
@@ -31,11 +32,12 @@ fn main() {
     // ::play05B::play();
     // ::play05C::play();
     // ::play06::play();
-    ::play07A::play();
+    // ::play07A::play();
     // ::play07B::play();
     // ::play07C::play();
     // ::play08A::play();
     // ::play08B::play();
     // ::play08C::play();
     // ::play09A::play();
+    ::play10A::play();
 }
