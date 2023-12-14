@@ -18,7 +18,9 @@ script;
 // mod play08B;
 // mod play08C;
 // mod play09A;
-mod play10A;
+// mod play10A;
+// mod play11;
+mod play12;
 
 fn main() {
     // ::play01::play();
@@ -39,5 +41,7 @@ fn main() {
     // ::play08B::play();
     // ::play08C::play();
     // ::play09A::play();
-    ::play10A::play();
+    // ::play10A::play();
+    // ::play11::play();
+    ::play12::play();
 }
