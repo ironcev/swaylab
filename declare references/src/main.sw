@@ -7,6 +7,7 @@ script;
 // mod play04B;
 // mod play04C;
 // mod play04D;
+// mod play04E;
 // mod play05A;
 // mod play05B;
 // mod play05C;
@@ -20,7 +21,19 @@ script;
 // mod play09A;
 // mod play10A;
 // mod play11;
-mod play12;
+// mod play12;
+// mod play13;
+// mod play14;
+// mod play15;
+// mod play16A;
+// mod play16B;
+// mod play17;
+// mod play18A;
+// mod play18B;
+// mod play19;
+mod play20A;
+// mod play20B;
+// mod play20C;
 
 fn main() {
     // ::play01::play();
@@ -30,6 +43,7 @@ fn main() {
     // ::play04B::play();
     // ::play04C::play();
     // ::play04D::play();
+    // ::play04E::play();
     // ::play05A::play();
     // ::play05B::play();
     // ::play05C::play();
@@ -43,5 +57,17 @@ fn main() {
     // ::play09A::play();
     // ::play10A::play();
     // ::play11::play();
-    ::play12::play();
+    // ::play12::play();
+    // ::play13::play();
+    // ::play14::play();
+    // ::play15::play();
+    // ::play16A::play();
+    // ::play16B::play();
+    // ::play17::play();
+    // ::play18A::play();
+    // ::play18B::play();
+    // ::play19::play();
+    ::play20A::play();
+    // ::play20B::play();
+    // ::play20C::play();
 }

@@ -5,3 +5,6 @@ license = "MIT"
 name = "declare_references"
 
 [dependencies]
+core = { path = "../../sway/sway-lib-core" }
+std = { path = "../../sway/sway-lib-std" }
+
