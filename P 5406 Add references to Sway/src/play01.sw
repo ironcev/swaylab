@@ -47,6 +47,8 @@ pub fn play() {
 
     let _ = 1u64 * 1u64;
     let _ = 1u64 * *1u64;
+    let _ = 1u64 * *&1u64;
+    let _ = 1u64 * *&*&1u64;
 
     let mut s = S {};
     by_ref(s);
