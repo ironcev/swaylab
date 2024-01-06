@@ -22,4 +22,13 @@ fn main() {
     //   |               ^ private field
     //
     //For more information about this error, try `rustc --explain E0616`.
+
+    let s = PublicTopStruct { x: 0 };
+    //     error: cannot construct `PublicTopStruct` with struct literal syntax due to private fields
+    //   --> src/main.rs:26:13
+    //    |
+    // 26 |     let s = PublicTopStruct { x: 0 };
+    //    |             ^^^^^^^^^^^^^^^
+    //    |
+    //    = note: ... and other private field `y` that was not provided
 }
