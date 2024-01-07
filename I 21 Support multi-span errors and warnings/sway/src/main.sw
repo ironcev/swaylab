@@ -23,6 +23,8 @@ fn main() {
 
     let LIB_Y_ALIAS = 6;
 
+    let LIB_Z_ALIAS = 7;
+
     // use lib::LIB_X as LIB_Y_ALIAS_2;
 
     const myConstant = 7;
@@ -33,5 +35,7 @@ fn main() {
 use lib::LIB_Y;
 
 use lib::LIB_Y as LIB_Y_ALIAS;
+
+use lib::LIB_Z as LIB_Z_ALIAS;
 
 // use lib::LIB_Y as LIB_Y_ALIAS_2;
