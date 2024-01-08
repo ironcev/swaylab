@@ -4,6 +4,7 @@ use top::PublicTopStruct;
 
 fn main() {
     top::middle::use_private_middle_struct();
+    top::middle::bottom::use_private_bottom_struct();
 
     let s = PublicTopStruct { x: 0, y: 0 };
     // error[E0451]: field `y` of struct `PublicTopStruct` is private

@@ -1,5 +1,7 @@
 use super::PrivateTopStruct;
 
+pub mod bottom;
+
 struct PrivateMiddleStruct {
     pub x: u64,
     y: u64,
