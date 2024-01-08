@@ -31,4 +31,24 @@ fn main() {
     //    |             ^^^^^^^^^^^^^^^
     //    |
     //    = note: ... and other private field `y` that was not provided
+
+    let s = PublicTopStruct { };
+    //     error: cannot construct `PublicTopStruct` with struct literal syntax due to private fields
+    //     --> src/main.rs:35:13
+    //      |
+    //   35 |     let s = PublicTopStruct { };
+    //      |             ^^^^^^^^^^^^^^^
+    //      |
+    //      = note: ... and other private field `y` that was not provided
+
+    let s = PublicTopStruct { nn: 123 };
+    // error[E0560]: struct `PublicTopStruct` has no field named `nn`
+    //     --> src/main.rs:44:31
+    //      |
+    //   44 |     let s = PublicTopStruct { nn: 123 };
+    //      |                               ^^ `PublicTopStruct` does not have this field
+    //      |
+    //      = note: available fields are: `x`
+
+    let s = PublicTopStruct { nn: 123, y: 0 };
 }
