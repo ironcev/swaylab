@@ -1,0 +1,8 @@
+[[package]]
+name = "test_lib"
+source = "member"
+dependencies = ["test_lib path+from-root-C28B2D062EB63E7C"]
+
+[[package]]
+name = "test_lib"
+source = "path+from-root-C28B2D062EB63E7C"

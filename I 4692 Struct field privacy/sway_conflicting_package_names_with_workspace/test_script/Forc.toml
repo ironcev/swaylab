@@ -1,0 +1,24 @@
+[project]
+authors = ["Fuel Labs <contact@fuel.sh>"]
+entry = "main.sw"
+license = "Apache-2.0"
+name = "test_lib"
+implicit-std = false
+
+[dependencies]
+# test_lib = { path = "../test_lib/" }
+# test_lib_alias = { path = "../test_lib/" }
+test_lib_alias = { path = "../test_lib/", package = "test_lib" }
+
+# If we rename the project to "test_lib" the following error will occur, as expected:
+# Error: Duplicate package names detected in the workspace:
+# 
+# test_lib: [
+#     "/home/igor/p/swaylab/I 4692 Struct field privacy/sway_conflicting_package_names/test_script/Forc.toml",
+#     "/home/igor/p/swaylab/I 4692 Struct field privacy/sway_conflicting_package_names/test_lib/Forc.toml",
+# ]
+
+# If we just set the alias name but without the original package name the following error will occur:
+# Error: dependency of "test_script" named "test_lib_alias" is invalid: dependency name "test_lib_alias" must match the manifest project name "test_lib" unless `package = "test_lib"` is specified in the dependency declaration
+
+# Even in this last case, we will still get the error that the duplicate package names are detected in the workspace.
