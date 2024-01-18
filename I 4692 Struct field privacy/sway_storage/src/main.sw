@@ -22,6 +22,7 @@ storage {
     // ms_no_init: MainStruct,
     //                    ^ Expected `=`.
     ls: LibStruct = LibStruct { },
+    los: LibOtherStruct = LibOtherStruct { y: 0 },
 }
 
 #[storage(read)]

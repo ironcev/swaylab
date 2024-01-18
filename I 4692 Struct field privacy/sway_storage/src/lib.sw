@@ -8,17 +8,18 @@ pub struct LibStruct {
 
 impl LibStruct {
     pub fn new() -> Self {
-        Self { x: 0, y: 0, other: LibOtherStruct { x: 0, y: 0 } }
+        Self { x: 0, y: 0, other: LibOtherStruct { x: 0, y: 0, z: 0 } }
     }
 }
 
 pub struct LibOtherStruct {
     pub x: u64,
     y: u64,
+    z: u64,
 }
 
 impl LibOtherStruct {
     pub fn new() -> Self {
-        Self { x: 0, y: 0 }
+        Self { x: 0, y: 0, z: 0 }
     }
 }

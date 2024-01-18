@@ -17,6 +17,8 @@ fn main() {
     let _ = LibTwoPrivateFields { };
     let _ = LibThreePrivateFields { };
 
+    let _ = LibStruct::instantiate();
+
     let _ = LibStruct { };
 
     let _ = LibStruct { x: 0 };
