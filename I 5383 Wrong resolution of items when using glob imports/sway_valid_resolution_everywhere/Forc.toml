@@ -2,3 +2,7 @@
 authors = ["Igor Rončević"]
 license = "MIT"
 name = "plays"
+implicit-std = false
+
+[dependencies]
+

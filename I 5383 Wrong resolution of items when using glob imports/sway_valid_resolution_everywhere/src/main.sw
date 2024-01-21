@@ -39,11 +39,13 @@ fn access_enum(e: Enum) {
 }
 
 fn main() {
-   let s = Struct { x: 0, y: 0 };
-   let gs = GenericStruct { x: 0, y: 0 };
+   let s = Struct { x: 0, y: 0, z: 0 };
+   let gs = GenericStruct { x: 0, y: 0, z: 0 };
    let e = Enum::B;
    let _: bool = X;
 
+   poke(s.x);
+   poke(s.y);
    poke(s.z);
    poke(gs.z);
 }
