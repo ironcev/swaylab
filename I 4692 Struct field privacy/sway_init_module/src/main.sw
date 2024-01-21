@@ -3,6 +3,7 @@ script;
 mod my;
 
 use my::unique::path::to::std::vec::Vec;
+use std::hash::core::ops::Eq;
 
 fn main() -> u64 {
     let mut vec: my::Vec::<u64> = Vec::new();
