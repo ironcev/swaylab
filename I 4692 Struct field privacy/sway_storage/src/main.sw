@@ -28,7 +28,7 @@ storage {
 #[storage(read)]
 fn read_storage() {
     let _ = storage.a.read();
-    let _ = storage.a.bla.read();
+//    let _ = storage.a.bla.read();
     let _ = storage.ls.x.read();
     let _ = storage.ls.y.read();
     let _ = storage.ls.other.read();
