@@ -5,5 +5,4 @@ license = "MIT"
 name = "plays"
 
 [dependencies]
-core = { path = "../../../sway/sway-lib-core" }
 std = { path = "../../../sway/sway-lib-std" }
