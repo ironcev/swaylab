@@ -17,9 +17,3 @@ pub struct LibOtherStruct {
     y: u64,
     z: u64,
 }
-
-impl LibOtherStruct {
-    pub fn new() -> Self {
-        Self { x: 0, y: 0, z: 0 }
-    }
-}
