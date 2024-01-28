@@ -1,0 +1,16 @@
+[[package]]
+name = "core"
+source = "path+from-root-903ED29C1F675F4D"
+
+[[package]]
+name = "std"
+source = "path+from-root-903ED29C1F675F4D"
+dependencies = ["core"]
+
+[[package]]
+name = "test_diverging"
+source = "member"
+dependencies = [
+    "core",
+    "std",
+]
