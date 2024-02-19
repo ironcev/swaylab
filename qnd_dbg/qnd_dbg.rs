@@ -7,7 +7,10 @@ use crate::ty::TyCodeBlock;
 use crate::ty::TyExpression;
 use crate::ty::TyExpressionVariant;
 use crate::Engines;
+use crate::TraitConstraint;
 use crate::TypeId;
+use crate::TypeInfo;
+use crate::TypeParameter;
 
 // To use this function, first add the `pretty_print_declared_traits` method to `impl DeclEngine`.
 pub fn qnd_dbg_declared_traits(de: &DeclEngine) {
@@ -31,8 +34,12 @@ pub fn qnd_dbg_declared_traits(de: &DeclEngine) {
 pub fn qnd_dbg_implemented_traits_for_type(ctx: &TypeCheckContext, type_id: TypeId) {
     let trait_call_paths = ctx
         .namespace
+        .module()
+        .current_items()
         .implemented_traits
-        .get_trait_names_for_type(ctx.engines, type_id);
+        .get_trait_names_and_type_arguments_for_type(ctx.engines, type_id)
+        .into_iter()
+        .map(|(trait_call_path, _)| trait_call_path);
     println!(
         "\n>> Implemented traits for type {} [{:?}]: {} trait(s)",
         ctx.engines.help_out(type_id),
@@ -45,7 +52,13 @@ pub fn qnd_dbg_implemented_traits_for_type(ctx: &TypeCheckContext, type_id: Type
 }
 
 pub fn qnd_dbg_symbols(ctx: &TypeCheckContext) {
-    let mut symbols = ctx.namespace.symbols.iter().collect::<Vec<(_, _)>>();
+    let mut symbols = ctx
+        .namespace
+        .module()
+        .current_items()
+        .symbols
+        .iter()
+        .collect::<Vec<(_, _)>>();
     symbols.sort_by(|a, b| a.0.cmp(b.0));
 
     println!("\n>> Symbols: {} symbol(s)", symbols.len());
@@ -55,7 +68,13 @@ pub fn qnd_dbg_symbols(ctx: &TypeCheckContext) {
 }
 
 pub fn qnd_dbg_use_synonyms(ctx: &TypeCheckContext) {
-    let mut use_synonyms = ctx.namespace.use_synonyms.iter().collect::<Vec<(_, _)>>();
+    let mut use_synonyms = ctx
+        .namespace
+        .module()
+        .current_items()
+        .use_synonyms
+        .iter()
+        .collect::<Vec<(_, _)>>();
     use_synonyms.sort_by(|a, b| a.0.cmp(b.0));
 
     println!("\n>> Synonyms: {} synonym(s)", use_synonyms.len());
@@ -151,16 +170,16 @@ pub fn qnd_dbg_expression(engines: &Engines, expr: &TyExpression) {
                 const_decl.call_path
             )),
             TyExpressionVariant::Literal(literal) => result.push_str(&format!("{literal}")),
+            TyExpressionVariant::ImplicitReturn(exp) => {
+                result.push_str(&format!(
+                    "\n{indent}{}",
+                    build_expression(engines, exp, Indent::default())
+                ))
+            }
             TyExpressionVariant::CodeBlock(TyCodeBlock { contents, .. }) => {
                 result.push('{');
                 for node in contents {
                     match &node.content {
-                        TyAstNodeContent::ImplicitReturnExpression(exp) => {
-                            result.push_str(&format!(
-                                "\n{indent}{}",
-                                build_expression(engines, exp, Indent::default())
-                            ))
-                        }
                         TyAstNodeContent::Declaration(crate::ty::TyDecl::VariableDecl(
                             var_decl,
                         )) => {
@@ -248,29 +267,136 @@ pub fn qnd_dbg_expression(engines: &Engines, expr: &TyExpression) {
 
         result
     }
+}
 
-    #[derive(Default, Clone, Copy)]
-    struct Indent {
-        indent: usize,
+pub fn qnd_dbq_type(engines: &Engines, type_id: TypeId) {
+    print!("\n{}\n", build_type(engines, type_id, Indent::default()));
+
+    fn build_type(engines: &Engines, type_id: TypeId, indent: Indent) -> String {
+        let type_engine = engines.te();
+        let decl_engine = engines.de();
+
+        let mut result = String::new();
+
+        let type_info = &*type_engine.get(type_id);
+        let type_id_as_str = engines.help_out(type_id).to_string();
+
+        match type_info {
+            TypeInfo::Unknown => result.push_str(&format!("{:?}: Unknown\n", type_id)),
+            TypeInfo::UnknownGeneric { name, trait_constraints } => {
+                result.push_str(&format!("{:?}: Generic {name} {{\n", type_id));
+
+                result.push_str(&format!("{}", build_trait_constraints(engines, trait_constraints, indent.inc())));
+
+                result.push_str(&format!("{}}}\n", indent));
+            }
+            TypeInfo::UnsignedInteger(_) => result.push_str(&format!("{:?}: {type_id_as_str}\n", type_id)),
+            TypeInfo::Numeric => result.push_str(&format!("{:?}: Numeric\n", type_id)),
+            TypeInfo::Custom { qualified_call_path, .. } => {
+                result.push_str(&format!("{:?}: Custom {}\n", type_id, qualified_call_path.call_path));
+            }
+            TypeInfo::Struct(decl_ref) => {
+                let struct_decl = &*decl_engine.get_struct(decl_ref.id());
+
+                result.push_str(&format!("{:?}: {type_id_as_str} {{\n", type_id));
+
+                result.push_str(&format!("{}{:?}\n", indent.inc(), decl_ref.id()));
+                result.push_str(&format!("{}{}\n", indent.inc(), struct_decl.call_path));
+
+                if struct_decl.type_parameters.is_empty() {
+                    result.push_str(&format!("{}Type parameters: <none>\n", indent.inc()));
+                } else {
+                    result.push_str(&format!("{}Type parameters:\n", indent.inc()));
+
+                    let type_parameter_indent = indent.inc().inc();
+                    for type_parameter in struct_decl.type_parameters.iter() {
+                        result.push_str(&build_type_parameter(engines, type_parameter, type_parameter_indent));
+                    }
+                }
+
+                result.push_str(&format!("\n{}}}\n", indent));
+            }
+            TypeInfo::Placeholder(type_parameter) => {
+                result.push_str(&format!("{:?} Placeholder {type_id_as_str} {{\n", type_id));
+
+                result.push_str(&build_type_parameter(engines, type_parameter, indent.inc()));
+
+                result.push_str(&format!("\n{}}}\n", indent));
+            }
+            TypeInfo::TypeParam(_) => todo!("TypeParam"),
+            TypeInfo::StringSlice => todo!("StringSlice"),
+            TypeInfo::StringArray(_) => todo!("StringArray"),
+            TypeInfo::Enum(_) => todo!("Enum"),
+            TypeInfo::Boolean => todo!("Boolean"),
+            TypeInfo::Tuple(_) => todo!("Tuple"),
+            TypeInfo::ContractCaller { .. } => todo!("ContractCaller"),
+            TypeInfo::B256 => todo!("B256"),
+            TypeInfo::Contract => todo!("Contract"),
+            TypeInfo::ErrorRecovery(_) => todo!("ErrorRecovery"),
+            TypeInfo::Array(_, _) => todo!("Array"),
+            TypeInfo::Storage { .. } => todo!("Storage"),
+            TypeInfo::RawUntypedPtr => todo!("RawUntypedPtr"),
+            TypeInfo::RawUntypedSlice => todo!("RawUntypedSlice"),
+            TypeInfo::Ptr(_) => todo!("Ptr"),
+            TypeInfo::Slice(_) => todo!("Slice"),
+            TypeInfo::Alias { .. } => todo!("Alias"),
+            TypeInfo::TraitType { .. } => todo!("TraitType"),
+            TypeInfo::Ref(_) => todo!("Ref"),
+        }
+
+        return result;
+
+        fn build_type_parameter(engines: &Engines, type_parameter: &TypeParameter, indent: Indent) -> String {
+            let mut result = String::new();
+
+            result.push_str(&format!("{}{}: {}", indent, type_parameter.name_ident, build_type(engines, type_parameter.type_id, indent.inc())));
+
+            result.push_str(&build_trait_constraints(engines, &type_parameter.trait_constraints, indent.inc()));
+
+            result
+        }
+
+        fn build_trait_constraints(engines: &Engines, trait_constraints: &[TraitConstraint], indent: Indent) -> String {
+            let mut result = String::new();
+
+            if trait_constraints.is_empty() {
+                result.push_str(&format!("{}Trait constraints: <none>\n", indent));
+            } else {
+                result.push_str(&format!("{}Trait constraints:\n", indent));
+                for trait_constraint in trait_constraints.iter() {
+                    result.push_str(&format!("{}{}: {}\n", indent.inc(), trait_constraint.trait_name, engines.help_out(trait_constraint)))
+                }
+            }
+
+            result
+        }
+    }
+}
+
+#[derive(Default, Clone, Copy)]
+struct Indent {
+    indent: usize,
+}
+
+impl Indent {
+    const SINGLE_INDENT: usize = 4;
+
+    fn inc(&self) -> Self {
+        Self {
+            indent: self.indent + Self::SINGLE_INDENT,
+        }
     }
 
-    impl Indent {
-        fn inc(&self) -> Self {
-            Self {
-                indent: self.indent + 4,
-            }
-        }
-        fn dec(&self) -> Self {
-            Self {
-                indent: self.indent.saturating_sub(4),
-            }
+    fn dec(&self) -> Self {
+        Self {
+            indent: self.indent.saturating_sub(Self::SINGLE_INDENT),
         }
     }
+}
 
-    use std::fmt::Display;
-    impl Display for Indent {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-            write!(f, "{0:1$}", "", self.indent)
-        }
+use std::fmt::Display;
+impl Display for Indent {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{0:1$}", "", self.indent)
     }
 }
