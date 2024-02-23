@@ -19,7 +19,3 @@ fn vec_issue() {
     assert(vec_01.get(0).unwrap() == 321);
 }
 
-// fn change_copy_of_vec(copy: Vec<u64>) {
-//   copy.set(0, 321);
-// //^^^^^^^^^^^^^^^^ Cannot call method "set" on variable "copy" because "copy" is not declared as mutable.  
-// }

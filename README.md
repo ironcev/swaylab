@@ -7,8 +7,7 @@ The distinguished folders in this repository are prefixed with:
 - `P` for [pull requests](https://github.com/FuelLabs/sway/pulls)
 - `R` for [requests for comments](https://github.com/FuelLabs/sway-rfcs)
 - `D` for code samples comming from the documentation, e.g., [The Sway Book](https://fuellabs.github.io/sway/latest/)
-
-Folders without prefix are random explorations.
+- `M` for miscellaneous samples and random explorations
 
 Samples are by default written in Sway. When comparing behavior and features of different languages, samples in a particular language are stored into separate folder with the language name, e.g., _rust_, or _csharp_.
 
