@@ -1,4 +1,6 @@
 use crate::decl_engine::DeclEngine;
+use crate::decl_engine::DeclRefEnum;
+use crate::decl_engine::DeclRefStruct;
 use crate::language::ty::VariableMutability;
 use crate::language::LazyOp;
 use crate::semantic_analysis::TypeCheckContext;
@@ -269,108 +271,162 @@ pub fn qnd_dbg_expression(engines: &Engines, expr: &TyExpression) {
     }
 }
 
-pub fn qnd_dbq_type(engines: &Engines, type_id: TypeId) {
+pub fn qnd_dbg_type(engines: &Engines, type_id: TypeId) {
     print!("\n{}\n", build_type(engines, type_id, Indent::default()));
+}
 
-    fn build_type(engines: &Engines, type_id: TypeId, indent: Indent) -> String {
-        let type_engine = engines.te();
-        let decl_engine = engines.de();
+pub fn qnd_dbg_enum_decl_ref(engines: &Engines, enum_decl_ref: &DeclRefEnum) {
+    print!("\n{}\n", build_enum_decl_ref(engines, enum_decl_ref, None, Indent::default()));
+}
 
-        let mut result = String::new();
+fn build_type(engines: &Engines, type_id: TypeId, indent: Indent) -> String {
+    let type_engine = engines.te();
 
-        let type_info = &*type_engine.get(type_id);
-        let type_id_as_str = engines.help_out(type_id).to_string();
+    let mut result = String::new();
 
-        match type_info {
-            TypeInfo::Unknown => result.push_str(&format!("{:?}: Unknown\n", type_id)),
-            TypeInfo::UnknownGeneric { name, trait_constraints } => {
-                result.push_str(&format!("{:?}: Generic {name} {{\n", type_id));
+    let type_info = &*type_engine.get(type_id);
+    let type_id_as_str = engines.help_out(type_id).to_string();
 
-                result.push_str(&format!("{}", build_trait_constraints(engines, trait_constraints, indent.inc())));
+    match type_info {
+        TypeInfo::Unknown => result.push_str(&format!("{:?}: Unknown\n", type_id)),
+        TypeInfo::UnknownGeneric { name, trait_constraints } => {
+            result.push_str(&format!("{:?}: Generic {name} {{\n", type_id));
 
-                result.push_str(&format!("{}}}\n", indent));
-            }
-            TypeInfo::UnsignedInteger(_) => result.push_str(&format!("{:?}: {type_id_as_str}\n", type_id)),
-            TypeInfo::Numeric => result.push_str(&format!("{:?}: Numeric\n", type_id)),
-            TypeInfo::Custom { qualified_call_path, .. } => {
-                result.push_str(&format!("{:?}: Custom {}\n", type_id, qualified_call_path.call_path));
-            }
-            TypeInfo::Struct(decl_ref) => {
-                let struct_decl = &*decl_engine.get_struct(decl_ref.id());
+            result.push_str(&format!("{}", build_trait_constraints(engines, trait_constraints, indent.inc())));
 
-                result.push_str(&format!("{:?}: {type_id_as_str} {{\n", type_id));
-
-                result.push_str(&format!("{}{:?}\n", indent.inc(), decl_ref.id()));
-                result.push_str(&format!("{}{}\n", indent.inc(), struct_decl.call_path));
-
-                if struct_decl.type_parameters.is_empty() {
-                    result.push_str(&format!("{}Type parameters: <none>\n", indent.inc()));
-                } else {
-                    result.push_str(&format!("{}Type parameters:\n", indent.inc()));
-
-                    let type_parameter_indent = indent.inc().inc();
-                    for type_parameter in struct_decl.type_parameters.iter() {
-                        result.push_str(&build_type_parameter(engines, type_parameter, type_parameter_indent));
-                    }
-                }
-
-                result.push_str(&format!("\n{}}}\n", indent));
-            }
-            TypeInfo::Placeholder(type_parameter) => {
-                result.push_str(&format!("{:?} Placeholder {type_id_as_str} {{\n", type_id));
-
-                result.push_str(&build_type_parameter(engines, type_parameter, indent.inc()));
-
-                result.push_str(&format!("\n{}}}\n", indent));
-            }
-            TypeInfo::TypeParam(_) => todo!("TypeParam"),
-            TypeInfo::StringSlice => todo!("StringSlice"),
-            TypeInfo::StringArray(_) => todo!("StringArray"),
-            TypeInfo::Enum(_) => todo!("Enum"),
-            TypeInfo::Boolean => todo!("Boolean"),
-            TypeInfo::Tuple(_) => todo!("Tuple"),
-            TypeInfo::ContractCaller { .. } => todo!("ContractCaller"),
-            TypeInfo::B256 => todo!("B256"),
-            TypeInfo::Contract => todo!("Contract"),
-            TypeInfo::ErrorRecovery(_) => todo!("ErrorRecovery"),
-            TypeInfo::Array(_, _) => todo!("Array"),
-            TypeInfo::Storage { .. } => todo!("Storage"),
-            TypeInfo::RawUntypedPtr => todo!("RawUntypedPtr"),
-            TypeInfo::RawUntypedSlice => todo!("RawUntypedSlice"),
-            TypeInfo::Ptr(_) => todo!("Ptr"),
-            TypeInfo::Slice(_) => todo!("Slice"),
-            TypeInfo::Alias { .. } => todo!("Alias"),
-            TypeInfo::TraitType { .. } => todo!("TraitType"),
-            TypeInfo::Ref(_) => todo!("Ref"),
+            result.push_str(&format!("{}}}\n", indent));
         }
-
-        return result;
-
-        fn build_type_parameter(engines: &Engines, type_parameter: &TypeParameter, indent: Indent) -> String {
-            let mut result = String::new();
-
-            result.push_str(&format!("{}{}: {}", indent, type_parameter.name_ident, build_type(engines, type_parameter.type_id, indent.inc())));
-
-            result.push_str(&build_trait_constraints(engines, &type_parameter.trait_constraints, indent.inc()));
-
-            result
+        TypeInfo::UnsignedInteger(_) => result.push_str(&format!("{:?}: {type_id_as_str}\n", type_id)),
+        TypeInfo::Numeric => result.push_str(&format!("{:?}: Numeric\n", type_id)),
+        TypeInfo::Boolean => result.push_str(&format!("{:?}: bool\n", type_id)),
+        TypeInfo::Custom { qualified_call_path, .. } => {
+            result.push_str(&format!("{:?}: Custom {}\n", type_id, qualified_call_path.call_path));
         }
+        TypeInfo::Struct(struct_decl_ref) => {
+            result.push_str(&build_struct_decl_ref(engines, struct_decl_ref, Some(type_id), indent));
+        }
+        TypeInfo::Enum(enum_decl_ref) => {
+            result.push_str(&build_enum_decl_ref(engines, enum_decl_ref, Some(type_id), indent));
+        }
+        TypeInfo::Placeholder(type_parameter) => {
+            result.push_str(&format!("{:?} Placeholder {type_id_as_str} {{\n", type_id));
 
-        fn build_trait_constraints(engines: &Engines, trait_constraints: &[TraitConstraint], indent: Indent) -> String {
-            let mut result = String::new();
+            result.push_str(&build_type_parameter(engines, type_parameter, indent.inc()));
 
-            if trait_constraints.is_empty() {
-                result.push_str(&format!("{}Trait constraints: <none>\n", indent));
-            } else {
-                result.push_str(&format!("{}Trait constraints:\n", indent));
-                for trait_constraint in trait_constraints.iter() {
-                    result.push_str(&format!("{}{}: {}\n", indent.inc(), trait_constraint.trait_name, engines.help_out(trait_constraint)))
-                }
-            }
+            result.push_str(&format!("\n{}}}\n", indent));
+        }
+        TypeInfo::TypeParam(_) => todo!("TypeParam"),
+        TypeInfo::StringSlice => todo!("StringSlice"),
+        TypeInfo::StringArray(_) => todo!("StringArray"),
+        TypeInfo::Tuple(_) => todo!("Tuple"),
+        TypeInfo::ContractCaller { .. } => todo!("ContractCaller"),
+        TypeInfo::B256 => todo!("B256"),
+        TypeInfo::Contract => todo!("Contract"),
+        TypeInfo::ErrorRecovery(_) => result.push_str(&format!("{:?}: Error\n", type_id)),
+        TypeInfo::Array(_, _) => todo!("Array"),
+        TypeInfo::Storage { .. } => todo!("Storage"),
+        TypeInfo::RawUntypedPtr => todo!("RawUntypedPtr"),
+        TypeInfo::RawUntypedSlice => todo!("RawUntypedSlice"),
+        TypeInfo::Ptr(_) => todo!("Ptr"),
+        TypeInfo::Slice(_) => todo!("Slice"),
+        TypeInfo::Alias { .. } => todo!("Alias"),
+        TypeInfo::TraitType { .. } => todo!("TraitType"),
+        TypeInfo::Ref(_) => todo!("Ref"),
+        TypeInfo::Never => todo!("Never"),
+    }
 
-            result
+    result
+}
+
+fn build_type_parameters(engines: &Engines, type_parameters: &[TypeParameter], indent: Indent) -> String {
+    let mut result = String::new();
+
+    if type_parameters.is_empty() {
+        result.push_str(&format!("{}Type parameters: <none>\n", indent));
+    } else {
+        result.push_str(&format!("{}Type parameters:\n", indent));
+
+        let type_parameter_indent = indent.inc();
+        for type_parameter in type_parameters.iter() {
+            result.push_str(&build_type_parameter(engines, type_parameter, type_parameter_indent));
         }
     }
+
+    result
+}
+
+fn build_type_parameter(engines: &Engines, type_parameter: &TypeParameter, indent: Indent) -> String {
+    let mut result = String::new();
+
+    result.push_str(&format!("{}{}: {}", indent, type_parameter.name_ident, build_type(engines, type_parameter.type_id, indent.inc())));
+
+    result.push_str(&build_trait_constraints(engines, &type_parameter.trait_constraints, indent.inc()));
+
+    result
+}
+
+fn build_trait_constraints(engines: &Engines, trait_constraints: &[TraitConstraint], indent: Indent) -> String {
+    let mut result = String::new();
+
+    if trait_constraints.is_empty() {
+        result.push_str(&format!("{}Trait constraints: <none>\n", indent));
+    } else {
+        result.push_str(&format!("{}Trait constraints:\n", indent));
+        for trait_constraint in trait_constraints.iter() {
+            result.push_str(&format!("{}{}: {}\n", indent.inc(), trait_constraint.trait_name, engines.help_out(trait_constraint)))
+        }
+    }
+
+    result
+}
+
+fn build_enum_decl_ref(engines: &Engines, enum_decl_ref: &DeclRefEnum, type_id: Option<TypeId>, indent: Indent) -> String {
+    let mut result = String::new();
+
+    let enum_decl = &*engines.de().get_enum(enum_decl_ref.id());
+
+    let type_id_as_str = type_id.map_or("<no type id>".to_string(), |type_id| engines.help_out(type_id).to_string());
+
+    result.push_str(&format!("{}: Enum {type_id_as_str} {{\n", type_id.map_or("<no type id>".to_string(), |type_id| format!("{:?}", type_id))));
+
+    result.push_str(&format!("{}{:?}\n", indent.inc(), enum_decl_ref.id()));
+    result.push_str(&format!("{}{}\n", indent.inc(), enum_decl.call_path));
+
+    result.push_str(&build_type_parameters(engines, &enum_decl.type_parameters, indent.inc()));
+
+    result.push_str(&format!("\n{}}}\n", indent));
+
+    result
+}
+
+fn build_struct_decl_ref(engines: &Engines, struct_decl_ref: &DeclRefStruct, type_id: Option<TypeId>, indent: Indent) -> String {
+    let mut result = String::new();
+
+    let struct_decl = &*engines.de().get_struct(struct_decl_ref.id());
+
+    let type_id_as_str = type_id.map_or("<no type id>".to_string(), |type_id| engines.help_out(type_id).to_string());
+
+    result.push_str(&format!("{}: Struct {type_id_as_str} {{\n", type_id.map_or("<no type id>".to_string(), |type_id| format!("{:?}", type_id))));
+
+    result.push_str(&format!("{}{:?}\n", indent.inc(), struct_decl_ref.id()));
+    result.push_str(&format!("{}{}\n", indent.inc(), struct_decl.call_path));
+
+    result.push_str(&build_type_parameters(engines, &struct_decl.type_parameters, indent.inc()));
+
+    if struct_decl.fields.is_empty() {
+        result.push_str(&format!("{}Fields: <none>\n", indent.inc()));
+    } else {
+        result.push_str(&format!("{}Fields:\n", indent.inc()));
+
+        let field_indent = indent.inc().inc();
+        for field in struct_decl.fields.iter() {
+            result.push_str(&format!("{}{}: {}", field_indent, field.name, build_type(engines, field.type_argument.type_id, field_indent.inc())));
+        }
+    }
+
+    result.push_str(&format!("\n{}}}\n", indent));
+
+    result
 }
 
 #[derive(Default, Clone, Copy)]
