@@ -5,7 +5,7 @@ struct S {
   y: u8,
 }
 
-fn revert_me() -> Never {
+fn revert_me() -> ! {
   __revert(0)
 }
 
