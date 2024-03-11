@@ -1,0 +1,14 @@
+[package]
+name = "parallel_execution_of_tests"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rand = "0.8.5"
+indicatif = "0.17.8"
+console = "0.15.8"
+rayon = "1.9.0"
+tokio = { version = "1.36.0", features = ["full"] }
+futures = "0.3.30"
