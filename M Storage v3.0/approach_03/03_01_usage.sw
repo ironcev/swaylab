@@ -1,19 +1,24 @@
 contract;
 
 struct MyTwoVecStorage<A, B> {
-    id: StorageKey,
+    // This storage don't need to store its own `self_key`/`id`.
+    // All the relevant information is already in the vectors.
     a: StorageVec<A>,
     b: StorageVec<B>,
 }
 
 impl<A, B> Storage for MyTwoVecStorage<A, B> {
     // `self_key` is a syntax sugar for `self_key: &StorageKey` similar to `&self` being `self: &Self`.
-    fn new(&self_key) -> Self {
+    // This means we could still simply write:
+    //   const fn new(self_key: &StorageKey) -> Self
+    // But having it like only `&self_key` makes it
+    // perhaps more prominent and also not so oddly looking
+    // in storage declarations.
+    const fn new(&self_key) -> Self {
         let a_key = StorageKey::new(sha256((self_key, "a")), 0);
         let b_key = StorageKey::new(sha256((self_key, "b")), 0);
 
         Self {
-            id: *self_key,
             a: StorageVec<A>::new(a_key),
             b: StorageVec<A>::new(b_key),
         }
@@ -110,11 +115,11 @@ fn main() {
 
     /* Get `slot` and `offset`. */
     let vec_storage_key = StorageKey::new(slot, offset);
-    let vec = StorageVec::<u6>::range(vec_storage_key, 1, 100).to_storage(vec_storage_key);
+    let vec = StorageVec::<u64>::range(vec_storage_key, 1, 100).to_storage(vec_storage_key);
     vec.push(123);
 
     /* Get `slot` and `offset`. */
-    let vec = StorageVec::<u6>::fib(vec_storage_key, 5).to_storage(vec_storage_key);
+    let vec = StorageVec::<u64>::fib(vec_storage_key, 5).to_storage(vec_storage_key);
     vec.push(123);
 
     /* ... */

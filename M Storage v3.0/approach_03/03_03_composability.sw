@@ -50,7 +50,7 @@ impl<TValue> IndexableStorage<TValue> for StorageVec<TValue> {
 
 // E.g. with this method we support `StorageVec<StorageVec<T>>`, `MyStorageVec<MyStorageVec<T>>`, etc.
 impl<TStorage, TElement> StorageVec<TStorage> where TStorage: IndexableStorage<TElement> {
-    const fn init(&self_key, elements: [[TElement]]) -> [StorageConfig<StorageVec<TStorage>, TElement>] {
+    const fn from_indexable(&self_key, elements: [[TElement]]) -> [StorageConfig<StorageVec<TStorage>, TElement>] {
         let mut i = 0;
         let result: [StorageConfig<StorageVec<TStorage>, TElement>] = [];
         while i < elements.len() { // Can be recursion, but let's support `while` in `const fn`s :-)
