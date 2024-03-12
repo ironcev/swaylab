@@ -7,6 +7,7 @@ struct MyTwoVecStorage<A, B> {
 }
 
 impl<A, B> Storage for MyTwoVecStorage<A, B> {
+    // `self_key` is a syntax sugar for `self_key: &StorageKey` similar to `&self` being `self: &Self`.
     fn new(&self_key) -> Self {
         let a_key = StorageKey::new(sha256((self_key, "a")), 0);
         let b_key = StorageKey::new(sha256((self_key, "b")), 0);
