@@ -136,6 +136,6 @@ impl<A, B> MyTwoVecStorage<A, B> {
         let a_key = StorageKey::new(sha256((self_key, "a")), 0);
         let b_key = StorageKey::new(sha256((self_key, "b")), 0);
         
-        (StorageVec<A>::init(a_elements).cast::<Self, A>(), StorageVec<B>::init(b_elements).cast::<Self, B>())
+        (StorageVec<A>::init(a_elements).cast::<Self>(), StorageVec<B>::init(b_elements).cast::<Self>())
     }
 }

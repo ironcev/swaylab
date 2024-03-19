@@ -6,14 +6,16 @@ pub trait Sequences<TStorage> where TStorage: Storage {
         // `n_th` could also be generic with proper constraints...
         // Ok, we actually only need Add trait for this :-)
         where N: Add + Mul + PartialOrd + AddNeutral; // General remark: We will need Traits like AddNeutral, MulNutral, if we ever want to do generic math.
+
     /// {first, first*ratio, first*ratio^2, first*ratio^3, ..., frist*ration^(n_th - 1) }
     fn geometric(self_key: StorageKey, first: N, ratio: N, n_th: u64) -> [StorageConfig<TStorage, N>]
         where N: Add + Mul + PartialOrd + AddNeutral;
+
     /* ... */
 }
 
 impl<N> Sequences<StorageVec<N>> for StorageVec<N> where N: Add + Mul + PartialOrd + AddNeutral {
-    fn arithmetic(self_key: StorageKey, first: N, difference: N, n_th: u64) -> [StorageConfig<Self, N>]
+    const fn arithmetic(self_key: StorageKey, first: N, difference: N, n_th: u64) -> [StorageConfig<Self, N>]
         where N: Add + Mul + PartialOrd + AddNeutral
     {
         let result: [StorageConfig<Self, N>] = [];
@@ -32,11 +34,12 @@ impl<N> Sequences<StorageVec<N>> for StorageVec<N> where N: Add + Mul + PartialO
 
         result
     }
+
     /* ... */
 }
 
 impl<N> Sequences<StorageMap<u64, N>> for StorageMap<TKey, N> where N: Add + Mul + PartialOrd + AddNeutral {
-    fn arithmetic(self_key: StorageKey, first: N, difference: N, n_th: u64) -> [StorageConfig<Self, N>]
+    const fn arithmetic(self_key: StorageKey, first: N, difference: N, n_th: u64) -> [StorageConfig<Self, N>]
         where N: Add + Mul + PartialOrd + AddNeutral,
               TKey: Add + Mul + PartialOrd + AddNeutral
     {
@@ -56,6 +59,7 @@ impl<N> Sequences<StorageMap<u64, N>> for StorageMap<TKey, N> where N: Add + Mul
 
         result
     }
+
     /* ... */
 }
 

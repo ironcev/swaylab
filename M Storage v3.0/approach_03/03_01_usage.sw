@@ -84,7 +84,7 @@ storage {
     ),
 
     // Again, `std` functionality, but with aftertaste :-(
-    map_01: StorageMap<str[3], MyStorageMap<u64, str[1]>> := StorageMap::from_mappable(self_key,
+    map_02: StorageMap<str[3], MyStorageMap<u64, str[1]>> := StorageMap::from_mappable(self_key,
         [
             ("abc", (1, "A")),
             ("def", (2, "B")),
