@@ -1,13 +1,15 @@
 contract;
 
-pub trait Sequences<TStorage> where TStorage: Storage {
-    /// {first, first + difference, first + 2*difference, first + 3*difference, ..., first + (n_th - 1)*difference }
+pub trait Sequences<TStorage, N> where TStorage: Storage {
+    /// [first, first + difference, first + 2*difference, first + 3*difference, ..., first + (n_th - 1)*difference]
+    /// E.g.: 1, 2, 3, 4, 5.
     fn arithmetic(self_key: StorageKey, first: N, difference: N, n_th: u64) -> [StorageConfig<TStorage, N>]
         // `n_th` could also be generic with proper constraints...
         // Ok, we actually only need Add trait for this :-)
         where N: Add + Mul + PartialOrd + AddNeutral; // General remark: We will need Traits like AddNeutral, MulNutral, if we ever want to do generic math.
 
-    /// {first, first*ratio, first*ratio^2, first*ratio^3, ..., frist*ration^(n_th - 1) }
+    /// [first, first*ratio, first*ratio^2, first*ratio^3, ..., frist*ration^(n_th - 1)]
+    /// E.g.: 1, 2, 4, 8, 16, 32.
     fn geometric(self_key: StorageKey, first: N, ratio: N, n_th: u64) -> [StorageConfig<TStorage, N>]
         where N: Add + Mul + PartialOrd + AddNeutral;
 

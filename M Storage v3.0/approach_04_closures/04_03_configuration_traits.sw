@@ -1,6 +1,6 @@
 contract;
 
-pub trait Sequences<TStorage> where TStorage: Storage {
+pub trait Sequences<TStorage, N> where TStorage: Storage {
     // Config functions return closures that accespt `StorageKey` and return `StorageConfig`.
     fn arithmetic(first: N, difference: N, n_th: u64) -> impl Fn(StorageKey) -> [StorageConfig<TStorage, N>]
         where N: Add + Mul + PartialOrd + AddNeutral;
