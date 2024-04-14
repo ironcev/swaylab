@@ -1,8 +1,0 @@
-[[package]]
-name = "core"
-source = "path+from-root-703560B24DD97299"
-
-[[package]]
-name = "plays"
-source = "member"
-dependencies = ["core"]
