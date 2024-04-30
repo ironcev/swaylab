@@ -1,0 +1,8 @@
+[package]
+name = "rust_impl_trait_for_type_and_ref_of_type"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
