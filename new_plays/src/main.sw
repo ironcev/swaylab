@@ -1,5 +1,7 @@
 script;
 
+mod play01A;
+
 fn main() {
-    assert(true);
+    play01A::play();
 }
