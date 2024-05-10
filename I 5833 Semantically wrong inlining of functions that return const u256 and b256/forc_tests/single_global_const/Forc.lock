@@ -1,0 +1,13 @@
+[[package]]
+name = "core"
+source = "path+from-root-1B32749157970326"
+
+[[package]]
+name = "single_global_const"
+source = "member"
+dependencies = ["std"]
+
+[[package]]
+name = "std"
+source = "path+from-root-1B32749157970326"
+dependencies = ["core"]

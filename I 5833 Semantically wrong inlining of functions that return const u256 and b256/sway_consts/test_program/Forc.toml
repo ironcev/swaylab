@@ -1,0 +1,11 @@
+[project]
+authors = ["Igor Rončević"]
+entry = "main.sw"
+license = "MIT"
+name = "test_program"
+# implicit-std = false
+
+[dependencies]
+core = { path = "../../../../sway/sway-lib-core" }
+# std = { path = "../../../../sway/sway-lib-std" }
+test_lib = { path = "../test_lib" }

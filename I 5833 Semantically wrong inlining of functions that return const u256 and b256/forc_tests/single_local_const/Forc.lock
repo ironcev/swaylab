@@ -1,0 +1,13 @@
+[[package]]
+name = "core"
+source = "path+from-root-0E3B26AF0278586A"
+
+[[package]]
+name = "single_local_const"
+source = "member"
+dependencies = ["std"]
+
+[[package]]
+name = "std"
+source = "path+from-root-0E3B26AF0278586A"
+dependencies = ["core"]
