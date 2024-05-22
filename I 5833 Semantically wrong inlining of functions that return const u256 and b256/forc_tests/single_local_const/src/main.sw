@@ -4,24 +4,52 @@ struct S {
     x: u64,
 }
 
+// #[test]
+// fn test_same_local_const() {
+//     let ptr_to_const_1 = get_const_address_1();
+//     let ptr_to_const_2 = get_const_address_2();
+//     assert(ptr_to_const_1 == ptr_to_const_2);     // <<-- Same pointers.
+// }
+
+// #[inline(never)]
+// fn get_const_address_1() -> raw_ptr {
+//     poke(505);
+//     const CONST_S: S = S { x: 11 };
+//     __addr_of(CONST_S)
+// }
+
+// #[inline(never)]
+// fn get_const_address_2() -> raw_ptr {
+//     poke(606);
+//     const CONST_S: S = S { x: 11 };
+//     __addr_of(CONST_S)
+// }
+
 #[test]
-fn test() {
-    let ptr_to_const_1 = get_const_address_1();
-    let ptr_to_const_2 = get_const_address_2();
-    // assert(ptr_to_const_1 == ptr_to_const_2);
+fn test_different_local_consts() {
+    let ptr_to_const_1 = get_const_address_different_1();
+    assert(ptr_to_const_1.read::<S>().x == 1111);
+
+    let ptr_to_const_2 = get_const_address_different_2();
+    // assert(ptr_to_const_2.read::<S>().x == 2222);
+    assert(ptr_to_const_2.read::<S>().x == 1111);
+
+    // assert(ptr_to_const_1 == ptr_to_const_2);     // <<-- Same pointers.
+
+    // assert(ptr_to_const_1.read::<S>().x == 2222);
 }
 
 #[inline(never)]
-fn get_const_address_1() -> raw_ptr {
+fn get_const_address_different_1() -> raw_ptr {
     poke(505);
-    const CONST_S: S = S { x: 11 };
+    const CONST_S: S = S { x: 1111 };
     __addr_of(CONST_S)
 }
 
 #[inline(never)]
-fn get_const_address_2() -> raw_ptr {
+fn get_const_address_different_2() -> raw_ptr {
     poke(606);
-    const CONST_S: S = S { x: 11 };
+    const CONST_S: S = S { x: 2222 };
     __addr_of(CONST_S)
 }
 

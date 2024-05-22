@@ -11,6 +11,11 @@ pub fn play() {
     poke(x, y);
 }
 
+#[test]
+fn test() {
+    play();
+}
+
 #[inline(never)]
 fn a() -> u256 {
     CONST_1

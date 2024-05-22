@@ -16,8 +16,13 @@ mod lib;
 // mod play04C;
 // mod play05A;
 // mod play05B;
-// mod play06A;
-mod play06B;
+mod play06A;
+// mod play06B;
+// mod play06C;
+// mod play06D;
+// mod play06E;
+// mod play06F;
+// mod play06G;
 
 fn main() {
     // play01A::play();
@@ -35,5 +40,10 @@ fn main() {
     // play05A::play();
     // play05B::play();
     // play06A::play();
-    play06B::play();
+    // play06B::play();
+    // play06C::play();
+    // play06D::play();
+    // play06E::play();
+    // play06F::play();
+    // play06G::play();
 }

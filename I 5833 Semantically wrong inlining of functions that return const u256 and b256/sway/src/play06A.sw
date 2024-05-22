@@ -16,14 +16,22 @@ pub fn play() {
     poke(x, y);
 }
 
+#[test]
+fn test() {
+    play();
+}
+
 #[inline(never)]
 fn a() -> S {
+    poke(1, 1);
     CONST_1
 }
 
 #[inline(never)]
 fn b() -> S {
-    CONST_2
+    poke(0, 0);
+    CONST_1
+    // CONST_2
 }
 
 #[inline(never)]
