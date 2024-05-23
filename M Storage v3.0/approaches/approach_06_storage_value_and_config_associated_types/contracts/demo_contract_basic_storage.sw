@@ -1,0 +1,135 @@
+contract;
+
+abi Demo {
+    #[storage(read, write)]
+    fn demo();
+}
+
+struct Struct {
+    x: u6,
+    y: bool,
+}
+
+storage {
+    // --
+    // Compiler calls `internal_get_config` here and passes the `:=`'s RHS and the self-generated `StorageKey`.
+    //
+    // There is no any special syntax on the RHS. It's just a regular Sway expression that can occure anywhere
+    // else in Sway that creates a value of the type specified in the declaration of the LHS.
+    // --
+    box_1: StorageBox<u64> := 0,
+    box_2: StorageBox<u64> := the_meaning_of_life(),
+    box_3: StorageBox<Struct> := Struct::default(),
+    box_4: StorageBox<Struct> := Struct { x: 11, y: false },
+    box_4: StorageBox<Struct> := some_const_fn_that_creates_struct(true, S { x: 22, y: true}, "abc"),
+
+    vec_of_val_1: StorageVec<StorageBox<u64>> := [],
+    vec_of_val_2: StorageVec<StorageBox<u64>> := StorageVec::default(),
+    vec_of_val_3: StorageVec<StorageBox<u64>> := [1, 2, 3, 4, 5],
+    vec_of_val_4: StorageVec<StorageBox<Struct>> := [
+        Struct::default(),
+        Struct { x: 11, y: false },
+        some_const_fn_that_creates_struct(true, S { x: 22, y: true}, "abc"),
+    ],
+
+    vec_of_vec_1: StorageVec<StorageVec<StorageBox<Struct>>> := [
+        [],
+        [Struct::default],
+        [
+            Struct::default(),
+            Struct { x: 11, y: false },
+            some_const_fn_that_creates_struct(true, S { x: 22, y: true}, "abc"),
+        ]
+    ],
+}
+
+impl Demo for Contract {
+    #[storage(read, write)]
+    fn demo() {
+        // -----------------------------------
+
+        // When creating the `box_1` the compiler calls `internal_create` and passes the self-generated `StorageKey`.
+        let x = storage.box_1.read();
+
+        // `storage` elements are mutable by default.
+        // Important because we properly model mutability on the `Storage` methods.
+        // E.g., `fn write(&mut self)`.
+        storage.box_1.write(&1111);
+
+        // Storage types can also be created and used in code without being declared in the storage.
+        // We assume below that we've calculated the desired `slot` and the `offset` and got the storage key.
+        let storage_key = get_storage_key( ... );
+
+        let local_box_1 = StorageBox::<b256>::default(storage_key);
+        assert_eq(local_box_1.read(), 0x0000000000000000000000000000000000000000000000000000000000000000);
+
+        // We properly model mutability, so the `local_box_2` must
+        // be mutable if we want to write to the storage through it.
+        let mut local_box_2 = StorageBox::new(storage_key, &true);
+        assert_eq(local_box_2.read(), true);
+
+        local_box_2.write(false);
+        assert_eq(local_box_2.read(), false);
+
+        // -----------------------------------
+
+        assert_eq(storage.vec_of_val_1.len(), 0);
+
+        storage.vec_of_val_1.push(&1111);
+        assert_eq(storage.vec_of_val_1.len(), 1);
+
+        let popped = storage.vec_of_val_1.pop();
+        assert_eq(popped, true);
+
+        storage.vec_of_val_1.push(&2222);
+
+        let popped_val = storage.vec_of_val_1.pop_and_get_value();
+        assert_eq(popped_vale, Some(2222));
+
+        // The result of `get` is always the stored `Storage`.
+        let val = storage.vec_of_val_1.get(0).unwrap().read();
+        assert_eq(val, 2222);
+
+        // `StorageVec` implements `StoredValue` and provides
+        // optimized access if the whole stored value is needed.
+        // Should be used rarely and with caution.
+        let content = storage.vec_of_val_1.value();
+        assert_eq(content, [2222])
+
+        storage.vec_of_vec_1.push(&[]);
+        storage.vec_of_vec_1.push(&[Struct { x: 11, y: true }, Struct { x: 22, y: false }]);
+
+        let val = storage.vec_of_vec_1.get(1).get(0).read(); // Accessing `vec_of_vec_1[1][0]`.
+        assert_eq(val, Struct::default());
+
+
+        let storage_key = get_storage_key( ... );
+
+        let mut local_vec_of_vec_of_vec_1 = StorageVec<StorageVec<StorageVec<StorageBox<u64>>>>::new(storage_key, &[
+            [],
+            [[]],
+            [[], []],
+            [[11, 22, 33], [33, 22, 11]]
+        ]);
+
+        // The overall Storage API prohibits semantically wrong usage.
+        // The desired composition semantics that implies ownership of the
+        // stored data is imposed by the API.
+        //
+        // E.g., `StorageVec::push` does not accept the contained storage
+        // as the type but rather the value that needs to be contained.
+        //
+        // This prohibits non-sensical usage like:
+        //
+        // let vec_of_vec_a = StorageVec<StorageVec<StorageBox<u6>>>::new(...);
+        // let vec_of_vec_b = StorageVec<StorageVec<StorageBox<u6>>>::new(...);
+        // let element_of_a = a.get(0);
+        // vec_of_vec_of_b.push(element_of_a);
+        //
+        // `StorageVec` which is contained in `a` cannot be contained in `b`!
+        //
+        // `StorageRef` allows referencing storage. For the demo see: demo_contract_storage_refs.sw.
+
+        local_vec_of_vec_of_vec_1.push(&[[11, 22, 33], [33, 22, 11]]);
+    }
+}

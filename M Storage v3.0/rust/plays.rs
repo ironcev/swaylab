@@ -110,3 +110,72 @@ fn main() {
 // 
 // For more information about this error, try `rustc --explain E0658`.
 
+
+
+// ------------------------------------------------------------------------
+
+
+
+trait Storage {}
+
+trait StorageInit where Self: Storage {}
+
+struct S {}
+
+impl Storage for S {}
+impl StorageInit for S {}
+
+struct NS {}
+impl StorageInit for NS {}
+
+
+
+// ------------------------------------------------------------------------
+
+
+
+trait Storage {
+    type Value;
+}
+
+trait StorageInit where Self: Storage {}
+
+trait StorageDefault where Self: Storage, Self::Value: Default {}
+
+struct S1 {}
+struct S2 {}
+
+enum E {
+    A,
+    B,
+}
+
+impl Storage for S1 {
+    type Value = u64;
+}
+
+impl StorageInit for S1 {}
+
+impl StorageDefault for S1 {}
+
+
+impl Storage for S2 {
+    type Value = E;
+}
+
+impl StorageInit for S2 {}
+
+impl StorageDefault for S2 {}
+
+
+// error[E0277]: the trait bound `E: Default` is not satisfied
+//   --> src/lib.rs:32:6
+//    |
+// 32 | impl StorageDefault for S2 {}
+//    |      ^^^^^^^^^^^^^^ the trait `Default` is not implemented for `E`, which is required by `<S2 as Storage>::Value: Default`
+//    |
+// note: required by a bound in `StorageDefault`
+//   --> src/lib.rs:7:56
+//    |
+// 7  | trait StorageDefault where Self: Storage, Self::Value: Default {}
+//    |                                                        ^^^^^^^ required by this bound in `StorageDefault`
