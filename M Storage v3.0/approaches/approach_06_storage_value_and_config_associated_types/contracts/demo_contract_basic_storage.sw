@@ -19,9 +19,10 @@ storage {
     // --
     box_1: StorageBox<u64> := 0,
     box_2: StorageBox<u64> := the_meaning_of_life(),
+
     box_3: StorageBox<Struct> := Struct::default(),
     box_4: StorageBox<Struct> := Struct { x: 11, y: false },
-    box_4: StorageBox<Struct> := some_const_fn_that_creates_struct(true, S { x: 22, y: true}, "abc"),
+    box_4: StorageBox<Struct> := some_const_fn_that_creates_struct(true, Struct { x: 22, y: true }, "abc"),
 
     vec_of_val_1: StorageVec<StorageBox<u64>> := [],
     vec_of_val_2: StorageVec<StorageBox<u64>> := StorageVec::default(),
@@ -29,7 +30,7 @@ storage {
     vec_of_val_4: StorageVec<StorageBox<Struct>> := [
         Struct::default(),
         Struct { x: 11, y: false },
-        some_const_fn_that_creates_struct(true, S { x: 22, y: true}, "abc"),
+        some_const_fn_that_creates_struct(true, Struct { x: 22, y: true }, "abc"),
     ],
 
     vec_of_vec_1: StorageVec<StorageVec<StorageBox<Struct>>> := [
@@ -38,9 +39,22 @@ storage {
         [
             Struct::default(),
             Struct { x: 11, y: false },
-            some_const_fn_that_creates_struct(true, S { x: 22, y: true}, "abc"),
+            some_const_fn_that_creates_struct(true, Struct { x: 22, y: true}, "abc"),
         ]
     ],
+
+    map_01: StorageMap<str[3], StorageVec<StorageMap<u64, StorageVec<StorageBox<Struct>>>>> := [
+        ("abc", [
+            (11, [Struct::default(), Struct { x: 11, y: false }]),
+            (22, []),
+            (33, [some_const_fn_that_creates_struct(true, Struct { x: 22, y: true}, "abc"), Struct::default()]),
+        ]),
+        ("def", [
+            (111, [Struct::default(), Struct { x: 111, y: true }]),
+            (222, [Struct::new_false(222)]),
+            (333, [some_const_fn_that_creates_struct(true, Struct { x: 22, y: true}, "abc")]),
+        ]),
+    ]
 }
 
 impl Demo for Contract {
@@ -102,7 +116,6 @@ impl Demo for Contract {
         let val = storage.vec_of_vec_1.get(1).get(0).read(); // Accessing `vec_of_vec_1[1][0]`.
         assert_eq(val, Struct::default());
 
-
         let storage_key = get_storage_key( ... );
 
         let mut local_vec_of_vec_of_vec_1 = StorageVec<StorageVec<StorageVec<StorageBox<u64>>>>::new(storage_key, &[
@@ -131,5 +144,35 @@ impl Demo for Contract {
         // `StorageRef` allows referencing storage. For the demo see: demo_contract_storage_refs.sw.
 
         local_vec_of_vec_of_vec_1.push(&[[11, 22, 33], [33, 22, 11]]);
+
+        // -----------------------------------
+
+        let storage_key = get_storage_key( ... );
+
+        let local_map_1 = StorageMap<str[3], StorageVec<StorageMap<u64, StorageVec<StorageBox<Struct>>>>>::default(storage_key);
+        local_map_1.insert("123", &[
+            ("000", []),
+            ("111", [
+                (111, [Struct::default()]),
+            ]),
+        ]);
+
+        let storage_key = get_storage_key( ... );
+
+        let local_map_2 = StorageMap<str[3], StorageVec<StorageMap<u64, StorageVec<StorageBox<Struct>>>>>::new(storage_key, &[
+            ("abc", [
+                (11, [Struct::default(), Struct { x: 11, y: false }]),
+                (22, []),
+                (33, [some_const_fn_that_creates_struct(true, Struct { x: 22, y: true}, "abc"), Struct::default()]),
+            ]),
+            ("def", [
+                (111, [Struct::default(), Struct { x: 111, y: true }]),
+                (222, [Struct::new_false(222)]),
+                (333, [some_const_fn_that_creates_struct(true, Struct { x: 22, y: true}, "abc")]),
+            ]),
+        ]);
+
+        let val = local_map_2.get("abc").get(0).get(11).get(0).read();
+        assert_eq(val, Struct::default());
     }
 }

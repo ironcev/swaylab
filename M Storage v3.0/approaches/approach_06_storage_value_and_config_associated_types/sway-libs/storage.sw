@@ -97,7 +97,8 @@ pub trait Storage {
     //               but not having the move semantics. How much can we
     //               optimize? How to avoid heap allocations? Etc.
     //--
-    fn new(self_key: &StorageKey, value: &Self::Value) -> Self;
+    #[storage(read, write)]
+    fn new(,self_key: &StorageKey, value: &Self::Value) -> Self;
 }
 
 /// Provides information to the compiler, during the configuration of the `storage`,
@@ -111,10 +112,12 @@ pub struct StorageConfig<TStoredValue>
 }
 
 pub trait StorageDefault where Self: Storage {
+    #[storage(read, write)]
     fn default(self_key: &StorageKey) -> Self;
 }
 
 impl StorageDefault for Storage where Self::Value: std::default::Default {
+    #[storage(read, write)]
     fn default(self_key: &StorageKey) -> Self {
         Self::new(self_key, Self::Value::default())
     }
@@ -138,5 +141,6 @@ pub trait StoredValue where Self: Storage {
     /// types. Therfore this method must always be
     /// used with care and only it the whole value is
     /// actually needed.
+    #[storage(read)]
     fn value(&self) -> Self::Value;
 }

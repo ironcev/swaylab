@@ -20,24 +20,6 @@ impl<T> Storage for StorageVec<T> where T: Storage {
         }
     }
 
-    /// Returns the self key of the element stored at `element_index`.
-    /// `self_key` is the self key of the [StorageVec].
-    const fn get_element_self_key(self_key: &StorageKey, element_index: u64) -> StorageKey {
-        match T::internal_layout() {
-            StorageLayout::Scattered | StorageLayout::Continuous => {
-                // The elements are stored each in its own slot.
-                StorageKey::new(__sha256((*self_key, element_index)), 0);
-            }
-            StorageLayout::ContinuousOfKnownSize(element_size) => {
-                //--
-                // The elements are packed and aligned to optimize slot usage and storage access.
-                // Here we calculate the element storage key based on the packing and aligning.
-                //--
-                StorageKey::new(<result of the calculation>);
-            }
-        }
-    }
-
     const fn internal_get_config(self_key: &StorageKey, elements: &[T::Value]) -> Self::Config {
         // The length is stored at the `self_key`.
         let length_config = StorageConfig {
@@ -68,6 +50,7 @@ impl<T> Storage for StorageVec<T> where T: Storage {
         self.self_key
     }
 
+    #[storage(read, write)]
     fn new(self_key: &StorageKey, elements: &[T::Value]) -> Self {
         // Store the length at the `self_key`.
         storage::internal::write(self_key, elements.len());
@@ -85,6 +68,25 @@ impl<T> Storage for StorageVec<T> where T: Storage {
 }
 
 impl<T> StorageVec<T> where T: Storage {
+    /// Returns the self key of the element stored at `element_index`.
+    /// `self_key` is the self key of the [StorageVec].
+    const fn get_element_self_key(self_key: &StorageKey, element_index: u64) -> StorageKey {
+        match T::internal_layout() {
+            StorageLayout::Scattered | StorageLayout::Continuous => {
+                // The elements are stored each in its own slot.
+                StorageKey::new(__sha256((*self_key, element_index)), 0);
+            }
+            StorageLayout::ContinuousOfKnownSize(element_size) => {
+                //--
+                // The elements are packed and aligned to optimize slot usage and storage access.
+                // Here we calculate the element storage key based on the packing and aligning.
+                //--
+                StorageKey::new(<result of the calculation>);
+            }
+        }
+    }
+
+    #[storage(read)]
     pub fn len(&self) -> u64 {
         //--
         // Note that we always expect value. API ensures storage is properly initialized.
@@ -92,6 +94,7 @@ impl<T> StorageVec<T> where T: Storage {
         storage::internal::read::<u64>(self.self_key).unwrap()
     }
 
+    #[storage(read, write)]
     pub fn push(&mut self, value: &T::Value) {
         let len = self.len();
 
@@ -105,6 +108,7 @@ impl<T> StorageVec<T> where T: Storage {
 
     /// Removes the last element of the [StorageVec] and returns true if there was a removal,
     /// or false if the vector was empty.
+    #[storage(read, write)]
     pub fn pop(&mut self) -> bool {
         let len = self.len();
 
@@ -132,6 +136,7 @@ impl<T> StorageVec<T> where T: Storage {
     /// This method can result in multiple storage reads and must,
     /// therefore, be used with caution and only if the popped content
     /// is actually needed.
+    #[storage(read, write)]
     pub fn pop_and_get_value(&mut self) -> Option<T::Value>
         where T: StoredValue
     {
@@ -152,6 +157,7 @@ impl<T> StorageVec<T> where T: Storage {
     }
 
     /// Gets the [Storage] stored at the `element_index`, or `None` if index is out of bounds.
+    #[storage(read)]
     pub fn get(&self, element_index) -> Option<T> {
         if self.len() <= index {
             return None;
@@ -168,6 +174,7 @@ impl<T> StoredValue for StorageVec<T> where T: Storage + StoredValue {
     /// This method can result in multiple storage reads and must,
     /// therefore, be used with caution and only if the whole content
     /// is actually needed.
+    #[storage(read)]
     fn value(&self) -> Self::Value {
         let len = self.len();
 
