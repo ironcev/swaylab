@@ -39,7 +39,7 @@ storage {
         [
             Struct::default(),
             Struct { x: 11, y: false },
-            some_const_fn_that_creates_struct(true, Struct { x: 22, y: true}, "abc"),
+            some_const_fn_that_creates_struct(true, Struct { x: 22, y: true }, "abc"),
         ]
     ],
 
@@ -47,14 +47,14 @@ storage {
         ("abc", [
             (11, [Struct::default(), Struct { x: 11, y: false }]),
             (22, []),
-            (33, [some_const_fn_that_creates_struct(true, Struct { x: 22, y: true}, "abc"), Struct::default()]),
+            (33, [some_const_fn_that_creates_struct(true, Struct { x: 22, y: true }, "abc"), Struct::default()]),
         ]),
         ("def", [
             (111, [Struct::default(), Struct { x: 111, y: true }]),
             (222, [Struct::new_false(222)]),
-            (333, [some_const_fn_that_creates_struct(true, Struct { x: 22, y: true}, "abc")]),
+            (333, [some_const_fn_that_creates_struct(true, Struct { x: 22, y: true }, "abc")]),
         ]),
-    ]
+    ],
 }
 
 impl Demo for Contract {

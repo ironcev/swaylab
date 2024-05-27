@@ -49,6 +49,7 @@ pub trait Storage {
     /// The type of the configuration used to configure this storage.
     //--
     // TODO-IG: Strictily define and list possible combinations. Compiler will check and emit error here.
+    //          `TStoredValue` cannot be a `Storage`.
     //--
     type Config;
 
@@ -98,13 +99,13 @@ pub trait Storage {
     //               optimize? How to avoid heap allocations? Etc.
     //--
     #[storage(read, write)]
-    fn new(,self_key: &StorageKey, value: &Self::Value) -> Self;
+    fn new(self_key: &StorageKey, value: &Self::Value) -> Self;
 }
 
 /// Provides information to the compiler, during the configuration of the `storage`,
 /// at which `storage_key` to store the `value`.
 ///
-/// This type should never be used in code.
+/// This type should never be used in contract code.
 pub struct StorageConfig<TStoredValue>
 {
     storage_key: StorageKey,
