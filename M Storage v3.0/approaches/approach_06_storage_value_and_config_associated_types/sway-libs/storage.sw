@@ -113,7 +113,8 @@ pub struct StorageConfig<TStoredValue>
 
 /// A [Storage] that supports reading its entire stored value.
 pub trait DeepReadStorage: Storage {
-    /// Returns the entired value stored in the [Storage].
+    /// Returns the entired value stored in the [Storage],
+    /// or `None` if the [Storage] is uninitialized.
     ///
     /// Composable storage types usually offer specialized
     /// methods for accessing parts of the stored value.
@@ -131,8 +132,10 @@ pub trait DeepReadStorage: Storage {
     /// used with care and only if the entire value is
     /// actually needed.
     #[storage(read)]
-    fn deep_read(&self) -> Self::Value;
-
-    #[storage(read)]
     fn try_deep_read(&self) -> Option<Self::Value>;
+} {
+    #[storage(read)]
+    fn deep_read(&self) -> Self::Value {
+        self.try_deep_read().unwrap()
+    }
 }

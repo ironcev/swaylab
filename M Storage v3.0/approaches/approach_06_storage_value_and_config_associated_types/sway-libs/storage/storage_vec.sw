@@ -174,16 +174,13 @@ impl<T> StorageVec<T> where T: Storage {
 }
 
 impl<T> DeepReadStorage for StorageVec<T> where T: DeepReadStorage {
-    /// Returns the entire content stored within the [StorageVec].
+    /// Returns the entire content stored within the [StorageVec],
+    /// or `None` if the [StorageVec] or any of the contained [Storage]s
+    //  are uninitialized.
     ///
     /// This method can result in multiple storage reads and must,
     /// therefore, be used with caution and only if the entire content
     /// is actually needed.
-    #[storage(read)]
-    fn deep_read(&self) -> Self::Value {
-        try_deep_read().unwrap()
-    }
-
     #[storage(read)]
     fn try_deep_read(&self) -> Option<Self::Value> {
         let len = match self.try_len() {
@@ -195,7 +192,12 @@ impl<T> DeepReadStorage for StorageVec<T> where T: DeepReadStorage {
         let mut i = 0;
         while i < len {
             let element_self_key = Self::get_element_self_key(self.self_key, i);
-            result += T::new(element_self_key).deep_read();
+            match T::new(element_self_key).try_deep_read() {
+                Some(value) => {
+                    result += value;
+                }
+                None => return None,
+            }
 
             i += 1;
         }

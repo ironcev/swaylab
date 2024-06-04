@@ -73,11 +73,6 @@ impl StorageBox<T> {
 
 impl<T> DeepReadStorage for StorageBox<T> {
     #[storage(read)]
-    fn deep_read(&self) -> T {
-        self.read()
-    }
-
-    #[storage(read)]
     fn try_deep_read(&self) -> Option<T> {
         self.try_read()
     }
