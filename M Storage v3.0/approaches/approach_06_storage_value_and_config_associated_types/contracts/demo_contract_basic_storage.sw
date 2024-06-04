@@ -11,12 +11,12 @@ struct Struct {
 }
 
 storage {
-    // --
+    //--
     // Compiler calls `internal_get_config` here and passes the `:=`'s RHS and the self-generated `StorageKey`.
     //
     // There is no any special syntax on the RHS. It's just a regular Sway expression that can occure anywhere
     // else in Sway that creates a value of the type specified in the declaration of the LHS.
-    // --
+    //--
     box_1: StorageBox<u64> := 0,
     box_2: StorageBox<u64> := the_meaning_of_life(),
 
@@ -25,9 +25,8 @@ storage {
     box_4: StorageBox<Struct> := some_const_fn_that_creates_struct(true, Struct { x: 22, y: true }, "abc"),
 
     vec_of_val_1: StorageVec<StorageBox<u64>> := [],
-    vec_of_val_2: StorageVec<StorageBox<u64>> := StorageVec::default(),
-    vec_of_val_3: StorageVec<StorageBox<u64>> := [1, 2, 3, 4, 5],
-    vec_of_val_4: StorageVec<StorageBox<Struct>> := [
+    vec_of_val_2: StorageVec<StorageBox<u64>> := [1, 2, 3, 4, 5],
+    vec_of_val_3: StorageVec<StorageBox<Struct>> := [
         Struct::default(),
         Struct { x: 11, y: false },
         some_const_fn_that_creates_struct(true, Struct { x: 22, y: true }, "abc"),
@@ -60,9 +59,9 @@ storage {
 impl Demo for Contract {
     #[storage(read, write)]
     fn demo() {
-        // -----------------------------------
+        //-----------------------------------
 
-        // When creating the `box_1` the compiler calls `internal_create` and passes the self-generated `StorageKey`.
+        // When creating the `box_1` the compiler calls `new` and passes the self-generated `StorageKey`.
         let x = storage.box_1.read();
 
         // `storage` elements are mutable by default.
@@ -74,18 +73,18 @@ impl Demo for Contract {
         // We assume below that we've calculated the desired `slot` and the `offset` and got the storage key.
         let storage_key = get_storage_key( ... );
 
-        let local_box_1 = StorageBox::<b256>::default(storage_key);
+        let local_box_1 = StorageBox::<b256>::init(storage_key, &b256::zero());
         assert_eq(local_box_1.read(), 0x0000000000000000000000000000000000000000000000000000000000000000);
 
         // We properly model mutability, so the `local_box_2` must
         // be mutable if we want to write to the storage through it.
-        let mut local_box_2 = StorageBox::new(storage_key, &true);
+        let mut local_box_2 = StorageBox::init(storage_key, &true);
         assert_eq(local_box_2.read(), true);
 
         local_box_2.write(false);
         assert_eq(local_box_2.read(), false);
 
-        // -----------------------------------
+        //-----------------------------------
 
         assert_eq(storage.vec_of_val_1.len(), 0);
 
@@ -118,7 +117,7 @@ impl Demo for Contract {
 
         let storage_key = get_storage_key( ... );
 
-        let mut local_vec_of_vec_of_vec_1 = StorageVec<StorageVec<StorageVec<StorageBox<u64>>>>::new(storage_key, &[
+        let mut local_vec_of_vec_of_vec_1 = StorageVec<StorageVec<StorageVec<StorageBox<u64>>>>::init(storage_key, &[
             [],
             [[]],
             [[], []],
@@ -134,8 +133,8 @@ impl Demo for Contract {
         //
         // This prohibits non-sensical usage like:
         //
-        // let vec_of_vec_a = StorageVec<StorageVec<StorageBox<u6>>>::new(...);
-        // let vec_of_vec_b = StorageVec<StorageVec<StorageBox<u6>>>::new(...);
+        // let vec_of_vec_a = StorageVec<StorageVec<StorageBox<u6>>>::init(...);
+        // let vec_of_vec_b = StorageVec<StorageVec<StorageBox<u6>>>::init(...);
         // let element_of_a = a.get(0);
         // vec_of_vec_of_b.push(element_of_a);
         //
@@ -145,11 +144,11 @@ impl Demo for Contract {
 
         local_vec_of_vec_of_vec_1.push(&[[11, 22, 33], [33, 22, 11]]);
 
-        // -----------------------------------
+        //-----------------------------------
 
         let storage_key = get_storage_key( ... );
 
-        let local_map_1 = StorageMap<str[3], StorageVec<StorageMap<u64, StorageVec<StorageBox<Struct>>>>>::default(storage_key);
+        let local_map_1 = StorageMap<str[3], StorageVec<StorageMap<u64, StorageVec<StorageBox<Struct>>>>>::init(storage_key, &[]);
         local_map_1.insert("123", &[
             ("000", []),
             ("111", [
@@ -159,7 +158,7 @@ impl Demo for Contract {
 
         let storage_key = get_storage_key( ... );
 
-        let local_map_2 = StorageMap<str[3], StorageVec<StorageMap<u64, StorageVec<StorageBox<Struct>>>>>::new(storage_key, &[
+        let local_map_2 = StorageMap<str[3], StorageVec<StorageMap<u64, StorageVec<StorageBox<Struct>>>>>::init(storage_key, &[
             ("abc", [
                 (11, [Struct::default(), Struct { x: 11, y: false }]),
                 (22, []),

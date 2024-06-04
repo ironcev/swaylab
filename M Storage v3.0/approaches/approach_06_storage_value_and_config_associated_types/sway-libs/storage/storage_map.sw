@@ -19,7 +19,7 @@ impl<K, V> Storage for StorageMap<K, V> where K: Hash, V: Storage {
     type Value = [(K, V::Value)];
     type Config = [V::Config];
 
-    fn internal_create(self_key: &StorageKey) -> Self {
+    fn new(self_key: &StorageKey) -> Self {
         Self {
             self_key: *self_key
         }
@@ -46,16 +46,16 @@ impl<K, V> Storage for StorageMap<K, V> where K: Hash, V: Storage {
         self.self_key
     }
 
-    fn new(self_key: &StorageKey, elements: &[(K, V::Value)]) -> Self {
+    fn init(self_key: &StorageKey, elements: &[(K, V::Value)]) -> Self {
         let mut i = 0;
         while i < elements.len() {
             let element_self_key = Self::get_element_self_key(self_key, elements[i].0);
-            T::new(element_self_key, &elements[i].1);
+            T::init(element_self_key, &elements[i].1);
 
             i += 1;
         }
 
-        internal_create(self_key)
+        new(self_key)
     }
 }
 
@@ -70,6 +70,6 @@ impl<K, V> StorageMap<K, V> where K: Hash, V: Storage {
     pub fn insert(&mut self, key: K, value: &V:Value)
     {
         let element_self_key = Self::get_element_self_key(self_key, key);
-        V:new(element_self_key, value);
+        V:init(element_self_key, value);
     }
 }

@@ -1,7 +1,7 @@
-// --
+//--
 // Unlike the current `StorageKey`, the new one becomes a plain struct that holds
-// the `slot` and the `offset`. There will be no impls on it.
-// --
+// the `slot` and the `offset`. There will be no storage type impls on it.
+//--
 pub struct StorageKey {
     slot: b256,
     offset: u64,
@@ -38,10 +38,12 @@ pub enum StorageLayout {
 
 //--
 // Functions and methods marked with `internal` are used only by Storage
-// implementors and by the compiler. It might be interesting to have
-// a language feature for that something like `pub(impl) fn` or just
-// `impl fn` to not realy on a naming convention hack that still bloats
-// the list of methods/functions availabe in a scope.
+// implementors and by the compiler.
+//
+// TODO-DISCUSS: Should we introduce a language feature here and not rely on a naming convention hack?
+//               E.g., a language feature for something like `pub(impl) fn`.
+//               The naming convention solution is convenient and simple, but still bloats the list
+//               of methods/functions availabe in a scope.
 //--
 pub trait Storage {
     /// The type of the value that can be stored in this storage.
@@ -53,17 +55,14 @@ pub trait Storage {
     //--
     type Config;
 
-    /// Creates a new [Storage] that is not guaranteed to be initialized.
+    /// Creates a new [Storage] that is not initialized.
     ///
-    /// This constructor should be used only when developing a custom
-    /// [Storage] and should never occur in contract code.
-    ///
-    /// To create a new [Storage] in a contract code, use the [Storage::new] constructor.
+    /// To create a new initialized [Storage], use the [Storage::init] constructor.
     //--
     //  Compiler will call this function in the storage element access.
     //  E.g. in `storage.x` to create `x`.
     //--
-    fn internal_create(self_key: &StorageKey) -> Self;
+    fn new(self_key: &StorageKey) -> Self;
 
     /// Creates a configuration information for configuring this [Storage].
     /// The [Storage] will be located at the `self_key` and has to store `values`.
@@ -78,7 +77,7 @@ pub trait Storage {
     //--
     const fn internal_get_config(self_key: &StorageKey, value: &Self::Value) -> Self::Config;
 
-    /// The [StorageLayout] of this [Storage]
+    /// The [StorageLayout] of this [Storage].
     ///
     /// This function should be used only when developing a custom
     /// [Storage] and should never occur in contract code.
@@ -89,17 +88,17 @@ pub trait Storage {
     /// This function is mainly used for obtaining a [StorageRef] to a [Storage].
     const fn self_key(&self) -> StorageKey;
 
-    /// Creates a new [Storage] that is guaranteed to be initialized to the `value`.
-    /// The [Storage] will be located at the `self_key` and will store the `value`.
+    /// Creates a new [Storage] that is initialized to the `value`.
+    /// The created [Storage] is located at the `self_key` and stores the `value`.
     //--
     // TODO-DISCUSS: Should we pass `&Self::Value` here or just `Self::Value`?
-    //               This is a general question which will be relevant when we
-    //               introduce references in the STD. Avoiding copies of data
-    //               but not having the move semantics. How much can we
+    //               This is a general question that is not only related to the storage API.
+    //               It will become relevant when we introduce references in the STD.
+    //               Avoiding copying data but not having the move semantics. How much can we
     //               optimize? How to avoid heap allocations? Etc.
     //--
     #[storage(read, write)]
-    fn new(self_key: &StorageKey, value: &Self::Value) -> Self;
+    fn init(self_key: &StorageKey, value: &Self::Value) -> Self;
 }
 
 /// Provides information to the compiler, during the configuration of the `storage`,
@@ -110,18 +109,6 @@ pub struct StorageConfig<TStoredValue>
 {
     storage_key: StorageKey,
     value: TStoredValue,
-}
-
-pub trait StorageDefault where Self: Storage {
-    #[storage(read, write)]
-    fn default(self_key: &StorageKey) -> Self;
-}
-
-impl StorageDefault for Storage where Self::Value: std::default::Default {
-    #[storage(read, write)]
-    fn default(self_key: &StorageKey) -> Self {
-        Self::new(self_key, Self::Value::default())
-    }
 }
 
 pub trait StoredValue where Self: Storage {

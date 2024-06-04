@@ -14,7 +14,7 @@ impl<T> Storage for StorageVec<T> where T: Storage {
     /// for the stored elements.
     type Config = (StorageConfig<u64>, [T::Config]);
 
-    fn internal_create(self_key: &StorageKey) -> Self {
+    fn new(self_key: &StorageKey) -> Self {
         Self {
             self_key: *self_key
         }
@@ -51,19 +51,19 @@ impl<T> Storage for StorageVec<T> where T: Storage {
     }
 
     #[storage(read, write)]
-    fn new(self_key: &StorageKey, elements: &[T::Value]) -> Self {
+    fn init(self_key: &StorageKey, elements: &[T::Value]) -> Self {
         // Store the length at the `self_key`.
         storage::internal::write(self_key, elements.len());
 
         let mut i = 0;
         while i < elements.len() {
             let element_self_key = Self::get_element_self_key(self_key, i);
-            T::new(element_self_key, &elements[i]);
+            T::init(element_self_key, &elements[i]);
 
             i += 1;
         }
 
-        internal_create(self_key)
+        new(self_key)
     }
 }
 
@@ -86,31 +86,40 @@ impl<T> StorageVec<T> where T: Storage {
         }
     }
 
+    /// Reverts if the [StorageVec] is uninitialized.
     #[storage(read)]
     pub fn len(&self) -> u64 {
-        //--
-        // Note that we always expect value. API ensures storage is properly initialized.
-        //--
-        storage::internal::read::<u64>(self.self_key).unwrap()
+        self.try_len().unwrap()
+    }
+
+    #[storage(read)]
+    pub fn try_len(&self) -> Option<u64> {
+        storage::internal::read::<u64>(self.self_key)
     }
 
     #[storage(read, write)]
     pub fn push(&mut self, value: &T::Value) {
-        let len = self.len();
+        let len = self.try_len().unwrap_or(0);
 
         // Store the value.
         let element_self_key = Self::get_element_self_key(self.self_key, len);
-        T::new(element_self_key, value);
+        T::init(element_self_key, value);
 
         // Store the new length.
         storage::internal::write(self.self_key, len + 1);
     }
 
     /// Removes the last element of the [StorageVec] and returns true if there was a removal,
-    /// or false if the vector was empty.
+    /// or false if the vector was empty or uninitialized.
+    //--
+    // TODO-DISCUSSION: Should we revert here if the `StorageVec` is uninitialized?
+    //                  And provide the `try_pop` accordingly?
+    //                  We should try to come up with good API design guidelines for
+    //                  similar cases.
+    //--
     #[storage(read, write)]
     pub fn pop(&mut self) -> bool {
-        let len = self.len();
+        let len = self.try_len().unwrap_or(0);
 
         if len <= 0 {
             return false;
@@ -131,7 +140,7 @@ impl<T> StorageVec<T> where T: Storage {
     }
 
     /// Removes the last element of the [StorageVec] and returns its value if there was a removal,
-    /// or `None` if the vector was empty.
+    /// or `None` if the vector was empty or uninitialized.
     ///
     /// This method can result in multiple storage reads and must,
     /// therefore, be used with caution and only if the popped content
@@ -140,14 +149,14 @@ impl<T> StorageVec<T> where T: Storage {
     pub fn pop_and_get_value(&mut self) -> Option<T::Value>
         where T: StoredValue
     {
-        let len = self.len();
+        let len = self.try_len().unwrap_or(0);
 
         if len <= 0 {
             return None;
         }
 
         let element_self_key = Self::get_element_self_key(self.self_key, len - 1);
-        let val = T::internal_create(element_self_key).value();
+        let val = T::new(element_self_key).value();
 
         // TODO-DISCUSS: See the above discussion in `pop` about clearing the spots.
 
@@ -156,15 +165,20 @@ impl<T> StorageVec<T> where T: Storage {
         Some(val)
     }
 
-    /// Gets the [Storage] stored at the `element_index`, or `None` if index is out of bounds.
+    /// Gets the [Storage] stored at the `element_index`, or `None` if index is out of bounds
+    /// or the [StorageVec] is uninitialized.
+    //--
+    // TODO-DISCUSSION: Similar question like above. Should we revert on uninitialized
+    //                  and provide `try_get` accordingly?
+    //--
     #[storage(read)]
     pub fn get(&self, element_index) -> Option<T> {
-        if self.len() <= index {
+        if self.try_len().unwrap_or(0) <= index {
             return None;
         }
 
         let element_self_key = Self::get_element_self_key(self.self_key, element_index);
-        Some(T::internal_create(element_self_key))
+        Some(T::new(element_self_key))
     }
 }
 
@@ -182,7 +196,7 @@ impl<T> StoredValue for StorageVec<T> where T: Storage + StoredValue {
         let mut i = 0;
         while i < len {
             let element_self_key = Self::get_element_self_key(self.self_key, i);
-            result += T::internal_create(element_self_key).value();
+            result += T::new(element_self_key).value();
 
             i += 1;
         }

@@ -25,7 +25,7 @@ impl<T> Storage for StorageBox<T> {
     type Value = T;
     type Config = StorageConfig<T>;
 
-    fn internal_create(self_key: &StorageKey) -> Self {
+    fn new(self_key: &StorageKey) -> Self {
         Self {
             self_key: *self_key
         }
@@ -47,22 +47,22 @@ impl<T> Storage for StorageBox<T> {
     }
 
     #[storage(read, write)]
-    fn new(self_key: &StorageKey, value: &T) -> Self {
+    fn init(self_key: &StorageKey, value: &T) -> Self {
         storage::internal::write(self_key, value);
-        internal_create(self_key)
+        new(self_key)
     }
 }
 
 impl StorageBox<T> {
-    // --
-    // There is no need for `try_read` because if the API is used
-    // consistently, the `StorageBox` will always contain a value.
-    // If the `internal_create` is used, then also the low-level
-    // calls should be used for checking if the data exists.
-    // --
+    /// Reverts if the [StorageBox] is uninitialized.
     #[storage(read)]
     fn read(&self) -> T {
         storage::internal::read::<T>(self.self_key).unwrap()
+    }
+
+    #[storage(read)]
+    fn try_read(&self) -> Option<T> {
+        storage::internal::read::<T>(self.self_key)
     }
 
     #[storage(read, write)]

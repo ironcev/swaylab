@@ -9,23 +9,23 @@
 // TODO-DISCUSS: See the comment on `Serializable` in the `storage_box.sw`.
 
 pub fn write<T>(storage_key: &StorageKey, value: &T) where T: std::marker::Serializable {
-    // --
+    //--
     // Here comes the same implementation as in the current `std::storage::storage_api::write`.
-    // --
+    //--
 }
 
 pub fn read<T>(storage_key: &StorageKey) -> Option<T>
     where T: std::marker::Serializable 
 { 
-    // --
+    //--
     // Here comes the same implementation as in the current `std::storage::storage_api::read`.
-    // --
+    //--
 }
 
 pub fn clear<T>(storage_key: &StorageKey) -> bool
     where T: std::marker::Serializable 
 {
-    // --
+    //--
     // Here comes the same implementation as in the current `std::storage::storage_api::clear`.
-    // --
+    //--
 }
