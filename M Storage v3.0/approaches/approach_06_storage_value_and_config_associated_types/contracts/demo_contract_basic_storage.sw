@@ -96,17 +96,14 @@ impl Demo for Contract {
 
         storage.vec_of_val_1.push(&2222);
 
-        let popped_val = storage.vec_of_val_1.pop_and_get_value();
-        assert_eq(popped_vale, Some(2222));
-
         // The result of `get` is always the stored `Storage`.
         let val = storage.vec_of_val_1.get(0).unwrap().read();
         assert_eq(val, 2222);
 
-        // `StorageVec` implements `StoredValue` and provides
-        // optimized access if the whole stored value is needed.
+        // `StorageVec` implements `DeepReadStorage` and provides
+        // optimized access if the entire stored value is needed.
         // Should be used rarely and with caution.
-        let content = storage.vec_of_val_1.value();
+        let content = storage.vec_of_val_1.deep_read();
         assert_eq(content, [2222])
 
         storage.vec_of_vec_1.push(&[]);

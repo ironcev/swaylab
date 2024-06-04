@@ -111,11 +111,26 @@ impl<T> StorageVec<T> where T: Storage {
 
     /// Removes the last element of the [StorageVec] and returns true if there was a removal,
     /// or false if the vector was empty or uninitialized.
+    ///
+    /// To get the last element before popping it use [StorageVec::last].
     //--
     // TODO-DISCUSSION: Should we revert here if the `StorageVec` is uninitialized?
     //                  And provide the `try_pop` accordingly?
     //                  We should try to come up with good API design guidelines for
     //                  similar cases.
+    //--
+    // TODO-DISCUSSION: Should we offer a method that pops and returned the popped value?
+    //                  This could be achieved with a `pop_deep_read` method defined as:
+    //
+    //                     pub fn pop_deep_read(&mut self) -> Option<T::Value> where T: DeepReadStorage
+    //
+    //                  The issue with such a method would be the failing semantic.
+    //                  What to do if popping is possible, but the deep read fails?
+    //                  We could defined it as reverting in that case and not popping.
+    //
+    //                  AS in other cases we then need to offer the `try` equivalent.
+    //                  E.g., `pop_try_deep_read` with a cumbersome returning type of `Option<Option<T::Value`.
+    //                  In that case we could successfuly pop even if the deep read fails.
     //--
     #[storage(read, write)]
     pub fn pop(&mut self) -> bool {
@@ -139,32 +154,6 @@ impl<T> StorageVec<T> where T: Storage {
         storage::internal::write(self.self_key, len - 1);
     }
 
-    /// Removes the last element of the [StorageVec] and returns its value if there was a removal,
-    /// or `None` if the vector was empty or uninitialized.
-    ///
-    /// This method can result in multiple storage reads and must,
-    /// therefore, be used with caution and only if the popped content
-    /// is actually needed.
-    #[storage(read, write)]
-    pub fn pop_and_get_value(&mut self) -> Option<T::Value>
-        where T: StoredValue
-    {
-        let len = self.try_len().unwrap_or(0);
-
-        if len <= 0 {
-            return None;
-        }
-
-        let element_self_key = Self::get_element_self_key(self.self_key, len - 1);
-        let val = T::new(element_self_key).value();
-
-        // TODO-DISCUSS: See the above discussion in `pop` about clearing the spots.
-
-        storage::internal::write(self.self_key, len - 1);
-
-        Some(val)
-    }
-
     /// Gets the [Storage] stored at the `element_index`, or `None` if index is out of bounds
     /// or the [StorageVec] is uninitialized.
     //--
@@ -180,27 +169,37 @@ impl<T> StorageVec<T> where T: Storage {
         let element_self_key = Self::get_element_self_key(self.self_key, element_index);
         Some(T::new(element_self_key))
     }
+
+    /* ... other `StorageVec` methods ... */
 }
 
-impl<T> StoredValue for StorageVec<T> where T: Storage + StoredValue {
-    /// Returns the complete content stored within the [StorageVec].
+impl<T> DeepReadStorage for StorageVec<T> where T: DeepReadStorage {
+    /// Returns the entire content stored within the [StorageVec].
     ///
     /// This method can result in multiple storage reads and must,
-    /// therefore, be used with caution and only if the whole content
+    /// therefore, be used with caution and only if the entire content
     /// is actually needed.
     #[storage(read)]
-    fn value(&self) -> Self::Value {
-        let len = self.len();
+    fn deep_read(&self) -> Self::Value {
+        try_deep_read().unwrap()
+    }
+
+    #[storage(read)]
+    fn try_deep_read(&self) -> Option<Self::Value> {
+        let len = match self.try_len() {
+            Some(len) => len,
+            None => return None,
+        };
 
         let result: Self::Value = [];
         let mut i = 0;
         while i < len {
             let element_self_key = Self::get_element_self_key(self.self_key, i);
-            result += T::new(element_self_key).value();
+            result += T::new(element_self_key).deep_read();
 
             i += 1;
         }
 
-        result
+        Some(result)
     }
 }
