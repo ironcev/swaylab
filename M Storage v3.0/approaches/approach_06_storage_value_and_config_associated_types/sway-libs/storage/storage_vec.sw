@@ -63,7 +63,7 @@ impl<T> Storage for StorageVec<T> where T: Storage {
             i += 1;
         }
 
-        new(self_key)
+        Self::new(self_key)
     }
 }
 

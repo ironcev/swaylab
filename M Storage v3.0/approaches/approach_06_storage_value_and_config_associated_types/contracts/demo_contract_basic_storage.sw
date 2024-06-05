@@ -34,7 +34,7 @@ storage {
 
     vec_of_vec_1: StorageVec<StorageVec<StorageBox<Struct>>> := [
         [],
-        [Struct::default],
+        [Struct::default()],
         [
             Struct::default(),
             Struct { x: 11, y: false },

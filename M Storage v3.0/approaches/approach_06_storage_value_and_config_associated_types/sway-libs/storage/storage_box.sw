@@ -2,7 +2,7 @@
 //                  do not contain pointers or references?
 //                  We want to storage-box only the types that can be safely memcopyed.
 //                  Note that this is not the same as `Copy` because `Copy` trait can be manually implemented.
-pub struct StorageBox<T> where T: std::marker::Serializable {
+pub struct StorageBox<T> where T: core::marker::Serializable {
     self_key: StorageKey,
 }
 
@@ -21,7 +21,7 @@ pub struct StorageBox<T> where T: std::marker::Serializable {
 //--
 impl<T> !Storage for StorageBox<T> where T: Storage { }
 
-impl<T> Storage for StorageBox<T> {
+impl<T> Storage for StorageBox<T> where T: core::marker::Serializable {
     type Value = T;
     type Config = StorageConfig<T>;
 
@@ -49,7 +49,7 @@ impl<T> Storage for StorageBox<T> {
     #[storage(read, write)]
     fn init(self_key: &StorageKey, value: &T) -> Self {
         storage::internal::write(self_key, value);
-        new(self_key)
+        Self::new(self_key)
     }
 }
 
@@ -57,7 +57,7 @@ impl StorageBox<T> {
     /// Reverts if the [StorageBox] is uninitialized.
     #[storage(read)]
     fn read(&self) -> T {
-        storage::internal::read::<T>(self.self_key).unwrap()
+        self.try_read().unwrap()
     }
 
     #[storage(read)]

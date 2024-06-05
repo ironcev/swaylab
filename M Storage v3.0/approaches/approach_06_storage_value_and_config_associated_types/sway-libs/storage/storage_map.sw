@@ -55,7 +55,7 @@ impl<K, V> Storage for StorageMap<K, V> where K: Hash, V: Storage {
             i += 1;
         }
 
-        new(self_key)
+        Self::new(self_key)
     }
 }
 
