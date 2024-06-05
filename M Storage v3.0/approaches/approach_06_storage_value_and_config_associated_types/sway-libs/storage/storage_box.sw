@@ -1,6 +1,6 @@
 // TODO-DISCUSSION: How to call the marker trait that marks the types that are, in Rust terms, Sized, and
 //                  do not contain pointers or references?
-//                  We want to box only the types that can be safely memcopyed.
+//                  We want to storage-box only the types that can be safely memcopyed.
 //                  Note that this is not the same as `Copy` because `Copy` trait can be manually implemented.
 pub struct StorageBox<T> where T: std::marker::Serializable {
     self_key: StorageKey,

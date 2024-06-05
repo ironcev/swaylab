@@ -46,13 +46,26 @@ pub enum StorageLayout {
 //               of methods/functions availabe in a scope.
 //--
 pub trait Storage {
-    /// The type of the value that can be stored in this storage.
+    /// The type of the value that can be stored in this [Storage].
     type Value;
-    /// The type of the configuration used to configure this storage.
-    //--
-    // TODO-IG: Strictily define and list possible combinations. Compiler will check and emit error here.
-    //          `TStoredValue` cannot be a `Storage`.
-    //--
+    /// The type that describes how this [Storage] stores its internal data and the
+    /// stored value within the storage.
+    ///
+    /// This type can be only one of the valid combinations of [StorageConfig<TValue>]s described below.
+    ///
+    /// Sway compiler will use this type to properly configure storage slots for the elements declared
+    /// in `storage` declarations.
+    ///
+    /// `Config` type is defined recursively as:
+    ///
+    /// ```ignore
+    /// <Config> := StorageConfig<TValue>
+    ///             | [<Config>]
+    ///             | (<Config>, ...);
+    /// ```
+    ///
+    /// Where `[<Config>]` represents a slice of `Config`s and `(<Config>, ...)` a tuple of arbitrary
+    /// many `Config`s.
     type Config;
 
     /// Creates a new [Storage] that is not initialized.
@@ -104,14 +117,17 @@ pub trait Storage {
 /// Provides information to the compiler, during the configuration of the `storage`,
 /// at which `storage_key` to store the `value`.
 ///
-/// This type should never be used in contract code.
-pub struct StorageConfig<TStoredValue>
+/// `TValue` cannot be a [Storage] or a [StorageConfig].
+///
+/// This struct should be used only when developing a custom
+/// [Storage] and should never occur in contract code.
+pub struct StorageConfig<TValue>
 {
     storage_key: StorageKey,
-    value: TStoredValue,
+    value: TValue,
 }
 
-/// A [Storage] that supports reading its entire stored value.
+/// A [Storage] that supports reading and retrieving its entire stored value.
 pub trait DeepReadStorage: Storage {
     /// Returns the entired value stored in the [Storage],
     /// or `None` if the [Storage] is uninitialized.
