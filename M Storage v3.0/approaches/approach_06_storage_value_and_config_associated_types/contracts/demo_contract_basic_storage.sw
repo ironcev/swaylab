@@ -54,6 +54,15 @@ storage {
             (333, [some_const_fn_that_creates_struct(true, Struct { x: 22, y: true }, "abc")]),
         ]),
     ],
+
+    //--
+    // If developers are not interested in configuring storage elements in the code, but just defining them,
+    // they can omit the `:=` operator if the type expected on the RHS implements `core::default::Default` trait.
+    //--
+    default_built_in: u64, // Same as `default_01: u64 := u64::default(),`.
+    default_struct: Struct, // `Struct` implements `core::default::Default`.
+    default_storage_vec: StorageVec<StorageBox<u64>>, // Slices implement `Default` and the default is an empty slice `[]`.
+    default_storage_map: StorageMap<str[3], StorageVec<StorageBox<u64>>>, // Slices implement `Default` and the default is an empty slice `[]`.
 }
 
 impl Demo for Contract {
