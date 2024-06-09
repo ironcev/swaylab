@@ -67,9 +67,14 @@ impl<K, V> StorageMap<K, V> where K: Hash, V: Storage {
     }
 
     #[storage(read, write)]
-    pub fn insert(&mut self, key: K, value: &V:Value)
-    {
+    pub fn insert(&mut self, key: K, value: &V:Value) -> V {
         let element_self_key = Self::get_element_self_key(&self_key, key);
-        V:init(element_self_key, value);
+        V:init(element_self_key, value)
+    }
+
+    #[storage(read)]
+    pub const fn get(&self, key: K) -> V {
+        let element_self_key = Self::get_element_self_key(&self_key, key);
+        V:new(element_self_key)
     }
 }

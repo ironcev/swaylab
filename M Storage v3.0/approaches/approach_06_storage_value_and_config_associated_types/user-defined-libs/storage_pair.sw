@@ -82,24 +82,24 @@ impl<A, B> StoragePair<A, B> where A: Storage, B: Storage {
     }
 
     #[storage(read)]
-    pub fn first(&self) -> A {
+    pub const fn first(&self) -> A {
         A::new(Self::get_first_element_self_key(&self.self_key))
     }
 
     #[storage(read)]
-    pub fn snd(&self) -> B {
+    pub const fn snd(&self) -> B {
         B::new(Self::get_snd_element_self_key(&self.self_key))
     }
 
     #[storage(read, write)]
-    pub fn set_first(&self, value: &A::Value) -> A {
+    pub fn set_first(&mut self, value: &A::Value) -> A {
         let first_element_self_key = Self::get_first_element_self_key(&self.self_key);
         A::init(&first_element_self_key, value)
         // TODO-IG: Deep clear.
     }
 
     #[storage(read, write)]
-    pub fn set_second(&self, value: &B::Value) -> B {
+    pub fn set_second(&mut self, value: &B::Value) -> B {
         let snd_element_self_key = Self::get_snd_element_self_key(&self.self_key);
         A::init(&snd_element_self_key, value)
         // TODO-IG: Deep clear.
