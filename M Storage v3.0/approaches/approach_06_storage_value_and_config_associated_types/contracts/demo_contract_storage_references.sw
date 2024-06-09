@@ -1,7 +1,7 @@
 contract;
 
 abi Demo {
-    #[storage(read, write)]
+    #[storage(write)]
     fn demo();
 }
 
@@ -42,7 +42,7 @@ storage {
 }
 
 impl Demo for Contract {
-    #[storage(read, write)]
+    #[storage(write)]
     fn demo() {
         //--
         // Storage references can be tested for null or dereferenced

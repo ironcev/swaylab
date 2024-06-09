@@ -113,7 +113,7 @@ pub trait Storage {
     //               Avoiding copying data but not having the move semantics. How much can we
     //               optimize? How to avoid heap allocations? Etc.
     //--
-    #[storage(read, write)]
+    #[storage(write)]
     fn init(self_key: &StorageKey, value: &Self::Value) -> Self;
 } {
     const fn as_ref(&self) -> StorageRef<Self> {
@@ -195,7 +195,7 @@ pub trait DeepReadStorage: Storage {
     ///
     /// Retrieving the entire stored value can require
     /// high amout of storage reads for certain storage
-    /// types. Therfore this method must always be
+    /// types. Therefore, this method must always be
     /// used with care and only if the entire value is
     /// actually needed.
     #[storage(read)]
@@ -205,4 +205,40 @@ pub trait DeepReadStorage: Storage {
     fn deep_read(&self) -> Self::Value {
         self.try_deep_read().unwrap()
     }
+}
+
+/// A [Storage] that supports removing its entire stored value
+/// from the storage by uninitializing the storage slots which
+/// were occupied by the stored value.
+pub trait DeepClearStorage: Storage {
+    /// Clears the entired value stored in the [Storage].
+    ///
+    /// This call always succeeds, even if the [Storage] is
+    /// uninitialized.
+    ///
+    /// Composable storage types usually offer specialized
+    /// methods for semantically clear the stored value.
+    /// To clear semantically means that the value will be removed
+    /// from the perspective of the storage type, but the
+    /// occupied storage slots will not necessarily be uninitialized.
+    ///
+    /// E.g., semantically clearing a [StorageVec] could simply set the length
+    /// of the vector to zero, without actually touching the stored
+    /// elements.
+    ///
+    /// Clearing the entire stored value should be used
+    /// only if clearing the entire value is actually needed.
+    ///
+    /// Not all storage types can clear the value
+    /// they store. E.g., a [StorageMap] is not aware of
+    /// all the elements stored and therefore cannot clear
+    /// all of them.
+    ///
+    /// Clearing the entire stored value can require
+    /// high amout of storage clears for certain storage
+    /// types. Therefore, this method must always be
+    /// used with care and only if clearing the entire value is
+    /// actually needed.
+    #[storage(write)]
+    fn deep_clear(&mut self);
 }

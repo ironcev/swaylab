@@ -1,14 +1,11 @@
 //! This module contains functions for low-level storage access.
 //! These functions should be used only when developing a custom
 //! [Storage] and should never occur in a contract code.
-//! Even for custom [Storage] implementations, unless a performance
-//! gain can be reached by manually controlling reading and
-//! writing to the storage, the preferable way of interacting
-//! with the storage is via [StorageBox] and [EncodedStorageBox].
 
 // TODO-DISCUSS: See the comment on `Serializable` in the `storage_box.sw`.
 use core::marker::Serializable;
 
+#[storage(write)]
 pub fn write<T>(storage_key: &StorageKey, value: &T)
 where T: Serializable
 {
@@ -17,6 +14,7 @@ where T: Serializable
     //--
 }
 
+#[storage(read)]
 pub fn read<T>(storage_key: &StorageKey) -> Option<T>
     where T: Serializable 
 { 
@@ -25,6 +23,11 @@ pub fn read<T>(storage_key: &StorageKey) -> Option<T>
     //--
 }
 
+//--
+// TODO-DISCUSSION: Should we also provide a function for clearing a certain number of elements of
+//                  the type `T`? This would, e.g., easy clearing a known number of bytes.
+//--
+#[storage(write)]
 pub fn clear<T>(storage_key: &StorageKey) -> bool
     where T: Serializable 
 {

@@ -1,7 +1,7 @@
 contract;
 
 abi Demo {
-    #[storage(read, write)]
+    #[storage(write)]
     fn demo();
 }
 
@@ -40,7 +40,7 @@ storage {
 }
 
 impl Demo for Contract {
-    #[storage(read, write)]
+    #[storage(write)]
     fn demo() {
         assert_eq(pair_1.first().read(), 123);
 

@@ -63,7 +63,7 @@ impl<T> Storage for StorageEncodedBox<T> where T: AbiEncode + AbiDecode {
         self.self_key
     }
 
-    #[storage(read, write)]
+    #[storage(write)]
     fn init(self_key: &StorageKey, value: &T) -> Self {
         let mut new_box = Self::new(self_key);
         new_box.write(value);
@@ -81,7 +81,7 @@ impl StorageEncodedBox<T> {
     #[storage(read)]
     fn try_read(&self) -> Option<T> {
         let encoded_value = /* ...
-           Read the lenght od the encoded value from the `self_key`
+           Read the length of the encoded value from the `self_key`
            and continue reading the `u8` content from the slots.
            If any of the reads fail, the `try_read` fails.
 
@@ -93,12 +93,12 @@ impl StorageEncodedBox<T> {
         Some(abi_decode::<T>(encoded_value))
     }
 
-    #[storage(read, write)]
+    #[storage(write)]
     fn write(&mut self, value: &T) {
         let encoded_value = encode::<T>(value);
 
         /* ...
-           Write the lenght od the `encoded_value` to the `self.self_key`
+           Write the length of the `encoded_value` to the `self.self_key`
            and continue writing its packed `u8` content to that and
            the consequtive slots.
 
@@ -110,7 +110,20 @@ impl StorageEncodedBox<T> {
            ...
         */
 
-        // TODO-IG: Clear remaining content discussion. Deep clear etc.
+        // TODO-IG: Deep clear.
+    }
+
+    #[storage(write)]
+    fn clear(&mut self) {
+        /* ...
+           Clear only the slot at the `self_key` by calling the `storage::internal::clear::<T>(<key>)`
+           where `T` is a type that guarantees a single slot gets cleared.
+           
+           TODO-DISCUSSION: See the discussion on clearing API in the `internal.sw`.
+           ...
+        */
+
+        // TODO-IG: Deep clear.
     }
 }
 
@@ -118,5 +131,19 @@ impl<T> DeepReadStorage for StorageEncodedBox<T> where T: AbiEncode + AbiDecode 
     #[storage(read)]
     fn try_deep_read(&self) -> Option<T> {
         self.try_read()
+    }
+}
+
+impl<T> DeepClearStorage for StorageEncodedBox<T> where T: AbiEncode + AbiDecode {
+    #[storage(write)]
+    fn deep_clear(&mut self) -> Option<T> {
+        /* ...
+           Read the length of the `encoded_value` and calculate the
+           optimal (minimal) number of calls to `storage::internal::clear(<key>)`
+           needed to clear the entire value from the storage.
+           
+           TODO-DISCUSSION: See the discussion on clearing API in the `internal.sw`.
+           ...
+        */
     }
 }

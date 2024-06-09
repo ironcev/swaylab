@@ -46,7 +46,7 @@ impl<T> Storage for StorageBox<T> where T: Serializable {
         self.self_key
     }
 
-    #[storage(read, write)]
+    #[storage(write)]
     fn init(self_key: &StorageKey, value: &T) -> Self {
         storage::internal::write(self_key, value);
         Self::new(self_key)
@@ -65,9 +65,14 @@ impl<T> StorageBox<T> where T: Serializable {
         storage::internal::read::<T>(self.self_key)
     }
 
-    #[storage(read, write)]
+    #[storage(write)]
     fn write(&mut self, value: &T) {
         storage::internal::write(self.self_key, value);
+    }
+
+    #[storage(write)]
+    fn clear(&mut self) {
+        storage::internal::clear::<T>(self.self_key);
     }
 }
 
@@ -75,5 +80,12 @@ impl<T> DeepReadStorage for StorageBox<T> where T: Serializable {
     #[storage(read)]
     fn try_deep_read(&self) -> Option<T> {
         self.try_read()
+    }
+}
+
+impl<T> DeepClearStorage for StorageBox<T> where T: Serializable {
+    #[storage(write)]
+    fn deep_clear(&mut self) {
+        self.clear()
     }
 }

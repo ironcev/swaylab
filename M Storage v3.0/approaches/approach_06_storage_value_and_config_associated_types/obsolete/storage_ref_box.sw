@@ -73,7 +73,7 @@ impl<T> Storage for StorageRefBox<TStorage> where TStorage: Storage {
         self.self_key
     }
 
-    #[storage(read, write)]
+    #[storage(write)]
     fn init(self_key: &StorageKey, value: &T) -> Self {
         storage::internal::write(self_key, value);
         Self::new(self_key)
@@ -102,12 +102,12 @@ impl<TStorage> StorageRefBox<TStorage> where TStorage: Storage {
         }
     }
 
-    #[storage(read, write)]
+    #[storage(write)]
     fn write_ref(&mut self, value: &TStorage) {
         storage::internal::write::<StorageRef<TStorage>>(self.self_key, value.as_ref());
     }
 
-    #[storage(read, write)]
+    #[storage(write)]
     fn write_null(&mut self) {
         storage::internal::write::<StorageRef<TStorage>>(self.self_key, StorageRef::<TStorage>::null());
     }

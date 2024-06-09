@@ -50,7 +50,7 @@ impl<T> Storage for StorageVec<T> where T: Storage {
         self.self_key
     }
 
-    #[storage(read, write)]
+    #[storage(write)]
     fn init(self_key: &StorageKey, elements: &[T::Value]) -> Self {
         // Store the length at the `self_key`.
         storage::internal::write(self_key, elements.len());
@@ -97,7 +97,7 @@ impl<T> StorageVec<T> where T: Storage {
         storage::internal::read::<u64>(self.self_key)
     }
 
-    #[storage(read, write)]
+    #[storage(write)]
     pub fn push(&mut self, value: &T::Value) {
         let len = self.try_len().unwrap_or(0);
 
@@ -132,7 +132,7 @@ impl<T> StorageVec<T> where T: Storage {
     //                  E.g., `pop_try_deep_read` with a cumbersome returning type of `Option<Option<T::Value`.
     //                  In that case we could successfuly pop even if the deep read fails.
     //--
-    #[storage(read, write)]
+    #[storage(write)]
     pub fn pop(&mut self) -> bool {
         let len = self.try_len().unwrap_or(0);
 
@@ -203,5 +203,25 @@ impl<T> DeepReadStorage for StorageVec<T> where T: DeepReadStorage {
         }
 
         Some(result)
+    }
+}
+
+impl<T> DeepClearStorage for StorageVec<T> where T: DeepClearStorage {
+    /// Clears the entire content stored within the [StorageVec].
+    ///
+    /// This method can result in multiple storage reads and writes and must,
+    /// therefore, be used with caution and only if clearing the entire content
+    /// is actually needed.
+    #[storage(read, write)]
+    fn deep_clear(&mut self) {
+        let len = match self.try_len().unwrap_or(0);
+
+        let mut i = 0;
+        while i < len {
+            let element_self_key = Self::get_element_self_key(&self.self_key, i);
+            T::new(element_self_key).deep_clear();
+
+            i += 1;
+        }
     }
 }
