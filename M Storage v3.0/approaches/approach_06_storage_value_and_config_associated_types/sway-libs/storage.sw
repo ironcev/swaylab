@@ -74,10 +74,15 @@ pub trait Storage {
     //--
     //  Compiler will call this function in the storage element access.
     //  E.g. in `storage.x` to create `x`.
+    //
+    //  Note that `new` is a `const` function. This allows us to use storage
+    //  elements when configuring other storage elements, e.g., to obtain
+    //  storage references within storage configuration. For an example,
+    //  see `demo_contract_storage_references.sw`.
     //--
-    fn new(self_key: &StorageKey) -> Self;
+    const fn new(self_key: &StorageKey) -> Self;
 
-    /// Creates a configuration information for configuring this [Storage].
+    /// Creates a configuration information for configuring an instance of this [Storage].
     /// The [Storage] will be located at the `self_key` and has to store `values`.
     ///
     /// This function should be used only when developing a custom
@@ -85,8 +90,8 @@ pub trait Storage {
     //--
     //  Compiler will call this function when generating storage slots.
     //  It will pass the `self_key` that it has generated for the storage element
-    //  and the `value` will be the the const evald configuration value,
-    //  the RHS of the `:=` operator.
+    //  and the `value` will be the the const evaluated configuration value
+    //  defined at the RHS of the `:=` operator.
     //--
     const fn internal_get_config(self_key: &StorageKey, value: &Self::Value) -> Self::Config;
 
@@ -97,8 +102,6 @@ pub trait Storage {
     const fn internal_layout() -> StorageLayout;
 
     /// The self key of this [Storage].
-    ///
-    /// This function is mainly used for obtaining a [StorageRef] to a [Storage].
     const fn self_key(&self) -> StorageKey;
 
     /// Creates a new [Storage] that is initialized to the `value`.
@@ -112,6 +115,10 @@ pub trait Storage {
     //--
     #[storage(read, write)]
     fn init(self_key: &StorageKey, value: &Self::Value) -> Self;
+} {
+    const fn as_ref(&self) -> StorageRef<Self> {
+        StorageRef::<Self>::Ref(self.self_key())
+    }
 }
 
 /// Provides information to the compiler, during the configuration of the `storage`,
@@ -123,8 +130,52 @@ pub trait Storage {
 /// [Storage] and should never occur in contract code.
 pub struct StorageConfig<TValue>
 {
-    storage_key: StorageKey,
-    value: TValue,
+    pub storage_key: StorageKey,
+    pub value: TValue,
+}
+
+/// Stores a reference to a [Storage] of type `TStorage`.
+///
+/// To create a [StorageRef::Ref] use [Storage::as_ref].
+///
+/// To create a null reference, use [StorageRef::Null].
+///
+/// Internally, a [StorageRef] stores the storage key
+/// of the referenced storage entity.
+///
+/// [StorageRef] requires two storage slots to store a reference.
+/// Consider using other, less storage consuming, approaches to "reference"
+/// storage entities. E.g., if they are stored in a [StorageVec], consider
+/// "referencing" them by storing their indices as "references".
+//--
+// This type is a type safe wrapper around `StorageKey` that
+// ensures we are always referencing and dereferencing a
+// proper `TStorage` type.
+//--
+pub enum StorageRef<TStorage> where TStorage: Storage {
+    Null: (),
+    Ref: StorageKey,
+}
+
+impl<TStorage> StorageRef<TStorage> where TStorage: Storage {
+    /// Reverts if the [StorageRef] is [StorageRef::Null].
+    fn deref(&self) -> TStorage {
+        self.try_deref().unwrap()
+    }
+
+    const fn try_deref(&self) -> Option<TStorage> {
+        match self {
+            Self::Null => None,
+            Self::Ref(storage_key) => Some(TStorage::new(storage_key)),
+        }
+    }
+
+    const fn is_null(&self) -> bool {
+        match self {
+            Self::Null => true,
+            _ => false,
+        }
+    }
 }
 
 /// A [Storage] that supports reading and retrieving its entire stored value.

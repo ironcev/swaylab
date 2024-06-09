@@ -18,13 +18,17 @@ impl<T> !Storage for StorageEncodedBox<T> where T: Storage { }
 
 //--
 // TODO-DISCUSSION: See discussion on `Serializable` in the `storage_box.sw`.
-//
+//--
+use core::marker::Serializable;
+
+//--
 // TODO-DISCUSSION: Shell we forbid encoded-boxing serializable types and thus force
 //                  them to be boxed in `StorageBox` or should this only be a compiler warning?
 //                  Essentially, if a type is `Serializable` encoding it in the storage
 //                  is a huge waste of computational and storage resources.
 //--
-impl<T> !Storage for StorageEncodedBox<T> where T: core::marker::Serializable { }
+
+impl<T> !Storage for StorageEncodedBox<T> where T: Serializable { }
 
 impl<T> Storage for StorageEncodedBox<T> where T: AbiEncode + AbiDecode {
     type Value = T;
@@ -34,7 +38,7 @@ impl<T> Storage for StorageEncodedBox<T> where T: AbiEncode + AbiDecode {
     //--
     type Config = StorageConfig<[u8]>; 
 
-    fn new(self_key: &StorageKey) -> Self {
+    const fn new(self_key: &StorageKey) -> Self {
         Self {
             self_key: *self_key
         }
@@ -110,7 +114,7 @@ impl StorageEncodedBox<T> {
     }
 }
 
-impl<T> DeepReadStorage for StorageBox<T> {
+impl<T> DeepReadStorage for StorageEncodedBox<T> where T: AbiEncode + AbiDecode {
     #[storage(read)]
     fn try_deep_read(&self) -> Option<T> {
         self.try_read()

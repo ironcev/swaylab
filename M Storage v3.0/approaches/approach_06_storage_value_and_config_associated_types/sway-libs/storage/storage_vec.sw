@@ -14,7 +14,7 @@ impl<T> Storage for StorageVec<T> where T: Storage {
     /// for the stored elements.
     type Config = (StorageConfig<u64>, [T::Config]);
 
-    fn new(self_key: &StorageKey) -> Self {
+    const fn new(self_key: &StorageKey) -> Self {
         Self {
             self_key: *self_key
         }
@@ -30,7 +30,7 @@ impl<T> Storage for StorageVec<T> where T: Storage {
         let elements_config: [T::Config] = [];
         let mut i = 0;
         while i < elements.len() {
-            let element_self_key = Self::get_element_self_key(self_key, i);
+            let element_self_key = Self::get_element_self_key(&self_key, i);
             elements_config += T::internal_get_config(&element_self_key, &elements[i]);
 
             i += 1;
@@ -57,8 +57,8 @@ impl<T> Storage for StorageVec<T> where T: Storage {
 
         let mut i = 0;
         while i < elements.len() {
-            let element_self_key = Self::get_element_self_key(self_key, i);
-            T::init(element_self_key, &elements[i]);
+            let element_self_key = Self::get_element_self_key(&self_key, i);
+            T::init(&element_self_key, &elements[i]);
 
             i += 1;
         }
@@ -102,7 +102,7 @@ impl<T> StorageVec<T> where T: Storage {
         let len = self.try_len().unwrap_or(0);
 
         // Store the value.
-        let element_self_key = Self::get_element_self_key(self.self_key, len);
+        let element_self_key = Self::get_element_self_key(&self.self_key, len);
         T::init(element_self_key, value);
 
         // Store the new length.
@@ -166,7 +166,7 @@ impl<T> StorageVec<T> where T: Storage {
             return None;
         }
 
-        let element_self_key = Self::get_element_self_key(self.self_key, element_index);
+        let element_self_key = Self::get_element_self_key(&self.self_key, element_index);
         Some(T::new(element_self_key))
     }
 
@@ -191,7 +191,7 @@ impl<T> DeepReadStorage for StorageVec<T> where T: DeepReadStorage {
         let result: Self::Value = [];
         let mut i = 0;
         while i < len {
-            let element_self_key = Self::get_element_self_key(self.self_key, i);
+            let element_self_key = Self::get_element_self_key(&self.self_key, i);
             match T::new(element_self_key).try_deep_read() {
                 Some(value) => {
                     result += value;

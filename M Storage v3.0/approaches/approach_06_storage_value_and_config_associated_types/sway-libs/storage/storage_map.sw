@@ -19,7 +19,7 @@ impl<K, V> Storage for StorageMap<K, V> where K: Hash, V: Storage {
     type Value = [(K, V::Value)];
     type Config = [V::Config];
 
-    fn new(self_key: &StorageKey) -> Self {
+    const fn new(self_key: &StorageKey) -> Self {
         Self {
             self_key: *self_key
         }
@@ -29,7 +29,7 @@ impl<K, V> Storage for StorageMap<K, V> where K: Hash, V: Storage {
         let elements_config: [V::Config] = [];
         let mut i = 0;
         while i < elements.len() {
-            let element_self_key = Self::get_element_self_key(self_key, elements[i].0);
+            let element_self_key = Self::get_element_self_key(&self_key, elements[i].0);
             elements_config += T::internal_get_config(&element_self_key, &elements[i].1);
 
             i += 1;
@@ -49,7 +49,7 @@ impl<K, V> Storage for StorageMap<K, V> where K: Hash, V: Storage {
     fn init(self_key: &StorageKey, elements: &[(K, V::Value)]) -> Self {
         let mut i = 0;
         while i < elements.len() {
-            let element_self_key = Self::get_element_self_key(self_key, elements[i].0);
+            let element_self_key = Self::get_element_self_key(&self_key, elements[i].0);
             T::init(element_self_key, &elements[i].1);
 
             i += 1;
@@ -69,7 +69,7 @@ impl<K, V> StorageMap<K, V> where K: Hash, V: Storage {
     #[storage(read, write)]
     pub fn insert(&mut self, key: K, value: &V:Value)
     {
-        let element_self_key = Self::get_element_self_key(self_key, key);
+        let element_self_key = Self::get_element_self_key(&self_key, key);
         V:init(element_self_key, value);
     }
 }

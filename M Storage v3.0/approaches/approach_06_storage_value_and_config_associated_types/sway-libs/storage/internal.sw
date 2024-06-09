@@ -7,15 +7,18 @@
 //! with the storage is via [StorageBox] and [EncodedStorageBox].
 
 // TODO-DISCUSS: See the comment on `Serializable` in the `storage_box.sw`.
+use core::marker::Serializable;
 
-pub fn write<T>(storage_key: &StorageKey, value: &T) where T: std::marker::Serializable {
+pub fn write<T>(storage_key: &StorageKey, value: &T)
+where T: Serializable
+{
     //--
     // Here comes the same implementation as in the current `std::storage::storage_api::write`.
     //--
 }
 
 pub fn read<T>(storage_key: &StorageKey) -> Option<T>
-    where T: std::marker::Serializable 
+    where T: Serializable 
 { 
     //--
     // Here comes the same implementation as in the current `std::storage::storage_api::read`.
@@ -23,7 +26,7 @@ pub fn read<T>(storage_key: &StorageKey) -> Option<T>
 }
 
 pub fn clear<T>(storage_key: &StorageKey) -> bool
-    where T: std::marker::Serializable 
+    where T: Serializable 
 {
     //--
     // Here comes the same implementation as in the current `std::storage::storage_api::clear`.

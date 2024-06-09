@@ -2,11 +2,11 @@
 //                  do not contain pointers or references?
 //                  We want to storage-box only the types that can be safely memcopyed.
 //                  Note that this is not the same as `Copy` because `Copy` trait can be manually implemented.
-pub struct StorageBox<T> where T: core::marker::Serializable {
+use core::marker::Serializable;
+
+pub struct StorageBox<T> where T: Serializable {
     self_key: StorageKey,
 }
-
-// TODO-IG: Shell we impl !Storage EncodedStorageBox<T> where T: Serializable. Or should this only be a warning?
 
 //--
 // A `StorageBox` cannot contain other `Storage`s.
@@ -21,11 +21,11 @@ pub struct StorageBox<T> where T: core::marker::Serializable {
 //--
 impl<T> !Storage for StorageBox<T> where T: Storage { }
 
-impl<T> Storage for StorageBox<T> where T: core::marker::Serializable {
+impl<T> Storage for StorageBox<T> where T: Serializable {
     type Value = T;
     type Config = StorageConfig<T>;
 
-    fn new(self_key: &StorageKey) -> Self {
+    const fn new(self_key: &StorageKey) -> Self {
         Self {
             self_key: *self_key
         }
@@ -53,7 +53,7 @@ impl<T> Storage for StorageBox<T> where T: core::marker::Serializable {
     }
 }
 
-impl StorageBox<T> {
+impl<T> StorageBox<T> where T: Serializable {
     /// Reverts if the [StorageBox] is uninitialized.
     #[storage(read)]
     fn read(&self) -> T {
@@ -71,7 +71,7 @@ impl StorageBox<T> {
     }
 }
 
-impl<T> DeepReadStorage for StorageBox<T> {
+impl<T> DeepReadStorage for StorageBox<T> where T: Serializable {
     #[storage(read)]
     fn try_deep_read(&self) -> Option<T> {
         self.try_read()
