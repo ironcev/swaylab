@@ -1,0 +1,13 @@
+[[package]]
+name = "core"
+source = "path+from-root-986B3250A5108E13"
+
+[[package]]
+name = "std"
+source = "path+from-root-986B3250A5108E13"
+dependencies = ["core"]
+
+[[package]]
+name = "temp_contract"
+source = "member"
+dependencies = ["std"]
