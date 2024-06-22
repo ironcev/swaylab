@@ -6,5 +6,5 @@ name = "temp_contract"
 
 [dependencies]
 # core = { path = "../../sway/sway-lib-core" }
-std = { path = "../../sway/sway-lib-std" }
+# std = { path = "../../sway/sway-lib-std" }
 
