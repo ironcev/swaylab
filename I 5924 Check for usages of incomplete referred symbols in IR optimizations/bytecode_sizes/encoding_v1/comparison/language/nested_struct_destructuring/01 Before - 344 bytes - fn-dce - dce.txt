@@ -1,0 +1,198 @@
+// IR: [dce] Dead code elimination
+script {
+    pub entry fn __entry() -> slice, !1 {
+        local { u64, u64, u64 } __anon_00
+        local { u64, u64, u64 } __anon_000
+        local { u64, u64, u64 } __anon_01
+        local { u64, u64 } __anon_10
+        local { u64, u64, u64 } __anon_100
+        local { { u64, u64 }, { u64, u64 } } __anon_11
+        local { u64, u64 } __anon_110
+        local { { u64, u64, u64 } } __anon_12
+        local { { u64, u64, u64 } } __anon_20
+        local { u64, u64 } __anon_9
+        local { { u64, u64 }, { u64, u64 } } __destructured_struct_4
+        local { u64, u64 } __destructured_struct_5
+        local { { u64, u64, u64 } } buffer
+        local { { u64, u64 }, { u64, u64 } } line
+        local { u64, u64 } point1
+        local { u64, u64 } point2
+        local u64 result
+        local u64 x2
+
+        entry():
+        v0 = get_local ptr { u64, u64 }, __anon_9, !5
+        v1 = const u64 0
+        v2 = get_elem_ptr v0, ptr u64, v1, !2
+        v3 = const u64 0, !6
+        store v3 to v2, !7
+        v4 = const u64 1
+        v5 = get_elem_ptr v0, ptr u64, v4, !2
+        v6 = const u64 0, !8
+        store v6 to v5, !9
+        v7 = load v0, !2
+        v8 = get_local ptr { u64, u64 }, point1, !11
+        store v7 to v8, !12
+        v9 = get_local ptr { u64, u64 }, __anon_10, !14
+        v10 = const u64 0
+        v11 = get_elem_ptr v9, ptr u64, v10, !2
+        v12 = const u64 1, !15
+        store v12 to v11, !16
+        v13 = const u64 1
+        v14 = get_elem_ptr v9, ptr u64, v13, !2
+        v15 = const u64 1, !17
+        store v15 to v14, !18
+        v16 = load v9, !2
+        v17 = get_local ptr { u64, u64 }, point2, !20
+        store v16 to v17, !21
+        v18 = get_local ptr { u64, u64 }, point1, !23
+        v19 = load v18, !2
+        v20 = get_local ptr { u64, u64 }, point2, !25
+        v21 = load v20, !2
+        v22 = get_local ptr { { u64, u64 }, { u64, u64 } }, __anon_11, !27
+        v23 = const u64 0
+        v24 = get_elem_ptr v22, ptr { u64, u64 }, v23, !2
+        store v19 to v24, !28
+        v25 = const u64 1
+        v26 = get_elem_ptr v22, ptr { u64, u64 }, v25, !2
+        store v21 to v26, !29
+        v27 = load v22, !2
+        v28 = get_local ptr { { u64, u64 }, { u64, u64 } }, line, !31
+        store v27 to v28, !32
+        v29 = get_local ptr { { u64, u64 }, { u64, u64 } }, line, !34
+        v30 = load v29, !2
+        v31 = get_local ptr { { u64, u64 }, { u64, u64 } }, __destructured_struct_4, !36
+        store v30 to v31, !37
+        v32 = get_local ptr { { u64, u64 }, { u64, u64 } }, __destructured_struct_4, !38
+        v33 = const u64 0
+        v34 = get_elem_ptr v32, ptr { u64, u64 }, v33, !40
+        v35 = load v34, !2
+        v36 = get_local ptr { u64, u64 }, __destructured_struct_5, !41
+        store v35 to v36, !42
+        v37 = get_local ptr { u64, u64 }, __destructured_struct_5, !43
+        v38 = const u64 0
+        v39 = get_elem_ptr v37, ptr u64, v38, !45
+        v40 = load v39, !2
+        v41 = get_local ptr u64, x2, !46
+        store v40 to v41, !47
+        v42 = get_local ptr u64, x2, !49
+        v43 = load v42, !2
+        br block0(v43), !2
+
+        block0(v44: u64):
+        v45 = get_local ptr u64, result, !50
+        store v44 to v45, !50
+        v46 = get_local ptr u64, result, !51
+        v47 = load v46
+        v48 = const u64 1024
+        v49 = asm(cap: v48) -> u64 hp, !55 {
+            aloc   cap
+        }
+        v50 = int_to_ptr v49 to ptr u8, !56
+        v51 = ptr_to_int v50 to u64, !57
+        v52 = get_local ptr { u64, u64, u64 }, __anon_00, !58
+        v53 = const u64 0
+        v54 = get_elem_ptr v52, ptr u64, v53, !59
+        store v51 to v54, !60
+        v55 = const u64 1
+        v56 = get_elem_ptr v52, ptr u64, v55, !61
+        store v48 to v56, !62
+        v57 = const u64 2
+        v58 = get_elem_ptr v52, ptr u64, v57, !63
+        v59 = const u64 0
+        store v59 to v58, !64
+        v60 = asm(buffer: v52) -> { u64, u64, u64 } buffer, !65 {
+        }
+        v61 = get_local ptr { { u64, u64, u64 } }, __anon_12, !67
+        v62 = const u64 0
+        v63 = get_elem_ptr v61, ptr { u64, u64, u64 }, v62, !68
+        store v60 to v63, !69
+        v64 = load v61, !70
+        br encode_1_block0(v64), !71
+
+        encode_1_block0(v65: { { u64, u64, u64 } }):
+        v66 = ptr_to_int v65 to u64, !73
+        v67 = int_to_ptr v66 to ptr { { u64, u64, u64 } }, !74
+        v68 = const u64 0
+        v69 = get_elem_ptr v67, ptr { u64, u64, u64 }, v68, !76
+        v70 = load v69, !77
+        v71 = asm(buffer: v70) -> { u64, u64, u64 } buffer, !78 {
+        }
+        v72 = get_local ptr { u64, u64, u64 }, __anon_000, !79
+        store v71 to v72, !80
+        v73 = const u64 0
+        v74 = get_elem_ptr v72, ptr u64, v73, !81
+        v75 = load v74, !82
+        v76 = int_to_ptr v75 to ptr u8, !83
+        v77 = const u64 1
+        v78 = get_elem_ptr v72, ptr u64, v77, !84
+        v79 = load v78, !85
+        v80 = const u64 2
+        v81 = get_elem_ptr v72, ptr u64, v80, !86
+        v82 = load v81, !87
+        v83 = ptr_to_int v76 to u64, !88
+        v84 = add v83, v82, !89
+        v85 = int_to_ptr v84 to ptr u64, !90
+        store v47 to v85, !91
+        v86 = const u64 8
+        v87 = add v82, v86, !92
+        v88 = ptr_to_int v76 to u64, !93
+        v89 = get_local ptr { u64, u64, u64 }, __anon_100, !94
+        v90 = const u64 0
+        v91 = get_elem_ptr v89, ptr u64, v90, !95
+        store v88 to v91, !96
+        v92 = const u64 1
+        v93 = get_elem_ptr v89, ptr u64, v92, !97
+        store v79 to v93, !98
+        v94 = const u64 2
+        v95 = get_elem_ptr v89, ptr u64, v94, !99
+        store v87 to v95, !100
+        v96 = asm(buffer: v89) -> { u64, u64, u64 } buffer, !101 {
+        }
+        v97 = get_local ptr { { u64, u64, u64 } }, __anon_20, !103
+        v98 = const u64 0
+        v99 = get_elem_ptr v97, ptr { u64, u64, u64 }, v98, !104
+        store v96 to v99, !105
+        v100 = load v97, !106
+        br encode_1_block1(v100), !107
+
+        encode_1_block1(v101: { { u64, u64, u64 } }):
+        v102 = get_local ptr { { u64, u64, u64 } }, buffer, !109
+        store v101 to v102, !110
+        v103 = get_local ptr { { u64, u64, u64 } }, buffer, !112
+        v104 = load v103, !52
+        v105 = ptr_to_int v104 to u64, !114
+        v106 = int_to_ptr v105 to ptr { { u64, u64, u64 } }, !115
+        v107 = const u64 0
+        v108 = get_elem_ptr v106, ptr { u64, u64, u64 }, v107, !116
+        v109 = load v108, !117
+        v110 = asm(buffer: v109) -> { u64, u64, u64 } buffer, !118 {
+        }
+        v111 = get_local ptr { u64, u64, u64 }, __anon_01, !119
+        store v110 to v111, !120
+        v112 = const u64 0
+        v113 = get_elem_ptr v111, ptr u64, v112, !121
+        v114 = load v113, !122
+        v115 = int_to_ptr v114 to ptr u8, !123
+        v116 = const u64 2
+        v117 = get_elem_ptr v111, ptr u64, v116, !124
+        v118 = load v117, !125
+        v119 = ptr_to_int v115 to u64, !126
+        v120 = get_local ptr { u64, u64 }, __anon_110, !127
+        v121 = const u64 0
+        v122 = get_elem_ptr v120, ptr u64, v121, !128
+        store v119 to v122, !129
+        v123 = const u64 1
+        v124 = get_elem_ptr v120, ptr u64, v123, !130
+        store v118 to v124, !131
+        v125 = asm(s: v120) -> slice s, !132 {
+        }
+        br encode_1_block2(v125), !133
+
+        encode_1_block2(v126: slice):
+        br block1(v126), !52
+
+        block1(v127: slice):
+        ret slice v127
+    }
+}

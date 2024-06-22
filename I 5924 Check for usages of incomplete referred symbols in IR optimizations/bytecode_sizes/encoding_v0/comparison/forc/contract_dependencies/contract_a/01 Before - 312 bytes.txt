@@ -1,0 +1,317 @@
+// IR: Initial
+contract {
+    pub entry fn test_function<2151bd4b>() -> (), !1 {
+        local b256 CONTRACT_B
+        local { b256 } _contract_b_id
+        local { b256 } _contract_c_id
+
+        entry():
+        v0 = get_local ptr b256, CONTRACT_B, !2
+        v1 = const b256 0x1f212e1f2e7b5a8cff18d994b7b7faa61db1a89cbf697facc518f6b6c8430196
+        store v1 to v0, !2
+        v2 = get_local ptr b256, CONTRACT_B, !3
+        v3 = load v2
+        v4 = call from_0(v3), !4
+        v5 = get_local ptr { b256 }, _contract_b_id, !5
+        store v4 to v5, !5
+        v6 = const b256 0x22f840cd4af724e7257dd01ce315d907d694e417778b5f16b205a918baee092e
+        v7 = call from_0(v6), !6
+        v8 = get_local ptr { b256 }, _contract_c_id, !7
+        store v7 to v8, !7
+        v9 = const unit ()
+        ret () v9
+    }
+
+    pub fn from_0(bits !9: b256) -> { b256 }, !10 {
+        local { b256 } __anon_0
+
+        entry(bits: b256):
+        v0 = get_local ptr { b256 }, __anon_0, !11
+        v1 = const u64 0
+        v2 = get_elem_ptr v0, ptr b256, v1
+        store bits to v2, !11
+        v3 = load v0
+        ret { b256 } v3
+    }
+}
+
+// IR: [dce] Dead code elimination
+contract {
+    pub entry fn test_function<2151bd4b>() -> (), !1 {
+        local b256 CONTRACT_B
+
+        entry():
+        v0 = get_local ptr b256, CONTRACT_B, !2
+        v1 = const b256 0x1f212e1f2e7b5a8cff18d994b7b7faa61db1a89cbf697facc518f6b6c8430196
+        store v1 to v0, !2
+        v2 = get_local ptr b256, CONTRACT_B, !3
+        v3 = load v2
+        v4 = call from_0(v3), !4
+        v5 = const b256 0x22f840cd4af724e7257dd01ce315d907d694e417778b5f16b205a918baee092e
+        v6 = call from_0(v5), !5
+        v7 = const unit ()
+        ret () v7
+    }
+
+    pub fn from_0(bits !7: b256) -> { b256 }, !8 {
+        local { b256 } __anon_0
+
+        entry(bits: b256):
+        v0 = get_local ptr { b256 }, __anon_0, !9
+        v1 = const u64 0
+        v2 = get_elem_ptr v0, ptr b256, v1
+        store bits to v2, !9
+        v3 = load v0
+        ret { b256 } v3
+    }
+}
+
+// IR: [const-demotion] Demotion of by-value constants to by-reference
+contract {
+    pub entry fn test_function<2151bd4b>() -> (), !1 {
+        local b256 CONTRACT_B
+        local b256 __const = const b256 0x1f212e1f2e7b5a8cff18d994b7b7faa61db1a89cbf697facc518f6b6c8430196
+        local b256 __const0 = const b256 0x22f840cd4af724e7257dd01ce315d907d694e417778b5f16b205a918baee092e
+
+        entry():
+        v0 = get_local ptr b256, __const
+        v1 = load v0
+        v2 = get_local ptr b256, __const0
+        v3 = load v2
+        v4 = get_local ptr b256, CONTRACT_B, !2
+        store v1 to v4, !2
+        v5 = get_local ptr b256, CONTRACT_B, !3
+        v6 = load v5
+        v7 = call from_0(v6), !4
+        v8 = call from_0(v3), !5
+        v9 = const unit ()
+        ret () v9
+    }
+
+    pub fn from_0(bits !7: b256) -> { b256 }, !8 {
+        local { b256 } __anon_0
+
+        entry(bits: b256):
+        v0 = get_local ptr { b256 }, __anon_0, !9
+        v1 = const u64 0
+        v2 = get_elem_ptr v0, ptr b256, v1
+        store bits to v2, !9
+        v3 = load v0
+        ret { b256 } v3
+    }
+}
+
+// IR: [arg-demotion] Demotion of by-value function arguments to by-reference
+contract {
+    pub entry fn test_function<2151bd4b>() -> (), !1 {
+        local b256 CONTRACT_B
+        local b256 __const = const b256 0x1f212e1f2e7b5a8cff18d994b7b7faa61db1a89cbf697facc518f6b6c8430196
+        local b256 __const0 = const b256 0x22f840cd4af724e7257dd01ce315d907d694e417778b5f16b205a918baee092e
+        local b256 __tmp_arg
+        local b256 __tmp_arg0
+
+        entry():
+        v0 = get_local ptr b256, __const
+        v1 = load v0
+        v2 = get_local ptr b256, __const0
+        v3 = load v2
+        v4 = get_local ptr b256, CONTRACT_B, !2
+        store v1 to v4, !2
+        v5 = get_local ptr b256, CONTRACT_B, !3
+        v6 = load v5
+        v7 = get_local ptr b256, __tmp_arg
+        store v6 to v7
+        v8 = call from_0(v7)
+        v9 = get_local ptr b256, __tmp_arg0
+        store v3 to v9
+        v10 = call from_0(v9)
+        v11 = const unit ()
+        ret () v11
+    }
+
+    pub fn from_0(bits: ptr b256) -> { b256 }, !5 {
+        local { b256 } __anon_0
+
+        entry(bits: ptr b256):
+        v0 = load bits
+        v1 = get_local ptr { b256 }, __anon_0, !6
+        v2 = const u64 0
+        v3 = get_elem_ptr v1, ptr b256, v2
+        store v0 to v3, !6
+        v4 = load v1
+        ret { b256 } v4
+    }
+}
+
+// IR: [ret-demotion] Demotion of by-value function return values to by-reference
+contract {
+    pub entry fn test_function<2151bd4b>() -> (), !1 {
+        local b256 CONTRACT_B
+        local b256 __const = const b256 0x1f212e1f2e7b5a8cff18d994b7b7faa61db1a89cbf697facc518f6b6c8430196
+        local b256 __const0 = const b256 0x22f840cd4af724e7257dd01ce315d907d694e417778b5f16b205a918baee092e
+        local { b256 } __ret_val
+        local { b256 } __ret_val0
+        local b256 __tmp_arg
+        local b256 __tmp_arg0
+
+        entry():
+        v0 = get_local ptr b256, __const
+        v1 = load v0
+        v2 = get_local ptr b256, __const0
+        v3 = load v2
+        v4 = get_local ptr b256, CONTRACT_B, !2
+        store v1 to v4, !2
+        v5 = get_local ptr b256, CONTRACT_B, !3
+        v6 = load v5
+        v7 = get_local ptr b256, __tmp_arg
+        store v6 to v7
+        v8 = get_local ptr { b256 }, __ret_val
+        v9 = call from_0(v7, v8)
+        v10 = load v9
+        v11 = get_local ptr b256, __tmp_arg0
+        store v3 to v11
+        v12 = get_local ptr { b256 }, __ret_val0
+        v13 = call from_0(v11, v12)
+        v14 = load v13
+        v15 = const unit ()
+        ret () v15
+    }
+
+    pub fn from_0(bits: ptr b256, __ret_value: ptr { b256 }) -> ptr { b256 }, !5 {
+        local { b256 } __anon_0
+
+        entry(bits: ptr b256, __ret_value: ptr { b256 }):
+        v0 = load bits
+        v1 = get_local ptr { b256 }, __anon_0, !6
+        v2 = const u64 0
+        v3 = get_elem_ptr v1, ptr b256, v2
+        store v0 to v3, !6
+        v4 = load v1
+        store v4 to __ret_value
+        ret ptr { b256 } __ret_value
+    }
+}
+
+// IR: [memcpyopt] Optimizations related to MemCopy instructions
+contract {
+    pub entry fn test_function<2151bd4b>() -> (), !1 {
+        local b256 CONTRACT_B
+        local b256 __const = const b256 0x1f212e1f2e7b5a8cff18d994b7b7faa61db1a89cbf697facc518f6b6c8430196
+        local b256 __const0 = const b256 0x22f840cd4af724e7257dd01ce315d907d694e417778b5f16b205a918baee092e
+        local { b256 } __ret_val
+        local { b256 } __ret_val0
+        local b256 __tmp_arg
+        local b256 __tmp_arg0
+
+        entry():
+        v0 = get_local ptr b256, __const
+        v1 = load v0
+        v2 = get_local ptr b256, __const0
+        v3 = load v2
+        v4 = get_local ptr b256, __const, !2
+        v5 = get_local ptr b256, __const, !3
+        v6 = load v5
+        v7 = get_local ptr b256, __tmp_arg
+        mem_copy_val v7, v5
+        v8 = get_local ptr { b256 }, __ret_val
+        v9 = call from_0(v7, v8)
+        v10 = load v9
+        v11 = get_local ptr b256, __tmp_arg0
+        mem_copy_val v11, v2
+        v12 = get_local ptr { b256 }, __ret_val0
+        v13 = call from_0(v11, v12)
+        v14 = load v13
+        v15 = const unit ()
+        ret () v15
+    }
+
+    pub fn from_0(bits: ptr b256, __ret_value: ptr { b256 }) -> ptr { b256 }, !5 {
+        local { b256 } __anon_0
+
+        entry(bits: ptr b256, __ret_value: ptr { b256 }):
+        v0 = load bits
+        v1 = get_local ptr { b256 }, __anon_0, !6
+        v2 = const u64 0
+        v3 = get_elem_ptr v1, ptr b256, v2
+        mem_copy_val v3, bits
+        v4 = load v1
+        mem_copy_val __ret_value, v1
+        ret ptr { b256 } __ret_value
+    }
+}
+
+// IR: [dce] Dead code elimination
+contract {
+    pub entry fn test_function<2151bd4b>() -> (), !1 {
+        local b256 __const = const b256 0x1f212e1f2e7b5a8cff18d994b7b7faa61db1a89cbf697facc518f6b6c8430196
+        local b256 __const0 = const b256 0x22f840cd4af724e7257dd01ce315d907d694e417778b5f16b205a918baee092e
+        local { b256 } __ret_val
+        local { b256 } __ret_val0
+        local b256 __tmp_arg
+        local b256 __tmp_arg0
+
+        entry():
+        v0 = get_local ptr b256, __const0
+        v1 = get_local ptr b256, __const, !2
+        v2 = get_local ptr b256, __tmp_arg
+        mem_copy_val v2, v1
+        v3 = get_local ptr { b256 }, __ret_val
+        v4 = call from_0(v2, v3)
+        v5 = get_local ptr b256, __tmp_arg0
+        mem_copy_val v5, v0
+        v6 = get_local ptr { b256 }, __ret_val0
+        v7 = call from_0(v5, v6)
+        v8 = const unit ()
+        ret () v8
+    }
+
+    pub fn from_0(bits: ptr b256, __ret_value: ptr { b256 }) -> ptr { b256 }, !4 {
+        local { b256 } __anon_0
+
+        entry(bits: ptr b256, __ret_value: ptr { b256 }):
+        v0 = get_local ptr { b256 }, __anon_0, !5
+        v1 = const u64 0
+        v2 = get_elem_ptr v0, ptr b256, v1
+        mem_copy_val v2, bits
+        mem_copy_val __ret_value, v0
+        ret ptr { b256 } __ret_value
+    }
+}
+
+// IR: Final
+contract {
+    pub entry fn test_function<2151bd4b>() -> (), !1 {
+        local b256 __const = const b256 0x1f212e1f2e7b5a8cff18d994b7b7faa61db1a89cbf697facc518f6b6c8430196
+        local b256 __const0 = const b256 0x22f840cd4af724e7257dd01ce315d907d694e417778b5f16b205a918baee092e
+        local { b256 } __ret_val
+        local { b256 } __ret_val0
+        local b256 __tmp_arg
+        local b256 __tmp_arg0
+
+        entry():
+        v0 = get_local ptr b256, __const0
+        v1 = get_local ptr b256, __const, !2
+        v2 = get_local ptr b256, __tmp_arg
+        mem_copy_val v2, v1
+        v3 = get_local ptr { b256 }, __ret_val
+        v4 = call from_0(v2, v3)
+        v5 = get_local ptr b256, __tmp_arg0
+        mem_copy_val v5, v0
+        v6 = get_local ptr { b256 }, __ret_val0
+        v7 = call from_0(v5, v6)
+        v8 = const unit ()
+        ret () v8
+    }
+
+    pub fn from_0(bits: ptr b256, __ret_value: ptr { b256 }) -> ptr { b256 }, !4 {
+        local { b256 } __anon_0
+
+        entry(bits: ptr b256, __ret_value: ptr { b256 }):
+        v0 = get_local ptr { b256 }, __anon_0, !5
+        v1 = const u64 0
+        v2 = get_elem_ptr v0, ptr b256, v1
+        mem_copy_val v2, bits
+        mem_copy_val __ret_value, v0
+        ret ptr { b256 } __ret_value
+    }
+}

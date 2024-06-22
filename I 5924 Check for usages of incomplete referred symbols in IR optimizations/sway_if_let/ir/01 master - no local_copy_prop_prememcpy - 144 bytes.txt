@@ -1,0 +1,969 @@
+// IR: Initial
+script {
+    entry fn main() -> u64, !1 {
+        local { u64, ( u64 | u64 | u64 ) } __anon_0
+        local { u64, ( u64 | u64 | u64 ) } __matched_value_1
+        local { u64, ( u64 | u64 | u64 ) } __matched_value_2
+        local { u64, ( u64 | u64 | u64 ) } __matched_value_3
+        local u64 _x
+        local u64 _x_
+        local u64 _x__
+        local u64 result_1
+        local u64 result_2
+        local u64 result_3
+        local { u64, ( u64 | u64 | u64 ) } x
+
+        entry():
+        v0 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __anon_0, !2
+        v1 = const u64 0
+        v2 = get_elem_ptr v0, ptr u64, v1, !2
+        v3 = const u64 0, !2
+        store v3 to v2, !2
+        v4 = const u64 1
+        v5 = const u64 0
+        v6 = get_elem_ptr v0, ptr u64, v4, v5, !2
+        v7 = const u64 112233, !3
+        store v7 to v6, !2
+        v8 = load v0
+        v9 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !4
+        store v8 to v9, !4
+        v10 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !5
+        v11 = load v10
+        v12 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_1, !6
+        store v11 to v12, !6
+        v13 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_1, !5
+        v14 = const u64 0
+        v15 = get_elem_ptr v13, ptr u64, v14, !5
+        v16 = load v15
+        v17 = const u64 0, !5
+        v18 = call eq_0(v16, v17), !7
+        cbr v18, block0(), block1(), !7
+
+        block0():
+        v19 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_1, !5
+        v20 = const u64 1
+        v21 = const u64 0
+        v22 = get_elem_ptr v19, ptr u64, v20, v21
+        v23 = load v22
+        v24 = get_local ptr u64, _x, !8
+        store v23 to v24, !8
+        v25 = const u64 1100, !9
+        br block2(v25)
+
+        block1():
+        v26 = const u64 1111, !10
+        br block2(v26)
+
+        block2(v27: u64):
+        v28 = get_local ptr u64, result_1, !11
+        store v27 to v28, !11
+        v29 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !12
+        v30 = load v29
+        v31 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_2, !13
+        store v30 to v31, !13
+        v32 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_2, !12
+        v33 = const u64 0
+        v34 = get_elem_ptr v32, ptr u64, v33, !12
+        v35 = load v34
+        v36 = const u64 1, !12
+        v37 = call eq_0(v35, v36), !14
+        cbr v37, block3(), block4(), !14
+
+        block3():
+        v38 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_2, !12
+        v39 = const u64 1
+        v40 = const u64 1
+        v41 = get_elem_ptr v38, ptr u64, v39, v40
+        v42 = load v41
+        v43 = get_local ptr u64, _x_, !15
+        store v42 to v43, !15
+        v44 = const u64 2200, !16
+        br block5(v44)
+
+        block4():
+        v45 = const u64 2211, !17
+        br block5(v45)
+
+        block5(v46: u64):
+        v47 = get_local ptr u64, result_2, !18
+        store v46 to v47, !18
+        v48 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !19
+        v49 = load v48
+        v50 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_3, !20
+        store v49 to v50, !20
+        v51 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_3, !19
+        v52 = const u64 0
+        v53 = get_elem_ptr v51, ptr u64, v52, !19
+        v54 = load v53
+        v55 = const u64 2, !19
+        v56 = call eq_0(v54, v55), !21
+        cbr v56, block6(), block7(), !21
+
+        block6():
+        v57 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_3, !19
+        v58 = const u64 1
+        v59 = const u64 2
+        v60 = get_elem_ptr v57, ptr u64, v58, v59
+        v61 = load v60
+        v62 = get_local ptr u64, _x__, !22
+        store v61 to v62, !22
+        v63 = const u64 3300, !23
+        br block8(v63)
+
+        block7():
+        v64 = const u64 3311, !24
+        br block8(v64)
+
+        block8(v65: u64):
+        v66 = get_local ptr u64, result_3, !25
+        store v65 to v66, !25
+        v67 = get_local ptr u64, result_1, !26
+        v68 = load v67
+        v69 = get_local ptr u64, result_2, !27
+        v70 = load v69
+        v71 = call add_1(v68, v70), !28
+        v72 = get_local ptr u64, result_3, !29
+        v73 = load v72
+        v74 = call add_1(v71, v73), !30
+        ret u64 v74
+    }
+
+    pub fn eq_0(self !32: u64, other !33: u64) -> bool, !34 {
+        entry(self: u64, other: u64):
+        v0 = cmp eq self other
+        ret bool v0
+    }
+
+    pub fn add_1(self !35: u64, other !36: u64) -> u64, !37 {
+        entry(self: u64, other: u64):
+        v0 = add self, other
+        ret u64 v0
+    }
+}
+
+// IR: [mem2reg] Promotion of local memory to SSA registers
+script {
+    entry fn main() -> u64, !1 {
+        local { u64, ( u64 | u64 | u64 ) } __anon_0
+        local { u64, ( u64 | u64 | u64 ) } __matched_value_1
+        local { u64, ( u64 | u64 | u64 ) } __matched_value_2
+        local { u64, ( u64 | u64 | u64 ) } __matched_value_3
+        local u64 _x
+        local u64 _x_
+        local u64 _x__
+        local u64 result_1
+        local u64 result_2
+        local u64 result_3
+        local { u64, ( u64 | u64 | u64 ) } x
+
+        entry():
+        v0 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __anon_0, !2
+        v1 = const u64 0
+        v2 = get_elem_ptr v0, ptr u64, v1, !2
+        v3 = const u64 0, !2
+        store v3 to v2, !2
+        v4 = const u64 1
+        v5 = const u64 0
+        v6 = get_elem_ptr v0, ptr u64, v4, v5, !2
+        v7 = const u64 112233, !3
+        store v7 to v6, !2
+        v8 = load v0
+        v9 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !4
+        store v8 to v9, !4
+        v10 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !5
+        v11 = load v10
+        v12 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_1, !6
+        store v11 to v12, !6
+        v13 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_1, !5
+        v14 = const u64 0
+        v15 = get_elem_ptr v13, ptr u64, v14, !5
+        v16 = load v15
+        v17 = const u64 0, !5
+        v18 = call eq_0(v16, v17), !7
+        cbr v18, block0(), block1(), !7
+
+        block0():
+        v19 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_1, !5
+        v20 = const u64 1
+        v21 = const u64 0
+        v22 = get_elem_ptr v19, ptr u64, v20, v21
+        v23 = load v22
+        v24 = get_local ptr u64, _x, !8
+        v25 = const u64 1100, !9
+        br block2(v25)
+
+        block1():
+        v26 = const u64 1111, !10
+        br block2(v26)
+
+        block2(v27: u64):
+        v28 = get_local ptr u64, result_1, !11
+        v29 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !12
+        v30 = load v29
+        v31 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_2, !13
+        store v30 to v31, !13
+        v32 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_2, !12
+        v33 = const u64 0
+        v34 = get_elem_ptr v32, ptr u64, v33, !12
+        v35 = load v34
+        v36 = const u64 1, !12
+        v37 = call eq_0(v35, v36), !14
+        cbr v37, block3(), block4(), !14
+
+        block3():
+        v38 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_2, !12
+        v39 = const u64 1
+        v40 = const u64 1
+        v41 = get_elem_ptr v38, ptr u64, v39, v40
+        v42 = load v41
+        v43 = get_local ptr u64, _x_, !15
+        v44 = const u64 2200, !16
+        br block5(v44)
+
+        block4():
+        v45 = const u64 2211, !17
+        br block5(v45)
+
+        block5(v46: u64):
+        v47 = get_local ptr u64, result_2, !18
+        v48 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !19
+        v49 = load v48
+        v50 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_3, !20
+        store v49 to v50, !20
+        v51 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_3, !19
+        v52 = const u64 0
+        v53 = get_elem_ptr v51, ptr u64, v52, !19
+        v54 = load v53
+        v55 = const u64 2, !19
+        v56 = call eq_0(v54, v55), !21
+        cbr v56, block6(), block7(), !21
+
+        block6():
+        v57 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_3, !19
+        v58 = const u64 1
+        v59 = const u64 2
+        v60 = get_elem_ptr v57, ptr u64, v58, v59
+        v61 = load v60
+        v62 = get_local ptr u64, _x__, !22
+        v63 = const u64 3300, !23
+        br block8(v63)
+
+        block7():
+        v64 = const u64 3311, !24
+        br block8(v64)
+
+        block8(v65: u64):
+        v66 = get_local ptr u64, result_3, !25
+        v67 = get_local ptr u64, result_1, !26
+        v68 = get_local ptr u64, result_2, !27
+        v69 = call add_1(v27, v46), !28
+        v70 = get_local ptr u64, result_3, !29
+        v71 = call add_1(v69, v65), !30
+        ret u64 v71
+    }
+
+    pub fn eq_0(self !32: u64, other !33: u64) -> bool, !34 {
+        entry(self: u64, other: u64):
+        v0 = cmp eq self other
+        ret bool v0
+    }
+
+    pub fn add_1(self !35: u64, other !36: u64) -> u64, !37 {
+        entry(self: u64, other: u64):
+        v0 = add self, other
+        ret u64 v0
+    }
+}
+
+// IR: [inline] Function inlining
+script {
+    entry fn main() -> u64, !1 {
+        local { u64, ( u64 | u64 | u64 ) } __anon_0
+        local { u64, ( u64 | u64 | u64 ) } __matched_value_1
+        local { u64, ( u64 | u64 | u64 ) } __matched_value_2
+        local { u64, ( u64 | u64 | u64 ) } __matched_value_3
+        local u64 _x
+        local u64 _x_
+        local u64 _x__
+        local u64 result_1
+        local u64 result_2
+        local u64 result_3
+        local { u64, ( u64 | u64 | u64 ) } x
+
+        entry():
+        v0 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __anon_0, !2
+        v1 = const u64 0
+        v2 = get_elem_ptr v0, ptr u64, v1, !2
+        v3 = const u64 0, !2
+        store v3 to v2, !2
+        v4 = const u64 1
+        v5 = const u64 0
+        v6 = get_elem_ptr v0, ptr u64, v4, v5, !2
+        v7 = const u64 112233, !3
+        store v7 to v6, !2
+        v8 = load v0
+        v9 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !4
+        store v8 to v9, !4
+        v10 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !5
+        v11 = load v10
+        v12 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_1, !6
+        store v11 to v12, !6
+        v13 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_1, !5
+        v14 = const u64 0
+        v15 = get_elem_ptr v13, ptr u64, v14, !5
+        v16 = load v15
+        v17 = const u64 0, !5
+        v18 = cmp eq v16 v17, !7
+        br block9(v18), !7
+
+        block9(v19: bool):
+        cbr v19, block0(), block1(), !7
+
+        block0():
+        v20 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_1, !5
+        v21 = const u64 1
+        v22 = const u64 0
+        v23 = get_elem_ptr v20, ptr u64, v21, v22
+        v24 = load v23
+        v25 = get_local ptr u64, _x, !8
+        v26 = const u64 1100, !9
+        br block2(v26)
+
+        block1():
+        v27 = const u64 1111, !10
+        br block2(v27)
+
+        block2(v28: u64):
+        v29 = get_local ptr u64, result_1, !11
+        v30 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !12
+        v31 = load v30
+        v32 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_2, !13
+        store v31 to v32, !13
+        v33 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_2, !12
+        v34 = const u64 0
+        v35 = get_elem_ptr v33, ptr u64, v34, !12
+        v36 = load v35
+        v37 = const u64 1, !12
+        v38 = cmp eq v36 v37, !14
+        br block10(v38), !14
+
+        block10(v39: bool):
+        cbr v39, block3(), block4(), !14
+
+        block3():
+        v40 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_2, !12
+        v41 = const u64 1
+        v42 = const u64 1
+        v43 = get_elem_ptr v40, ptr u64, v41, v42
+        v44 = load v43
+        v45 = get_local ptr u64, _x_, !15
+        v46 = const u64 2200, !16
+        br block5(v46)
+
+        block4():
+        v47 = const u64 2211, !17
+        br block5(v47)
+
+        block5(v48: u64):
+        v49 = get_local ptr u64, result_2, !18
+        v50 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !19
+        v51 = load v50
+        v52 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_3, !20
+        store v51 to v52, !20
+        v53 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_3, !19
+        v54 = const u64 0
+        v55 = get_elem_ptr v53, ptr u64, v54, !19
+        v56 = load v55
+        v57 = const u64 2, !19
+        v58 = cmp eq v56 v57, !21
+        br block11(v58), !21
+
+        block11(v59: bool):
+        cbr v59, block6(), block7(), !21
+
+        block6():
+        v60 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_3, !19
+        v61 = const u64 1
+        v62 = const u64 2
+        v63 = get_elem_ptr v60, ptr u64, v61, v62
+        v64 = load v63
+        v65 = get_local ptr u64, _x__, !22
+        v66 = const u64 3300, !23
+        br block8(v66)
+
+        block7():
+        v67 = const u64 3311, !24
+        br block8(v67)
+
+        block8(v68: u64):
+        v69 = get_local ptr u64, result_3, !25
+        v70 = get_local ptr u64, result_1, !26
+        v71 = get_local ptr u64, result_2, !27
+        v72 = add v28, v48, !28
+        br block12(v72), !28
+
+        block12(v73: u64):
+        v74 = get_local ptr u64, result_3, !29
+        v75 = add v73, v68, !30
+        br block13(v75), !30
+
+        block13(v76: u64):
+        ret u64 v76
+    }
+
+    pub fn eq_0(self !32: u64, other !33: u64) -> bool, !34 {
+        entry(self: u64, other: u64):
+        v0 = cmp eq self other
+        ret bool v0
+    }
+
+    pub fn add_1(self !35: u64, other !36: u64) -> u64, !37 {
+        entry(self: u64, other: u64):
+        v0 = add self, other
+        ret u64 v0
+    }
+}
+
+// IR: [simplify-cfg] Simplify the control flow graph (CFG)
+script {
+    entry fn main() -> u64, !1 {
+        local { u64, ( u64 | u64 | u64 ) } __anon_0
+        local { u64, ( u64 | u64 | u64 ) } __matched_value_1
+        local { u64, ( u64 | u64 | u64 ) } __matched_value_2
+        local { u64, ( u64 | u64 | u64 ) } __matched_value_3
+        local u64 _x
+        local u64 _x_
+        local u64 _x__
+        local u64 result_1
+        local u64 result_2
+        local u64 result_3
+        local { u64, ( u64 | u64 | u64 ) } x
+
+        entry():
+        v0 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __anon_0, !2
+        v1 = const u64 0
+        v2 = get_elem_ptr v0, ptr u64, v1, !2
+        v3 = const u64 0, !2
+        store v3 to v2, !2
+        v4 = const u64 1
+        v5 = const u64 0
+        v6 = get_elem_ptr v0, ptr u64, v4, v5, !2
+        v7 = const u64 112233, !3
+        store v7 to v6, !2
+        v8 = load v0
+        v9 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !4
+        store v8 to v9, !4
+        v10 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !5
+        v11 = load v10
+        v12 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_1, !6
+        store v11 to v12, !6
+        v13 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_1, !5
+        v14 = const u64 0
+        v15 = get_elem_ptr v13, ptr u64, v14, !5
+        v16 = load v15
+        v17 = const u64 0, !5
+        v18 = cmp eq v16 v17, !7
+        v19 = const u64 1111, !8
+        cbr v18, block0(), block2(v19), !7
+
+        block0():
+        v20 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_1, !5
+        v21 = const u64 1
+        v22 = const u64 0
+        v23 = get_elem_ptr v20, ptr u64, v21, v22
+        v24 = load v23
+        v25 = get_local ptr u64, _x, !9
+        v26 = const u64 1100, !10
+        br block2(v26)
+
+        block2(v27: u64):
+        v28 = get_local ptr u64, result_1, !11
+        v29 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !12
+        v30 = load v29
+        v31 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_2, !13
+        store v30 to v31, !13
+        v32 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_2, !12
+        v33 = const u64 0
+        v34 = get_elem_ptr v32, ptr u64, v33, !12
+        v35 = load v34
+        v36 = const u64 1, !12
+        v37 = cmp eq v35 v36, !14
+        v38 = const u64 2211, !15
+        cbr v37, block3(), block5(v38), !14
+
+        block3():
+        v39 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_2, !12
+        v40 = const u64 1
+        v41 = const u64 1
+        v42 = get_elem_ptr v39, ptr u64, v40, v41
+        v43 = load v42
+        v44 = get_local ptr u64, _x_, !16
+        v45 = const u64 2200, !17
+        br block5(v45)
+
+        block5(v46: u64):
+        v47 = get_local ptr u64, result_2, !18
+        v48 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !19
+        v49 = load v48
+        v50 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_3, !20
+        store v49 to v50, !20
+        v51 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_3, !19
+        v52 = const u64 0
+        v53 = get_elem_ptr v51, ptr u64, v52, !19
+        v54 = load v53
+        v55 = const u64 2, !19
+        v56 = cmp eq v54 v55, !21
+        v57 = const u64 3311, !22
+        cbr v56, block6(), block8(v57), !21
+
+        block6():
+        v58 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_3, !19
+        v59 = const u64 1
+        v60 = const u64 2
+        v61 = get_elem_ptr v58, ptr u64, v59, v60
+        v62 = load v61
+        v63 = get_local ptr u64, _x__, !23
+        v64 = const u64 3300, !24
+        br block8(v64)
+
+        block8(v65: u64):
+        v66 = get_local ptr u64, result_3, !25
+        v67 = get_local ptr u64, result_1, !26
+        v68 = get_local ptr u64, result_2, !27
+        v69 = add v27, v46, !28
+        v70 = get_local ptr u64, result_3, !29
+        v71 = add v69, v65, !30
+        ret u64 v71
+    }
+
+    pub fn eq_0(self !32: u64, other !33: u64) -> bool, !34 {
+        entry(self: u64, other: u64):
+        v0 = cmp eq self other
+        ret bool v0
+    }
+
+    pub fn add_1(self !35: u64, other !36: u64) -> u64, !37 {
+        entry(self: u64, other: u64):
+        v0 = add self, other
+        ret u64 v0
+    }
+}
+
+// IR: [fn-dce] Dead function elimination
+script {
+    entry fn main() -> u64, !1 {
+        local { u64, ( u64 | u64 | u64 ) } __anon_0
+        local { u64, ( u64 | u64 | u64 ) } __matched_value_1
+        local { u64, ( u64 | u64 | u64 ) } __matched_value_2
+        local { u64, ( u64 | u64 | u64 ) } __matched_value_3
+        local u64 _x
+        local u64 _x_
+        local u64 _x__
+        local u64 result_1
+        local u64 result_2
+        local u64 result_3
+        local { u64, ( u64 | u64 | u64 ) } x
+
+        entry():
+        v0 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __anon_0, !2
+        v1 = const u64 0
+        v2 = get_elem_ptr v0, ptr u64, v1, !2
+        v3 = const u64 0, !2
+        store v3 to v2, !2
+        v4 = const u64 1
+        v5 = const u64 0
+        v6 = get_elem_ptr v0, ptr u64, v4, v5, !2
+        v7 = const u64 112233, !3
+        store v7 to v6, !2
+        v8 = load v0
+        v9 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !4
+        store v8 to v9, !4
+        v10 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !5
+        v11 = load v10
+        v12 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_1, !6
+        store v11 to v12, !6
+        v13 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_1, !5
+        v14 = const u64 0
+        v15 = get_elem_ptr v13, ptr u64, v14, !5
+        v16 = load v15
+        v17 = const u64 0, !5
+        v18 = cmp eq v16 v17, !7
+        v19 = const u64 1111, !8
+        cbr v18, block0(), block2(v19), !7
+
+        block0():
+        v20 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_1, !5
+        v21 = const u64 1
+        v22 = const u64 0
+        v23 = get_elem_ptr v20, ptr u64, v21, v22
+        v24 = load v23
+        v25 = get_local ptr u64, _x, !9
+        v26 = const u64 1100, !10
+        br block2(v26)
+
+        block2(v27: u64):
+        v28 = get_local ptr u64, result_1, !11
+        v29 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !12
+        v30 = load v29
+        v31 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_2, !13
+        store v30 to v31, !13
+        v32 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_2, !12
+        v33 = const u64 0
+        v34 = get_elem_ptr v32, ptr u64, v33, !12
+        v35 = load v34
+        v36 = const u64 1, !12
+        v37 = cmp eq v35 v36, !14
+        v38 = const u64 2211, !15
+        cbr v37, block3(), block5(v38), !14
+
+        block3():
+        v39 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_2, !12
+        v40 = const u64 1
+        v41 = const u64 1
+        v42 = get_elem_ptr v39, ptr u64, v40, v41
+        v43 = load v42
+        v44 = get_local ptr u64, _x_, !16
+        v45 = const u64 2200, !17
+        br block5(v45)
+
+        block5(v46: u64):
+        v47 = get_local ptr u64, result_2, !18
+        v48 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !19
+        v49 = load v48
+        v50 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_3, !20
+        store v49 to v50, !20
+        v51 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_3, !19
+        v52 = const u64 0
+        v53 = get_elem_ptr v51, ptr u64, v52, !19
+        v54 = load v53
+        v55 = const u64 2, !19
+        v56 = cmp eq v54 v55, !21
+        v57 = const u64 3311, !22
+        cbr v56, block6(), block8(v57), !21
+
+        block6():
+        v58 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_3, !19
+        v59 = const u64 1
+        v60 = const u64 2
+        v61 = get_elem_ptr v58, ptr u64, v59, v60
+        v62 = load v61
+        v63 = get_local ptr u64, _x__, !23
+        v64 = const u64 3300, !24
+        br block8(v64)
+
+        block8(v65: u64):
+        v66 = get_local ptr u64, result_3, !25
+        v67 = get_local ptr u64, result_1, !26
+        v68 = get_local ptr u64, result_2, !27
+        v69 = add v27, v46, !28
+        v70 = get_local ptr u64, result_3, !29
+        v71 = add v69, v65, !30
+        ret u64 v71
+    }
+}
+
+// IR: [dce] Dead code elimination
+script {
+    entry fn main() -> u64, !1 {
+        local { u64, ( u64 | u64 | u64 ) } __anon_0
+        local { u64, ( u64 | u64 | u64 ) } __matched_value_1
+        local { u64, ( u64 | u64 | u64 ) } __matched_value_2
+        local { u64, ( u64 | u64 | u64 ) } __matched_value_3
+        local { u64, ( u64 | u64 | u64 ) } x
+
+        entry():
+        v0 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __anon_0, !2
+        v1 = const u64 0
+        v2 = get_elem_ptr v0, ptr u64, v1, !2
+        v3 = const u64 0, !2
+        store v3 to v2, !2
+        v4 = const u64 1
+        v5 = const u64 0
+        v6 = get_elem_ptr v0, ptr u64, v4, v5, !2
+        v7 = const u64 112233, !3
+        store v7 to v6, !2
+        v8 = load v0
+        v9 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !4
+        store v8 to v9, !4
+        v10 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !5
+        v11 = load v10
+        v12 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_1, !6
+        store v11 to v12, !6
+        v13 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_1, !5
+        v14 = const u64 0
+        v15 = get_elem_ptr v13, ptr u64, v14, !5
+        v16 = load v15
+        v17 = const u64 0, !5
+        v18 = cmp eq v16 v17, !7
+        v19 = const u64 1111, !8
+        cbr v18, block0(), block2(v19), !7
+
+        block0():
+        v20 = const u64 1100, !9
+        br block2(v20)
+
+        block2(v21: u64):
+        v22 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !10
+        v23 = load v22
+        v24 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_2, !11
+        store v23 to v24, !11
+        v25 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_2, !10
+        v26 = const u64 0
+        v27 = get_elem_ptr v25, ptr u64, v26, !10
+        v28 = load v27
+        v29 = const u64 1, !10
+        v30 = cmp eq v28 v29, !12
+        v31 = const u64 2211, !13
+        cbr v30, block3(), block5(v31), !12
+
+        block3():
+        v32 = const u64 2200, !14
+        br block5(v32)
+
+        block5(v33: u64):
+        v34 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !15
+        v35 = load v34
+        v36 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_3, !16
+        store v35 to v36, !16
+        v37 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_3, !15
+        v38 = const u64 0
+        v39 = get_elem_ptr v37, ptr u64, v38, !15
+        v40 = load v39
+        v41 = const u64 2, !15
+        v42 = cmp eq v40 v41, !17
+        v43 = const u64 3311, !18
+        cbr v42, block6(), block8(v43), !17
+
+        block6():
+        v44 = const u64 3300, !19
+        br block8(v44)
+
+        block8(v45: u64):
+        v46 = add v21, v33, !20
+        v47 = add v46, v45, !21
+        ret u64 v47
+    }
+}
+
+// IR: [memcpyopt] Optimizations related to MemCopy instructions
+script {
+    entry fn main() -> u64, !1 {
+        local { u64, ( u64 | u64 | u64 ) } __anon_0
+        local { u64, ( u64 | u64 | u64 ) } __matched_value_1
+        local { u64, ( u64 | u64 | u64 ) } __matched_value_2
+        local { u64, ( u64 | u64 | u64 ) } __matched_value_3
+        local { u64, ( u64 | u64 | u64 ) } x
+
+        entry():
+        v0 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __anon_0, !2
+        v1 = const u64 0
+        v2 = get_elem_ptr v0, ptr u64, v1, !2
+        v3 = const u64 0, !2
+        store v3 to v2, !2
+        v4 = const u64 1
+        v5 = const u64 0
+        v6 = get_elem_ptr v0, ptr u64, v4, v5, !2
+        v7 = const u64 112233, !3
+        store v7 to v6, !2
+        v8 = load v0
+        v9 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !4
+        mem_copy_val v9, v0
+        v10 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !5
+        v11 = load v0
+        v12 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_1, !6
+        mem_copy_val v12, v0
+        v13 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_1, !5
+        v14 = const u64 0
+        v15 = get_elem_ptr v13, ptr u64, v14, !5
+        v16 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __anon_0
+        v17 = get_elem_ptr v16, ptr u64, v14
+        v18 = load v17
+        v19 = const u64 0, !5
+        v20 = cmp eq v18 v19, !7
+        v21 = const u64 1111, !8
+        cbr v20, block0(), block2(v21), !7
+
+        block0():
+        v22 = const u64 1100, !9
+        br block2(v22)
+
+        block2(v23: u64):
+        v24 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !10
+        v25 = load v24
+        v26 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_2, !11
+        mem_copy_val v26, v24
+        v27 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_2, !10
+        v28 = const u64 0
+        v29 = get_elem_ptr v27, ptr u64, v28, !10
+        v30 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x
+        v31 = get_elem_ptr v30, ptr u64, v28
+        v32 = load v31
+        v33 = const u64 1, !10
+        v34 = cmp eq v32 v33, !12
+        v35 = const u64 2211, !13
+        cbr v34, block3(), block5(v35), !12
+
+        block3():
+        v36 = const u64 2200, !14
+        br block5(v36)
+
+        block5(v37: u64):
+        v38 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !15
+        v39 = load v38
+        v40 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_3, !16
+        mem_copy_val v40, v38
+        v41 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_3, !15
+        v42 = const u64 0
+        v43 = get_elem_ptr v41, ptr u64, v42, !15
+        v44 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x
+        v45 = get_elem_ptr v44, ptr u64, v42
+        v46 = load v45
+        v47 = const u64 2, !15
+        v48 = cmp eq v46 v47, !17
+        v49 = const u64 3311, !18
+        cbr v48, block6(), block8(v49), !17
+
+        block6():
+        v50 = const u64 3300, !19
+        br block8(v50)
+
+        block8(v51: u64):
+        v52 = add v23, v37, !20
+        v53 = add v52, v51, !21
+        ret u64 v53
+    }
+}
+
+// IR: [dce] Dead code elimination
+script {
+    entry fn main() -> u64, !1 {
+        local { u64, ( u64 | u64 | u64 ) } __anon_0
+        local { u64, ( u64 | u64 | u64 ) } x
+
+        entry():
+        v0 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __anon_0, !2
+        v1 = const u64 0
+        v2 = get_elem_ptr v0, ptr u64, v1, !2
+        v3 = const u64 0, !2
+        store v3 to v2, !2
+        v4 = const u64 1
+        v5 = const u64 0
+        v6 = get_elem_ptr v0, ptr u64, v4, v5, !2
+        v7 = const u64 112233, !3
+        store v7 to v6, !2
+        v8 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !4
+        mem_copy_val v8, v0
+        v9 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __anon_0
+        v10 = const u64 0
+        v11 = get_elem_ptr v9, ptr u64, v10
+        v12 = load v11
+        v13 = const u64 0, !5
+        v14 = cmp eq v12 v13, !6
+        v15 = const u64 1111, !7
+        cbr v14, block0(), block2(v15), !6
+
+        block0():
+        v16 = const u64 1100, !8
+        br block2(v16)
+
+        block2(v17: u64):
+        v18 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x
+        v19 = const u64 0
+        v20 = get_elem_ptr v18, ptr u64, v19
+        v21 = load v20
+        v22 = const u64 1, !9
+        v23 = cmp eq v21 v22, !10
+        v24 = const u64 2211, !11
+        cbr v23, block3(), block5(v24), !10
+
+        block3():
+        v25 = const u64 2200, !12
+        br block5(v25)
+
+        block5(v26: u64):
+        v27 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x
+        v28 = const u64 0
+        v29 = get_elem_ptr v27, ptr u64, v28
+        v30 = load v29
+        v31 = const u64 2, !13
+        v32 = cmp eq v30 v31, !14
+        v33 = const u64 3311, !15
+        cbr v32, block6(), block8(v33), !14
+
+        block6():
+        v34 = const u64 3300, !16
+        br block8(v34)
+
+        block8(v35: u64):
+        v36 = add v17, v26, !17
+        v37 = add v36, v35, !18
+        ret u64 v37
+    }
+}
+
+// IR: Final
+script {
+    entry fn main() -> u64, !1 {
+        local { u64, ( u64 | u64 | u64 ) } __anon_0
+        local { u64, ( u64 | u64 | u64 ) } x
+
+        entry():
+        v0 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __anon_0, !2
+        v1 = const u64 0
+        v2 = get_elem_ptr v0, ptr u64, v1, !2
+        v3 = const u64 0, !2
+        store v3 to v2, !2
+        v4 = const u64 1
+        v5 = const u64 0
+        v6 = get_elem_ptr v0, ptr u64, v4, v5, !2
+        v7 = const u64 112233, !3
+        store v7 to v6, !2
+        v8 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !4
+        mem_copy_val v8, v0
+        v9 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __anon_0
+        v10 = const u64 0
+        v11 = get_elem_ptr v9, ptr u64, v10
+        v12 = load v11
+        v13 = const u64 0, !5
+        v14 = cmp eq v12 v13, !6
+        v15 = const u64 1111, !7
+        cbr v14, block0(), block2(v15), !6
+
+        block0():
+        v16 = const u64 1100, !8
+        br block2(v16)
+
+        block2(v17: u64):
+        v18 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x
+        v19 = const u64 0
+        v20 = get_elem_ptr v18, ptr u64, v19
+        v21 = load v20
+        v22 = const u64 1, !9
+        v23 = cmp eq v21 v22, !10
+        v24 = const u64 2211, !11
+        cbr v23, block3(), block5(v24), !10
+
+        block3():
+        v25 = const u64 2200, !12
+        br block5(v25)
+
+        block5(v26: u64):
+        v27 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x
+        v28 = const u64 0
+        v29 = get_elem_ptr v27, ptr u64, v28
+        v30 = load v29
+        v31 = const u64 2, !13
+        v32 = cmp eq v30 v31, !14
+        v33 = const u64 3311, !15
+        cbr v32, block6(), block8(v33), !14
+
+        block6():
+        v34 = const u64 3300, !16
+        br block8(v34)
+
+        block8(v35: u64):
+        v36 = add v17, v26, !17
+        v37 = add v36, v35, !18
+        ret u64 v37
+    }
+}

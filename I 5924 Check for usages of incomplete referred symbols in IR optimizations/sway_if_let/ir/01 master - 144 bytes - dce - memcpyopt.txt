@@ -1,0 +1,87 @@
+// IR: [memcpyopt] Optimizations related to MemCopy instructions
+script {
+    entry fn main() -> u64, !1 {
+        local { u64, ( u64 | u64 | u64 ) } __anon_0
+        local { u64, ( u64 | u64 | u64 ) } __matched_value_1
+        local { u64, ( u64 | u64 | u64 ) } __matched_value_2
+        local { u64, ( u64 | u64 | u64 ) } __matched_value_3
+        local { u64, ( u64 | u64 | u64 ) } x
+
+        entry():
+        v0 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __anon_0, !2
+        v1 = const u64 0
+        v2 = get_elem_ptr v0, ptr u64, v1, !2
+        v3 = const u64 0, !2
+        store v3 to v2, !2
+        v4 = const u64 1
+        v5 = const u64 0
+        v6 = get_elem_ptr v0, ptr u64, v4, v5, !2
+        v7 = const u64 112233, !3
+        store v7 to v6, !2
+        v8 = load v0
+        v9 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !4
+        mem_copy_val v9, v0
+        v10 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !5
+        v11 = load v0
+        v12 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !6
+        v13 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !5
+        v14 = const u64 0
+        v15 = get_elem_ptr v13, ptr u64, v14, !5
+        v16 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __anon_0
+        v17 = get_elem_ptr v16, ptr u64, v14
+        v18 = load v17
+        v19 = const u64 0, !5
+        v20 = cmp eq v18 v19, !7
+        v21 = const u64 1111, !8
+        cbr v20, block0(), block2(v21), !7
+
+        block0():
+        v22 = const u64 1100, !9
+        br block2(v22)
+
+        block2(v23: u64):
+        v24 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !10
+        v25 = load v24
+        v26 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_2, !11
+        mem_copy_val v26, v24
+        v27 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_2, !10
+        v28 = const u64 0
+        v29 = get_elem_ptr v27, ptr u64, v28, !10
+        v30 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x
+        v31 = get_elem_ptr v30, ptr u64, v28
+        v32 = load v31
+        v33 = const u64 1, !10
+        v34 = cmp eq v32 v33, !12
+        v35 = const u64 2211, !13
+        cbr v34, block3(), block5(v35), !12
+
+        block3():
+        v36 = const u64 2200, !14
+        br block5(v36)
+
+        block5(v37: u64):
+        v38 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x, !15
+        v39 = load v38
+        v40 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_3, !16
+        mem_copy_val v40, v38
+        v41 = get_local ptr { u64, ( u64 | u64 | u64 ) }, __matched_value_3, !15
+        v42 = const u64 0
+        v43 = get_elem_ptr v41, ptr u64, v42, !15
+        v44 = get_local ptr { u64, ( u64 | u64 | u64 ) }, x
+        v45 = get_elem_ptr v44, ptr u64, v42
+        v46 = load v45
+        v47 = const u64 2, !15
+        v48 = cmp eq v46 v47, !17
+        v49 = const u64 3311, !18
+        cbr v48, block6(), block8(v49), !17
+
+        block6():
+        v50 = const u64 3300, !19
+        br block8(v50)
+
+        block8(v51: u64):
+        v52 = add v23, v37, !20
+        v53 = add v52, v51, !21
+        ret u64 v53
+    }
+}
