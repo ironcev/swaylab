@@ -10,6 +10,7 @@ Some additional tips & tricks useful for debugging are given below.
 
 ```
 cargo run --bin test --release -- --release --verbose should_pass/ | egrep "(Compiling should_pass|Bytecode size)" | tee ~/Desktop/bytecode_sizes.txt
+cargo run --bin test --release -- --release --verbose --no-encoding-v1 --exclude 'log_decode|payable_non_zero_coins|workspace_test|slice_contract' should_pass/ | egrep "(Compiling should_pass|Bytecode size)" | tee ~/Desktop/bytecode_sizes.txt
 
 tr -d '\n' < ~/Desktop/bytecode_sizes.txt > ~/Desktop/bytecode_sizes.txt.01.single_line.temp.txt
 
