@@ -1,0 +1,89 @@
+pub entry fn test_function<2151bd4b>() -> { u64, ( () | {  } ) }, !3 {
+    local { b256, u64, b256 } __anon_0
+    local { u64, b256 } __anon_00
+    local { b256, u64, b256 } __anon_000
+    local { b256, u64, u64 } __anon_001
+    local { u64, ( () | {  } ) } __anon_01
+    local { u64, ( () | {  } ) } __anon_1
+    local { u64, ( () | {  } ) } __anon_2
+    local bool __matched_value_1
+    local { b256, u64, u64 } __tuple_2
+    local { b256, u64, u64 } __tuple_2_
+    local b256 key_
+    local b256 key_for_storage
+    local u64 last_slot
+    local u64 number_of_slots
+    local u64 number_of_slots0
+    local b256 offset_slot
+    local mut u256 offset_slot0
+    local u64 place_in_slot
+    local u64 place_in_slot0
+    local u64 result_ptr
+    local u64 size_of_t
+
+    entry():
+    v0 = get_local ptr { b256, u64, b256 }, __anon_0, !4
+    v1 = const u64 0
+    v2 = get_elem_ptr v0, ptr b256, v1
+    v3 = const b256 0xa24a9a952387782d16a882c340d5621f40cad0921d5c70f721993e2187c46048, !4
+    store v3 to v2, !4
+    v4 = const u64 1
+    v5 = get_elem_ptr v0, ptr u64, v4
+    v6 = const u64 0
+    store v6 to v5, !4
+    v7 = const u64 2
+    v8 = get_elem_ptr v0, ptr b256, v7
+    v9 = const b256 0xa24a9a952387782d16a882c340d5621f40cad0921d5c70f721993e2187c46048, !4
+    store v9 to v8, !4
+    v10 = load v0
+    v11 = ptr_to_int v10 to u64, !8
+    v12 = int_to_ptr v11 to ptr { b256, u64, b256 }, !9
+    v13 = const u64 2
+    v14 = get_elem_ptr v12, ptr b256, v13, !12
+    v15 = load v14, !13
+    v16 = get_local ptr { u64, b256 }, __anon_00, !15
+    v17 = const u64 0
+    v18 = get_elem_ptr v16, ptr u64, v17, !16
+    v19 = const u64 1, !17
+    store v19 to v18, !18
+    v20 = const u64 1
+    v21 = get_elem_ptr v16, ptr b256, v20, !19
+    store v15 to v21, !20
+    v22 = load v16, !5
+    v23 = call sha256_20(v22), !22
+    v24 = get_local ptr b256, key_, !24
+    store v23 to v24, !25
+    v25 = get_local ptr b256, key_, !27
+    v26 = load v25, !5
+    v27 = get_local ptr b256, key_, !29
+    v28 = load v27, !5
+    v29 = get_local ptr { b256, u64, b256 }, __anon_000, !32
+    v30 = const u64 0
+    v31 = get_elem_ptr v29, ptr b256, v30, !33
+    store v26 to v31, !34
+    v32 = const u64 1
+    v33 = get_elem_ptr v29, ptr u64, v32, !35
+    v34 = const u64 0, !36
+    store v34 to v33, !37
+    v35 = const u64 2
+    v36 = get_elem_ptr v29, ptr b256, v35, !38
+    store v28 to v36, !39
+    v37 = load v29, !40
+    v38 = ptr_to_int v37 to u64, !44
+    v39 = int_to_ptr v38 to ptr { b256, u64, b256 }, !45
+    v40 = const u64 0
+    v41 = get_elem_ptr v39, ptr b256, v40, !47
+    v42 = load v41, !48
+    v43 = ptr_to_int v37 to u64, !50
+    v44 = int_to_ptr v43 to ptr { b256, u64, b256 }, !51
+    v45 = const u64 1
+    v46 = get_elem_ptr v44, ptr u64, v45, !53
+    v47 = load v46, !54
+    v48 = get_local ptr { u64, ( () | {  } ) }, __anon_01, !58
+    v49 = const u64 0
+    v50 = get_elem_ptr v48, ptr u64, v49, !59
+    v51 = const u64 0, !57
+    store v51 to v50, !60
+    v52 = load v48, !61
+    ret { u64, ( () | {  } ) } v52
+}

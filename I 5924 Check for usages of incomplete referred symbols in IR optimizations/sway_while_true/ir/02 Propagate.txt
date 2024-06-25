@@ -1,0 +1,78 @@
+script {
+    pub entry fn __entry() -> ptr slice, !1 {
+        local { u64, u64, u64 } __anon_0
+        local { u64, u64, u64 } __anon_00
+        local { { u64, u64, u64 } } __anon_1
+        local { u64, u64 } __anon_10
+        local { u64, u64, u64 } __asm_arg
+        local slice __ret_value
+        local { { u64, u64, u64 } } buffer
+
+        entry():
+        v0 = get_local ptr slice, __ret_value
+        v1 = call main_0(), !2
+        v2 = const u64 1024
+        v3 = asm(cap: v2) -> u64 hp, !6 {
+            aloc   cap
+        }
+        v4 = int_to_ptr v3 to ptr u8, !7
+        v5 = ptr_to_int v4 to u64, !8
+        v6 = get_local ptr { u64, u64, u64 }, __anon_0, !9
+        v7 = const u64 0
+        v8 = get_elem_ptr v6, ptr u64, v7, !10
+        store v5 to v8, !11
+        v9 = const u64 1
+        v10 = get_elem_ptr v6, ptr u64, v9, !12
+        store v2 to v10, !13
+        v11 = const u64 2
+        v12 = get_elem_ptr v6, ptr u64, v11, !14
+        v13 = const u64 0
+        store v13 to v12, !15
+        v14 = asm(buffer: v6) -> ptr { u64, u64, u64 } buffer {
+        }
+        v15 = get_local ptr { { u64, u64, u64 } }, __anon_1, !17
+        v16 = const u64 0
+        v17 = get_elem_ptr v15, ptr { u64, u64, u64 }, v16, !18
+        mem_copy_val v17, v14
+        v18 = get_local ptr { { u64, u64, u64 } }, buffer, !20
+        mem_copy_val v18, v15
+        v19 = get_local ptr { { u64, u64, u64 } }, buffer, !22
+        v20 = ptr_to_int v19 to u64, !24
+        v21 = int_to_ptr v20 to ptr { { u64, u64, u64 } }, !25
+        v22 = const u64 0
+        v23 = get_elem_ptr v21, ptr { u64, u64, u64 }, v22, !27
+        v24 = get_local ptr { u64, u64, u64 }, __asm_arg
+        mem_copy_val v24, v23
+        v25 = asm(buffer: v24) -> ptr { u64, u64, u64 } buffer {
+        }
+        v26 = get_local ptr { u64, u64, u64 }, __anon_00, !28
+        mem_copy_val v26, v25
+        v27 = const u64 0
+        v28 = get_elem_ptr v26, ptr u64, v27, !29
+        v29 = load v28, !30
+        v30 = int_to_ptr v29 to ptr u8, !31
+        v31 = const u64 2
+        v32 = get_elem_ptr v26, ptr u64, v31, !32
+        v33 = ptr_to_int v30 to u64, !33
+        v34 = get_local ptr { u64, u64 }, __anon_10, !34
+        v35 = const u64 0
+        v36 = get_elem_ptr v34, ptr u64, v35, !35
+        store v33 to v36, !36
+        v37 = const u64 1
+        v38 = get_elem_ptr v34, ptr u64, v37, !37
+        mem_copy_val v38, v32
+        v39 = asm(s: v34) -> ptr slice s {
+        }
+        mem_copy_val v0, v39
+        ret ptr slice v0
+    }
+
+    entry_orig fn main_0() -> (), !41 {
+        entry():
+        br while()
+
+        while():
+        br while()
+    }
+}
+
