@@ -33,6 +33,17 @@ pub fn qnd_dbg_declared_traits(de: &DeclEngine) {
     //     builder
     // }
 
+pub fn qnd_dbg_asm_block(asm: &Value, context: &Context) {
+    if let Some( Instruction { op: InstOp::AsmBlock(asm, _), .. }) = asm.get_instruction(context) {
+        println!("\n>> ASM block: {} arguments, {} instructions, {}: {}",
+            asm.args_names.len(),
+            asm.body.len(),
+            asm.return_name.as_ref().map_or("<none>", |name| name.as_str()),
+            asm.return_type.as_string(context)
+        );
+    }
+}
+
 pub fn qnd_dbg_implemented_traits_for_type(ctx: &TypeCheckContext, type_id: TypeId) {
     let trait_call_paths = ctx
         .namespace
