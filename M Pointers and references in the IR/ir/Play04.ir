@@ -1,0 +1,19 @@
+// Copying function arguments to locals.
+
+script {
+  entry fn main(arg_1: u64) -> u64 {
+    local u64 __arg_1_copy
+
+    entry(arg_1: u64):
+    v0 = get_local ptr u64, __arg_1_copy
+    store arg_1 to v0
+
+    v1 = load v0
+    ret u64 v1
+  }
+}
+
+// After `mem2reg`, as expected, the `__arg_1_copy` will not be used, and the usage replaced by `arg_1`.
+// After `dce` the `__arg_1_copy` will completely disappear.
+
+

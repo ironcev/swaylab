@@ -1,0 +1,21 @@
+// `mem2reg`.
+
+script {
+  fn main() -> bool {
+    local u64 x
+
+    entry():
+    v0 = get_local ptr u64, x
+    v1 = const u64 112233
+    store v1 to v0
+    
+    v2 = load v0
+    v3 = load v0
+
+    v4 = add v2, v3
+    store v4 to v0
+
+    v1000 = const bool true
+    ret bool v1000
+  }
+}
