@@ -1,0 +1,14 @@
+Test Name,Size Before,Size After,Change,Change %
+empty_fields_in_storage_struct,28384,28456,72,0.253664036076663
+language/deprecated_attribute,224,208,-16,-7.14285714285714
+language/duplicated_storage_keys,224,208,-16,-7.14285714285714
+language/references/dereferencing_operator_dot_on_structs,124920,125272,352,0.281780339417227
+language/references/dereferencing_operator_dot_on_tuples,124920,125272,352,0.281780339417227
+language/references/dereferencing_operator_index,92376,92344,-32,-0.0346410323027626
+language/references/dereferencing_operator_star,151152,151536,384,0.2540489044141
+language/references/impl_reference_types,7840,7776,-64,-0.816326530612245
+language/references/reassigning_via_references_passed_and_returned_to_and_from_functions,39008,39184,176,0.451189499589828
+language/references/reassigning_via_references_to_expressions,36920,37064,144,0.390032502708559
+language/references/reassigning_via_references_to_values,13952,13936,-16,-0.114678899082569
+stdlib/storage_vec_insert,8480,8552,72,0.849056603773585
+stdlib/vec_byte_remove,1904,1976,72,3.78151260504202
