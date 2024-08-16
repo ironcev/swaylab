@@ -1,0 +1,47 @@
+grep -n -E 'cfei i0' ASM\ -\ Before.txt
+44 operations found
+
+3273:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+3287:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+3338:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+3442:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+3455:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+3845:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+3859:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+4073:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+4155:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+4389:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+4442:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+4951:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+5425:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+5910:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+6099:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+6386:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+6407:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+6504:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+6520:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+7774:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+7886:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+7901:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+7917:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+8076:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+8373:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+8388:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+8450:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+9051:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+9316:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+9962:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+11395:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+11408:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+11480:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+12605:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+12641:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+12659:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+13625:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+14012:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+14048:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+14066:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+14104:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+14132:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+15289:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
+15340:cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments.
