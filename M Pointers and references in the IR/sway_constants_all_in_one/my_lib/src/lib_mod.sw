@@ -1,0 +1,14 @@
+library;
+
+pub struct LibModStruct {
+    pub x: u64,
+    pub y: u256,
+}
+
+pub const LIB_MOD_U64: u64 = 0xff_ff_ff_ff_ff_ff_ff_eeu64;
+pub const LIB_MOD_U64_IMM: u64 = 222222;
+pub const LIB_MOD_U256: u256 = 0x2222222222222222222222222222222222222222222222222222222222222222u256;
+pub const LIB_MOD_LIB_STRUCT: LibModStruct = LibModStruct {
+    x: 224444,
+    y: 0x2222222222222222222222222222222222333333333333333333333333333333u256,
+};

@@ -1,0 +1,6 @@
+[project]
+authors = ["Igor Rončević"]
+entry = "lib.sw"
+license = "MIT"
+name = "my_lib"
+implicit-std = false

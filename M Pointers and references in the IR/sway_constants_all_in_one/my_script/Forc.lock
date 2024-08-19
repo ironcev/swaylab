@@ -1,0 +1,15 @@
+[[package]]
+name = "core"
+source = "path+from-root-113BF57343BDF04A"
+
+[[package]]
+name = "my_lib"
+source = "path+from-root-113BF57343BDF04A"
+
+[[package]]
+name = "my_script"
+source = "member"
+dependencies = [
+    "core",
+    "my_lib",
+]
