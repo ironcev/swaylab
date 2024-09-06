@@ -6,5 +6,5 @@ name = "plays"
 # implicit-std = false
 
 [dependencies]
-core = { path = "../../sway/sway-lib-core" }
-# std = { path = "../../sway/sway-lib-std" }
+core = { path = "../../../sway/sway-lib-core" }
+# std = { path = "../../../sway/sway-lib-std" }
