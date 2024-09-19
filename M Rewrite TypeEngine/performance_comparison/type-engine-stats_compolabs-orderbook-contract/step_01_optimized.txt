@@ -1,0 +1,841 @@
+   Compiling library core (/home/kebradalaonda/.forc/git/checkouts/std-9be0d6062747ea7/cba9a005ef2a5b61e13eb02ba6e9e93ebd19a31a/sway-lib-core)
+Concurrent slab:
+    Length:               27266
+    Capacity:             32768
+    Free slots:               0
+    With source id:       22542
+    Without source id:     4724
+
+Hash map content      :      276 types
+    Length            :      276
+    Capacity          :      448
+    With source id    :      275
+    Without source id :        1
+    -------------------
+    String arrays       :      273
+    Structs             :        3
+
+Type engine content     :    27266 types
+    Unknowns            :     1406
+    Nevers              :       31
+    Unknown generics    :     6747
+    String slices       :       65
+    String arrays       :      540
+    Unsigned integers   :     2343
+    Structs             :     2499
+    Booleans            :       30
+    Units               :      600
+    Tuples              :     2652
+    Customs             :     5870
+    B256s               :       57
+    Numerics            :     2011
+    Contracts           :        1
+    Error recoveries    :        1
+    Arrays              :     1805
+    Raw pointers        :      339
+    Raw slices          :      240
+    References          :       19
+
+Type engine access:
+    insert():                   18587
+        Clone TypeInfo:               12496
+        Heap-alloc TypeInfo:          12496
+        Heap-alloc TypeSourceInfo:    11531
+        Hash calculation:              1241
+        --------------------------
+        Unknowns            :     2688
+        Nevers              :        3
+        Unknown generics    :     2112
+        String slices       :       58
+        String arrays       :      345
+        Unsigned integers   :     1184
+        Structs             :      897
+        Booleans            :       71
+        Units               :      784
+        Tuples              :     1786
+        Customs             :     5870
+        B256s               :       60
+        Numerics            :     1110
+        Arrays              :     1466
+        Raw pointers        :      109
+        Raw slices          :       24
+        References          :       10
+    new_unknown():              11371
+    new_numeric():               2028
+    new_unknown_generic():       2144
+    new_placeholder():            178
+    replace():                  14064
+        Unknowns            :     9965
+        Numerics            :      962
+        Unknown generics    :     2959
+        Placeholders        :      178
+
+   Compiling library std (git+https://github.com/fuellabs/sway?tag=v0.63.6#cba9a005ef2a5b61e13eb02ba6e9e93ebd19a31a)
+Concurrent slab:
+    Length:              188520
+    Capacity:            262144
+    Free slots:               0
+    With source id:      178569
+    Without source id:     9951
+
+Hash map content      :      319 types
+    Length            :      319
+    Capacity          :      448
+    With source id    :      309
+    Without source id :       10
+    -------------------
+    String arrays       :      273
+    Enums               :       25
+    Structs             :       17
+    Trait types         :        4
+
+Type engine content     :   188520 types
+    Unknowns            :     4194
+    Nevers              :      290
+    Unknown generics    :     7589
+    Placeholders        :       46
+    String slices       :       93
+    String arrays       :      540
+    Unsigned integers   :     8952
+    Enums               :    70936
+    Structs             :    57559
+    Booleans            :       55
+    Units               :     2080
+    Tuples              :    14014
+    Customs             :     8780
+    B256s               :      551
+    Numerics            :     5584
+    Contracts           :        1
+    Error recoveries    :        3
+    Arrays              :     5633
+    Raw pointers        :     1183
+    Raw slices          :      386
+    Aliases             :       18
+    Trait types         :        4
+    References          :       19
+
+Type engine access:
+    insert():                  167423
+        Clone TypeInfo:              152863
+        Heap-alloc TypeInfo:         152863
+        Heap-alloc TypeSourceInfo:   150429
+        Hash calculation:              2753
+        --------------------------
+        Unknowns            :     3616
+        Nevers              :        5
+        Unknown generics    :     2160
+        String slices       :       64
+        String arrays       :      345
+        Unsigned integers   :     2936
+        Enums               :    71034
+        Structs             :    54034
+        Booleans            :      339
+        Units               :     2466
+        Tuples              :    12624
+        Customs             :     8780
+        B256s               :      353
+        Numerics            :     4380
+        Arrays              :     3854
+        Raw pointers        :      269
+        Raw slices          :      132
+        Aliases             :        8
+        Trait types         :        4
+        References          :       10
+    new_unknown():              26871
+    new_numeric():               6809
+    new_unknown_generic():       2573
+    new_placeholder():           1824
+    replace():                  31559
+        Unknowns            :    22677
+        Numerics            :     3671
+        Unknown generics    :     3428
+        Placeholders        :     1783
+
+   Compiling library standards (git+https://github.com/FuelLabs/sway-standards?tag=v0.4.3#6f63eb7dff2458a7d976184e565b5cbf26f61da2)
+Concurrent slab:
+    Length:              216768
+    Capacity:            262144
+    Free slots:               0
+    With source id:      206727
+    Without source id:    10041
+
+Hash map content      :      332 types
+    Length            :      332
+    Capacity          :      448
+    With source id    :      319
+    Without source id :       13
+    -------------------
+    String arrays       :      273
+    Enums               :       34
+    Structs             :       21
+    Trait types         :        4
+
+Type engine content     :   216768 types
+    Unknowns            :     4273
+    Nevers              :      290
+    Unknown generics    :     7598
+    Placeholders        :       86
+    String slices       :       93
+    String arrays       :      540
+    Unsigned integers   :     9044
+    Enums               :    84073
+    Structs             :    69666
+    Booleans            :       55
+    Units               :     2098
+    Tuples              :    16201
+    Customs             :     9287
+    B256s               :      571
+    Numerics            :     5600
+    Contracts           :        1
+    Error recoveries    :        3
+    Arrays              :     5633
+    Raw pointers        :     1191
+    Raw slices          :      387
+    Aliases             :       45
+    Trait types         :        4
+    References          :       19
+
+Type engine access:
+    insert():                  195424
+        Clone TypeInfo:              180713
+        Heap-alloc TypeInfo:         180713
+        Heap-alloc TypeSourceInfo:   177994
+        Hash calculation:              3051
+        --------------------------
+        Unknowns            :     3619
+        Nevers              :        5
+        Unknown generics    :     2160
+        String slices       :       65
+        String arrays       :      345
+        Unsigned integers   :     2985
+        Enums               :    84278
+        Structs             :    65939
+        Booleans            :      368
+        Units               :     2485
+        Tuples              :    14799
+        Customs             :     9287
+        B256s               :      372
+        Numerics            :     4409
+        Arrays              :     3854
+        Raw pointers        :      270
+        Raw slices          :      133
+        Aliases             :       27
+        Trait types         :        4
+        References          :       10
+    new_unknown():              27426
+    new_numeric():               6845
+    new_unknown_generic():       2599
+    new_placeholder():           1890
+    replace():                  32106
+        Unknowns            :    23153
+        Numerics            :     3699
+        Unknown generics    :     3445
+        Placeholders        :     1809
+
+warning
+ --> /home/kebradalaonda/.forc/git/checkouts/standards-a75010d5ab7a85a4/6f63eb7dff2458a7d976184e565b5cbf26f61da2/standards/src/src10.sw:6:9
+  |
+4 | 
+5 |     /// The number of tokens.
+6 |     pub amount: b256,
+  |         ------ This struct field is never accessed.
+7 |     /// The user's address on the canonical chain.
+8 |     pub from: b256,
+  |
+____
+
+warning
+  --> /home/kebradalaonda/.forc/git/checkouts/standards-a75010d5ab7a85a4/6f63eb7dff2458a7d976184e565b5cbf26f61da2/standards/src/src10.sw:8:9
+   |
+ 6 | 
+ 7 |     /// The user's address on the canonical chain.
+ 8 |     pub from: b256,
+   |         ---- This struct field is never accessed.
+ 9 |     /// The number of deposit messages.
+10 |     pub len: u16,
+   |
+____
+
+warning
+  --> /home/kebradalaonda/.forc/git/checkouts/standards-a75010d5ab7a85a4/6f63eb7dff2458a7d976184e565b5cbf26f61da2/standards/src/src10.sw:10:9
+   |
+ 8 | 
+ 9 |     /// The number of deposit messages.
+10 |     pub len: u16,
+   |         --- This struct field is never accessed.
+11 |     /// The bridging target destination on the Fuel chain.
+12 |     pub to: Identity,
+   |
+____
+
+warning
+  --> /home/kebradalaonda/.forc/git/checkouts/standards-a75010d5ab7a85a4/6f63eb7dff2458a7d976184e565b5cbf26f61da2/standards/src/src10.sw:12:9
+   |
+10 | 
+11 |     /// The bridging target destination on the Fuel chain.
+12 |     pub to: Identity,
+   |         -- This struct field is never accessed.
+13 |     /// The bridged token's address on the canonical chain.
+14 |     pub token_address: b256,
+   |
+____
+
+warning
+  --> /home/kebradalaonda/.forc/git/checkouts/standards-a75010d5ab7a85a4/6f63eb7dff2458a7d976184e565b5cbf26f61da2/standards/src/src10.sw:14:9
+   |
+12 | 
+13 |     /// The bridged token's address on the canonical chain.
+14 |     pub token_address: b256,
+   |         ------------- This struct field is never accessed.
+15 |     /// The token's ID on the canonical chain.
+16 |     pub token_id: b256,
+   |
+____
+
+warning
+  --> /home/kebradalaonda/.forc/git/checkouts/standards-a75010d5ab7a85a4/6f63eb7dff2458a7d976184e565b5cbf26f61da2/standards/src/src10.sw:16:9
+   |
+14 | 
+15 |     /// The token's ID on the canonical chain.
+16 |     pub token_id: b256,
+   |         -------- This struct field is never accessed.
+17 | }
+   |
+____
+
+  Compiled library "standards" with 6 warnings.
+   Compiling library sway_libs (git+https://github.com/FuelLabs/sway-libs?tag=v0.21.0#6a227ed34c86fe1ebd334dbdfeccf66c43e3915b)
+Concurrent slab:
+    Length:              363844
+    Capacity:            524288
+    Free slots:               0
+    With source id:      352019
+    Without source id:    11825
+
+Hash map content      :      387 types
+    Length            :      387
+    Capacity          :      448
+    With source id    :      367
+    Without source id :       20
+    -------------------
+    String arrays       :      273
+    Enums               :       70
+    Structs             :       40
+    Trait types         :        4
+
+Type engine content     :   363844 types
+    Unknowns            :     5269
+    Nevers              :      442
+    Unknown generics    :     7626
+    Placeholders        :      128
+    String slices       :       93
+    String arrays       :      540
+    Unsigned integers   :    12613
+    Enums               :   155133
+    Structs             :   122341
+    Booleans            :      218
+    Units               :     3355
+    Tuples              :    27840
+    Customs             :    13093
+    B256s               :      753
+    Numerics            :     6947
+    Contracts           :        1
+    Error recoveries    :        3
+    Arrays              :     5652
+    Raw pointers        :     1291
+    Raw slices          :      422
+    Aliases             :       51
+    Trait types         :        4
+    References          :       19
+
+Type engine access:
+    insert():                  334625
+        Clone TypeInfo:              316263
+        Heap-alloc TypeInfo:         316263
+        Heap-alloc TypeSourceInfo:   312159
+        Hash calculation:              4491
+        --------------------------
+        Unknowns            :     4211
+        Nevers              :        5
+        Unknown generics    :     2160
+        String slices       :       65
+        String arrays       :      345
+        Unsigned integers   :     3356
+        Enums               :   155569
+        Structs             :   114911
+        Booleans            :      698
+        Units               :     4006
+        Tuples              :    26268
+        Customs             :    13093
+        B256s               :      406
+        Numerics            :     5194
+        Arrays              :     3864
+        Raw pointers        :      274
+        Raw slices          :      147
+        Aliases             :       29
+        Trait types         :        4
+        References          :       10
+    new_unknown():              38363
+    new_numeric():               8245
+    new_unknown_generic():       2811
+    new_placeholder():           2252
+    replace():                  43265
+        Unknowns            :    33094
+        Numerics            :     4387
+        Unknown generics    :     3655
+        Placeholders        :     2129
+
+warning
+   --> /home/kebradalaonda/.forc/git/checkouts/sway_libs-30641758e4be7209/6a227ed34c86fe1ebd334dbdfeccf66c43e3915b/libs/src/fixed_point/ufp32.sw:450:13
+    |
+448 | 
+449 |     fn pow(self, exponent: u32) -> Self {
+450 |         let demoninator_power = UFP32::denominator();
+    |             ----------------- This declaration is never used.
+451 |         let nominator_pow = self.value.pow(exponent);
+452 |         // As we need to ensure the fixed point structure 
+    |
+____
+
+warning
+   --> /home/kebradalaonda/.forc/git/checkouts/sway_libs-30641758e4be7209/6a227ed34c86fe1ebd334dbdfeccf66c43e3915b/libs/src/fixed_point/ufp128.sw:208:17
+    |
+206 | 
+207 |     fn divide(self, divisor: Self) -> Self {
+208 |         let mut s = self;
+    |                 - This declaration is never used.
+209 |         let zero = UFP128::zero();
+210 |         let u128_max = U128::max();
+    |
+____
+
+warning
+   --> /home/kebradalaonda/.forc/git/checkouts/sway_libs-30641758e4be7209/6a227ed34c86fe1ebd334dbdfeccf66c43e3915b/libs/src/fixed_point/ufp128.sw:210:13
+    |
+208 | 
+209 |         let zero = UFP128::zero();
+210 |         let u128_max = U128::max();
+    |             -------- This declaration is never used.
+211 | 
+212 |         assert(divisor != zero);
+    |
+____
+
+warning
+   --> /home/kebradalaonda/.forc/git/checkouts/sway_libs-30641758e4be7209/6a227ed34c86fe1ebd334dbdfeccf66c43e3915b/libs/src/fixed_point/ufp128.sw:434:13
+    |
+432 | 
+433 |         let res_minus_1 = exponent + exponent * exponent * (p2 + exponent * (p3 + exponent * (p4 + exponent * (p5 + exponent * (p6 + exponent * p7)))));
+434 |         let res = res_minus_1 + one;
+    |             --- This declaration is never used.
+435 |         let res = one;
+436 |         res
+    |
+____
+
+warning
+   --> /home/kebradalaonda/.forc/git/checkouts/sway_libs-30641758e4be7209/6a227ed34c86fe1ebd334dbdfeccf66c43e3915b/libs/src/fixed_point/ifp64.sw:450:17
+    |
+448 | 
+449 |         let mut underlying = self.underlying;
+450 |         let mut non_negative = self.non_negative;
+    |                 ------------ This declaration is never used.
+451 | 
+452 |         if self.non_negative {
+    |
+____
+
+warning
+   --> /home/kebradalaonda/.forc/git/checkouts/sway_libs-30641758e4be7209/6a227ed34c86fe1ebd334dbdfeccf66c43e3915b/libs/src/fixed_point/ifp64.sw:459:17
+    |
+457 | 
+458 |             let diff_ceil_self = ceil - self.underlying;
+459 |             let underlying = if diff_self_floor > diff_ceil_self {
+    |                 ---------- This declaration is never used.
+460 |                 floor
+461 |             } else {
+    |
+____
+
+warning
+   --> /home/kebradalaonda/.forc/git/checkouts/sway_libs-30641758e4be7209/6a227ed34c86fe1ebd334dbdfeccf66c43e3915b/libs/src/fixed_point/ifp128.sw:450:17
+    |
+448 | 
+449 |         let mut underlying = self.underlying;
+450 |         let mut non_negative = self.non_negative;
+    |                 ------------ This declaration is never used.
+451 | 
+452 |         if self.non_negative {
+    |
+____
+
+warning
+   --> /home/kebradalaonda/.forc/git/checkouts/sway_libs-30641758e4be7209/6a227ed34c86fe1ebd334dbdfeccf66c43e3915b/libs/src/fixed_point/ifp128.sw:459:17
+    |
+457 | 
+458 |             let diff_ceil_self = ceil - self.underlying;
+459 |             let underlying = if diff_self_floor > diff_ceil_self {
+    |                 ---------- This declaration is never used.
+460 |                 floor
+461 |             } else {
+    |
+____
+
+warning
+   --> /home/kebradalaonda/.forc/git/checkouts/sway_libs-30641758e4be7209/6a227ed34c86fe1ebd334dbdfeccf66c43e3915b/libs/src/fixed_point/ifp256.sw:450:17
+    |
+448 | 
+449 |         let mut underlying = self.underlying;
+450 |         let mut non_negative = self.non_negative;
+    |                 ------------ This declaration is never used.
+451 | 
+452 |         if self.non_negative {
+    |
+____
+
+warning
+   --> /home/kebradalaonda/.forc/git/checkouts/sway_libs-30641758e4be7209/6a227ed34c86fe1ebd334dbdfeccf66c43e3915b/libs/src/fixed_point/ifp256.sw:459:17
+    |
+457 | 
+458 |             let diff_ceil_self = ceil - self.underlying;
+459 |             let underlying = if diff_self_floor > diff_ceil_self {
+    |                 ---------- This declaration is never used.
+460 |                 floor
+461 |             } else {
+    |
+____
+
+  Compiled library "sway_libs" with 10 warnings.
+   Compiling library i64 (git+https://github.com/compolabs/i64?branch=devnet#81bb0f2c3108dae0724d1e786ef82e9a3536cac6)
+Concurrent slab:
+    Length:              365615
+    Capacity:            524288
+    Free slots:               0
+    With source id:      353747
+    Without source id:    11868
+
+Hash map content      :      388 types
+    Length            :      388
+    Capacity          :      448
+    With source id    :      368
+    Without source id :       20
+    -------------------
+    String arrays       :      273
+    Enums               :       70
+    Structs             :       41
+    Trait types         :        4
+
+Type engine content     :   365615 types
+    Unknowns            :     5294
+    Nevers              :      442
+    Unknown generics    :     7626
+    Placeholders        :      128
+    String slices       :       95
+    String arrays       :      540
+    Unsigned integers   :    12806
+    Enums               :   155917
+    Structs             :   122653
+    Booleans            :      298
+    Units               :     3357
+    Tuples              :    28044
+    Customs             :    13226
+    B256s               :      753
+    Numerics            :     6983
+    Contracts           :        1
+    Error recoveries    :        3
+    Arrays              :     5652
+    Raw pointers        :     1291
+    Raw slices          :      422
+    Aliases             :       51
+    Trait types         :        4
+    References          :       19
+
+Type engine access:
+    insert():                  335990
+        Clone TypeInfo:              317479
+        Heap-alloc TypeInfo:         317479
+        Heap-alloc TypeSourceInfo:   313273
+        Hash calculation:              4594
+        --------------------------
+        Unknowns            :     4211
+        Nevers              :        5
+        Unknown generics    :     2160
+        String slices       :       67
+        String arrays       :      345
+        Unsigned integers   :     3379
+        Enums               :   156349
+        Structs             :   115014
+        Booleans            :      780
+        Units               :     4008
+        Tuples              :    26468
+        Customs             :    13226
+        B256s               :      406
+        Numerics            :     5234
+        Arrays              :     3864
+        Raw pointers        :      274
+        Raw slices          :      147
+        Aliases             :       29
+        Trait types         :        4
+        References          :       10
+    new_unknown():              38948
+    new_numeric():               8303
+    new_unknown_generic():       2823
+    new_placeholder():           2254
+    replace():                  43879
+        Unknowns            :    33654
+        Numerics            :     4427
+        Unknown generics    :     3667
+        Placeholders        :     2131
+
+   Compiling contract orderbook (/home/kebradalaonda/p/compolabs-orderbook-contract/contract)
+Concurrent slab:
+    Length:              479181
+    Capacity:            524288
+    Free slots:               0
+    With source id:      467014
+    Without source id:    12167
+
+Hash map content      :      402 types
+    Length            :      402
+    Capacity          :      448
+    With source id    :      379
+    Without source id :       23
+    -------------------
+    String arrays       :      273
+    Enums               :       78
+    Structs             :       47
+    Trait types         :        4
+
+Type engine content     :   479181 types
+    Unknowns            :     5514
+    Nevers              :      502
+    Unknown generics    :     7627
+    Placeholders        :      222
+    String slices       :      144
+    String arrays       :      540
+    Unsigned integers   :    13169
+    Enums               :   228461
+    Structs             :   148608
+    Booleans            :      304
+    Units               :     3589
+    Tuples              :    40447
+    Customs             :    14582
+    B256s               :      842
+    Numerics            :     7125
+    Contracts           :        3
+    Error recoveries    :        3
+    Arrays              :     5652
+    Raw pointers        :     1313
+    Raw slices          :      450
+    Aliases             :       51
+    Trait types         :        4
+    References          :       19
+
+Type engine access:
+    insert():                  448753
+        Clone TypeInfo:              429529
+        Heap-alloc TypeInfo:         429529
+        Heap-alloc TypeSourceInfo:   424487
+        Hash calculation:              5444
+        --------------------------
+        Unknowns            :     4263
+        Nevers              :        5
+        Unknown generics    :     2160
+        String slices       :       94
+        String arrays       :      345
+        Unsigned integers   :     3495
+        Enums               :   229331
+        Structs             :   140410
+        Booleans            :      786
+        Units               :     4314
+        Tuples              :    38784
+        Customs             :    14582
+        B256s               :      466
+        Numerics            :     5364
+        Contracts           :        1
+        Arrays              :     3864
+        Raw pointers        :      282
+        Raw slices          :      154
+        Aliases             :       29
+        Trait types         :        4
+        References          :       10
+    new_unknown():              40867
+    new_numeric():               8503
+    new_unknown_generic():       2842
+    new_placeholder():           2468
+    replace():                  45846
+        Unknowns            :    35353
+        Numerics            :     4557
+        Unknown generics    :     3685
+        Placeholders        :     2251
+
+   Compiling script match-script (/home/kebradalaonda/p/compolabs-orderbook-contract/match-script)
+Concurrent slab:
+    Length:              486591
+    Capacity:            524288
+    Free slots:               0
+    With source id:      474384
+    Without source id:    12207
+
+Hash map content      :      403 types
+    Length            :      403
+    Capacity          :      448
+    With source id    :      380
+    Without source id :       23
+    -------------------
+    String arrays       :      273
+    Enums               :       78
+    Structs             :       48
+    Trait types         :        4
+
+Type engine content     :   486591 types
+    Unknowns            :     5525
+    Nevers              :      505
+    Unknown generics    :     7628
+    Placeholders        :      222
+    String slices       :      144
+    String arrays       :      540
+    Unsigned integers   :    13179
+    Enums               :   231538
+    Structs             :   152004
+    Booleans            :      308
+    Units               :     3600
+    Tuples              :    41057
+    Contract callers    :        9
+    Customs             :    14839
+    B256s               :      853
+    Numerics            :     7135
+    Contracts           :        3
+    Error recoveries    :        3
+    Arrays              :     5652
+    Raw pointers        :     1313
+    Raw slices          :      450
+    Aliases             :       51
+    Trait types         :        4
+    References          :       19
+
+Type engine access:
+    insert():                  456124
+        Clone TypeInfo:              436812
+        Heap-alloc TypeInfo:         436812
+        Heap-alloc TypeSourceInfo:   431754
+        Hash calculation:              5461
+        --------------------------
+        Unknowns            :     4269
+        Nevers              :        5
+        Unknown generics    :     2160
+        String slices       :      100
+        String arrays       :      345
+        Unsigned integers   :     3509
+        Enums               :   232399
+        Structs             :   143760
+        Booleans            :      786
+        Units               :     4347
+        Tuples              :    39390
+        Contract callers    :        2
+        Customs             :    14839
+        B256s               :      490
+        Numerics            :     5368
+        Contracts           :        1
+        Arrays              :     3864
+        Raw pointers        :      282
+        Raw slices          :      155
+        Aliases             :       29
+        Trait types         :        4
+        References          :       10
+    new_unknown():              40999
+    new_numeric():               8511
+    new_unknown_generic():       2845
+    new_placeholder():           2468
+    replace():                  45972
+        Unknowns            :    35474
+        Numerics            :     4560
+        Unknown generics    :     3687
+        Placeholders        :     2251
+
+   Compiling script fulfill-script (/home/kebradalaonda/p/compolabs-orderbook-contract/fulfill-script)
+Concurrent slab:
+    Length:              494189
+    Capacity:            524288
+    Free slots:               0
+    With source id:      481913
+    Without source id:    12276
+
+Hash map content      :      404 types
+    Length            :      404
+    Capacity          :      448
+    With source id    :      381
+    Without source id :       23
+    -------------------
+    String arrays       :      273
+    Enums               :       78
+    Structs             :       49
+    Trait types         :        4
+
+Type engine content     :   494189 types
+    Unknowns            :     5535
+    Nevers              :      507
+    Unknown generics    :     7629
+    Placeholders        :      230
+    String slices       :      144
+    String arrays       :      540
+    Unsigned integers   :    13195
+    Enums               :   234481
+    Structs             :   155417
+    Booleans            :      312
+    Units               :     3613
+    Tuples              :    41719
+    Contract callers    :       25
+    Customs             :    15315
+    B256s               :      868
+    Numerics            :     7154
+    Contracts           :        3
+    Error recoveries    :        3
+    Arrays              :     5652
+    Raw pointers        :     1313
+    Raw slices          :      450
+    Aliases             :       51
+    Trait types         :        4
+    References          :       19
+
+Type engine access:
+    insert():                  463686
+        Clone TypeInfo:              444242
+        Heap-alloc TypeInfo:         444242
+        Heap-alloc TypeSourceInfo:   439154
+        Hash calculation:              5492
+        --------------------------
+        Unknowns            :     4273
+        Nevers              :        5
+        Unknown generics    :     2160
+        String slices       :      113
+        String arrays       :      345
+        Unsigned integers   :     3541
+        Enums               :   235336
+        Structs             :   147124
+        Booleans            :      787
+        Units               :     4386
+        Tuples              :    40041
+        Contract callers    :        4
+        Customs             :    15315
+        B256s               :      524
+        Numerics            :     5376
+        Contracts           :        1
+        Arrays              :     3864
+        Raw pointers        :      282
+        Raw slices          :      156
+        Aliases             :       29
+        Trait types         :        4
+        References          :       10
+    new_unknown():              41162
+    new_numeric():               8527
+    new_unknown_generic():       2848
+    new_placeholder():           2484
+    replace():                  46141
+        Unknowns            :    35627
+        Numerics            :     4566
+        Unknown generics    :     3689
+        Placeholders        :     2259
+
+    Finished release [optimized + fuel] target(s) [72.728 KB] in 6.56s
+
