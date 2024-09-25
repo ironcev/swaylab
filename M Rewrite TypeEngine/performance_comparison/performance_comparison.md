@@ -10,3 +10,8 @@ Commit:  Succeed test & failed deployment (SHA: 03e491f055d314f1facdb42d14f00649
 Step #1: Add `id_of_<build-in type>` and `new_<replacable type>[_<options>]` methods.
 
 Step #2: Add singleton instances for `TypeInfo::Unknown` and `TypeInfo::Numeric`.
+
+Step #3: Implement `is_changeable_type` for `TypeInfo::Enum` and `TypeInfo::Struct` and remove `TypeInfo` cloning.
+
+Step #4: Implement zero-heap-allocations hashing and store `Arc<TypeSourceInfo>` in the `unchangeable_type_ids` map.
+
