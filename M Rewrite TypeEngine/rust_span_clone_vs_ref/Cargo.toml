@@ -1,0 +1,13 @@
+[package]
+name = "rust_span_clone_vs_ref"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+[dev-dependencies]
+criterion = "0.5"
+
+[[bench]]
+name = "benchmark"
+harness = false

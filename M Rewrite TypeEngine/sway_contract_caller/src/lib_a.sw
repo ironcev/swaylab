@@ -1,0 +1,3 @@
+library;
+
+abi Abi {}

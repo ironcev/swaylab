@@ -15,3 +15,7 @@ Step #3: Implement `is_changeable_type` for `TypeInfo::Enum` and `TypeInfo::Stru
 
 Step #4: Implement zero-heap-allocations hashing and store `Arc<TypeSourceInfo>` in the `unchangeable_type_ids` map.
 
+Step #5: Implement `insert_<type>` for all types except `TypeInfo::Custom` and `TypeInfo::TraitType`.
+
+Step #6: Reuse shareable types when `replace()`ing replaceable types.
+

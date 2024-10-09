@@ -27,3 +27,14 @@ hyperfine --warmup 1 --runs 3 '~/p/sway/target/release/forc check -p ~/p/compola
 
   Time (mean ± σ):      5.607 s ±  0.200 s    [User: 4.514 s, System: 0.703 s]
   Range (min … max):    5.377 s …  5.733 s    3 runs
+
+## Step #5: Implement `insert_<type>` for all types except `TypeInfo::Custom` and `TypeInfo::TraitType`.
+
+  Time (mean ± σ):      5.981 s ±  0.362 s    [User: 4.785 s, System: 0.759 s]
+  Range (min … max):    5.565 s …  6.229 s    3 runs
+
+## Step #6: Reuse shareable types when `replace()`ing replaceable types.
+
+  Time (mean ± σ):      5.945 s ±  0.517 s    [User: 4.749 s, System: 0.768 s]
+  Range (min … max):    5.349 s …  6.280 s    3 runs
+
