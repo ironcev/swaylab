@@ -1,24 +1,12 @@
 // Add to `forc-pkg/src/pkg.rs`. Line ~1825.
 engines.te().qnd_dbg_type_engine_statistics();
 
-// Add to `sway-core/src/concurrent_slab.rs`.
-impl ConcurrentSlab<crate::TypeSourceInfo> {
-    pub fn qnd_dbg_concurrent_slab_statistics(&self) {
-        let inner = self.inner.read();
-        println!("Concurrent slab:");
-        println!("    Length:            {:>8}", self.len());
-        println!("    Capacity:          {:>8}", inner.items.capacity());
-        println!("    Free slots:        {:>8}", inner.free_list.len());
-        let types_with_source_id = inner.items.iter().flatten().fold(0, |sum, ti| if ti.source_id.is_some() { sum + 1 } else { sum });
-        println!("    With source id:    {types_with_source_id:>8}");
-        println!("    Without source id: {:>8}", self.len() - types_with_source_id);
-    }
-}
 
 // Add to `sway-core/src/type_system/engine.rs`.
 access_counter: RwLock<QndDbgTypeEngineAccessCounter>,
 access_counter: RwLock::new(QndDbgTypeEngineAccessCounter::default()),
 access_counter: RwLock::new(self.access_counter.read().clone()),
+
 
 #[derive(Default, Debug, Clone)]
 struct QndDbgTypeEngineAccessCounter {
@@ -29,9 +17,20 @@ struct QndDbgTypeEngineAccessCounter {
     insert_hashing: usize,
     new_unknown: usize,
     new_numeric: usize,
-    // TODO-IG!: Add `new_` methods for these.
     new_unknown_generic: usize,
     new_placeholder: usize,
+    insert_enum: usize,
+    insert_struct: usize,
+    insert_tuple: usize,
+    insert_array: usize,
+    insert_string_array: usize,
+    new_contract_caller: usize,
+    new_alias: usize,
+    new_custom: usize,
+    insert_slice: usize,
+    insert_ptr: usize,
+    insert_ref: usize,
+    insert_trait_type: usize,
     replace: usize,
     replace_unknown: usize,
     replace_numeric: usize,
@@ -70,6 +69,54 @@ impl QndDbgTypeEngineAccessCounter {
         }
     }
 
+    pub fn inc_insert_enum(&mut self) {
+        self.insert_enum += 1;
+    }
+
+    pub fn inc_insert_struct(&mut self) {
+        self.insert_struct += 1;
+    }
+
+    pub fn inc_insert_tuple(&mut self) {
+        self.insert_tuple += 1;
+    }
+
+    pub fn inc_insert_array(&mut self) {
+        self.insert_array += 1;
+    }
+
+    pub fn inc_insert_string_array(&mut self) {
+        self.insert_string_array += 1;
+    }
+
+    pub fn inc_new_contract_caller(&mut self) {
+        self.new_contract_caller += 1;
+    }
+
+    pub fn inc_new_alias(&mut self) {
+        self.new_alias += 1;
+    }
+
+    pub fn inc_new_custom(&mut self) {
+        self.new_custom += 1;
+    }
+
+    pub fn inc_insert_slice(&mut self) {
+        self.insert_slice += 1;
+    }
+
+    pub fn inc_insert_ptr(&mut self) {
+        self.insert_ptr += 1;
+    }
+
+    pub fn inc_insert_ref(&mut self) {
+        self.insert_ref += 1;
+    }
+
+    pub fn inc_insert_trait_type(&mut self) {
+        self.insert_trait_type += 1;
+    }
+
     pub fn inc_replace(&mut self, replaced_ti: &TypeInfo) {
         self.replace += 1;
         match replaced_ti {
@@ -94,6 +141,21 @@ impl QndDbgTypeEngineAccessCounter {
         println!("    new_numeric():           {:>8}", self.new_numeric);
         println!("    new_unknown_generic():   {:>8}", self.new_unknown_generic);
         println!("    new_placeholder():       {:>8}", self.new_placeholder);
+        println!();
+        println!("    new_contract_caller():   {:>8}", self.new_contract_caller);
+        println!("    new_alias():             {:>8}", self.new_alias);
+        println!("    new_custom():            {:>8}", self.new_custom);
+        println!();
+        println!("    insert_enum():           {:>8}", self.insert_enum);
+        println!("    insert_struct():         {:>8}", self.insert_struct);
+        println!("    insert_tuple():          {:>8}", self.insert_tuple);
+        println!("    insert_array():          {:>8}", self.insert_array);
+        println!("    insert_string_array():   {:>8}", self.insert_string_array);
+        println!("    insert_slice():          {:>8}", self.insert_slice);
+        println!("    insert_ptr():            {:>8}", self.insert_ptr);
+        println!("    insert_ref():            {:>8}", self.insert_ref);
+        println!("    insert_trait_type():     {:>8}", self.insert_trait_type);
+        println!();
         println!("    replace():               {:>8}", self.replace);
         println!("        {:20}: {:>8}", "Unknowns", self.replace_unknown);
         println!("        {:20}: {:>8}", "Numerics", self.replace_numeric);
@@ -159,7 +221,6 @@ impl QndDbgTypesCounter {
             TypeInfo::Contract => self.contracts += 1,
             TypeInfo::ErrorRecovery(_) => self.error_recoveries += 1,
             TypeInfo::Array(_, _) => self.arrays += 1,
-            TypeInfo::Storage { .. } => self.storages += 1,
             TypeInfo::RawUntypedPtr => self.raw_ptrs += 1,
             TypeInfo::RawUntypedSlice => self.raw_slices += 1,
             TypeInfo::Ptr(_) => self.ptrs += 1,
@@ -207,6 +268,19 @@ impl QndDbgTypesCounter {
     }
 }
 
+impl ConcurrentSlab<TypeSourceInfo> {
+    pub fn qnd_dbg_concurrent_slab_statistics(&self) {
+        let inner = self.inner.read();
+        println!("Concurrent slab:");
+        println!("    Length:            {:>8}", self.len());
+        println!("    Capacity:          {:>8}", inner.items.capacity());
+        println!("    Free slots:        {:>8}", inner.free_list.len());
+        let types_with_source_id = inner.items.iter().flatten().fold(0, |sum, ti| if ti.source_id.is_some() { sum + 1 } else { sum });
+        println!("    With source id:    {types_with_source_id:>8}");
+        println!("    Without source id: {:>8}", self.len() - types_with_source_id);
+    }
+}
+
 impl TypeEngine {
     pub fn qnd_dbg_type_engine_statistics(&self) {
         // Concurrent slab statistics.
@@ -215,17 +289,17 @@ impl TypeEngine {
         println!();
 
         // Hash map statistics.
-        let id_map = self.id_map.read();
-        println!("Hash map content      : {:>8} types", id_map.len());
-        println!("    Length            : {:>8}", id_map.len());
-        println!("    Capacity          : {:>8}", id_map.capacity());
-        let types_with_source_id = id_map.keys().fold(0, |sum, ti| if ti.source_id.is_some() { sum + 1 } else { sum });
+        let shareable_types = self.shareable_types.read();
+        println!("Hash map content      : {:>8} types", shareable_types.len());
+        println!("    Length            : {:>8}", shareable_types.len());
+        println!("    Capacity          : {:>8}", shareable_types.capacity());
+        let types_with_source_id = shareable_types.keys().fold(0, |sum, ti| if ti.source_id.is_some() { sum + 1 } else { sum });
         println!("    With source id    : {types_with_source_id:>8}");
-        println!("    Without source id : {:>8}", id_map.len() - types_with_source_id);
+        println!("    Without source id : {:>8}", shareable_types.len() - types_with_source_id);
         println!("    -------------------");
 
         let mut counter = QndDbgTypesCounter::default();
-        for val in id_map.keys() {
+        for val in shareable_types.keys() {
             counter.inc(&val.type_info);
         }
         counter.print_counters(4);
@@ -249,15 +323,13 @@ impl TypeEngine {
     }
 }
 
+
+self.access_counter.write().inc_new(&self.singleton_types.read().unknown.type_info);
+self.access_counter.write().inc_new(&self.singleton_types.read().numeric.type_info);
 self.access_counter.write().inc_new(&tsi.type_info);
-
+self.access_counter.write().inc_insert_enum();
 self.access_counter.write().inc_insert(&ty);
-
-self.access_counter.write().inc_insert_clone_type_info();
-self.access_counter.write().inc_insert_heap_alloc_type_info();
-
 self.access_counter.write().inc_insert_heap_alloc_type_source_info();
-
 self.access_counter.write().inc_insert_hashing();
-
 self.access_counter.write().inc_replace(&type_source_info.type_info);
+
