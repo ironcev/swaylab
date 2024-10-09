@@ -23,3 +23,13 @@ sort ~/Desktop/bytecode_sizes.txt.01.single_line.temp.txt -o ~/Desktop/bytecode_
 
 cp ~/Desktop/bytecode_sizes.txt.02.final.temp.txt ~/Desktop/bytecode_sizes.csv
 ```
+
+2. Creating flamegraphs
+
+```
+sudo sysctl -w kernel.perf_event_paranoid=1
+
+cargo flamegraph -b forc -- build -p ~/path/to/project
+
+sudo sysctl -w kernel.perf_event_paranoid=4
+```
