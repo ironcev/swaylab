@@ -79,10 +79,7 @@ crad $$reta
 jmpf $zero i190               ; [call]: call main_17
 move $r0 $$retv               ; [call]: copy the return value
 ret  $r0
-pshl i31                      ; save registers 16..40
-pshh i524288                  ; save registers 40..64
-move $$locbase $sp            ; save locals base register for function abi_decode_in_place_0
-cfei i112                     ; allocate 112 bytes for locals and 0 slots for call arguments
+ifun i31 i524288 i112
 move $r0 $$arg0               ; save argument 0 (ptr)
 move $r1 $$arg1               ; save argument 1 (len)
 move $r2 $$arg2               ; save argument 2 (target)
@@ -117,10 +114,7 @@ move $$reta $r3               ; restore return address
 poph i524288                  ; restore registers 40..64
 popl i31                      ; restore registers 16..40
 jmp $$reta                    ; return from call
-pshl i7                       ; save registers 16..40
-pshh i524288                  ; save registers 40..64
-move $$locbase $sp            ; save locals base register for function from_parts_1
-cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments
+ifun i7 i524288 i0
 move $r0 $$arg0               ; save argument 0 (ptr)
 move $r1 $$arg2               ; save argument 2 (__ret_value)
 move $r2 $$reta               ; save return address
@@ -131,10 +125,7 @@ move $$reta $r2               ; restore return address
 poph i524288                  ; restore registers 40..64
 popl i7                       ; restore registers 16..40
 jmp $$reta                    ; return from call
-pshl i15                      ; save registers 16..40
-pshh i524288                  ; save registers 40..64
-move $$locbase $sp            ; save locals base register for function abi_decode_in_place_6
-cfei i16                      ; allocate 16 bytes for locals and 0 slots for call arguments
+ifun i15 i524288 i16
 move $r0 $$arg0               ; save argument 0 (ptr)
 move $r1 $$arg1               ; save argument 1 (len)
 move $r2 $$arg2               ; save argument 2 (target)
@@ -157,10 +148,7 @@ move $$reta $r3               ; restore return address
 poph i524288                  ; restore registers 40..64
 popl i15                      ; restore registers 16..40
 jmp $$reta                    ; return from call
-pshl i31                      ; save registers 16..40
-pshh i524288                  ; save registers 40..64
-move $$locbase $sp            ; save locals base register for function abi_decode_in_place_9
-cfei i16                      ; allocate 16 bytes for locals and 0 slots for call arguments
+ifun i31 i524288 i16
 move $r0 $$arg0               ; save argument 0 (ptr)
 move $r1 $$arg1               ; save argument 1 (len)
 move $r2 $$arg2               ; save argument 2 (target)
@@ -191,10 +179,7 @@ move $$reta $r3               ; restore return address
 poph i524288                  ; restore registers 40..64
 popl i31                      ; restore registers 16..40
 jmp $$reta                    ; return from call
-pshl i31                      ; save registers 16..40
-pshh i524288                  ; save registers 40..64
-move $$locbase $sp            ; save locals base register for function abi_decode_in_place_15
-cfei i112                     ; allocate 112 bytes for locals and 0 slots for call arguments
+ifun i31 i524288 i112
 move $r0 $$arg0               ; save argument 0 (ptr)
 move $r1 $$arg1               ; save argument 1 (len)
 move $r2 $$arg2               ; save argument 2 (target)
@@ -229,10 +214,7 @@ move $$reta $r3               ; restore return address
 poph i524288                  ; restore registers 40..64
 popl i31                      ; restore registers 16..40
 jmp $$reta                    ; return from call
-pshl i31                      ; save registers 16..40
-pshh i524288                  ; save registers 40..64
-move $$locbase $sp            ; save locals base register for function abi_decode_16
-cfei i96                      ; allocate 96 bytes for locals and 0 slots for call arguments
+ifun i31 i524288 i96
 move $r0 $$arg0               ; save argument 0 (buffer)
 move $r1 $$arg1               ; save argument 1 (__ret_value)
 move $r2 $$reta               ; save return address
@@ -257,10 +239,7 @@ move $$reta $r2               ; restore return address
 poph i524288                  ; restore registers 40..64
 popl i31                      ; restore registers 16..40
 jmp $$reta                    ; return from call
-pshl i127                     ; save registers 16..40
-pshh i524288                  ; save registers 40..64
-move $$locbase $sp            ; save locals base register for function main_17
-cfei i3992                    ; allocate 3992 bytes for locals and 0 slots for call arguments
+ifun i127 i524288 i3992
 move $r4 $$reta               ; save return address
 gm   $r3 i3                   ; gm r1 i3
 addi $r0 $$locbase i1384      ; get offset to local
@@ -1572,10 +1551,7 @@ move $$reta $r4               ; restore return address
 poph i524288                  ; restore registers 40..64
 popl i127                     ; restore registers 16..40
 jmp $$reta                    ; return from call
-pshl i15                      ; save registers 16..40
-pshh i524288                  ; save registers 40..64
-move $$locbase $sp            ; save locals base register for function unwrap_18
-cfei i40                      ; allocate 40 bytes for locals and 0 slots for call arguments
+ifun i15 i524288 i40
 move $r0 $$arg0               ; save argument 0 (self)
 move $r1 $$arg1               ; save argument 1 (__ret_value)
 move $r2 $$reta               ; save return address
@@ -1594,10 +1570,7 @@ move $$reta $r2               ; restore return address
 poph i524288                  ; restore registers 40..64
 popl i15                      ; restore registers 16..40
 jmp $$reta                    ; return from call
-pshl i31                      ; save registers 16..40
-pshh i524288                  ; save registers 40..64
-move $$locbase $sp            ; save locals base register for function input_type_21
-cfei i128                     ; allocate 128 bytes for locals and 0 slots for call arguments
+ifun i31 i524288 i128
 move $r0 $$arg0               ; save argument 0 (index)
 move $r1 $$arg1               ; save argument 1 (__ret_value)
 move $r2 $$reta               ; save return address
@@ -1664,10 +1637,7 @@ move $$reta $r2               ; restore return address
 poph i524288                  ; restore registers 40..64
 popl i31                      ; restore registers 16..40
 jmp $$reta                    ; return from call
-pshl i15                      ; save registers 16..40
-pshh i524288                  ; save registers 40..64
-move $$locbase $sp            ; save locals base register for function ge_22
-cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments
+ifun i15 i524288 i0
 move $r0 $$arg0               ; save argument 0 (self)
 move $r1 $$arg1               ; save argument 1 (other)
 move $r2 $$reta               ; save return address
@@ -1680,10 +1650,7 @@ move $$reta $r2               ; restore return address
 poph i524288                  ; restore registers 40..64
 popl i15                      ; restore registers 16..40
 jmp $$reta                    ; return from call
-pshl i7                       ; save registers 16..40
-pshh i524288                  ; save registers 40..64
-move $$locbase $sp            ; save locals base register for function input_count_25
-cfei i8                       ; allocate 8 bytes for locals and 0 slots for call arguments
+ifun i7 i524288 i8
 move $r0 $$reta               ; save return address
 move $$arg0 $$locbase         ; [call]: pass argument 0
 crad $$reta
@@ -1719,10 +1686,7 @@ move $$reta $r0               ; restore return address
 poph i524288                  ; restore registers 40..64
 popl i7                       ; restore registers 16..40
 jmp $$reta                    ; return from call
-pshl i15                      ; save registers 16..40
-pshh i524288                  ; save registers 40..64
-move $$locbase $sp            ; save locals base register for function tx_type_26
-cfei i0                       ; allocate 0 bytes for locals and 0 slots for call arguments
+ifun i15 i524288 i0
 move $r0 $$arg0               ; save argument 0 (__ret_value)
 move $r1 $$reta               ; save return address
 gtf  $r2 $zero i1             ; get transaction field
@@ -1756,10 +1720,7 @@ move $$reta $r1               ; restore return address
 poph i524288                  ; restore registers 40..64
 popl i15                      ; restore registers 16..40
 jmp $$reta                    ; return from call
-pshl i63                      ; save registers 16..40
-pshh i524288                  ; save registers 40..64
-move $$locbase $sp            ; save locals base register for function input_coin_owner_27
-cfei i264                     ; allocate 264 bytes for locals and 0 slots for call arguments
+ifun i63 i524288 i264
 move $r0 $$arg0               ; save argument 0 (index)
 move $r1 $$arg1               ; save argument 1 (__ret_value)
 move $r2 $$reta               ; save return address
@@ -1816,10 +1777,7 @@ move $$reta $r2               ; restore return address
 poph i524288                  ; restore registers 40..64
 popl i63                      ; restore registers 16..40
 jmp $$reta                    ; return from call
-pshl i15                      ; save registers 16..40
-pshh i524288                  ; save registers 40..64
-move $$locbase $sp            ; save locals base register for function from_28
-cfei i32                      ; allocate 32 bytes for locals and 0 slots for call arguments
+ifun i15 i524288 i32
 move $r0 $$arg0               ; save argument 0 (bits)
 move $r1 $$arg1               ; save argument 1 (__ret_value)
 move $r2 $$reta               ; save return address
@@ -1833,10 +1791,7 @@ move $$reta $r2               ; restore return address
 poph i524288                  ; restore registers 40..64
 popl i15                      ; restore registers 16..40
 jmp $$reta                    ; return from call
-pshl i15                      ; save registers 16..40
-pshh i524288                  ; save registers 40..64
-move $$locbase $sp            ; save locals base register for function eq_43
-cfei i64                      ; allocate 64 bytes for locals and 0 slots for call arguments
+ifun i15 i524288 i64
 move $r0 $$arg0               ; save argument 0 (self)
 move $r1 $$arg1               ; save argument 1 (other)
 move $r2 $$reta               ; save return address
@@ -1852,10 +1807,7 @@ move $$reta $r2               ; restore return address
 poph i524288                  ; restore registers 40..64
 popl i15                      ; restore registers 16..40
 jmp $$reta                    ; return from call
-pshl i7                       ; save registers 16..40
-pshh i524288                  ; save registers 40..64
-move $$locbase $sp            ; save locals base register for function output_count_44
-cfei i8                       ; allocate 8 bytes for locals and 0 slots for call arguments
+ifun i7 i524288 i8
 move $r0 $$reta               ; save return address
 move $$arg0 $$locbase         ; [call]: pass argument 0
 crad $$reta
@@ -1891,10 +1843,7 @@ move $$reta $r0               ; restore return address
 poph i524288                  ; restore registers 40..64
 popl i7                       ; restore registers 16..40
 jmp $$reta                    ; return from call
-pshl i7                       ; save registers 16..40
-pshh i524288                  ; save registers 40..64
-move $$locbase $sp            ; save locals base register for function unwrap_46
-cfei i16                      ; allocate 16 bytes for locals and 0 slots for call arguments
+ifun i7 i524288 i16
 move $r0 $$arg0               ; save argument 0 (self)
 move $r1 $$reta               ; save return address
 movi $r2 i16                  ; get data length for memory copy
@@ -1910,10 +1859,7 @@ move $$reta $r1               ; restore return address
 poph i524288                  ; restore registers 40..64
 popl i7                       ; restore registers 16..40
 jmp $$reta                    ; return from call
-pshl i63                      ; save registers 16..40
-pshh i524288                  ; save registers 40..64
-move $$locbase $sp            ; save locals base register for function output_amount_47
-cfei i504                     ; allocate 504 bytes for locals and 0 slots for call arguments
+ifun i63 i524288 i504
 move $r5 $$arg0               ; save argument 0 (index)
 move $r4 $$arg1               ; save argument 1 (__ret_value)
 move $r3 $$reta               ; save return address
@@ -2141,10 +2087,7 @@ move $$reta $r3               ; restore return address
 poph i524288                  ; restore registers 40..64
 popl i63                      ; restore registers 16..40
 jmp $$reta                    ; return from call
-pshl i31                      ; save registers 16..40
-pshh i524288                  ; save registers 40..64
-move $$locbase $sp            ; save locals base register for function output_type_48
-cfei i192                     ; allocate 192 bytes for locals and 0 slots for call arguments
+ifun i31 i524288 i192
 move $r0 $$arg0               ; save argument 0 (index)
 move $r4 $$arg1               ; save argument 1 (__ret_value)
 move $r3 $$reta               ; save return address
@@ -2239,10 +2182,7 @@ move $$reta $r3               ; restore return address
 poph i524288                  ; restore registers 40..64
 popl i31                      ; restore registers 16..40
 jmp $$reta                    ; return from call
-pshl i63                      ; save registers 16..40
-pshh i524288                  ; save registers 40..64
-move $$locbase $sp            ; save locals base register for function validate_output_55
-cfei i304                     ; allocate 304 bytes for locals and 0 slots for call arguments
+ifun i63 i524288 i304
 move $r0 $$arg0               ; save argument 0 (index)
 move $r1 $$arg1               ; save argument 1 (expected_asset_id)
 move $r2 $$arg2               ; save argument 2 (expected_asset_type)
@@ -2329,10 +2269,7 @@ move $$reta $r3               ; restore return address
 poph i524288                  ; restore registers 40..64
 popl i63                      ; restore registers 16..40
 jmp $$reta                    ; return from call
-pshl i31                      ; save registers 16..40
-pshh i524288                  ; save registers 40..64
-move $$locbase $sp            ; save locals base register for function output_asset_id_56
-cfei i96                      ; allocate 96 bytes for locals and 0 slots for call arguments
+ifun i31 i524288 i96
 move $r0 $$arg0               ; save argument 0 (index)
 move $r1 $$arg1               ; save argument 1 (__ret_value)
 move $r2 $$reta               ; save return address
@@ -2356,10 +2293,7 @@ move $$reta $r2               ; restore return address
 poph i524288                  ; restore registers 40..64
 popl i31                      ; restore registers 16..40
 jmp $$reta                    ; return from call
-pshl i63                      ; save registers 16..40
-pshh i524288                  ; save registers 40..64
-move $$locbase $sp            ; save locals base register for function validate_output_to_57
-cfei i304                     ; allocate 304 bytes for locals and 0 slots for call arguments
+ifun i63 i524288 i304
 move $r0 $$arg0               ; save argument 0 (index)
 move $r1 $$arg1               ; save argument 1 (expected_address_to)
 move $r2 $$arg2               ; save argument 2 (expected_asset_type)
@@ -2446,10 +2380,7 @@ move $$reta $r3               ; restore return address
 poph i524288                  ; restore registers 40..64
 popl i63                      ; restore registers 16..40
 jmp $$reta                    ; return from call
-pshl i31                      ; save registers 16..40
-pshh i524288                  ; save registers 40..64
-move $$locbase $sp            ; save locals base register for function output_asset_to_58
-cfei i96                      ; allocate 96 bytes for locals and 0 slots for call arguments
+ifun i31 i524288 i96
 move $r0 $$arg0               ; save argument 0 (index)
 move $r1 $$arg1               ; save argument 1 (__ret_value)
 move $r2 $$reta               ; save return address
