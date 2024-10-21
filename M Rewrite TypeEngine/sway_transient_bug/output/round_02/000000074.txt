@@ -1,0 +1,3569 @@
+    [1;32mBuilding[0m /home/kebradalaonda/p/swaylab/M Rewrite TypeEngine/sway_transient_bug
+   [1;32mCompiling[0m script [1mplays[0m (/home/kebradalaonda/p/swaylab/M Rewrite TypeEngine/sway_transient_bug)
+TypeEngine {
+    slab: ConcurrentSlab {
+        inner: RwLock {
+            data: Inner {
+                items: [
+                    Some(
+                        TypeSourceInfo [0] {
+                            type_info: Tuple(
+                                [],
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [1] {
+                            type_info: ErrorRecovery(
+                                ErrorEmitted {
+                                    _priv: (),
+                                },
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [2] {
+                            type_info: Never,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [3] {
+                            type_info: StringSlice,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [4] {
+                            type_info: UnsignedInteger(
+                                Eight,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [5] {
+                            type_info: UnsignedInteger(
+                                Sixteen,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [6] {
+                            type_info: UnsignedInteger(
+                                ThirtyTwo,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [7] {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [8] {
+                            type_info: UnsignedInteger(
+                                V256,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [9] {
+                            type_info: Boolean,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [10] {
+                            type_info: B256,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [11] {
+                            type_info: Contract,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [12] {
+                            type_info: RawUntypedPtr,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [13] {
+                            type_info: RawUntypedSlice,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [14] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            27,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 276,
+                                            end: 299,
+                                            as_str(): "__addr_of([1u64, 2, 3])",
+                                        },
+                                        call_path_tree: None,
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            42,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 301,
+                                            end: 305,
+                                            as_str(): "0u64",
+                                        },
+                                        call_path_tree: None,
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [15] {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [16] {
+                            type_info: RawUntypedPtr,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [17] {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [18] {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [19] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            16,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            16,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e4681a3850,
+                                            source_id: None,
+                                            start: 0,
+                                            end: 0,
+                                            as_str(): "",
+                                        },
+                                        call_path_tree: None,
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            18,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            18,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e4681a3850,
+                                            source_id: None,
+                                            start: 0,
+                                            end: 0,
+                                            as_str(): "",
+                                        },
+                                        call_path_tree: None,
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [20] {
+                            type_info: RawUntypedPtr,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [21] {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [22] {
+                            type_info: RawUntypedPtr,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [23] {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [24] {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [25] {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [26] {
+                            type_info: Tuple(
+                                [],
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [27] {
+                            type_info: RawUntypedPtr,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [28] {
+                            type_info: Array(
+                                TypeArgument {
+                                    type_id: TypeId(
+                                        37,
+                                    ),
+                                    initial_type_id: TypeId(
+                                        37,
+                                    ),
+                                    span: Span {
+                                        src (ptr): 0x000058e4681a3850,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                    call_path_tree: None,
+                                },
+                                Length {
+                                    val: 3,
+                                    span: Span {
+                                        src (ptr): 0x000058e4681a3850,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                },
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [29] {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [30] {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [31] {
+                            type_info: Numeric,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [32] {
+                            type_info: Numeric,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [33] {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [34] {
+                            type_info: Numeric,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [35] {
+                            type_info: Numeric,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [36] {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [37] {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [38] {
+                            type_info: Array(
+                                TypeArgument {
+                                    type_id: TypeId(
+                                        37,
+                                    ),
+                                    initial_type_id: TypeId(
+                                        37,
+                                    ),
+                                    span: Span {
+                                        src (ptr): 0x000058e4681a3850,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                    call_path_tree: None,
+                                },
+                                Length {
+                                    val: 3,
+                                    span: Span {
+                                        src (ptr): 0x000058e4681a3850,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                },
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [39] {
+                            type_info: Array(
+                                TypeArgument {
+                                    type_id: TypeId(
+                                        37,
+                                    ),
+                                    initial_type_id: TypeId(
+                                        37,
+                                    ),
+                                    span: Span {
+                                        src (ptr): 0x000058e4681a3850,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                    call_path_tree: None,
+                                },
+                                Length {
+                                    val: 3,
+                                    span: Span {
+                                        src (ptr): 0x000058e4681a3850,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                },
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [40] {
+                            type_info: Array(
+                                TypeArgument {
+                                    type_id: TypeId(
+                                        37,
+                                    ),
+                                    initial_type_id: TypeId(
+                                        37,
+                                    ),
+                                    span: Span {
+                                        src (ptr): 0x000058e4681a3850,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                    call_path_tree: None,
+                                },
+                                Length {
+                                    val: 3,
+                                    span: Span {
+                                        src (ptr): 0x000058e4681a3850,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                },
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [41] {
+                            type_info: RawUntypedPtr,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [42] {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [43] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            27,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 276,
+                                            end: 299,
+                                            as_str(): "__addr_of([1u64, 2, 3])",
+                                        },
+                                        call_path_tree: None,
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            42,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 301,
+                                            end: 305,
+                                            as_str(): "0u64",
+                                        },
+                                        call_path_tree: None,
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [44] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            27,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 276,
+                                            end: 299,
+                                            as_str(): "__addr_of([1u64, 2, 3])",
+                                        },
+                                        call_path_tree: None,
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            42,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 301,
+                                            end: 305,
+                                            as_str(): "0u64",
+                                        },
+                                        call_path_tree: None,
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [45] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            16,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            16,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e4681a3850,
+                                            source_id: None,
+                                            start: 0,
+                                            end: 0,
+                                            as_str(): "",
+                                        },
+                                        call_path_tree: None,
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            18,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            18,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e4681a3850,
+                                            source_id: None,
+                                            start: 0,
+                                            end: 0,
+                                            as_str(): "",
+                                        },
+                                        call_path_tree: None,
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [46] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            12,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 351,
+                                            end: 358,
+                                            as_str(): "raw_ptr",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: raw_ptr,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            7,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 360,
+                                            end: 363,
+                                            as_str(): "u64",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: u64,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [47] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            12,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 351,
+                                            end: 358,
+                                            as_str(): "raw_ptr",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: raw_ptr,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            7,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 360,
+                                            end: 363,
+                                            as_str(): "u64",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: u64,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [48] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            27,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 276,
+                                            end: 299,
+                                            as_str(): "__addr_of([1u64, 2, 3])",
+                                        },
+                                        call_path_tree: None,
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            42,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 301,
+                                            end: 305,
+                                            as_str(): "0u64",
+                                        },
+                                        call_path_tree: None,
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [49] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            27,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 276,
+                                            end: 299,
+                                            as_str(): "__addr_of([1u64, 2, 3])",
+                                        },
+                                        call_path_tree: None,
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            42,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 301,
+                                            end: 305,
+                                            as_str(): "0u64",
+                                        },
+                                        call_path_tree: None,
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [50] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            12,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 351,
+                                            end: 358,
+                                            as_str(): "raw_ptr",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: raw_ptr,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            7,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 360,
+                                            end: 363,
+                                            as_str(): "u64",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: u64,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [51] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            12,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 351,
+                                            end: 358,
+                                            as_str(): "raw_ptr",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: raw_ptr,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            7,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 360,
+                                            end: 363,
+                                            as_str(): "u64",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: u64,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [52] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            12,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 351,
+                                            end: 358,
+                                            as_str(): "raw_ptr",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: raw_ptr,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            7,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 360,
+                                            end: 363,
+                                            as_str(): "u64",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: u64,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [53] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            12,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 351,
+                                            end: 358,
+                                            as_str(): "raw_ptr",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: raw_ptr,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            7,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 360,
+                                            end: 363,
+                                            as_str(): "u64",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: u64,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [54] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            12,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 351,
+                                            end: 358,
+                                            as_str(): "raw_ptr",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: raw_ptr,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            7,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 360,
+                                            end: 363,
+                                            as_str(): "u64",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: u64,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [55] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            12,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 351,
+                                            end: 358,
+                                            as_str(): "raw_ptr",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: raw_ptr,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            7,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 360,
+                                            end: 363,
+                                            as_str(): "u64",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: u64,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [56] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            27,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 276,
+                                            end: 299,
+                                            as_str(): "__addr_of([1u64, 2, 3])",
+                                        },
+                                        call_path_tree: None,
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            42,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 301,
+                                            end: 305,
+                                            as_str(): "0u64",
+                                        },
+                                        call_path_tree: None,
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [57] {
+                            type_info: Array(
+                                TypeArgument {
+                                    type_id: TypeId(
+                                        37,
+                                    ),
+                                    initial_type_id: TypeId(
+                                        37,
+                                    ),
+                                    span: Span {
+                                        src (ptr): 0x000058e4681a3850,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                    call_path_tree: None,
+                                },
+                                Length {
+                                    val: 3,
+                                    span: Span {
+                                        src (ptr): 0x000058e4681a3850,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                },
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [58] {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [59] {
+                            type_info: Numeric,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [60] {
+                            type_info: Numeric,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [61] {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [62] {
+                            type_info: Numeric,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [63] {
+                            type_info: Numeric,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [64] {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [65] {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [66] {
+                            type_info: Array(
+                                TypeArgument {
+                                    type_id: TypeId(
+                                        65,
+                                    ),
+                                    initial_type_id: TypeId(
+                                        65,
+                                    ),
+                                    span: Span {
+                                        src (ptr): 0x000058e4681a3850,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                    call_path_tree: None,
+                                },
+                                Length {
+                                    val: 3,
+                                    span: Span {
+                                        src (ptr): 0x000058e4681a3850,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                },
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [67] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            12,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 276,
+                                            end: 299,
+                                            as_str(): "__addr_of([1u64, 2, 3])",
+                                        },
+                                        call_path_tree: None,
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            7,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 301,
+                                            end: 305,
+                                            as_str(): "0u64",
+                                        },
+                                        call_path_tree: None,
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [68] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            12,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 276,
+                                            end: 299,
+                                            as_str(): "__addr_of([1u64, 2, 3])",
+                                        },
+                                        call_path_tree: None,
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            7,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 301,
+                                            end: 305,
+                                            as_str(): "0u64",
+                                        },
+                                        call_path_tree: None,
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [69] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            12,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 351,
+                                            end: 358,
+                                            as_str(): "raw_ptr",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: raw_ptr,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            7,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 360,
+                                            end: 363,
+                                            as_str(): "u64",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: u64,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [70] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            12,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 351,
+                                            end: 358,
+                                            as_str(): "raw_ptr",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: raw_ptr,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            7,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 360,
+                                            end: 363,
+                                            as_str(): "u64",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: u64,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [71] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            12,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 276,
+                                            end: 299,
+                                            as_str(): "__addr_of([1u64, 2, 3])",
+                                        },
+                                        call_path_tree: None,
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            7,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 301,
+                                            end: 305,
+                                            as_str(): "0u64",
+                                        },
+                                        call_path_tree: None,
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [72] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            12,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 276,
+                                            end: 299,
+                                            as_str(): "__addr_of([1u64, 2, 3])",
+                                        },
+                                        call_path_tree: None,
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            7,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 301,
+                                            end: 305,
+                                            as_str(): "0u64",
+                                        },
+                                        call_path_tree: None,
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [73] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            12,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 351,
+                                            end: 358,
+                                            as_str(): "raw_ptr",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: raw_ptr,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            7,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 360,
+                                            end: 363,
+                                            as_str(): "u64",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: u64,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [74] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            12,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 351,
+                                            end: 358,
+                                            as_str(): "raw_ptr",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: raw_ptr,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            7,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 360,
+                                            end: 363,
+                                            as_str(): "u64",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: u64,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [75] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            12,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 351,
+                                            end: 358,
+                                            as_str(): "raw_ptr",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: raw_ptr,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            7,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 360,
+                                            end: 363,
+                                            as_str(): "u64",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: u64,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [76] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            12,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 351,
+                                            end: 358,
+                                            as_str(): "raw_ptr",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: raw_ptr,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            7,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 360,
+                                            end: 363,
+                                            as_str(): "u64",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: u64,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [77] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            12,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 351,
+                                            end: 358,
+                                            as_str(): "raw_ptr",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: raw_ptr,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            7,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 360,
+                                            end: 363,
+                                            as_str(): "u64",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: u64,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo [78] {
+                            type_info: Tuple(
+                                [
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            12,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            12,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 351,
+                                            end: 358,
+                                            as_str(): "raw_ptr",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: raw_ptr,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                    TypeArgument {
+                                        type_id: TypeId(
+                                            7,
+                                        ),
+                                        initial_type_id: TypeId(
+                                            7,
+                                        ),
+                                        span: Span {
+                                            src (ptr): 0x000058e46819f560,
+                                            source_id: Some(
+                                                SourceId(
+                                                    1048576,
+                                                ),
+                                            ),
+                                            start: 360,
+                                            end: 363,
+                                            as_str(): "u64",
+                                        },
+                                        call_path_tree: Some(
+                                            CallPathTree {
+                                                qualified_call_path: QualifiedCallPath {
+                                                    call_path: CallPath {
+                                                        prefixes: [],
+                                                        suffix: u64,
+                                                        is_absolute: false,
+                                                    },
+                                                    qualified_path_root: None,
+                                                },
+                                                children: [],
+                                            },
+                                        ),
+                                    },
+                                ],
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                ],
+                free_list: [],
+            },
+        },
+    },
+    shareable_types: RwLock {
+        data: {
+            TypeSourceInfo {
+                type_info: UnsignedInteger(
+                    SixtyFour,
+                ),
+                source_id: Some(
+                    SourceId(
+                        1048576,
+                    ),
+                ),
+            }: TypeId(
+                30,
+            ),
+            TypeSourceInfo {
+                type_info: Tuple(
+                    [],
+                ),
+                source_id: None,
+            }: TypeId(
+                26,
+            ),
+            TypeSourceInfo {
+                type_info: Array(
+                    TypeArgument {
+                        type_id: TypeId(
+                            37,
+                        ),
+                        initial_type_id: TypeId(
+                            37,
+                        ),
+                        span: Span {
+                            src (ptr): 0x000058e4681a3850,
+                            source_id: None,
+                            start: 0,
+                            end: 0,
+                            as_str(): "",
+                        },
+                        call_path_tree: None,
+                    },
+                    Length {
+                        val: 3,
+                        span: Span {
+                            src (ptr): 0x000058e4681a3850,
+                            source_id: None,
+                            start: 0,
+                            end: 0,
+                            as_str(): "",
+                        },
+                    },
+                ),
+                source_id: None,
+            }: TypeId(
+                40,
+            ),
+            TypeSourceInfo {
+                type_info: Array(
+                    TypeArgument {
+                        type_id: TypeId(
+                            37,
+                        ),
+                        initial_type_id: TypeId(
+                            37,
+                        ),
+                        span: Span {
+                            src (ptr): 0x000058e4681a3850,
+                            source_id: None,
+                            start: 0,
+                            end: 0,
+                            as_str(): "",
+                        },
+                        call_path_tree: None,
+                    },
+                    Length {
+                        val: 3,
+                        span: Span {
+                            src (ptr): 0x000058e4681a3850,
+                            source_id: None,
+                            start: 0,
+                            end: 0,
+                            as_str(): "",
+                        },
+                    },
+                ),
+                source_id: Some(
+                    SourceId(
+                        1048576,
+                    ),
+                ),
+            }: TypeId(
+                39,
+            ),
+            TypeSourceInfo {
+                type_info: RawUntypedPtr,
+                source_id: Some(
+                    SourceId(
+                        1048576,
+                    ),
+                ),
+            }: TypeId(
+                41,
+            ),
+        },
+    },
+    singleton_types: RwLock {
+        data: SingletonTypeSourceInfos {
+            unknown: TypeSourceInfo {
+                type_info: Unknown,
+                source_id: None,
+            },
+            numeric: TypeSourceInfo {
+                type_info: Numeric,
+                source_id: None,
+            },
+        },
+    },
+    unifications: ConcurrentSlab {
+        inner: RwLock {
+            data: Inner {
+                items: [
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                7,
+                            ),
+                            expected: TypeId(
+                                29,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 287,
+                                end: 291,
+                                as_str(): "1u64",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                32,
+                            ),
+                            expected: TypeId(
+                                31,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 293,
+                                end: 294,
+                                as_str(): "2",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                35,
+                            ),
+                            expected: TypeId(
+                                34,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 296,
+                                end: 297,
+                                as_str(): "3",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                7,
+                            ),
+                            expected: TypeId(
+                                37,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 287,
+                                end: 291,
+                                as_str(): "1u64",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                33,
+                            ),
+                            expected: TypeId(
+                                37,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 293,
+                                end: 294,
+                                as_str(): "2",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                36,
+                            ),
+                            expected: TypeId(
+                                37,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 296,
+                                end: 297,
+                                as_str(): "3",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                38,
+                            ),
+                            expected: TypeId(
+                                28,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 286,
+                                end: 298,
+                                as_str(): "[1u64, 2, 3]",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                12,
+                            ),
+                            expected: TypeId(
+                                27,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 276,
+                                end: 299,
+                                as_str(): "__addr_of([1u64, 2, 3])",
+                            },
+                            help_text: "tuple field type does not match the expected type",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                7,
+                            ),
+                            expected: TypeId(
+                                42,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 301,
+                                end: 305,
+                                as_str(): "0u64",
+                            },
+                            help_text: "tuple field type does not match the expected type",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                43,
+                            ),
+                            expected: TypeId(
+                                14,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 275,
+                                end: 306,
+                                as_str(): "(__addr_of([1u64, 2, 3]), 0u64)",
+                            },
+                            help_text: "Variable declaration's type annotation does not match up with the assigned expression's type.",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                44,
+                            ),
+                            expected: TypeId(
+                                48,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 334,
+                                end: 335,
+                                as_str(): "x",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                47,
+                            ),
+                            expected: TypeId(
+                                45,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 327,
+                                end: 370,
+                                as_str(): "asm(s: x) {\n        s: (raw_ptr, u64)\n    }",
+                            },
+                            help_text: "Variable declaration's type annotation does not match up with the assigned expression's type.",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                51,
+                            ),
+                            expected: TypeId(
+                                52,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 312,
+                                end: 371,
+                                as_str(): "let (ptr, _) = asm(s: x) {\n        s: (raw_ptr, u64)\n    };",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                12,
+                            ),
+                            expected: TypeId(
+                                20,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 312,
+                                end: 371,
+                                as_str(): "let (ptr, _) = asm(s: x) {\n        s: (raw_ptr, u64)\n    };",
+                            },
+                            help_text: "Variable declaration's type annotation does not match up with the assigned expression's type.",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                51,
+                            ),
+                            expected: TypeId(
+                                54,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 312,
+                                end: 371,
+                                as_str(): "let (ptr, _) = asm(s: x) {\n        s: (raw_ptr, u64)\n    };",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                7,
+                            ),
+                            expected: TypeId(
+                                21,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 312,
+                                end: 371,
+                                as_str(): "let (ptr, _) = asm(s: x) {\n        s: (raw_ptr, u64)\n    };",
+                            },
+                            help_text: "Variable declaration's type annotation does not match up with the assigned expression's type.",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                12,
+                            ),
+                            expected: TypeId(
+                                22,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 384,
+                                end: 387,
+                                as_str(): "ptr",
+                            },
+                            help_text: "Variable declaration's type annotation does not match up with the assigned expression's type.",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                7,
+                            ),
+                            expected: TypeId(
+                                58,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 287,
+                                end: 291,
+                                as_str(): "1u64",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                60,
+                            ),
+                            expected: TypeId(
+                                59,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 293,
+                                end: 294,
+                                as_str(): "2",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                63,
+                            ),
+                            expected: TypeId(
+                                62,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 296,
+                                end: 297,
+                                as_str(): "3",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                7,
+                            ),
+                            expected: TypeId(
+                                65,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 287,
+                                end: 291,
+                                as_str(): "1u64",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                61,
+                            ),
+                            expected: TypeId(
+                                65,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 293,
+                                end: 294,
+                                as_str(): "2",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                64,
+                            ),
+                            expected: TypeId(
+                                65,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 296,
+                                end: 297,
+                                as_str(): "3",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                66,
+                            ),
+                            expected: TypeId(
+                                57,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 286,
+                                end: 298,
+                                as_str(): "[1u64, 2, 3]",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                12,
+                            ),
+                            expected: TypeId(
+                                12,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 276,
+                                end: 299,
+                                as_str(): "__addr_of([1u64, 2, 3])",
+                            },
+                            help_text: "tuple field type does not match the expected type",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                7,
+                            ),
+                            expected: TypeId(
+                                7,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 301,
+                                end: 305,
+                                as_str(): "0u64",
+                            },
+                            help_text: "tuple field type does not match the expected type",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                67,
+                            ),
+                            expected: TypeId(
+                                56,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 275,
+                                end: 306,
+                                as_str(): "(__addr_of([1u64, 2, 3]), 0u64)",
+                            },
+                            help_text: "Variable declaration's type annotation does not match up with the assigned expression's type.",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                68,
+                            ),
+                            expected: TypeId(
+                                44,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 271,
+                                end: 272,
+                                as_str(): "x",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                68,
+                            ),
+                            expected: TypeId(
+                                71,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 334,
+                                end: 335,
+                                as_str(): "x",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                73,
+                            ),
+                            expected: TypeId(
+                                51,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 316,
+                                end: 324,
+                                as_str(): "(ptr, _)",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                74,
+                            ),
+                            expected: TypeId(
+                                51,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 316,
+                                end: 324,
+                                as_str(): "(ptr, _)",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                74,
+                            ),
+                            expected: TypeId(
+                                75,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 312,
+                                end: 371,
+                                as_str(): "let (ptr, _) = asm(s: x) {\n        s: (raw_ptr, u64)\n    };",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                12,
+                            ),
+                            expected: TypeId(
+                                20,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 312,
+                                end: 371,
+                                as_str(): "let (ptr, _) = asm(s: x) {\n        s: (raw_ptr, u64)\n    };",
+                            },
+                            help_text: "Variable declaration's type annotation does not match up with the assigned expression's type.",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                12,
+                            ),
+                            expected: TypeId(
+                                12,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 317,
+                                end: 320,
+                                as_str(): "ptr",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                74,
+                            ),
+                            expected: TypeId(
+                                77,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 312,
+                                end: 371,
+                                as_str(): "let (ptr, _) = asm(s: x) {\n        s: (raw_ptr, u64)\n    };",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                7,
+                            ),
+                            expected: TypeId(
+                                21,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 312,
+                                end: 371,
+                                as_str(): "let (ptr, _) = asm(s: x) {\n        s: (raw_ptr, u64)\n    };",
+                            },
+                            help_text: "Variable declaration's type annotation does not match up with the assigned expression's type.",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                7,
+                            ),
+                            expected: TypeId(
+                                7,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 322,
+                                end: 323,
+                                as_str(): "_",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                12,
+                            ),
+                            expected: TypeId(
+                                22,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 384,
+                                end: 387,
+                                as_str(): "ptr",
+                            },
+                            help_text: "Variable declaration's type annotation does not match up with the assigned expression's type.",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                12,
+                            ),
+                            expected: TypeId(
+                                12,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 380,
+                                end: 381,
+                                as_str(): "_",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                7,
+                            ),
+                            expected: TypeId(
+                                65,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 287,
+                                end: 291,
+                                as_str(): "1u64",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                61,
+                            ),
+                            expected: TypeId(
+                                65,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 293,
+                                end: 294,
+                                as_str(): "2",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                64,
+                            ),
+                            expected: TypeId(
+                                65,
+                            ),
+                            span: Span {
+                                src (ptr): 0x000058e46819f560,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 296,
+                                end: 297,
+                                as_str(): "3",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                ],
+                free_list: [],
+            },
+        },
+    },
+    last_replace: RwLock {
+        data: Instant {
+            tv_sec: 2904531,
+            tv_nsec: 825703714,
+        },
+    },
+}
+Failed to compile plays
