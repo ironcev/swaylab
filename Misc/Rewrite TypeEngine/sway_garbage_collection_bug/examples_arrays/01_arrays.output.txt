@@ -1,0 +1,2768 @@
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 32 filtered out; finished in 0.00s
+
+
+running 1 test
+~~ [TypeEngine::clear_module]: SourceId(1048576)
+~~ [TypeEngine::clear_module] Type engine before clearing:
+TypeEngine {
+    slab: ConcurrentSlab {
+        inner: RwLock {
+            data: Inner {
+                items: [
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Tuple(
+                                [],
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: ErrorRecovery(
+                                ErrorEmitted {
+                                    _priv: (),
+                                },
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Never,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: StringSlice,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                Eight,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                Sixteen,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                ThirtyTwo,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                V256,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Boolean,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: B256,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Contract,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: RawUntypedPtr,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: RawUntypedSlice,
+                            source_id: None,
+                        },
+                    ),
+                ],
+                free_list: [],
+            },
+        },
+    },
+    shareable_types: RwLock {
+        data: {},
+    },
+    singleton_types: RwLock {
+        data: SingletonTypeSourceInfos {
+            unknown: TypeSourceInfo {
+                type_info: Unknown,
+                source_id: None,
+            },
+            numeric: TypeSourceInfo {
+                type_info: Numeric,
+                source_id: None,
+            },
+        },
+    },
+    unifications: ConcurrentSlab {
+        inner: RwLock {
+            data: Inner {
+                items: [],
+                free_list: [],
+            },
+        },
+    },
+    last_replace: RwLock {
+        data: Instant {
+            tv_sec: 426740,
+            tv_nsec: 688950938,
+        },
+    },
+}
+~~ [TypeEngine::clear_module] Type engine after clearing:
+TypeEngine {
+    slab: ConcurrentSlab {
+        inner: RwLock {
+            data: Inner {
+                items: [
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Tuple(
+                                [],
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: ErrorRecovery(
+                                ErrorEmitted {
+                                    _priv: (),
+                                },
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Never,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: StringSlice,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                Eight,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                Sixteen,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                ThirtyTwo,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                V256,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Boolean,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: B256,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Contract,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: RawUntypedPtr,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: RawUntypedSlice,
+                            source_id: None,
+                        },
+                    ),
+                ],
+                free_list: [],
+            },
+        },
+    },
+    shareable_types: RwLock {
+        data: {},
+    },
+    singleton_types: RwLock {
+        data: SingletonTypeSourceInfos {
+            unknown: TypeSourceInfo {
+                type_info: Unknown,
+                source_id: None,
+            },
+            numeric: TypeSourceInfo {
+                type_info: Numeric,
+                source_id: None,
+            },
+        },
+    },
+    unifications: ConcurrentSlab {
+        inner: RwLock {
+            data: Inner {
+                items: [],
+                free_list: [],
+            },
+        },
+    },
+    last_replace: RwLock {
+        data: Instant {
+            tv_sec: 426740,
+            tv_nsec: 688950938,
+        },
+    },
+}
+~~ [TypeEngine::clear_module]: SourceId(1048576)
+~~ [TypeEngine::clear_module] Type engine before clearing:
+TypeEngine {
+    slab: ConcurrentSlab {
+        inner: RwLock {
+            data: Inner {
+                items: [
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Tuple(
+                                [],
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: ErrorRecovery(
+                                ErrorEmitted {
+                                    _priv: (),
+                                },
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Never,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: StringSlice,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                Eight,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                Sixteen,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                ThirtyTwo,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                V256,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Boolean,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: B256,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Contract,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: RawUntypedPtr,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: RawUntypedSlice,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Array(
+                                TypeArgument {
+                                    type_id: TypeId(
+                                        25,
+                                    ),
+                                    initial_type_id: TypeId(
+                                        25,
+                                    ),
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                    call_path_tree: None,
+                                },
+                                Length {
+                                    val: 3,
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                },
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Tuple(
+                                [],
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: StringSlice,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: StringSlice,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: StringSlice,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: StringSlice,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: StringSlice,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Array(
+                                TypeArgument {
+                                    type_id: TypeId(
+                                        25,
+                                    ),
+                                    initial_type_id: TypeId(
+                                        25,
+                                    ),
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                    call_path_tree: None,
+                                },
+                                Length {
+                                    val: 3,
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                },
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Array(
+                                TypeArgument {
+                                    type_id: TypeId(
+                                        25,
+                                    ),
+                                    initial_type_id: TypeId(
+                                        25,
+                                    ),
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                    call_path_tree: None,
+                                },
+                                Length {
+                                    val: 3,
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                },
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Array(
+                                TypeArgument {
+                                    type_id: TypeId(
+                                        25,
+                                    ),
+                                    initial_type_id: TypeId(
+                                        25,
+                                    ),
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                    call_path_tree: None,
+                                },
+                                Length {
+                                    val: 3,
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                },
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: StringSlice,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Array(
+                                TypeArgument {
+                                    type_id: TypeId(
+                                        25,
+                                    ),
+                                    initial_type_id: TypeId(
+                                        25,
+                                    ),
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                    call_path_tree: None,
+                                },
+                                Length {
+                                    val: 3,
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                },
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: StringSlice,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Array(
+                                TypeArgument {
+                                    type_id: TypeId(
+                                        25,
+                                    ),
+                                    initial_type_id: TypeId(
+                                        25,
+                                    ),
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                    call_path_tree: None,
+                                },
+                                Length {
+                                    val: 3,
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                },
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: StringSlice,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Array(
+                                TypeArgument {
+                                    type_id: TypeId(
+                                        25,
+                                    ),
+                                    initial_type_id: TypeId(
+                                        25,
+                                    ),
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                    call_path_tree: None,
+                                },
+                                Length {
+                                    val: 3,
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                },
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: StringSlice,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Array(
+                                TypeArgument {
+                                    type_id: TypeId(
+                                        25,
+                                    ),
+                                    initial_type_id: TypeId(
+                                        25,
+                                    ),
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                    call_path_tree: None,
+                                },
+                                Length {
+                                    val: 3,
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                },
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                ],
+                free_list: [],
+            },
+        },
+    },
+    shareable_types: RwLock {
+        data: {
+            TypeSourceInfo {
+                type_info: Array(
+                    TypeArgument {
+                        type_id: TypeId(
+                            25,
+                        ),
+                        initial_type_id: TypeId(
+                            25,
+                        ),
+                        span: Span {
+                            src (ptr): 0x0000794c680053b0,
+                            source_id: None,
+                            start: 0,
+                            end: 0,
+                            as_str(): "",
+                        },
+                        call_path_tree: None,
+                    },
+                    Length {
+                        val: 3,
+                        span: Span {
+                            src (ptr): 0x0000794c680053b0,
+                            source_id: None,
+                            start: 0,
+                            end: 0,
+                            as_str(): "",
+                        },
+                    },
+                ),
+                source_id: None,
+            }: TypeId(
+                28,
+            ),
+            TypeSourceInfo {
+                type_info: Array(
+                    TypeArgument {
+                        type_id: TypeId(
+                            25,
+                        ),
+                        initial_type_id: TypeId(
+                            25,
+                        ),
+                        span: Span {
+                            src (ptr): 0x0000794c680053b0,
+                            source_id: None,
+                            start: 0,
+                            end: 0,
+                            as_str(): "",
+                        },
+                        call_path_tree: None,
+                    },
+                    Length {
+                        val: 3,
+                        span: Span {
+                            src (ptr): 0x0000794c680053b0,
+                            source_id: None,
+                            start: 0,
+                            end: 0,
+                            as_str(): "",
+                        },
+                    },
+                ),
+                source_id: Some(
+                    SourceId(
+                        1048576,
+                    ),
+                ),
+            }: TypeId(
+                27,
+            ),
+            TypeSourceInfo {
+                type_info: UnsignedInteger(
+                    SixtyFour,
+                ),
+                source_id: Some(
+                    SourceId(
+                        1048576,
+                    ),
+                ),
+            }: TypeId(
+                33,
+            ),
+            TypeSourceInfo {
+                type_info: Tuple(
+                    [],
+                ),
+                source_id: None,
+            }: TypeId(
+                20,
+            ),
+            TypeSourceInfo {
+                type_info: StringSlice,
+                source_id: Some(
+                    SourceId(
+                        1048576,
+                    ),
+                ),
+            }: TypeId(
+                22,
+            ),
+        },
+    },
+    singleton_types: RwLock {
+        data: SingletonTypeSourceInfos {
+            unknown: TypeSourceInfo {
+                type_info: Unknown,
+                source_id: None,
+            },
+            numeric: TypeSourceInfo {
+                type_info: Numeric,
+                source_id: None,
+            },
+        },
+    },
+    unifications: ConcurrentSlab {
+        inner: RwLock {
+            data: Inner {
+                items: [
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                21,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 353,
+                                end: 358,
+                                as_str(): "\"Bob\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                23,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 360,
+                                end: 365,
+                                as_str(): "\"Jan\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                24,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 367,
+                                end: 372,
+                                as_str(): "\"Ron\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                25,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 353,
+                                end: 358,
+                                as_str(): "\"Bob\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                25,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 360,
+                                end: 365,
+                                as_str(): "\"Jan\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                25,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 367,
+                                end: 372,
+                                as_str(): "\"Ron\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                26,
+                            ),
+                            expected: TypeId(
+                                16,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 352,
+                                end: 373,
+                                as_str(): "[\"Bob\", \"Jan\", \"Ron\"]",
+                            },
+                            help_text: "Variable declaration's type annotation does not match up with the assigned expression's type.",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                28,
+                            ),
+                            expected: TypeId(
+                                31,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 379,
+                                end: 395,
+                                as_str(): "array_of_strings",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                32,
+                            ),
+                            expected: TypeId(
+                                7,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 396,
+                                end: 397,
+                                as_str(): "0",
+                            },
+                            help_text: "Array index must be of type \"u64\".",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                25,
+                            ),
+                            expected: TypeId(
+                                29,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 379,
+                                end: 398,
+                                as_str(): "array_of_strings[0]",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                28,
+                            ),
+                            expected: TypeId(
+                                36,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 404,
+                                end: 420,
+                                as_str(): "array_of_strings",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                37,
+                            ),
+                            expected: TypeId(
+                                7,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 421,
+                                end: 422,
+                                as_str(): "0",
+                            },
+                            help_text: "Array index must be of type \"u64\".",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                25,
+                            ),
+                            expected: TypeId(
+                                34,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 404,
+                                end: 423,
+                                as_str(): "array_of_strings[0]",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                3,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 353,
+                                end: 358,
+                                as_str(): "\"Bob\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                3,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 360,
+                                end: 365,
+                                as_str(): "\"Jan\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                3,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 367,
+                                end: 372,
+                                as_str(): "\"Ron\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                3,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 353,
+                                end: 358,
+                                as_str(): "\"Bob\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                3,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 360,
+                                end: 365,
+                                as_str(): "\"Jan\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                3,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 367,
+                                end: 372,
+                                as_str(): "\"Ron\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                28,
+                            ),
+                            expected: TypeId(
+                                28,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 352,
+                                end: 373,
+                                as_str(): "[\"Bob\", \"Jan\", \"Ron\"]",
+                            },
+                            help_text: "Variable declaration's type annotation does not match up with the assigned expression's type.",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                28,
+                            ),
+                            expected: TypeId(
+                                28,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 333,
+                                end: 349,
+                                as_str(): "array_of_strings",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                28,
+                            ),
+                            expected: TypeId(
+                                40,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 379,
+                                end: 395,
+                                as_str(): "array_of_strings",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                41,
+                            ),
+                            expected: TypeId(
+                                7,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 396,
+                                end: 397,
+                                as_str(): "0",
+                            },
+                            help_text: "Array index must be of type \"u64\".",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                25,
+                            ),
+                            expected: TypeId(
+                                38,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 379,
+                                end: 398,
+                                as_str(): "array_of_strings[0]",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                28,
+                            ),
+                            expected: TypeId(
+                                44,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 404,
+                                end: 420,
+                                as_str(): "array_of_strings",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                45,
+                            ),
+                            expected: TypeId(
+                                7,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 421,
+                                end: 422,
+                                as_str(): "0",
+                            },
+                            help_text: "Array index must be of type \"u64\".",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                25,
+                            ),
+                            expected: TypeId(
+                                42,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 404,
+                                end: 423,
+                                as_str(): "array_of_strings[0]",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                3,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 353,
+                                end: 358,
+                                as_str(): "\"Bob\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                3,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 360,
+                                end: 365,
+                                as_str(): "\"Jan\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                3,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 367,
+                                end: 372,
+                                as_str(): "\"Ron\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                ],
+                free_list: [],
+            },
+        },
+    },
+    last_replace: RwLock {
+        data: Instant {
+            tv_sec: 426740,
+            tv_nsec: 696963545,
+        },
+    },
+}
+~~ [TypeEngine::clear_module] Type engine after clearing:
+TypeEngine {
+    slab: ConcurrentSlab {
+        inner: RwLock {
+            data: Inner {
+                items: [
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Tuple(
+                                [],
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: ErrorRecovery(
+                                ErrorEmitted {
+                                    _priv: (),
+                                },
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Never,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: StringSlice,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                Eight,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                Sixteen,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                ThirtyTwo,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                V256,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Boolean,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: B256,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Contract,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: RawUntypedPtr,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: RawUntypedSlice,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    None,
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Tuple(
+                                [],
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    None,
+                    None,
+                    None,
+                    None,
+                    None,
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Array(
+                                TypeArgument {
+                                    type_id: TypeId(
+                                        25,
+                                    ),
+                                    initial_type_id: TypeId(
+                                        25,
+                                    ),
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                    call_path_tree: None,
+                                },
+                                Length {
+                                    val: 3,
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                },
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    None,
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Array(
+                                TypeArgument {
+                                    type_id: TypeId(
+                                        25,
+                                    ),
+                                    initial_type_id: TypeId(
+                                        25,
+                                    ),
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                    call_path_tree: None,
+                                },
+                                Length {
+                                    val: 3,
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                },
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    None,
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    None,
+                    None,
+                    None,
+                    None,
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    None,
+                    None,
+                    None,
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    None,
+                    None,
+                    None,
+                    Some(
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    None,
+                    None,
+                ],
+                free_list: [
+                    16,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    27,
+                    29,
+                    31,
+                    32,
+                    33,
+                    34,
+                    36,
+                    37,
+                    38,
+                    40,
+                    41,
+                    42,
+                    44,
+                    45,
+                ],
+            },
+        },
+    },
+    shareable_types: RwLock {
+        data: {
+            TypeSourceInfo {
+                type_info: Array(
+                    TypeArgument {
+                        type_id: TypeId(
+                            25,
+                        ),
+                        initial_type_id: TypeId(
+                            25,
+                        ),
+                        span: Span {
+                            src (ptr): 0x0000794c680053b0,
+                            source_id: None,
+                            start: 0,
+                            end: 0,
+                            as_str(): "",
+                        },
+                        call_path_tree: None,
+                    },
+                    Length {
+                        val: 3,
+                        span: Span {
+                            src (ptr): 0x0000794c680053b0,
+                            source_id: None,
+                            start: 0,
+                            end: 0,
+                            as_str(): "",
+                        },
+                    },
+                ),
+                source_id: None,
+            }: TypeId(
+                28,
+            ),
+            TypeSourceInfo {
+                type_info: Tuple(
+                    [],
+                ),
+                source_id: None,
+            }: TypeId(
+                20,
+            ),
+        },
+    },
+    singleton_types: RwLock {
+        data: SingletonTypeSourceInfos {
+            unknown: TypeSourceInfo {
+                type_info: Unknown,
+                source_id: None,
+            },
+            numeric: TypeSourceInfo {
+                type_info: Numeric,
+                source_id: None,
+            },
+        },
+    },
+    unifications: ConcurrentSlab {
+        inner: RwLock {
+            data: Inner {
+                items: [
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                21,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 353,
+                                end: 358,
+                                as_str(): "\"Bob\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                23,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 360,
+                                end: 365,
+                                as_str(): "\"Jan\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                24,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 367,
+                                end: 372,
+                                as_str(): "\"Ron\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                25,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 353,
+                                end: 358,
+                                as_str(): "\"Bob\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                25,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 360,
+                                end: 365,
+                                as_str(): "\"Jan\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                25,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 367,
+                                end: 372,
+                                as_str(): "\"Ron\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                26,
+                            ),
+                            expected: TypeId(
+                                16,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 352,
+                                end: 373,
+                                as_str(): "[\"Bob\", \"Jan\", \"Ron\"]",
+                            },
+                            help_text: "Variable declaration's type annotation does not match up with the assigned expression's type.",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                28,
+                            ),
+                            expected: TypeId(
+                                31,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 379,
+                                end: 395,
+                                as_str(): "array_of_strings",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                32,
+                            ),
+                            expected: TypeId(
+                                7,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 396,
+                                end: 397,
+                                as_str(): "0",
+                            },
+                            help_text: "Array index must be of type \"u64\".",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                25,
+                            ),
+                            expected: TypeId(
+                                29,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 379,
+                                end: 398,
+                                as_str(): "array_of_strings[0]",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                28,
+                            ),
+                            expected: TypeId(
+                                36,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 404,
+                                end: 420,
+                                as_str(): "array_of_strings",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                37,
+                            ),
+                            expected: TypeId(
+                                7,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 421,
+                                end: 422,
+                                as_str(): "0",
+                            },
+                            help_text: "Array index must be of type \"u64\".",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                25,
+                            ),
+                            expected: TypeId(
+                                34,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 404,
+                                end: 423,
+                                as_str(): "array_of_strings[0]",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                3,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 353,
+                                end: 358,
+                                as_str(): "\"Bob\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                3,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 360,
+                                end: 365,
+                                as_str(): "\"Jan\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                3,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 367,
+                                end: 372,
+                                as_str(): "\"Ron\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                3,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 353,
+                                end: 358,
+                                as_str(): "\"Bob\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                3,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 360,
+                                end: 365,
+                                as_str(): "\"Jan\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                3,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 367,
+                                end: 372,
+                                as_str(): "\"Ron\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                28,
+                            ),
+                            expected: TypeId(
+                                28,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 352,
+                                end: 373,
+                                as_str(): "[\"Bob\", \"Jan\", \"Ron\"]",
+                            },
+                            help_text: "Variable declaration's type annotation does not match up with the assigned expression's type.",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                28,
+                            ),
+                            expected: TypeId(
+                                28,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 333,
+                                end: 349,
+                                as_str(): "array_of_strings",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                28,
+                            ),
+                            expected: TypeId(
+                                40,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 379,
+                                end: 395,
+                                as_str(): "array_of_strings",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                41,
+                            ),
+                            expected: TypeId(
+                                7,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 396,
+                                end: 397,
+                                as_str(): "0",
+                            },
+                            help_text: "Array index must be of type \"u64\".",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                25,
+                            ),
+                            expected: TypeId(
+                                38,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 379,
+                                end: 398,
+                                as_str(): "array_of_strings[0]",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                28,
+                            ),
+                            expected: TypeId(
+                                44,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 404,
+                                end: 420,
+                                as_str(): "array_of_strings",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                45,
+                            ),
+                            expected: TypeId(
+                                7,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 421,
+                                end: 422,
+                                as_str(): "0",
+                            },
+                            help_text: "Array index must be of type \"u64\".",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                25,
+                            ),
+                            expected: TypeId(
+                                42,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 404,
+                                end: 423,
+                                as_str(): "array_of_strings[0]",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                3,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 353,
+                                end: 358,
+                                as_str(): "\"Bob\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                3,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 360,
+                                end: 365,
+                                as_str(): "\"Jan\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                    Some(
+                        Unification {
+                            received: TypeId(
+                                3,
+                            ),
+                            expected: TypeId(
+                                3,
+                            ),
+                            span: Span {
+                                src (ptr): 0x0000794c6800ae00,
+                                source_id: Some(
+                                    SourceId(
+                                        1048576,
+                                    ),
+                                ),
+                                start: 367,
+                                end: 372,
+                                as_str(): "\"Ron\"",
+                            },
+                            help_text: "",
+                            unify_kind: Default,
+                        },
+                    ),
+                ],
+                free_list: [],
+            },
+        },
+    },
+    last_replace: RwLock {
+        data: Instant {
+            tv_sec: 426740,
+            tv_nsec: 696963545,
+        },
+    },
+}
+~~ [ConcurrentSlab::get] Index: 25

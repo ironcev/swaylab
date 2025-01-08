@@ -1,0 +1,717 @@
+~~ [TypeEngine::clear_module]: SourceId(1048576)
+~~ [TypeEngine::clear_module] Type engine before clearing:
+TypeEngine {
+    slab: ConcurrentSlab {
+        inner: RwLock {
+            data: Inner {
+                items: [
+                    Some( [0]
+                        TypeSourceInfo {
+                            type_info: Tuple(
+                                [],
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some( [1]
+                        TypeSourceInfo {
+                            type_info: ErrorRecovery(
+                                ErrorEmitted {
+                                    _priv: (),
+                                },
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some( [2]
+                        TypeSourceInfo {
+                            type_info: Never,
+                            source_id: None,
+                        },
+                    ),
+                    Some( [3]
+                        TypeSourceInfo {
+                            type_info: StringSlice,
+                            source_id: None,
+                        },
+                    ),
+                    Some( [4]
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                Eight,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some( [5]
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                Sixteen,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some( [6]
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                ThirtyTwo,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some( [7]
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some( [8]
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                V256,
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some( [9]
+                        TypeSourceInfo {
+                            type_info: Boolean,
+                            source_id: None,
+                        },
+                    ),
+                    Some( [10]
+                        TypeSourceInfo {
+                            type_info: B256,
+                            source_id: None,
+                        },
+                    ),
+                    Some( [11]
+                        TypeSourceInfo {
+                            type_info: Contract,
+                            source_id: None,
+                        },
+                    ),
+                    Some( [12]
+                        TypeSourceInfo {
+                            type_info: RawUntypedPtr,
+                            source_id: None,
+                        },
+                    ),
+                    Some( [13]
+                        TypeSourceInfo {
+                            type_info: RawUntypedSlice,
+                            source_id: None,
+                        },
+                    ),
+                    Some( [14]
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some( [15]
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some( [16]
+                        TypeSourceInfo {
+                            type_info: Array(
+                                TypeArgument {
+                                    type_id: TypeId(
+                                        25,
+                                    ),
+                                    initial_type_id: TypeId(
+                                        25,
+                                    ),
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                    call_path_tree: None,
+                                },
+                                Length {
+                                    val: 3,
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                },
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some( [17]
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some( [18]
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some( [19]
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some( [20]
+                        TypeSourceInfo {
+                            type_info: Tuple(
+                                [],
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some( [21]
+                        TypeSourceInfo {
+                            type_info: StringSlice,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some( [22]
+                        TypeSourceInfo {
+                            type_info: StringSlice,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some( [23]
+                        TypeSourceInfo {
+                            type_info: StringSlice,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some( [24]
+                        TypeSourceInfo {
+                            type_info: StringSlice,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some( [25]
+                        TypeSourceInfo {
+                            type_info: StringSlice,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some( [26]
+                        TypeSourceInfo {
+                            type_info: Array(
+                                TypeArgument {
+                                    type_id: TypeId(
+                                        25,
+                                    ),
+                                    initial_type_id: TypeId(
+                                        25,
+                                    ),
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                    call_path_tree: None,
+                                },
+                                Length {
+                                    val: 3,
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                },
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some( [27]
+                        TypeSourceInfo {
+                            type_info: Array(
+                                TypeArgument {
+                                    type_id: TypeId(
+                                        25,
+                                    ),
+                                    initial_type_id: TypeId(
+                                        25,
+                                    ),
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                    call_path_tree: None,
+                                },
+                                Length {
+                                    val: 3,
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                },
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some( [28]
+                        TypeSourceInfo {
+                            type_info: Array(
+                                TypeArgument {
+                                    type_id: TypeId(
+                                        25,
+                                    ),
+                                    initial_type_id: TypeId(
+                                        25,
+                                    ),
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                    call_path_tree: None,
+                                },
+                                Length {
+                                    val: 3,
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                },
+                            ),
+                            source_id: None,
+                        },
+                    ),
+                    Some( [29]
+                        TypeSourceInfo {
+                            type_info: StringSlice,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some( [30]
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some( [31]
+                        TypeSourceInfo {
+                            type_info: Array(
+                                TypeArgument {
+                                    type_id: TypeId(
+                                        25,
+                                    ),
+                                    initial_type_id: TypeId(
+                                        25,
+                                    ),
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                    call_path_tree: None,
+                                },
+                                Length {
+                                    val: 3,
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                },
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some( [32]
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some( [33]
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some( [34]
+                        TypeSourceInfo {
+                            type_info: StringSlice,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some( [35]
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some( [36]
+                        TypeSourceInfo {
+                            type_info: Array(
+                                TypeArgument {
+                                    type_id: TypeId(
+                                        25,
+                                    ),
+                                    initial_type_id: TypeId(
+                                        25,
+                                    ),
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                    call_path_tree: None,
+                                },
+                                Length {
+                                    val: 3,
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                },
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some( [37]
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some( [38]
+                        TypeSourceInfo {
+                            type_info: StringSlice,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some( [39]
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some( [40]
+                        TypeSourceInfo {
+                            type_info: Array(
+                                TypeArgument {
+                                    type_id: TypeId(
+                                        25,
+                                    ),
+                                    initial_type_id: TypeId(
+                                        25,
+                                    ),
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                    call_path_tree: None,
+                                },
+                                Length {
+                                    val: 3,
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                },
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some( [41]
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some( [42]
+                        TypeSourceInfo {
+                            type_info: StringSlice,
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some( [43]
+                        TypeSourceInfo {
+                            type_info: Unknown,
+                            source_id: None,
+                        },
+                    ),
+                    Some( [44]
+                        TypeSourceInfo {
+                            type_info: Array(
+                                TypeArgument {
+                                    type_id: TypeId(
+                                        25,
+                                    ),
+                                    initial_type_id: TypeId(
+                                        25,
+                                    ),
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                    call_path_tree: None,
+                                },
+                                Length {
+                                    val: 3,
+                                    span: Span {
+                                        src (ptr): 0x0000794c680053b0,
+                                        source_id: None,
+                                        start: 0,
+                                        end: 0,
+                                        as_str(): "",
+                                    },
+                                },
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                    Some( [45]
+                        TypeSourceInfo {
+                            type_info: UnsignedInteger(
+                                SixtyFour,
+                            ),
+                            source_id: Some(
+                                SourceId(
+                                    1048576,
+                                ),
+                            ),
+                        },
+                    ),
+                ],
+                free_list: [],
+            },
+        },
+    },
+    shareable_types: RwLock {
+        data: {
+            TypeSourceInfo {
+                type_info: Array(
+                    TypeArgument {
+                        type_id: TypeId(
+                            25,
+                        ),
+                        initial_type_id: TypeId(
+                            25,
+                        ),
+                        span: Span {
+                            src (ptr): 0x0000794c680053b0,
+                            source_id: None,
+                            start: 0,
+                            end: 0,
+                            as_str(): "",
+                        },
+                        call_path_tree: None,
+                    },
+                    Length {
+                        val: 3,
+                        span: Span {
+                            src (ptr): 0x0000794c680053b0,
+                            source_id: None,
+                            start: 0,
+                            end: 0,
+                            as_str(): "",
+                        },
+                    },
+                ),
+                source_id: None,
+            }: TypeId(
+                28,
+            ),
+            TypeSourceInfo {
+                type_info: Array(
+                    TypeArgument {
+                        type_id: TypeId(
+                            25,
+                        ),
+                        initial_type_id: TypeId(
+                            25,
+                        ),
+                        span: Span {
+                            src (ptr): 0x0000794c680053b0,
+                            source_id: None,
+                            start: 0,
+                            end: 0,
+                            as_str(): "",
+                        },
+                        call_path_tree: None,
+                    },
+                    Length {
+                        val: 3,
+                        span: Span {
+                            src (ptr): 0x0000794c680053b0,
+                            source_id: None,
+                            start: 0,
+                            end: 0,
+                            as_str(): "",
+                        },
+                    },
+                ),
+                source_id: Some(
+                    SourceId(
+                        1048576,
+                    ),
+                ),
+            }: TypeId(
+                27,
+            ),
+            TypeSourceInfo {
+                type_info: UnsignedInteger(
+                    SixtyFour,
+                ),
+                source_id: Some(
+                    SourceId(
+                        1048576,
+                    ),
+                ),
+            }: TypeId(
+                33,
+            ),
+            TypeSourceInfo {
+                type_info: Tuple(
+                    [],
+                ),
+                source_id: None,
+            }: TypeId(
+                20,
+            ),
+            TypeSourceInfo {
+                type_info: StringSlice,
+                source_id: Some(
+                    SourceId(
+                        1048576,
+                    ),
+                ),
+            }: TypeId(
+                22,
+            ),
+        },
+    },
+}

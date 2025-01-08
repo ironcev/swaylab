@@ -15,7 +15,7 @@ sway/test$ cargo run --release -- --release
 sway$ cargo run --release --bin=forc build --release --path test/src/sdk-harness
 sway/test/src/sdk-harness$ cargo test --release
 
-sway/sway-lsp$ cargo test --release
+sway/sway-lsp$ cargo test --release -- --test-threads=1
 
 sway/sway-core$ cargo test --release
 

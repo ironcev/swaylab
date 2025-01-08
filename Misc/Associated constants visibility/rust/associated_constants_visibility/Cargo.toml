@@ -1,0 +1,6 @@
+[package]
+name = "associated_constants_visibility"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]

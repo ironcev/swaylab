@@ -1,19 +1,23 @@
 # Sway Lab
 
-Code samples used while working on the [Sway programming language](https://github.com/FuelLabs/sway).
+_Sway Lab_ contains code samples and various helpful code snippets, that I've used while contributing to the [Sway programming language](https://github.com/FuelLabs/sway).
 
-The distinguished folders in this repository are prefixed with:
-- `I` for [issues](https://github.com/FuelLabs/sway/issues)
-- `P` for [pull requests](https://github.com/FuelLabs/sway/pulls)
-- `R` for [requests for comments](https://github.com/FuelLabs/sway-rfcs)
-- `D` for code samples comming from the documentation, e.g., [The Sway Book](https://fuellabs.github.io/sway/latest/)
-- `M` for miscellaneous samples and random explorations
+The repository contains the following folders:
 
-Samples are by default written in Sway. When comparing behavior and features of different languages, samples in a particular language are stored into separate folder with the language name, e.g., _rust_, or _csharp_.
+| Folder  | Content |
+| ------- | ------- |
+| Issues  | Code samples used while working on [Sway issues](https://github.com/FuelLabs/sway/issues). |
+| PRs     | Code samples used while working on [Sway pull requests](https://github.com/FuelLabs/sway/pulls). |
+| RFCs    | Code samples used while working on [Sway Requests for Comments](https://github.com/FuelLabs/sway-rfcs). |
+| Docs    | Code samples comming from the Sway documentation, e.g., [The Sway Book](https://fuellabs.github.io/sway/latest/). |
+| Misc    | Miscellaneous code samples and random explorations. |
+| qnd_dbg | Code snippets and tips and tricks useful for quick and dirty debugging. |
 
-Samples stored in _tests_ folder are meant to be copied over to Sway _e2e_vm_tests_ and executed as Sway E2E tests.
+Samples are by default written in Sway. When comparing Sway's features with those of other languages, language specific samples are stored in folders with the language name, e.g., _rust_, _cpp_, _csharp_, etc.
 
-Samples stored in _forc_tests_ folder are meant to be run with `forc test`.
+Sway samples stored in _tests_ folders are meant to be copied over to Sway _e2e_vm_tests_ and executed as Sway E2E tests.
+
+Sway samples stored in _forc_tests_ folders are meant to be run with `forc test`.
 
 # License
 

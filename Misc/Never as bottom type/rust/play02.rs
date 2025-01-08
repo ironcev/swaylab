@@ -1,0 +1,2 @@
+#![feature(never_type)]
+
