@@ -2,8 +2,11 @@ library;
 
 use std::iterator::Iterator;
 
-fn iterate<I, T>(collection: I) where I: Iterator<Item=T> { }
+fn iterate_1<I, T>(collection: I) where I: Iterator<Item=T> { }
 //                                                    ^ Expected `,`.
+
+fn iterate_2<I, T>(collection: I) where I: Iterator<T> { }
+//                                         ^^^^^^^^^^ "Iterator" does not take type arguments.
 
 trait T {
     type AT;
