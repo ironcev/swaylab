@@ -8,6 +8,8 @@ fn private_fn(x: u64) {}
 
 fn fn_a(x: u64) {}
 
+fn empty_function(x: u64) {}
+
 fn fn_b(x: u64) {}
 
 fn fn_c(x: u64, y: u8) {}

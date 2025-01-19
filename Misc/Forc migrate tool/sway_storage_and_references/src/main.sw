@@ -12,6 +12,7 @@ contract;
 */
 
 mod module;
+mod empty_module;
 
 fn calculate_slot_address() -> b256 {
     b256::zero()

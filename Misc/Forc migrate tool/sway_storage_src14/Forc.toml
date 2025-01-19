@@ -1,0 +1,14 @@
+[project]
+authors = ["Igor Rončević"]
+entry = "main.sw"
+license = "MIT"
+name = "sample-project"
+# implicit-std = false
+
+[dependencies]
+# core = { path = "../../sway/sway-lib-core" }
+# std = { path = "../../sway/sway-lib-std" }
+core = { path = "/home/kebradalaonda/p/sway/sway-lib-core" }
+std = { path = "/home/kebradalaonda/p/sway/sway-lib-std" }
+# sway_libs = { git = "https://github.com/FuelLabs/sway-libs", tag = "v0.24.0" }
+# standards = { git = "https://github.com/FuelLabs/sway-standards", tag = "v0.6.2" }
