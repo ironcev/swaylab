@@ -10,6 +10,8 @@ struct S {
     [filter]     [&'a type]     [&value]         [value];
     [filter_mut] [&'a mut type] [&mut value]     [ref mut value];
 )]
+/// This is some comment that comments on [function].
+#[doc = "This is additional line on [function]."]
 fn function<'a, F>(s: ref_type([S]), f: F) -> Option<ref_type([u8])>
 where F: Fn(&ref_type([S])) -> bool + Copy + 'a
 {
