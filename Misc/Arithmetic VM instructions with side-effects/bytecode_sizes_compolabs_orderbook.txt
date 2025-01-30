@@ -1,0 +1,4 @@
+                Original    With side-effects   Increase    Increase percentage
+orderbook:      50600       54232               3632        7.18%
+match-script:   5528        5864                336         6.08%
+fulfill-script: 8976        9504                528         5.88%
