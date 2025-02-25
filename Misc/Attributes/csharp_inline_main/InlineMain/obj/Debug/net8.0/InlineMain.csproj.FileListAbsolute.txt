@@ -1,0 +1,15 @@
+/home/kebradalaonda/p/swaylab/Misc/`error_type` attribute/csharp_inline_main/InlineMain/obj/Debug/net8.0/InlineMain.GeneratedMSBuildEditorConfig.editorconfig
+/home/kebradalaonda/p/swaylab/Misc/`error_type` attribute/csharp_inline_main/InlineMain/obj/Debug/net8.0/InlineMain.AssemblyInfoInputs.cache
+/home/kebradalaonda/p/swaylab/Misc/`error_type` attribute/csharp_inline_main/InlineMain/obj/Debug/net8.0/InlineMain.AssemblyInfo.cs
+/home/kebradalaonda/p/swaylab/Misc/`error_type` attribute/csharp_inline_main/InlineMain/obj/Debug/net8.0/InlineMain.csproj.CoreCompileInputs.cache
+/home/kebradalaonda/p/swaylab/Misc/`error_type` attribute/csharp_inline_main/InlineMain/obj/Debug/net8.0/InlineMain.sourcelink.json
+/home/kebradalaonda/p/swaylab/Misc/`error_type` attribute/csharp_inline_main/InlineMain/bin/Debug/net8.0/InlineMain
+/home/kebradalaonda/p/swaylab/Misc/`error_type` attribute/csharp_inline_main/InlineMain/bin/Debug/net8.0/InlineMain.deps.json
+/home/kebradalaonda/p/swaylab/Misc/`error_type` attribute/csharp_inline_main/InlineMain/bin/Debug/net8.0/InlineMain.runtimeconfig.json
+/home/kebradalaonda/p/swaylab/Misc/`error_type` attribute/csharp_inline_main/InlineMain/bin/Debug/net8.0/InlineMain.dll
+/home/kebradalaonda/p/swaylab/Misc/`error_type` attribute/csharp_inline_main/InlineMain/bin/Debug/net8.0/InlineMain.pdb
+/home/kebradalaonda/p/swaylab/Misc/`error_type` attribute/csharp_inline_main/InlineMain/obj/Debug/net8.0/InlineMain.dll
+/home/kebradalaonda/p/swaylab/Misc/`error_type` attribute/csharp_inline_main/InlineMain/obj/Debug/net8.0/refint/InlineMain.dll
+/home/kebradalaonda/p/swaylab/Misc/`error_type` attribute/csharp_inline_main/InlineMain/obj/Debug/net8.0/InlineMain.pdb
+/home/kebradalaonda/p/swaylab/Misc/`error_type` attribute/csharp_inline_main/InlineMain/obj/Debug/net8.0/InlineMain.genruntimeconfig.cache
+/home/kebradalaonda/p/swaylab/Misc/`error_type` attribute/csharp_inline_main/InlineMain/obj/Debug/net8.0/ref/InlineMain.dll
