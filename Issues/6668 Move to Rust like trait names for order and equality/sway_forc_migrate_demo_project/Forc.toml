@@ -1,0 +1,12 @@
+[project]
+authors = ["Igor Rončević"]
+entry = "main.sw"
+license = "MIT"
+name = "forc_migrate_demo_project"
+# implicit-std = false
+
+[dependencies]
+core = { path = "/home/kebradalaonda/p/sway/sway-lib-core" }
+# std = { path = "/home/kebradalaonda/p/sway/sway-lib-std" }
+# core = { path = "../../../../sway/sway-lib-core" }
+# std = { path = "../../../../sway/sway-lib-std" }
