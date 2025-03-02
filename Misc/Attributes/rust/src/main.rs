@@ -14,6 +14,8 @@ mod play05A;
 
 mod play06A;
 
+mod play07A;
+
 // #[inline(always)]
 // error[E0518]: attribute should be applied to function or closure
 // not a function or closure
