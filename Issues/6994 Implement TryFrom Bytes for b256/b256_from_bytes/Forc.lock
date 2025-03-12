@@ -1,0 +1,13 @@
+[[package]]
+name = "b256_from_bytes"
+source = "member"
+dependencies = ["std"]
+
+[[package]]
+name = "core"
+source = "path+from-root-A0B9C6D3F585D952"
+
+[[package]]
+name = "std"
+source = "path+from-root-A0B9C6D3F585D952"
+dependencies = ["core"]
