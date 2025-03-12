@@ -1,0 +1,13 @@
+[[package]]
+name = "core"
+source = "path+from-root-C55929AA899A8075"
+
+[[package]]
+name = "merge_core_std"
+source = "member"
+dependencies = ["std"]
+
+[[package]]
+name = "std"
+source = "path+from-root-C55929AA899A8075"
+dependencies = ["core"]
