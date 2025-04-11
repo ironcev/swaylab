@@ -1,0 +1,8 @@
+[project]
+authors = ["Kebradalaonda"]
+entry = "lib.sw"
+license = "Apache-2.0"
+name = "generic_constraints_on_supertraits"
+
+[dependencies]
+std = { path = "/home/kebradalaonda/p/sway/sway-lib-std" }

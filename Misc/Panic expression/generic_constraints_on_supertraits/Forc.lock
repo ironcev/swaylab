@@ -1,0 +1,8 @@
+[[package]]
+name = "generic_constraints_on_supertraits"
+source = "member"
+dependencies = ["std"]
+
+[[package]]
+name = "std"
+source = "path+from-root-7366BD6442123013"

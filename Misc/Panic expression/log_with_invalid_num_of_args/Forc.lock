@@ -1,0 +1,8 @@
+[[package]]
+name = "log_in_log"
+source = "member"
+dependencies = ["std"]
+
+[[package]]
+name = "std"
+source = "path+from-root-B39E821029FF6F84"
