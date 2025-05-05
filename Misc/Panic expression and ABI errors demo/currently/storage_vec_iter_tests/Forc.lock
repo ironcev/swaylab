@@ -1,0 +1,8 @@
+[[package]]
+name = "std"
+source = "path+from-root-27026E86155B715E"
+
+[[package]]
+name = "storage_vec_iter_tests"
+source = "member"
+dependencies = ["std"]
