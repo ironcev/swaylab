@@ -27,7 +27,7 @@ fi
 paste -d, "$before_file" "$after_file" | while IFS=',' read -r test1 before test2 after; do
   if [ "$before" != "$after" ]; then
     diff=$((before - after))
-    percent=$(awk -v d="$diff" -v b="$before" 'BEGIN { printf "%.2f", (d / b) * 100 }')
+    percent=$(LC_NUMERIC=C awk -v d="$diff" -v b="$before" 'BEGIN { printf "%.2f", (d / b) * 100 }')
 
     if [ "$output_format" == "CSV" ]; then
       echo "$test1,$before,$after,$percent"
