@@ -5,4 +5,4 @@ dependencies = ["std"]
 
 [[package]]
 name = "std"
-source = "git+https://github.com/fuellabs/sway?tag=v0.68.2#05480bb07ed7b62e4123a2696ba22bce57ffb049"
+source = "git+https://github.com/fuellabs/sway?tag=v0.68.4#1fb61fdc42054109c54a57544b9aeb88afd3cae8"

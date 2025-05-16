@@ -6,7 +6,7 @@ abi PanicContract {
 
 impl PanicContract for Contract {
     fn some_panic() {
-        panic "some panic msg";
+        // panic "some panic msg";
     }
 }
 
