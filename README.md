@@ -10,6 +10,7 @@ The repository contains the following folders:
 | PRs     | Code samples used while working on [Sway pull requests](https://github.com/FuelLabs/sway/pulls). |
 | RFCs    | Code samples used while working on [Sway Requests for Comments](https://github.com/FuelLabs/sway-rfcs). |
 | Docs    | Code samples comming from the Sway documentation, e.g., [The Sway Book](https://fuellabs.github.io/sway/latest/). |
+| Demos   | Code samples used in public demos. |
 | Misc    | Miscellaneous code samples and random explorations. |
 | qnd_dbg | Code snippets and tips and tricks useful for quick and dirty debugging. |
 
