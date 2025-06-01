@@ -1,0 +1,8 @@
+[[package]]
+name = "guard_attribute"
+source = "member"
+dependencies = ["std"]
+
+[[package]]
+name = "std"
+source = "path+from-root-9EFDA25839E05A50"
