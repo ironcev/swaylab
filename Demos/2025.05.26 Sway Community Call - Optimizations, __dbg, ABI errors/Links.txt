@@ -1,0 +1,13 @@
+Performance improvements:
+LSP:
+https://github.com/FuelLabs/sway/pull/7139
+https://github.com/FuelLabs/sway/pull/7093
+
+Bytecode size and gas usage:
+https://github.com/FuelLabs/sway/pull/6795
+https://github.com/FuelLabs/sway/pull/7109
+https://github.com/FuelLabs/sway/pulls?q=is%3Apr+is%3Aclosed+author%3Aironcev+optimize+label%3A%22lib%3A+std%22
+
+Improved debugging and troubleshooting:
+__dbg intrinsic:    https://github.com/FuelLabs/sway/pull/7015
+ABI errors:         https://github.com/FuelLabs/sway-rfcs/blob/master/rfcs/0014-abi-errors.md
