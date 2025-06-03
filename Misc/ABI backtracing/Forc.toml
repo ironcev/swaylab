@@ -1,0 +1,9 @@
+[project]
+authors = ["Kebradalaonda"]
+entry = "main.sw"
+license = "Apache-2.0"
+name = "abi_backtracing"
+version = "0.1.0"
+
+[dependencies]
+std = { path = "/home/kebradalaonda/p/sway/sway-lib-std" }
