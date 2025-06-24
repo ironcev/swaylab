@@ -14,5 +14,5 @@ fn test_fn() {
 
 #[test(should_revert)]
 fn test_meaning_of_life() {
-    assert(6 * 6 == 42);
+    assert_eq(6 * 6, 42);
 }

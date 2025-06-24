@@ -5,3 +5,4 @@ license = "Apache-2.0"
 name = "logging_in_tests"
 
 [dependencies]
+std = { path = "/home/kebradalaonda/p/sway/sway-lib-std" }
