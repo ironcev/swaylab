@@ -1,0 +1,8 @@
+[project]
+authors = ["Kebradalaonda"]
+entry = "main.sw"
+license = "Apache-2.0"
+name = "string_arrays_in_ir"
+implicit-std = false
+
+[dependencies]
