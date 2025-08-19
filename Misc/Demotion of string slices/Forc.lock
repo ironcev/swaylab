@@ -1,0 +1,8 @@
+[[package]]
+name = "demotion_of_string_slices"
+source = "member"
+dependencies = ["std"]
+
+[[package]]
+name = "std"
+source = "path+from-root-BA3FB01E7C241156"

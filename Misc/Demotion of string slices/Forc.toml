@@ -1,0 +1,9 @@
+[project]
+authors = ["Kebradalaonda"]
+entry = "main.sw"
+license = "Apache-2.0"
+name = "demotion_of_string_slices"
+implicit-std = false
+
+[dependencies]
+std = { path = "/home/kebradalaonda/p/sway/sway-lib-std" }
