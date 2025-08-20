@@ -1,0 +1,9 @@
+[[package]]
+name = "passing_aggregates_to_functions"
+source = "member"
+dependencies = ["std"]
+
+[[package]]
+name = "std"
+version = "0.69.1"
+source = "registry+std?0.69.1#QmbPunScay4xpfHKpxQ71dFKXSiyJuPP8P8YhgX5Dkmzm9!"
