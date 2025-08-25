@@ -1,0 +1,78 @@
+global storage_all_layouts::ADDRESS : b256 = const b256 0x9999999999999999999999999999999999999999999999999999999999999999
+
+entry_orig fn main_0() -> (), !13 {
+    local b256 __tmp_arg
+    local b256 __tmp_arg0
+    local b256 __tmp_arg1
+
+    entry():
+    v0 = get_global __ptr b256, storage_all_layouts::ADDRESS, !14
+    v1 = get_local __ptr b256, __tmp_arg
+    mem_copy_val v1, v0
+    v2 = call poke_1(v1)
+    v3 = get_global __ptr b256, storage_all_layouts::ADDRESS, !15
+    v4 = get_local __ptr b256, __tmp_arg0
+    mem_copy_val v4, v3
+    v5 = call poke_1(v4)
+    v6 = get_global __ptr b256, storage_all_layouts::ADDRESS, !16
+    v7 = get_local __ptr b256, __tmp_arg1
+    mem_copy_val v7, v6
+    v8 = call poke_1(v7)
+    v9 = const unit ()
+    ret () v9
+}
+
+.program:
+move $$tmp $pc
+jmpf $zero i4
+DATA_SECTION_OFFSET[0..32]
+DATA_SECTION_OFFSET[32..64]
+CONFIGURABLES_OFFSET[0..32]
+CONFIGURABLES_OFFSET[32..64]
+lw   $$ds $$tmp i1
+add  $$ds $$ds $$tmp
+cfei i0                       ; allocate stack space for globals
+move $$locbase $sp            ; save locals base register for function __entry
+cfei i48                      ; allocate 48 bytes for locals and 0 slots for call arguments
+addi $r0 $$locbase i32        ; get offset to local
+jal  $$reta $pc i9            ; [call]: call main_0
+addi $r1 $$locbase i16        ; get offset to local
+sw   $$locbase $zero i2       ; store word
+sw   $$locbase $zero i3       ; store word
+mcpi $$locbase $r1 i16        ; copy memory
+mcpi $r0 $$locbase i16        ; copy memory
+lw   $r1 $r0 i1               ; load size of returned slice
+lw   $r0 $r0 i0               ; load pointer to returned slice
+retd  $r0 $r1
+pshl i7                       ; save registers 16..40
+pshh i524288                  ; save registers 40..64
+move $$locbase $sp            ; save locals base register for function main_0
+cfei i96                      ; allocate 96 bytes for locals and 0 slots for call arguments
+move $r2 $$reta               ; save return address
+addr $r0 data_NonConfigurable_0; get constant's address in data section
+mcpi $$locbase $r0 i32        ; copy memory
+move $$arg0 $$locbase         ; [call]: pass argument 0
+jal  $$reta $pc i19           ; [call]: call poke_1
+addr $r0 data_NonConfigurable_0; get constant's address in data section
+addi $r1 $$locbase i32        ; get offset to local
+mcpi $r1 $r0 i32              ; copy memory
+move $$arg0 $r1               ; [call]: pass argument 0
+jal  $$reta $pc i13           ; [call]: call poke_1
+addr $r0 data_NonConfigurable_0; get constant's address in data section
+addi $r1 $$locbase i64        ; get offset to local
+mcpi $r1 $r0 i32              ; copy memory
+move $$arg0 $r1               ; [call]: pass argument 0
+jal  $$reta $pc i7            ; [call]: call poke_1
+move $$retv $zero             ; set return value
+cfsi i96                      ; free 96 bytes for locals and 0 slots for extra call arguments
+move $$reta $r2               ; restore return address
+poph i524288                  ; restore registers 40..64
+popl i7                       ; restore registers 16..40
+jal  $zero $$reta i0          ; return from call
+pshh i524288                  ; save registers 40..64
+move $$locbase $sp            ; save locals base register for function poke_1
+move $$retv $zero             ; set return value
+poph i524288                  ; restore registers 40..64
+jal  $zero $$reta i0          ; return from call
+.data:
+data_NonConfigurable_0 .bytes[32] 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99  ................................
