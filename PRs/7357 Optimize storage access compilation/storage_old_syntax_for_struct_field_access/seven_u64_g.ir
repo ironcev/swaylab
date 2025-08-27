@@ -1,0 +1,57 @@
+pub entry fn new_syntax_seven_u64_g<0dc6f9a9>() -> u64, !304 {
+    local mut u256 __aggr_memcpy_0
+    local mut u256 __aggr_memcpy_00
+    local mut u256 __aggr_memcpy_01
+    local mut b256 __aggr_memcpy_02
+    local { b256, u64, b256 } __anon_0
+    local { b256, u64, u64 } __anon_000
+    local { u64, ( () | { u64, u64, u64, u64, u64, u64, u64 } ) } __anon_10
+    local { u64, ( () | { u64, u64, u64, u64, u64, u64, u64 } ) } __anon_2
+    local b256 __const = const b256 0xeb7ceb95f655d60faa3ae0cd0de1ff1af784e38a3b25a88f2be480f15478907f
+    local b256 __const0 = const b256 0xeb7ceb95f655d60faa3ae0cd0de1ff1af784e38a3b25a88f2be480f15478907f
+    local { u64, ( () | { u64, u64, u64, u64, u64, u64, u64 } ) } __matched_value_4
+    local u256 __ret_val
+    local u256 __ret_val0
+    local { u64, ( () | { u64, u64, u64, u64, u64, u64, u64 } ) } __tmp_block_arg
+    local mut u256 __wide_result
+    local mut u256 __wide_result0
+    local b256 offset_slot
+    local mut u256 offset_slot0
+    local u256 other_10
+    local b256 self_100
+    local u256 self_11
+    local u256 self_12
+    local u256 self_13
+    local { u64, ( () | { u64, u64, u64, u64, u64, u64, u64 } ) } self_18
+    local b256 slot_
+
+    entry():
+    ...
+    ...
+
+
+pub entry fn old_syntax_seven_u64_g<a9ac2cac>() -> u64, !498 {
+    local { b256, u64, b256 } __anon_0
+    local b256 __const = const b256 0xeb7ceb95f655d60faa3ae0cd0de1ff1af784e38a3b25a88f2be480f154789080
+    local b256 __const0 = const b256 0xfa967c3d31116c89e4af6d5c33ef6dcb4e8e385ebfae77f4a2c3060a2daa6eb0
+    local { b256, u64, b256 } __tmp_arg
+
+    entry():
+    v0 = get_local ptr b256, __const
+    v1 = get_local ptr b256, __const0
+    v2 = get_local ptr { b256, u64, b256 }, __anon_0, !499
+    v3 = const u64 0
+    v4 = get_elem_ptr v2, ptr b256, v3
+    mem_copy_val v4, v0
+    v5 = const u64 1
+    v6 = get_elem_ptr v2, ptr u64, v5
+    v7 = const u64 2
+    store v7 to v6, !499
+    v8 = const u64 2
+    v9 = get_elem_ptr v2, ptr b256, v8
+    mem_copy_val v9, v1
+    v10 = get_local ptr { b256, u64, b256 }, __tmp_arg
+    mem_copy_val v10, v2
+    v11 = call read_42(v10)
+    ret u64 v11
+}

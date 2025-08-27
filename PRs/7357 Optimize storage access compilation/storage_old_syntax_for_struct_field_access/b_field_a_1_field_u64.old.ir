@@ -1,0 +1,25 @@
+    pub entry fn old_syntax_b_field_a_1_field_u64<c1fc9649>() -> u64, !248 {
+        local { b256, u64, b256 } __anon_0
+        local b256 __const = const b256 0x87314c243e59486847dd9d3dacd54c0fc10493e4a6d96d7556cb479352d17afb
+        local b256 __const0 = const b256 0x566c9c57fbbd4761f947ca264b24a9d2a424779956f45e5ac107ac7ff8f060ed
+        local { b256, u64, b256 } __tmp_arg
+
+        entry():
+        v0 = get_local ptr b256, __const
+        v1 = get_local ptr b256, __const0
+        v2 = get_local ptr { b256, u64, b256 }, __anon_0, !249
+        v3 = const u64 0
+        v4 = get_elem_ptr v2, ptr b256, v3
+        mem_copy_val v4, v0
+        v5 = const u64 1
+        v6 = get_elem_ptr v2, ptr u64, v5
+        v7 = const u64 0
+        store v7 to v6, !249
+        v8 = const u64 2
+        v9 = get_elem_ptr v2, ptr b256, v8
+        mem_copy_val v9, v1
+        v10 = get_local ptr { b256, u64, b256 }, __tmp_arg
+        mem_copy_val v10, v2
+        v11 = call read_29(v10)
+        ret u64 v11
+    }

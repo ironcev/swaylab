@@ -1,0 +1,17 @@
+Test,Before,After,Percentage
+empty_fields_in_storage_struct,22528,21768,3.37
+language/fallback_only,2008,1944,3.19
+language/generics_in_contract,2448,2400,1.96
+static_analysis/cei_pattern_violation_more_complex_logic,15392,15064,2.13
+static_analysis/cei_pattern_violation_storage_map_and_vec,6424,6224,3.11
+static_analysis/cei_pattern_violation_storage_struct_read,2784,2760,0.86
+static_analysis/cei_pattern_violation_storage_var_read,2952,2928,0.81
+static_analysis/cei_pattern_violation_storage_var_update,2664,2648,0.60
+stdlib/storage_vec_insert,4864,4816,0.99
+storage_slot_key_calculation,4848,4856,-0.17
+supertraits_for_abis_ownable,3576,3536,1.12
+test_contracts/basic_storage,32272,31720,1.71
+test_contracts/increment_contract,3168,2984,5.81
+test_contracts/storage_access_contract,28248,26720,5.41
+test_contracts/storage_enum_contract,16128,13736,14.83
+test_contracts/storage_namespace,31248,30648,1.92

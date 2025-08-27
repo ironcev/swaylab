@@ -1,0 +1,182 @@
+contract {
+    pub entry fn poke_storage_1<72e32f2c>() -> (), !4 {
+        local { b256, u64, b256 } __anon_0
+        local { b256, u64, b256 } __anon_1
+        local { b256, u64, b256 } __anon_2
+        local b256 __const = const b256 0x9e0e87bef2e44d9771eb12cfc81e34e4dd6caad55385354757a8898a2c808b61
+        local b256 __const0 = const b256 0x9e0e87bef2e44d9771eb12cfc81e34e4dd6caad55385354757a8898a2c808b61
+        local b256 __const1 = const b256 0x822b67d5a2c7f6a1b6a48c253be436eb6c57de0c39fc8b0e27bfb66933788af3
+        local b256 __const2 = const b256 0x822b67d5a2c7f6a1b6a48c253be436eb6c57de0c39fc8b0e27bfb66933788af3
+        local b256 __const3 = const b256 0x8c1fb83c6f6bfcfa3eb45a6afb8f3bc63deddb27a0fabd754c5ed677417e4a34
+        local b256 __const4 = const b256 0x8c1fb83c6f6bfcfa3eb45a6afb8f3bc63deddb27a0fabd754c5ed677417e4a34
+        local { b256, u64, b256 } __tmp_arg
+        local { b256, u64, b256 } __tmp_arg0
+        local { b256, u64, b256 } __tmp_arg1
+
+        entry():
+        v0 = get_local ptr b256, __const
+        v1 = get_local ptr b256, __const0
+        v2 = get_local ptr b256, __const1
+        v3 = get_local ptr b256, __const2
+        v4 = get_local ptr b256, __const3
+        v5 = get_local ptr b256, __const4
+        v6 = get_local ptr { b256, u64, b256 }, __anon_0, !5
+        v7 = const u64 0
+        v8 = get_elem_ptr v6, ptr b256, v7
+        mem_copy_val v8, v0
+        v9 = const u64 1
+        v10 = get_elem_ptr v6, ptr u64, v9
+        v11 = const u64 0
+        store v11 to v10, !5
+        v12 = const u64 2
+        v13 = get_elem_ptr v6, ptr b256, v12
+        mem_copy_val v13, v1
+        v14 = get_local ptr { b256, u64, b256 }, __tmp_arg
+        mem_copy_val v14, v6
+        v15 = call poke_2(v14)
+        v16 = get_local ptr { b256, u64, b256 }, __anon_1, !6
+        v17 = const u64 0
+        v18 = get_elem_ptr v16, ptr b256, v17
+        mem_copy_val v18, v2
+        v19 = const u64 1
+        v20 = get_elem_ptr v16, ptr u64, v19
+        v21 = const u64 0
+        store v21 to v20, !6
+        v22 = const u64 2
+        v23 = get_elem_ptr v16, ptr b256, v22
+        mem_copy_val v23, v3
+        v24 = get_local ptr { b256, u64, b256 }, __tmp_arg0
+        mem_copy_val v24, v16
+        v25 = call poke_2(v24)
+        v26 = get_local ptr { b256, u64, b256 }, __anon_2, !7
+        v27 = const u64 0
+        v28 = get_elem_ptr v26, ptr b256, v27
+        mem_copy_val v28, v4
+        v29 = const u64 1
+        v30 = get_elem_ptr v26, ptr u64, v29
+        v31 = const u64 0
+        store v31 to v30, !7
+        v32 = const u64 2
+        v33 = get_elem_ptr v26, ptr b256, v32
+        mem_copy_val v33, v5
+        v34 = get_local ptr { b256, u64, b256 }, __tmp_arg1
+        mem_copy_val v34, v26
+        v35 = call poke_2(v34)
+        v36 = const unit ()
+        ret () v36
+    }
+
+    fn poke_2(_t: ptr { b256, u64, b256 }) -> (), !11 {
+        entry(_t: ptr { b256, u64, b256 }):
+        v0 = const unit ()
+        ret () v0
+    }
+
+    pub entry fn poke_storage_2<9b2b11df>() -> (), !14 {
+        local { b256, u64, b256 } __anon_0
+        local { b256, u64, b256 } __anon_1
+        local { b256, u64, b256 } __anon_2
+        local b256 __const = const b256 0x9e0e87bef2e44d9771eb12cfc81e34e4dd6caad55385354757a8898a2c808b61
+        local b256 __const0 = const b256 0x9e0e87bef2e44d9771eb12cfc81e34e4dd6caad55385354757a8898a2c808b61
+        local b256 __const1 = const b256 0x822b67d5a2c7f6a1b6a48c253be436eb6c57de0c39fc8b0e27bfb66933788af3
+        local b256 __const2 = const b256 0x822b67d5a2c7f6a1b6a48c253be436eb6c57de0c39fc8b0e27bfb66933788af3
+        local b256 __const3 = const b256 0x8c1fb83c6f6bfcfa3eb45a6afb8f3bc63deddb27a0fabd754c5ed677417e4a34
+        local b256 __const4 = const b256 0x8c1fb83c6f6bfcfa3eb45a6afb8f3bc63deddb27a0fabd754c5ed677417e4a34
+        local { b256, u64, b256 } __tmp_arg
+        local { b256, u64, b256 } __tmp_arg0
+        local { b256, u64, b256 } __tmp_arg1
+
+        entry():
+        v0 = get_local ptr b256, __const
+        v1 = get_local ptr b256, __const0
+        v2 = get_local ptr b256, __const1
+        v3 = get_local ptr b256, __const2
+        v4 = get_local ptr b256, __const3
+        v5 = get_local ptr b256, __const4
+        v6 = get_local ptr { b256, u64, b256 }, __anon_0, !15
+        v7 = const u64 0
+        v8 = get_elem_ptr v6, ptr b256, v7
+        mem_copy_val v8, v0
+        v9 = const u64 1
+        v10 = get_elem_ptr v6, ptr u64, v9
+        v11 = const u64 0
+        store v11 to v10, !15
+        v12 = const u64 2
+        v13 = get_elem_ptr v6, ptr b256, v12
+        mem_copy_val v13, v1
+        v14 = get_local ptr { b256, u64, b256 }, __tmp_arg
+        mem_copy_val v14, v6
+        v15 = call poke_2(v14)
+        v16 = get_local ptr { b256, u64, b256 }, __anon_1, !16
+        v17 = const u64 0
+        v18 = get_elem_ptr v16, ptr b256, v17
+        mem_copy_val v18, v2
+        v19 = const u64 1
+        v20 = get_elem_ptr v16, ptr u64, v19
+        v21 = const u64 0
+        store v21 to v20, !16
+        v22 = const u64 2
+        v23 = get_elem_ptr v16, ptr b256, v22
+        mem_copy_val v23, v3
+        v24 = get_local ptr { b256, u64, b256 }, __tmp_arg0
+        mem_copy_val v24, v16
+        v25 = call poke_2(v24)
+        v26 = get_local ptr { b256, u64, b256 }, __anon_2, !17
+        v27 = const u64 0
+        v28 = get_elem_ptr v26, ptr b256, v27
+        mem_copy_val v28, v4
+        v29 = const u64 1
+        v30 = get_elem_ptr v26, ptr u64, v29
+        v31 = const u64 0
+        store v31 to v30, !17
+        v32 = const u64 2
+        v33 = get_elem_ptr v26, ptr b256, v32
+        mem_copy_val v33, v5
+        v34 = get_local ptr { b256, u64, b256 }, __tmp_arg1
+        mem_copy_val v34, v26
+        v35 = call poke_2(v34)
+        v36 = const unit ()
+        ret () v36
+    }
+
+    pub entry fn poke_storage_in_a_loop<ca4fe854>() -> (), !20 {
+        local { b256, u64, b256 } __anon_0
+        local b256 __const = const b256 0x9e0e87bef2e44d9771eb12cfc81e34e4dd6caad55385354757a8898a2c808b61
+        local b256 __const0 = const b256 0x9e0e87bef2e44d9771eb12cfc81e34e4dd6caad55385354757a8898a2c808b61
+        local { b256, u64, b256 } __tmp_arg
+
+        entry():
+        v0 = const u64 0, !21
+        br while(v0)
+
+        while(v1: u64):
+        v2 = const u64 10, !22
+        v3 = cmp lt v1 v2, !25
+        cbr v3, while_body(), end_while()
+
+        while_body():
+        v4 = get_local ptr b256, __const
+        v5 = get_local ptr b256, __const0
+        v6 = get_local ptr { b256, u64, b256 }, __anon_0, !26
+        v7 = const u64 0
+        v8 = get_elem_ptr v6, ptr b256, v7
+        mem_copy_val v8, v4
+        v9 = const u64 1
+        v10 = get_elem_ptr v6, ptr u64, v9
+        v11 = const u64 0
+        store v11 to v10, !26
+        v12 = const u64 2
+        v13 = get_elem_ptr v6, ptr b256, v12
+        mem_copy_val v13, v5
+        v14 = get_local ptr { b256, u64, b256 }, __tmp_arg
+        mem_copy_val v14, v6
+        v15 = call poke_2(v14)
+        v16 = const u64 1, !27
+        v17 = add v1, v16, !30
+        br while(v17)
+
+        end_while():
+        v18 = const unit ()
+        ret () v18
+    }
+}
