@@ -1,0 +1,884 @@
+[sway-core/src/language/ty/declaration/function.rs:772:13] &self.name.as_str() = "friendly_provided_method_in_trait"
+[sway-core/src/language/ty/declaration/function.rs:773:13] &self.call_path = CallPath {
+    prefixes: [
+        abi-backtracing,
+        non_generic,
+    ],
+    suffix: friendly_provided_method_in_trait,
+    callpath_type: Full,
+}
+[sway-core/src/language/ty/declaration/function.rs:774:13] &self.implementing_type = None
+[sway-core/src/language/ty/declaration/function.rs:775:13] &self.implementing_type.as_ref().map(|decl|
+decl.span(engines).as_str().to_string()).unwrap_or("<none>".to_string()) = "<none>"
+[sway-core/src/language/ty/declaration/function.rs:777:17] "{}: {}" = "{}: {}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] &implementing_for_typeid = TypeId(
+    107308,
+)
+[sway-core/src/language/ty/declaration/function.rs:777:17] engines.te().get(implementing_for_typeid) = UnknownGeneric {
+    name: Self,
+    trait_constraints: [],
+    parent: None,
+    is_from_type_parameter: true,
+}
+IN TYPE CHECK END:   --------------------------------------------------------
+IN TYPE CHECK BEGIN: --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:772:13] &self.name.as_str() = "friendly_provided_fn_in_trait"
+[sway-core/src/language/ty/declaration/function.rs:773:13] &self.call_path = CallPath {
+    prefixes: [
+        abi-backtracing,
+        non_generic,
+    ],
+    suffix: friendly_provided_fn_in_trait,
+    callpath_type: Full,
+}
+[sway-core/src/language/ty/declaration/function.rs:774:13] &self.implementing_type = None
+[sway-core/src/language/ty/declaration/function.rs:775:13] &self.implementing_type.as_ref().map(|decl|
+decl.span(engines).as_str().to_string()).unwrap_or("<none>".to_string()) = "<none>"
+[sway-core/src/language/ty/declaration/function.rs:777:17] "{}: {}" = "{}: {}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] &implementing_for_typeid = TypeId(
+    107308,
+)
+[sway-core/src/language/ty/declaration/function.rs:777:17] engines.te().get(implementing_for_typeid) = UnknownGeneric {
+    name: Self,
+    trait_constraints: [],
+    parent: None,
+    is_from_type_parameter: true,
+}
+IN TYPE CHECK END:   --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:569:13] "`set_implementing_type`: {} {} -> {} : {}" = "`set_implementing_type`: {} {} -> {} : {}"
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.name = friendly_provided_method_in_trait
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.implementing_type = None
+[sway-core/src/language/ty/declaration/function.rs:569:13] &decl = TraitDecl(
+    TraitDecl {
+        decl_id: DeclId(
+            34,
+        ),
+    },
+)
+[sway-core/src/language/ty/declaration/function.rs:569:13] self.implementing_for_typeid = Some(
+    TypeId(
+        107308,
+    ),
+)
+[sway-core/src/language/ty/declaration/function.rs:569:13] "`set_implementing_type`: {} {} -> {} : {}" = "`set_implementing_type`: {} {} -> {} : {}"
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.name = friendly_provided_fn_in_trait
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.implementing_type = None
+[sway-core/src/language/ty/declaration/function.rs:569:13] &decl = TraitDecl(
+    TraitDecl {
+        decl_id: DeclId(
+            34,
+        ),
+    },
+)
+[sway-core/src/language/ty/declaration/function.rs:569:13] self.implementing_for_typeid = Some(
+    TypeId(
+        107308,
+    ),
+)
+IN TYPE CHECK BEGIN: --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:772:13] &self.name.as_str() = "friendly_fn_in_trait"
+[sway-core/src/language/ty/declaration/function.rs:773:13] &self.call_path = CallPath {
+    prefixes: [
+        abi-backtracing,
+        non_generic,
+    ],
+    suffix: friendly_fn_in_trait,
+    callpath_type: Full,
+}
+[sway-core/src/language/ty/declaration/function.rs:774:13] &self.implementing_type = None
+[sway-core/src/language/ty/declaration/function.rs:775:13] &self.implementing_type.as_ref().map(|decl|
+decl.span(engines).as_str().to_string()).unwrap_or("<none>".to_string()) = "<none>"
+[sway-core/src/language/ty/declaration/function.rs:777:17] "{}: {}" = "{}: {}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] &implementing_for_typeid = TypeId(
+    107278,
+)
+[sway-core/src/language/ty/declaration/function.rs:777:17] engines.te().get(implementing_for_typeid) = Struct(
+    DeclId(
+        5162,
+    ),
+)
+IN TYPE CHECK END:   --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:569:13] "`set_implementing_type`: {} {} -> {} : {}" = "`set_implementing_type`: {} {} -> {} : {}"
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.name = friendly_fn_in_trait
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.implementing_type = None
+[sway-core/src/language/ty/declaration/function.rs:569:13] &decl = ImplSelfOrTrait(
+    ImplSelfOrTrait {
+        decl_id: DeclId(
+            1188,
+        ),
+    },
+)
+[sway-core/src/language/ty/declaration/function.rs:569:13] self.implementing_for_typeid = Some(
+    TypeId(
+        107278,
+    ),
+)
+[sway-core/src/language/ty/declaration/function.rs:569:13] "`set_implementing_type`: {} {} -> {} : {}" = "`set_implementing_type`: {} {} -> {} : {}"
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.name = friendly_provided_method_in_trait
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.implementing_type = Some(
+    TraitDecl(
+        TraitDecl {
+            decl_id: DeclId(
+                34,
+            ),
+        },
+    ),
+)
+[sway-core/src/language/ty/declaration/function.rs:569:13] &decl = ImplSelfOrTrait(
+    ImplSelfOrTrait {
+        decl_id: DeclId(
+            1188,
+        ),
+    },
+)
+[sway-core/src/language/ty/declaration/function.rs:569:13] self.implementing_for_typeid = Some(
+    TypeId(
+        107278,
+    ),
+)
+[sway-core/src/language/ty/declaration/function.rs:569:13] "`set_implementing_type`: {} {} -> {} : {}" = "`set_implementing_type`: {} {} -> {} : {}"
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.name = friendly_provided_fn_in_trait
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.implementing_type = Some(
+    TraitDecl(
+        TraitDecl {
+            decl_id: DeclId(
+                34,
+            ),
+        },
+    ),
+)
+[sway-core/src/language/ty/declaration/function.rs:569:13] &decl = ImplSelfOrTrait(
+    ImplSelfOrTrait {
+        decl_id: DeclId(
+            1188,
+        ),
+    },
+)
+[sway-core/src/language/ty/declaration/function.rs:569:13] self.implementing_for_typeid = Some(
+    TypeId(
+        107278,
+    ),
+)
+IN TYPE CHECK BEGIN: --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:772:13] &self.name.as_str() = "friendly_fn_in_struct"
+[sway-core/src/language/ty/declaration/function.rs:773:13] &self.call_path = CallPath {
+    prefixes: [
+        abi-backtracing,
+        non_generic,
+    ],
+    suffix: friendly_fn_in_struct,
+    callpath_type: Full,
+}
+[sway-core/src/language/ty/declaration/function.rs:774:13] &self.implementing_type = None
+[sway-core/src/language/ty/declaration/function.rs:775:13] &self.implementing_type.as_ref().map(|decl|
+decl.span(engines).as_str().to_string()).unwrap_or("<none>".to_string()) = "<none>"
+[sway-core/src/language/ty/declaration/function.rs:777:17] "{}: {}" = "{}: {}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] &implementing_for_typeid = TypeId(
+    107278,
+)
+[sway-core/src/language/ty/declaration/function.rs:777:17] engines.te().get(implementing_for_typeid) = Struct(
+    DeclId(
+        5162,
+    ),
+)
+IN TYPE CHECK END:   --------------------------------------------------------
+IN TYPE CHECK BEGIN: --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:772:13] &self.name.as_str() = "friendly_method_in_struct"
+[sway-core/src/language/ty/declaration/function.rs:773:13] &self.call_path = CallPath {
+    prefixes: [
+        abi-backtracing,
+        non_generic,
+    ],
+    suffix: friendly_method_in_struct,
+    callpath_type: Full,
+}
+[sway-core/src/language/ty/declaration/function.rs:774:13] &self.implementing_type = None
+[sway-core/src/language/ty/declaration/function.rs:775:13] &self.implementing_type.as_ref().map(|decl|
+decl.span(engines).as_str().to_string()).unwrap_or("<none>".to_string()) = "<none>"
+[sway-core/src/language/ty/declaration/function.rs:777:17] "{}: {}" = "{}: {}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] &implementing_for_typeid = TypeId(
+    107278,
+)
+[sway-core/src/language/ty/declaration/function.rs:777:17] engines.te().get(implementing_for_typeid) = Struct(
+    DeclId(
+        5162,
+    ),
+)
+IN TYPE CHECK END:   --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:569:13] "`set_implementing_type`: {} {} -> {} : {}" = "`set_implementing_type`: {} {} -> {} : {}"
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.name = friendly_fn_in_struct
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.implementing_type = None
+[sway-core/src/language/ty/declaration/function.rs:569:13] &decl = ImplSelfOrTrait(
+    ImplSelfOrTrait {
+        decl_id: DeclId(
+            1190,
+        ),
+    },
+)
+[sway-core/src/language/ty/declaration/function.rs:569:13] self.implementing_for_typeid = Some(
+    TypeId(
+        107278,
+    ),
+)
+[sway-core/src/language/ty/declaration/function.rs:569:13] "`set_implementing_type`: {} {} -> {} : {}" = "`set_implementing_type`: {} {} -> {} : {}"
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.name = friendly_method_in_struct
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.implementing_type = None
+[sway-core/src/language/ty/declaration/function.rs:569:13] &decl = ImplSelfOrTrait(
+    ImplSelfOrTrait {
+        decl_id: DeclId(
+            1190,
+        ),
+    },
+)
+[sway-core/src/language/ty/declaration/function.rs:569:13] self.implementing_for_typeid = Some(
+    TypeId(
+        107278,
+    ),
+)
+IN TYPE CHECK BEGIN: --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:772:13] &self.name.as_str() = "friendly_fn_in_module"
+[sway-core/src/language/ty/declaration/function.rs:773:13] &self.call_path = CallPath {
+    prefixes: [
+        abi-backtracing,
+        non_generic,
+    ],
+    suffix: friendly_fn_in_module,
+    callpath_type: Full,
+}
+[sway-core/src/language/ty/declaration/function.rs:774:13] &self.implementing_type = None
+[sway-core/src/language/ty/declaration/function.rs:775:13] &self.implementing_type.as_ref().map(|decl|
+decl.span(engines).as_str().to_string()).unwrap_or("<none>".to_string()) = "<none>"
+[sway-core/src/language/ty/declaration/function.rs:779:17] "No implementing_for_typeid" = "No implementing_for_typeid"
+IN TYPE CHECK END:   --------------------------------------------------------
+IN TYPE CHECK BEGIN: --------------------------------------------------------
+IN TYPE CHECK END:   --------------------------------------------------------
+IN TYPE CHECK BEGIN: --------------------------------------------------------
+IN TYPE CHECK END:   --------------------------------------------------------
+IN TYPE CHECK BEGIN: --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:772:13] &self.name.as_str() = "friendly_provided_fn_in_first_abi"
+[sway-core/src/language/ty/declaration/function.rs:773:13] &self.call_path = CallPath {
+    prefixes: [
+        abi-backtracing,
+    ],
+    suffix: friendly_provided_fn_in_first_abi,
+    callpath_type: Full,
+}
+[sway-core/src/language/ty/declaration/function.rs:774:13] &self.implementing_type = None
+[sway-core/src/language/ty/declaration/function.rs:775:13] &self.implementing_type.as_ref().map(|decl|
+decl.span(engines).as_str().to_string()).unwrap_or("<none>".to_string()) = "<none>"
+[sway-core/src/language/ty/declaration/function.rs:777:17] "{}: {}" = "{}: {}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] &implementing_for_typeid = TypeId(
+    107427,
+)
+[sway-core/src/language/ty/declaration/function.rs:777:17] engines.te().get(implementing_for_typeid) = UnknownGeneric {
+    name: Self,
+    trait_constraints: [],
+    parent: None,
+    is_from_type_parameter: true,
+}
+IN TYPE CHECK END:   --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:569:13] "`set_implementing_type`: {} {} -> {} : {}" = "`set_implementing_type`: {} {} -> {} : {}"
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.name = friendly_provided_fn_in_first_abi
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.implementing_type = None
+[sway-core/src/language/ty/declaration/function.rs:569:13] &decl = AbiDecl(
+    AbiDecl {
+        decl_id: DeclId(
+            0,
+        ),
+    },
+)
+[sway-core/src/language/ty/declaration/function.rs:569:13] self.implementing_for_typeid = Some(
+    TypeId(
+        107427,
+    ),
+)
+IN TYPE CHECK BEGIN: --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:772:13] &self.name.as_str() = "friendly_provided_fn_in_second_abi"
+[sway-core/src/language/ty/declaration/function.rs:773:13] &self.call_path = CallPath {
+    prefixes: [
+        abi-backtracing,
+    ],
+    suffix: friendly_provided_fn_in_second_abi,
+    callpath_type: Full,
+}
+[sway-core/src/language/ty/declaration/function.rs:774:13] &self.implementing_type = None
+[sway-core/src/language/ty/declaration/function.rs:775:13] &self.implementing_type.as_ref().map(|decl|
+decl.span(engines).as_str().to_string()).unwrap_or("<none>".to_string()) = "<none>"
+[sway-core/src/language/ty/declaration/function.rs:777:17] "{}: {}" = "{}: {}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] &implementing_for_typeid = TypeId(
+    107437,
+)
+[sway-core/src/language/ty/declaration/function.rs:777:17] engines.te().get(implementing_for_typeid) = UnknownGeneric {
+    name: Self,
+    trait_constraints: [],
+    parent: None,
+    is_from_type_parameter: true,
+}
+IN TYPE CHECK END:   --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:569:13] "`set_implementing_type`: {} {} -> {} : {}" = "`set_implementing_type`: {} {} -> {} : {}"
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.name = friendly_provided_fn_in_second_abi
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.implementing_type = None
+[sway-core/src/language/ty/declaration/function.rs:569:13] &decl = AbiDecl(
+    AbiDecl {
+        decl_id: DeclId(
+            1,
+        ),
+    },
+)
+[sway-core/src/language/ty/declaration/function.rs:569:13] self.implementing_for_typeid = Some(
+    TypeId(
+        107437,
+    ),
+)
+IN TYPE CHECK BEGIN: --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:772:13] &self.name.as_str() = "friendly_fn_in_first_abi"
+[sway-core/src/language/ty/declaration/function.rs:773:13] &self.call_path = CallPath {
+    prefixes: [
+        abi-backtracing,
+    ],
+    suffix: friendly_fn_in_first_abi,
+    callpath_type: Full,
+}
+[sway-core/src/language/ty/declaration/function.rs:774:13] &self.implementing_type = None
+[sway-core/src/language/ty/declaration/function.rs:775:13] &self.implementing_type.as_ref().map(|decl|
+decl.span(engines).as_str().to_string()).unwrap_or("<none>".to_string()) = "<none>"
+[sway-core/src/language/ty/declaration/function.rs:777:17] "{}: {}" = "{}: {}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] &implementing_for_typeid = TypeId(
+    11,
+)
+[sway-core/src/language/ty/declaration/function.rs:777:17] engines.te().get(implementing_for_typeid) = Contract
+IN TYPE CHECK END:   --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:569:13] "`set_implementing_type`: {} {} -> {} : {}" = "`set_implementing_type`: {} {} -> {} : {}"
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.name = friendly_fn_in_first_abi
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.implementing_type = None
+[sway-core/src/language/ty/declaration/function.rs:569:13] &decl = ImplSelfOrTrait(
+    ImplSelfOrTrait {
+        decl_id: DeclId(
+            1191,
+        ),
+    },
+)
+[sway-core/src/language/ty/declaration/function.rs:569:13] self.implementing_for_typeid = Some(
+    TypeId(
+        11,
+    ),
+)
+[sway-core/src/language/ty/declaration/function.rs:569:13] "`set_implementing_type`: {} {} -> {} : {}" = "`set_implementing_type`: {} {} -> {} : {}"
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.name = friendly_provided_fn_in_first_abi
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.implementing_type = Some(
+    AbiDecl(
+        AbiDecl {
+            decl_id: DeclId(
+                0,
+            ),
+        },
+    ),
+)
+[sway-core/src/language/ty/declaration/function.rs:569:13] &decl = ImplSelfOrTrait(
+    ImplSelfOrTrait {
+        decl_id: DeclId(
+            1191,
+        ),
+    },
+)
+[sway-core/src/language/ty/declaration/function.rs:569:13] self.implementing_for_typeid = Some(
+    TypeId(
+        11,
+    ),
+)
+IN TYPE CHECK BEGIN: --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:772:13] &self.name.as_str() = "friendly_fn_in_second_abi"
+[sway-core/src/language/ty/declaration/function.rs:773:13] &self.call_path = CallPath {
+    prefixes: [
+        abi-backtracing,
+    ],
+    suffix: friendly_fn_in_second_abi,
+    callpath_type: Full,
+}
+[sway-core/src/language/ty/declaration/function.rs:774:13] &self.implementing_type = None
+[sway-core/src/language/ty/declaration/function.rs:775:13] &self.implementing_type.as_ref().map(|decl|
+decl.span(engines).as_str().to_string()).unwrap_or("<none>".to_string()) = "<none>"
+[sway-core/src/language/ty/declaration/function.rs:777:17] "{}: {}" = "{}: {}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] &implementing_for_typeid = TypeId(
+    11,
+)
+[sway-core/src/language/ty/declaration/function.rs:777:17] engines.te().get(implementing_for_typeid) = Contract
+IN TYPE CHECK END:   --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:569:13] "`set_implementing_type`: {} {} -> {} : {}" = "`set_implementing_type`: {} {} -> {} : {}"
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.name = friendly_fn_in_second_abi
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.implementing_type = None
+[sway-core/src/language/ty/declaration/function.rs:569:13] &decl = ImplSelfOrTrait(
+    ImplSelfOrTrait {
+        decl_id: DeclId(
+            1192,
+        ),
+    },
+)
+[sway-core/src/language/ty/declaration/function.rs:569:13] self.implementing_for_typeid = Some(
+    TypeId(
+        11,
+    ),
+)
+[sway-core/src/language/ty/declaration/function.rs:569:13] "`set_implementing_type`: {} {} -> {} : {}" = "`set_implementing_type`: {} {} -> {} : {}"
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.name = friendly_provided_fn_in_second_abi
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.implementing_type = Some(
+    AbiDecl(
+        AbiDecl {
+            decl_id: DeclId(
+                1,
+            ),
+        },
+    ),
+)
+[sway-core/src/language/ty/declaration/function.rs:569:13] &decl = ImplSelfOrTrait(
+    ImplSelfOrTrait {
+        decl_id: DeclId(
+            1192,
+        ),
+    },
+)
+[sway-core/src/language/ty/declaration/function.rs:569:13] self.implementing_for_typeid = Some(
+    TypeId(
+        11,
+    ),
+)
+IN TYPE CHECK BEGIN: --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:772:13] &self.name.as_str() = "friendly_fn_in_impl_contract"
+[sway-core/src/language/ty/declaration/function.rs:773:13] &self.call_path = CallPath {
+    prefixes: [
+        abi-backtracing,
+    ],
+    suffix: friendly_fn_in_impl_contract,
+    callpath_type: Full,
+}
+[sway-core/src/language/ty/declaration/function.rs:774:13] &self.implementing_type = None
+[sway-core/src/language/ty/declaration/function.rs:775:13] &self.implementing_type.as_ref().map(|decl|
+decl.span(engines).as_str().to_string()).unwrap_or("<none>".to_string()) = "<none>"
+[sway-core/src/language/ty/declaration/function.rs:777:17] "{}: {}" = "{}: {}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] &implementing_for_typeid = TypeId(
+    11,
+)
+[sway-core/src/language/ty/declaration/function.rs:777:17] engines.te().get(implementing_for_typeid) = Contract
+IN TYPE CHECK END:   --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:569:13] "`set_implementing_type`: {} {} -> {} : {}" = "`set_implementing_type`: {} {} -> {} : {}"
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.name = friendly_fn_in_impl_contract
+[sway-core/src/language/ty/declaration/function.rs:569:13] &self.implementing_type = None
+[sway-core/src/language/ty/declaration/function.rs:569:13] &decl = ImplSelfOrTrait(
+    ImplSelfOrTrait {
+        decl_id: DeclId(
+            1193,
+        ),
+    },
+)
+[sway-core/src/language/ty/declaration/function.rs:569:13] self.implementing_for_typeid = Some(
+    TypeId(
+        11,
+    ),
+)
+IN TYPE CHECK BEGIN: --------------------------------------------------------
+IN TYPE CHECK END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:772:13] &self.name.as_str() = "friendly_fn_in_trait"
+[sway-core/src/language/ty/declaration/function.rs:773:13] &self.call_path = CallPath {
+    prefixes: [
+        abi-backtracing,
+        non_generic,
+    ],
+    suffix: friendly_fn_in_trait,
+    callpath_type: Full,
+}
+[sway-core/src/language/ty/declaration/function.rs:774:13] &self.implementing_type = Some(
+    ImplSelfOrTrait(
+        ImplSelfOrTrait {
+            decl_id: DeclId(
+                1188,
+            ),
+        },
+    ),
+)
+[sway-core/src/language/ty/declaration/function.rs:775:13] &self.implementing_type.as_ref().map(|decl|
+decl.span(engines).as_str().to_string()).unwrap_or("<none>".to_string()) = "impl Trait for Struct {\n    fn friendly_fn_in_trait(self) -> Self {\n        panic;\n    }\n}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] "{}: {}" = "{}: {}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] &implementing_for_typeid = TypeId(
+    107278,
+)
+[sway-core/src/language/ty/declaration/function.rs:777:17] engines.te().get(implementing_for_typeid) = Struct(
+    DeclId(
+        5162,
+    ),
+)
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:772:13] &self.name.as_str() = "friendly_fn_in_struct"
+[sway-core/src/language/ty/declaration/function.rs:773:13] &self.call_path = CallPath {
+    prefixes: [
+        abi-backtracing,
+        non_generic,
+    ],
+    suffix: friendly_fn_in_struct,
+    callpath_type: Full,
+}
+[sway-core/src/language/ty/declaration/function.rs:774:13] &self.implementing_type = Some(
+    ImplSelfOrTrait(
+        ImplSelfOrTrait {
+            decl_id: DeclId(
+                1190,
+            ),
+        },
+    ),
+)
+[sway-core/src/language/ty/declaration/function.rs:775:13] &self.implementing_type.as_ref().map(|decl|
+decl.span(engines).as_str().to_string()).unwrap_or("<none>".to_string()) = "impl Struct {\n    pub fn friendly_fn_in_struct() -> (b256, Self) {\n        panic;\n    }\n}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] "{}: {}" = "{}: {}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] &implementing_for_typeid = TypeId(
+    107278,
+)
+[sway-core/src/language/ty/declaration/function.rs:777:17] engines.te().get(implementing_for_typeid) = Struct(
+    DeclId(
+        5162,
+    ),
+)
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:772:13] &self.name.as_str() = "friendly_provided_fn_in_trait"
+[sway-core/src/language/ty/declaration/function.rs:773:13] &self.call_path = CallPath {
+    prefixes: [
+        abi-backtracing,
+        non_generic,
+    ],
+    suffix: friendly_provided_fn_in_trait,
+    callpath_type: Full,
+}
+[sway-core/src/language/ty/declaration/function.rs:774:13] &self.implementing_type = Some(
+    ImplSelfOrTrait(
+        ImplSelfOrTrait {
+            decl_id: DeclId(
+                1188,
+            ),
+        },
+    ),
+)
+[sway-core/src/language/ty/declaration/function.rs:775:13] &self.implementing_type.as_ref().map(|decl|
+decl.span(engines).as_str().to_string()).unwrap_or("<none>".to_string()) = "impl Trait for Struct {\n    fn friendly_fn_in_trait(self) -> Self {\n        panic;\n    }\n}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] "{}: {}" = "{}: {}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] &implementing_for_typeid = TypeId(
+    107278,
+)
+[sway-core/src/language/ty/declaration/function.rs:777:17] engines.te().get(implementing_for_typeid) = Struct(
+    DeclId(
+        5162,
+    ),
+)
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:772:13] &self.name.as_str() = "friendly_method_in_struct"
+[sway-core/src/language/ty/declaration/function.rs:773:13] &self.call_path = CallPath {
+    prefixes: [
+        abi-backtracing,
+        non_generic,
+    ],
+    suffix: friendly_method_in_struct,
+    callpath_type: Full,
+}
+[sway-core/src/language/ty/declaration/function.rs:774:13] &self.implementing_type = Some(
+    ImplSelfOrTrait(
+        ImplSelfOrTrait {
+            decl_id: DeclId(
+                1190,
+            ),
+        },
+    ),
+)
+[sway-core/src/language/ty/declaration/function.rs:775:13] &self.implementing_type.as_ref().map(|decl|
+decl.span(engines).as_str().to_string()).unwrap_or("<none>".to_string()) = "impl Struct {\n    pub fn friendly_fn_in_struct() -> (b256, Self) {\n        panic;\n    }\n}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] "{}: {}" = "{}: {}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] &implementing_for_typeid = TypeId(
+    107278,
+)
+[sway-core/src/language/ty/declaration/function.rs:777:17] engines.te().get(implementing_for_typeid) = Struct(
+    DeclId(
+        5162,
+    ),
+)
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:772:13] &self.name.as_str() = "friendly_provided_method_in_trait"
+[sway-core/src/language/ty/declaration/function.rs:773:13] &self.call_path = CallPath {
+    prefixes: [
+        abi-backtracing,
+        non_generic,
+    ],
+    suffix: friendly_provided_method_in_trait,
+    callpath_type: Full,
+}
+[sway-core/src/language/ty/declaration/function.rs:774:13] &self.implementing_type = Some(
+    ImplSelfOrTrait(
+        ImplSelfOrTrait {
+            decl_id: DeclId(
+                1188,
+            ),
+        },
+    ),
+)
+[sway-core/src/language/ty/declaration/function.rs:775:13] &self.implementing_type.as_ref().map(|decl|
+decl.span(engines).as_str().to_string()).unwrap_or("<none>".to_string()) = "impl Trait for Struct {\n    fn friendly_fn_in_trait(self) -> Self {\n        panic;\n    }\n}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] "{}: {}" = "{}: {}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] &implementing_for_typeid = TypeId(
+    107278,
+)
+[sway-core/src/language/ty/declaration/function.rs:777:17] engines.te().get(implementing_for_typeid) = Struct(
+    DeclId(
+        5162,
+    ),
+)
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:772:13] &self.name.as_str() = "friendly_fn_in_module"
+[sway-core/src/language/ty/declaration/function.rs:773:13] &self.call_path = CallPath {
+    prefixes: [
+        abi-backtracing,
+        non_generic,
+    ],
+    suffix: friendly_fn_in_module,
+    callpath_type: Full,
+}
+[sway-core/src/language/ty/declaration/function.rs:774:13] &self.implementing_type = None
+[sway-core/src/language/ty/declaration/function.rs:775:13] &self.implementing_type.as_ref().map(|decl|
+decl.span(engines).as_str().to_string()).unwrap_or("<none>".to_string()) = "<none>"
+[sway-core/src/language/ty/declaration/function.rs:779:17] "No implementing_for_typeid" = "No implementing_for_typeid"
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:772:13] &self.name.as_str() = "friendly_fn_in_first_abi"
+[sway-core/src/language/ty/declaration/function.rs:773:13] &self.call_path = CallPath {
+    prefixes: [
+        abi-backtracing,
+    ],
+    suffix: friendly_fn_in_first_abi,
+    callpath_type: Full,
+}
+[sway-core/src/language/ty/declaration/function.rs:774:13] &self.implementing_type = Some(
+    ImplSelfOrTrait(
+        ImplSelfOrTrait {
+            decl_id: DeclId(
+                1191,
+            ),
+        },
+    ),
+)
+[sway-core/src/language/ty/declaration/function.rs:775:13] &self.implementing_type.as_ref().map(|decl|
+decl.span(engines).as_str().to_string()).unwrap_or("<none>".to_string()) = "impl FirstAbi for Contract {\n    fn friendly_fn_in_first_abi() -> bool {\n        non_generic::play();\n        panic;\n    }\n}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] "{}: {}" = "{}: {}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] &implementing_for_typeid = TypeId(
+    11,
+)
+[sway-core/src/language/ty/declaration/function.rs:777:17] engines.te().get(implementing_for_typeid) = Contract
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:772:13] &self.name.as_str() = "friendly_provided_fn_in_first_abi"
+[sway-core/src/language/ty/declaration/function.rs:773:13] &self.call_path = CallPath {
+    prefixes: [
+        abi-backtracing,
+    ],
+    suffix: friendly_provided_fn_in_first_abi,
+    callpath_type: Full,
+}
+[sway-core/src/language/ty/declaration/function.rs:774:13] &self.implementing_type = Some(
+    ImplSelfOrTrait(
+        ImplSelfOrTrait {
+            decl_id: DeclId(
+                1191,
+            ),
+        },
+    ),
+)
+[sway-core/src/language/ty/declaration/function.rs:775:13] &self.implementing_type.as_ref().map(|decl|
+decl.span(engines).as_str().to_string()).unwrap_or("<none>".to_string()) = "impl FirstAbi for Contract {\n    fn friendly_fn_in_first_abi() -> bool {\n        non_generic::play();\n        panic;\n    }\n}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] "{}: {}" = "{}: {}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] &implementing_for_typeid = TypeId(
+    11,
+)
+[sway-core/src/language/ty/declaration/function.rs:777:17] engines.te().get(implementing_for_typeid) = Contract
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:772:13] &self.name.as_str() = "friendly_fn_in_second_abi"
+[sway-core/src/language/ty/declaration/function.rs:773:13] &self.call_path = CallPath {
+    prefixes: [
+        abi-backtracing,
+    ],
+    suffix: friendly_fn_in_second_abi,
+    callpath_type: Full,
+}
+[sway-core/src/language/ty/declaration/function.rs:774:13] &self.implementing_type = Some(
+    ImplSelfOrTrait(
+        ImplSelfOrTrait {
+            decl_id: DeclId(
+                1192,
+            ),
+        },
+    ),
+)
+[sway-core/src/language/ty/declaration/function.rs:775:13] &self.implementing_type.as_ref().map(|decl|
+decl.span(engines).as_str().to_string()).unwrap_or("<none>".to_string()) = "impl SecondAbi for Contract {\n    fn friendly_fn_in_second_abi() -> bool {\n        non_generic::play();\n        panic;\n    }\n}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] "{}: {}" = "{}: {}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] &implementing_for_typeid = TypeId(
+    11,
+)
+[sway-core/src/language/ty/declaration/function.rs:777:17] engines.te().get(implementing_for_typeid) = Contract
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:772:13] &self.name.as_str() = "friendly_provided_fn_in_second_abi"
+[sway-core/src/language/ty/declaration/function.rs:773:13] &self.call_path = CallPath {
+    prefixes: [
+        abi-backtracing,
+    ],
+    suffix: friendly_provided_fn_in_second_abi,
+    callpath_type: Full,
+}
+[sway-core/src/language/ty/declaration/function.rs:774:13] &self.implementing_type = Some(
+    ImplSelfOrTrait(
+        ImplSelfOrTrait {
+            decl_id: DeclId(
+                1192,
+            ),
+        },
+    ),
+)
+[sway-core/src/language/ty/declaration/function.rs:775:13] &self.implementing_type.as_ref().map(|decl|
+decl.span(engines).as_str().to_string()).unwrap_or("<none>".to_string()) = "impl SecondAbi for Contract {\n    fn friendly_fn_in_second_abi() -> bool {\n        non_generic::play();\n        panic;\n    }\n}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] "{}: {}" = "{}: {}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] &implementing_for_typeid = TypeId(
+    11,
+)
+[sway-core/src/language/ty/declaration/function.rs:777:17] engines.te().get(implementing_for_typeid) = Contract
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+IN COMPILE CALL END:   --------------------------------------------------------
+IN COMPILE CALL BEGIN: --------------------------------------------------------
+[sway-core/src/language/ty/declaration/function.rs:772:13] &self.name.as_str() = "friendly_fn_in_impl_contract"
+[sway-core/src/language/ty/declaration/function.rs:773:13] &self.call_path = CallPath {
+    prefixes: [
+        abi-backtracing,
+    ],
+    suffix: friendly_fn_in_impl_contract,
+    callpath_type: Full,
+}
+[sway-core/src/language/ty/declaration/function.rs:774:13] &self.implementing_type = Some(
+    ImplSelfOrTrait(
+        ImplSelfOrTrait {
+            decl_id: DeclId(
+                1193,
+            ),
+        },
+    ),
+)
+[sway-core/src/language/ty/declaration/function.rs:775:13] &self.implementing_type.as_ref().map(|decl|
+decl.span(engines).as_str().to_string()).unwrap_or("<none>".to_string()) = "impl Contract {\n    fn friendly_fn_in_impl_contract() -> (b256, bool) {\n        non_generic::play();\n        panic;\n    }\n}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] "{}: {}" = "{}: {}"
+[sway-core/src/language/ty/declaration/function.rs:777:17] &implementing_for_typeid = TypeId(
+    11,
+)
+[sway-core/src/language/ty/declaration/function.rs:777:17] engines.te().get(implementing_for_typeid) = Contract

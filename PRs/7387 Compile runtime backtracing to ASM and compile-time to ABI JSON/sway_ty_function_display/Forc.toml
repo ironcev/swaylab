@@ -1,0 +1,13 @@
+[project]
+authors = ["Kebradalaonda"]
+entry = "main.sw"
+license = "Apache-2.0"
+name = "abi-backtracing"
+
+[dependencies]
+
+[build-profile.debug_backtrace_none]
+backtrace = "none"
+
+[build-profile.debug_backtrace_all]
+backtrace = "all"

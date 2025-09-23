@@ -1,0 +1,426 @@
+size_of::<Cow<str>:  24
+size_of::<&str>:     16
+size_of::<String>:   24
+
+
+cargo bench two_strings
+=======================
+two_strings/format/short
+                        time:   [36.587 ns 37.176 ns 37.801 ns]
+Found 10 outliers among 100 measurements (10.00%)
+  4 (4.00%) high mild
+  6 (6.00%) high severe
+Benchmarking two_strings/concat/short: Collecting 100 samples in estimated 
+two_strings/concat/short
+                        time:   [18.871 ns 19.157 ns 19.435 ns]
+Found 7 outliers among 100 measurements (7.00%)
+  5 (5.00%) high mild
+  2 (2.00%) high severe
+Benchmarking two_strings/join/short: Collecting 100 samples in estimated 5.
+two_strings/join/short  time:   [17.713 ns 18.026 ns 18.373 ns]
+Found 6 outliers among 100 measurements (6.00%)
+  3 (3.00%) high mild
+  3 (3.00%) high severe
+Benchmarking two_strings/push_str/short: Collecting 100 samples in estimate
+two_strings/push_str/short
+                        time:   [16.127 ns 16.392 ns 16.673 ns]
+Found 8 outliers among 100 measurements (8.00%)
+  2 (2.00%) high mild
+  6 (6.00%) high severe
+two_strings/push_str_new_str/short
+                        time:   [28.284 ns 28.337 ns 28.406 ns]
+                        change: [-1.8425% +0.8205% +3.4905%] (p = 0.60 > 0.05)
+                        No change in performance detected.
+Found 6 outliers among 100 measurements (6.00%)
+  2 (2.00%) high mild
+  4 (4.00%) high severe
+two_strings/vec_cow/short
+                        time:   [34.053 ns 34.133 ns 34.244 ns]
+                        change: [-3.9878% -0.0472% +4.2206%] (p = 0.98 > 0.05)
+                        No change in performance detected.
+Found 9 outliers among 100 measurements (9.00%)
+  5 (5.00%) high mild
+  4 (4.00%) high severe
+
+
+
+Benchmarking two_strings/format/medium: Collecting 100 samples in estimated
+two_strings/format/medium
+                        time:   [62.701 ns 63.912 ns 65.111 ns]
+Found 3 outliers among 100 measurements (3.00%)
+  3 (3.00%) high severe
+Benchmarking two_strings/concat/medium: Collecting 100 samples in estimated
+two_strings/concat/medium
+                        time:   [18.339 ns 18.639 ns 18.956 ns]
+Found 3 outliers among 100 measurements (3.00%)
+  2 (2.00%) high mild
+  1 (1.00%) high severe
+Benchmarking two_strings/join/medium: Collecting 100 samples in estimated 5
+two_strings/join/medium time:   [19.187 ns 19.549 ns 19.937 ns]
+Found 3 outliers among 100 measurements (3.00%)
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+Benchmarking two_strings/push_str/medium: Collecting 100 samples in estimat
+two_strings/push_str/medium
+                        time:   [17.214 ns 17.405 ns 17.611 ns]
+Found 3 outliers among 100 measurements (3.00%)
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+two_strings/push_str_new_str/medium
+                        time:   [56.816 ns 56.936 ns 57.095 ns]
+                        change: [-23.105% -21.698% -20.333%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 15 outliers among 100 measurements (15.00%)
+  4 (4.00%) high mild
+  11 (11.00%) high severe
+two_strings/vec_cow/medium
+                        time:   [34.351 ns 34.407 ns 34.482 ns]
+                        change: [-2.3153% +0.4959% +3.8757%] (p = 0.78 > 0.05)
+                        No change in performance detected.
+Found 12 outliers among 100 measurements (12.00%)
+  1 (1.00%) low severe
+  5 (5.00%) low mild
+  6 (6.00%) high severe
+
+
+
+Benchmarking two_strings/format/long: Collecting 100 samples in estimated 5
+two_strings/format/long time:   [77.525 ns 78.617 ns 79.737 ns]
+Found 7 outliers among 100 measurements (7.00%)
+  5 (5.00%) high mild
+  2 (2.00%) high severe
+Benchmarking two_strings/concat/long: Collecting 100 samples in estimated 5
+two_strings/concat/long time:   [21.204 ns 21.736 ns 22.266 ns]
+Found 5 outliers among 100 measurements (5.00%)
+  3 (3.00%) high mild
+  2 (2.00%) high severe
+Benchmarking two_strings/join/long: Collecting 100 samples in estimated 5.0
+two_strings/join/long   time:   [20.949 ns 21.367 ns 21.777 ns]
+Found 3 outliers among 100 measurements (3.00%)
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+Benchmarking two_strings/push_str/long: Collecting 100 samples in estimated
+two_strings/push_str/long
+                        time:   [16.950 ns 17.273 ns 17.583 ns]
+Found 5 outliers among 100 measurements (5.00%)
+  2 (2.00%) high mild
+  3 (3.00%) high severe
+two_strings/push_str_new_str/long
+                        time:   [78.923 ns 79.009 ns 79.112 ns]
+                        change: [+6.1554% +8.9485% +11.476%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 14 outliers among 100 measurements (14.00%)
+  5 (5.00%) high mild
+  9 (9.00%) high severe
+two_strings/vec_cow/long
+                        time:   [34.180 ns 34.219 ns 34.264 ns]
+                        change: [-1.2953% +0.4034% +2.4866%] (p = 0.74 > 0.05)
+                        No change in performance detected.
+Found 7 outliers among 100 measurements (7.00%)
+  1 (1.00%) high mild
+  6 (6.00%) high severe
+
+
+
+cargo bench multiple_strings
+============================
+multiple_strings/format/2_short
+                        time:   [31.683 ns 32.083 ns 32.520 ns]
+Found 7 outliers among 100 measurements (7.00%)
+  2 (2.00%) high mild
+  5 (5.00%) high severe
+multiple_strings/concat/2_short
+                        time:   [13.859 ns 14.048 ns 14.256 ns]
+Found 13 outliers among 100 measurements (13.00%)
+  9 (9.00%) high mild
+  4 (4.00%) high severe
+multiple_strings/join/2_short
+                        time:   [13.884 ns 14.123 ns 14.404 ns]
+Found 7 outliers among 100 measurements (7.00%)
+  5 (5.00%) high mild
+  2 (2.00%) high severe
+multiple_strings/push_str/2_short
+                        time:   [13.597 ns 13.876 ns 14.168 ns]
+Found 4 outliers among 100 measurements (4.00%)
+  2 (2.00%) high mild
+  2 (2.00%) high severe
+multiple_strings/push_str_new_str/2_short
+                        time:   [27.883 ns 28.681 ns 29.546 ns]
+Found 2 outliers among 100 measurements (2.00%)
+  2 (2.00%) high severe
+multiple_strings/vec_cow/2_short
+                        time:   [36.425 ns 37.427 ns 38.547 ns]
+Found 7 outliers among 100 measurements (7.00%)
+  4 (4.00%) high mild
+  3 (3.00%) high severe
+
+
+multiple_strings/format/3_short
+                        time:   [38.855 ns 39.502 ns 40.188 ns]
+Found 8 outliers among 100 measurements (8.00%)
+  4 (4.00%) high mild
+  4 (4.00%) high severe
+multiple_strings/concat/3_short
+                        time:   [17.285 ns 17.610 ns 17.965 ns]
+Found 8 outliers among 100 measurements (8.00%)
+  5 (5.00%) high mild
+  3 (3.00%) high severe
+multiple_strings/join/3_short
+                        time:   [17.056 ns 17.304 ns 17.601 ns]
+Found 13 outliers among 100 measurements (13.00%)
+  6 (6.00%) high mild
+  7 (7.00%) high severe
+multiple_strings/push_str/3_short
+                        time:   [15.686 ns 15.924 ns 16.201 ns]
+Found 11 outliers among 100 measurements (11.00%)
+  7 (7.00%) high mild
+  4 (4.00%) high severe
+multiple_strings/push_str_new_str/3_short
+                        time:   [30.949 ns 32.011 ns 33.182 ns]
+Found 6 outliers among 100 measurements (6.00%)
+  3 (3.00%) high mild
+  3 (3.00%) high severe
+multiple_strings/vec_cow/3_short
+                        time:   [41.351 ns 42.301 ns 43.394 ns]
+Found 4 outliers among 100 measurements (4.00%)
+  1 (1.00%) high mild
+  3 (3.00%) high severe
+
+
+
+multiple_strings/format/4_short
+                        time:   [45.086 ns 46.181 ns 47.299 ns]
+Found 8 outliers among 100 measurements (8.00%)
+  5 (5.00%) high mild
+  3 (3.00%) high severe
+multiple_strings/concat/4_short
+                        time:   [21.124 ns 21.504 ns 21.917 ns]
+Found 6 outliers among 100 measurements (6.00%)
+  4 (4.00%) high mild
+  2 (2.00%) high severe
+multiple_strings/join/4_short
+                        time:   [21.269 ns 21.655 ns 22.049 ns]
+Found 5 outliers among 100 measurements (5.00%)
+  3 (3.00%) high mild
+  2 (2.00%) high severe
+multiple_strings/push_str/4_short
+                        time:   [17.771 ns 17.965 ns 18.173 ns]
+Found 10 outliers among 100 measurements (10.00%)
+  4 (4.00%) high mild
+  6 (6.00%) high severe
+multiple_strings/push_str_new_str/4_short
+                        time:   [33.136 ns 33.704 ns 34.342 ns]
+Found 7 outliers among 100 measurements (7.00%)
+  4 (4.00%) high mild
+  3 (3.00%) high severe
+multiple_strings/vec_cow/4_short
+                        time:   [46.813 ns 47.783 ns 48.791 ns]
+Found 7 outliers among 100 measurements (7.00%)
+  2 (2.00%) high mild
+  5 (5.00%) high severe
+
+
+multiple_strings/format/5_short
+                        time:   [70.114 ns 71.138 ns 72.305 ns]
+Found 7 outliers among 100 measurements (7.00%)
+  4 (4.00%) high mild
+  3 (3.00%) high severe
+multiple_strings/concat/5_short
+                        time:   [21.352 ns 21.584 ns 21.852 ns]
+Found 9 outliers among 100 measurements (9.00%)
+  6 (6.00%) high mild
+  3 (3.00%) high severe
+multiple_strings/join/5_short
+                        time:   [21.082 ns 21.309 ns 21.553 ns]
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) high mild
+  7 (7.00%) high severe
+multiple_strings/push_str/5_short
+                        time:   [20.693 ns 20.949 ns 21.240 ns]
+Found 11 outliers among 100 measurements (11.00%)
+  5 (5.00%) high mild
+  6 (6.00%) high severe
+multiple_strings/push_str_new_str/5_short
+                        time:   [61.378 ns 62.527 ns 63.752 ns]
+Found 9 outliers among 100 measurements (9.00%)
+  3 (3.00%) high mild
+  6 (6.00%) high severe
+multiple_strings/vec_cow/5_short
+                        time:   [92.646 ns 94.301 ns 96.118 ns]
+Found 10 outliers among 100 measurements (10.00%)
+  7 (7.00%) high mild
+  3 (3.00%) high severe
+
+
+multiple_strings/format/2_medium
+                        time:   [52.047 ns 52.634 ns 53.283 ns]
+Found 7 outliers among 100 measurements (7.00%)
+  4 (4.00%) high mild
+  3 (3.00%) high severe
+multiple_strings/concat/2_medium
+                        time:   [14.152 ns 14.393 ns 14.657 ns]
+Found 5 outliers among 100 measurements (5.00%)
+  3 (3.00%) high mild
+  2 (2.00%) high severe
+multiple_strings/join/2_medium
+                        time:   [14.064 ns 14.285 ns 14.513 ns]
+Found 3 outliers among 100 measurements (3.00%)
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+multiple_strings/push_str/2_medium
+                        time:   [13.611 ns 13.878 ns 14.166 ns]
+Found 5 outliers among 100 measurements (5.00%)
+  3 (3.00%) high mild
+  2 (2.00%) high severe
+multiple_strings/push_str_new_str/2_medium
+                        time:   [48.110 ns 48.967 ns 49.886 ns]
+Found 6 outliers among 100 measurements (6.00%)
+  2 (2.00%) high mild
+  4 (4.00%) high severe
+multiple_strings/vec_cow/2_medium
+                        time:   [36.450 ns 37.291 ns 38.137 ns]
+Found 3 outliers among 100 measurements (3.00%)
+  3 (3.00%) high severe
+
+
+multiple_strings/format/3_medium
+                        time:   [52.825 ns 53.409 ns 54.049 ns]
+Found 5 outliers among 100 measurements (5.00%)
+  2 (2.00%) high mild
+  3 (3.00%) high severe
+multiple_strings/concat/3_medium
+                        time:   [17.397 ns 17.689 ns 18.049 ns]
+Found 8 outliers among 100 measurements (8.00%)
+  5 (5.00%) high mild
+  3 (3.00%) high severe
+multiple_strings/join/3_medium
+                        time:   [17.053 ns 17.231 ns 17.424 ns]
+Found 8 outliers among 100 measurements (8.00%)
+  2 (2.00%) high mild
+  6 (6.00%) high severe
+multiple_strings/push_str/3_medium
+                        time:   [16.619 ns 16.911 ns 17.212 ns]
+Found 3 outliers among 100 measurements (3.00%)
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+multiple_strings/push_str_new_str/3_medium
+                        time:   [51.843 ns 53.119 ns 54.507 ns]
+Found 3 outliers among 100 measurements (3.00%)
+  3 (3.00%) high severe
+multiple_strings/vec_cow/3_medium
+                        time:   [42.361 ns 43.367 ns 44.415 ns]
+Found 7 outliers among 100 measurements (7.00%)
+  3 (3.00%) high mild
+  4 (4.00%) high severe
+
+
+
+multiple_strings/format/2_long
+                        time:   [58.056 ns 59.059 ns 60.136 ns]
+Found 3 outliers among 100 measurements (3.00%)
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+multiple_strings/concat/2_long
+                        time:   [14.304 ns 14.627 ns 15.002 ns]
+Found 3 outliers among 100 measurements (3.00%)
+  2 (2.00%) high mild
+  1 (1.00%) high severe
+multiple_strings/join/2_long
+                        time:   [14.098 ns 14.286 ns 14.489 ns]
+Found 9 outliers among 100 measurements (9.00%)
+  6 (6.00%) high mild
+  3 (3.00%) high severe
+multiple_strings/push_str/2_long
+                        time:   [13.493 ns 13.658 ns 13.828 ns]
+Found 7 outliers among 100 measurements (7.00%)
+  3 (3.00%) high mild
+  4 (4.00%) high severe
+multiple_strings/push_str_new_str/2_long
+                        time:   [61.691 ns 62.788 ns 63.958 ns]
+Found 5 outliers among 100 measurements (5.00%)
+  1 (1.00%) high mild
+  4 (4.00%) high severe
+multiple_strings/vec_cow/2_long
+                        time:   [45.272 ns 49.821 ns 54.139 ns]
+Found 13 outliers among 100 measurements (13.00%)
+  7 (7.00%) high mild
+  6 (6.00%) high severe
+
+
+cargo bench enclosing
+=====================
+enclosing/format/short  time:   [67.904 ns 68.652 ns 69.485 ns]
+Found 9 outliers among 100 measurements (9.00%)
+  5 (5.00%) high mild
+  4 (4.00%) high severe
+enclosing/format/medium time:   [107.72 ns 109.39 ns 111.44 ns]
+Found 9 outliers among 100 measurements (9.00%)
+  4 (4.00%) high mild
+  5 (5.00%) high severe
+enclosing/collect/short time:   [57.630 ns 58.495 ns 59.508 ns]
+Found 13 outliers among 100 measurements (13.00%)
+  4 (4.00%) high mild
+  9 (9.00%) high severe
+enclosing/collect/medium
+                        time:   [81.382 ns 82.779 ns 84.271 ns]
+Found 6 outliers among 100 measurements (6.00%)
+  3 (3.00%) high mild
+  3 (3.00%) high severe
+enclosing/concat/short  time:   [50.672 ns 51.663 ns 52.706 ns]
+Found 5 outliers among 100 measurements (5.00%)
+  2 (2.00%) high mild
+  3 (3.00%) high severe
+enclosing/concat/medium time:   [50.505 ns 51.353 ns 52.223 ns]
+Found 6 outliers among 100 measurements (6.00%)
+  3 (3.00%) high mild
+  3 (3.00%) high severe
+
+
+
+cargo bench cow_vs_string
+=========================
+cow_vs_string/return_cow/short
+                        time:   [736.19 ps 749.14 ps 762.86 ps]
+Found 8 outliers among 100 measurements (8.00%)
+  5 (5.00%) high mild
+  3 (3.00%) high severe
+cow_vs_string/return_cow/medium
+                        time:   [725.77 ps 736.15 ps 748.04 ps]
+Found 5 outliers among 100 measurements (5.00%)
+  2 (2.00%) high mild
+  3 (3.00%) high severe
+cow_vs_string/return_cow/long
+                        time:   [751.01 ps 763.15 ps 775.90 ps]
+Found 6 outliers among 100 measurements (6.00%)
+  3 (3.00%) high mild
+  3 (3.00%) high severe
+cow_vs_string/return_string/short
+                        time:   [9.1465 ns 9.3295 ns 9.5232 ns]
+Found 6 outliers among 100 measurements (6.00%)
+  2 (2.00%) high mild
+  4 (4.00%) high severe
+cow_vs_string/return_string/medium
+                        time:   [8.8820 ns 9.0506 ns 9.2357 ns]
+Found 7 outliers among 100 measurements (7.00%)
+  4 (4.00%) high mild
+  3 (3.00%) high severe
+cow_vs_string/return_string/long
+                        time:   [8.8941 ns 9.0332 ns 9.1770 ns]
+Found 5 outliers among 100 measurements (5.00%)
+  3 (3.00%) high mild
+  2 (2.00%) high severe
+cow_vs_string/return_cow_of_string/short
+                        time:   [9.3294 ns 9.5495 ns 9.7922 ns]
+Found 6 outliers among 100 measurements (6.00%)
+  4 (4.00%) high mild
+  2 (2.00%) high severe
+cow_vs_string/return_cow_of_string/medium
+                        time:   [9.1160 ns 9.3043 ns 9.5102 ns]
+Found 4 outliers among 100 measurements (4.00%)
+  1 (1.00%) high mild
+  3 (3.00%) high severe
+cow_vs_string/return_cow_of_string/long
+                        time:   [9.0051 ns 9.1326 ns 9.2691 ns]
+Found 4 outliers among 100 measurements (4.00%)
+  2 (2.00%) high mild
+  2 (2.00%) high severe
