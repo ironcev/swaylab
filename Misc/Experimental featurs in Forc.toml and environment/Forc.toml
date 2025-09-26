@@ -1,0 +1,12 @@
+[project]
+authors = ["Kebradalaonda"]
+entry = "main.sw"
+license = "Apache-2.0"
+name = "experimental_features"
+experimental = { const_generics = true, new_encoding = false }
+# experimental = { const_genericssss = true, new_encodingggg = false } # error: Unknown experimental feature: "const_genericssss".
+no-experimental = { const_generics = true } # warning: unused manifest key: project.no-experimental
+
+[dependencies]
+
+[build-profile.debug]
