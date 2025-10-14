@@ -1,0 +1,57 @@
+;; ASM: Final program
+;; Program kind: Script
+.program:
+move $$tmp $pc
+jmpf $zero i4
+DATA_SECTION_OFFSET[0..32]
+DATA_SECTION_OFFSET[32..64]
+CONFIGURABLES_OFFSET[0..32]
+CONFIGURABLES_OFFSET[32..64]
+lw   $$ds $$tmp i1
+add  $$ds $$ds $$tmp
+cfei i0                       ; allocate stack space for globals
+move $$locbase $sp            ; save locals base register for function __entry
+cfei i240                     ; allocate 240 bytes for locals and 0 slots for call arguments
+addi $r0 $$locbase i152       ; get offset to local __ptr slice
+addi $r1 $$locbase i152       ; get offset to local __ptr string<0>
+move $$arg0 $r1               ; [call]: pass argument 0
+jal  $$reta $pc i35           ; [call]: call main_0
+movi $r1 i1024                ; initialize constant into register
+aloc $r1
+addi $r1 $$locbase i64        ; get offset to local __ptr { ptr, u64, u64 }
+sw   $$locbase $hp i8         ; store word
+movi $r2 i1024                ; initialize constant into register
+sw   $$locbase $r2 i9         ; store word
+sw   $$locbase $zero i10      ; store word
+mcpi $$locbase $r1 i24        ; copy memory
+addi $r1 $$locbase i112       ; get offset to local __ptr { { ptr, u64, u64 } }
+mcpi $r1 $$locbase i24        ; copy memory
+addi $r2 $$locbase i192       ; get offset to local __ptr { { ptr, u64, u64 } }
+mcpi $r2 $r1 i24              ; copy memory
+addi $r1 $$locbase i192       ; get offset to local __ptr { { ptr, u64, u64 } }
+addi $r2 $$locbase i168       ; get offset to local __ptr { { ptr, u64, u64 } }
+mcpi $r2 $r1 i24              ; copy memory
+addi $r1 $$locbase i168       ; get offset to local __ptr { { ptr, u64, u64 } }
+addi $r2 $$locbase i216       ; get offset to local __ptr { { ptr, u64, u64 } }
+mcpi $r2 $r1 i24              ; copy memory
+addi $r1 $$locbase i216       ; get offset to local __ptr { { ptr, u64, u64 } }
+addi $r2 $$locbase i24        ; get offset to local __ptr { ptr, u64, u64 }
+mcpi $r2 $r1 i24              ; copy memory
+addi $r1 $$locbase i88        ; get offset to local __ptr { ptr, u64, u64 }
+mcpi $r1 $r2 i24              ; copy memory
+addi $r2 $r1 i16              ; get offset to aggregate element
+addi $r3 $$locbase i136       ; get offset to local __ptr { ptr, u64 }
+mcpi $r3 $r1 i8               ; copy memory
+addi $r1 $r3 i8               ; get offset to aggregate element
+mcpi $r1 $r2 i8               ; copy memory
+addi $r1 $$locbase i48        ; get offset to local __ptr slice
+mcpi $r1 $r3 i16              ; copy memory
+mcpi $r0 $r1 i16              ; copy memory
+lw   $r1 $r0 i1               ; load size of returned slice
+lw   $r0 $r0 i0               ; load pointer to returned slice
+retd  $r0 $r1
+pshh i524288                  ; save registers 40..64
+move $$locbase $sp            ; save locals base register for function main_0
+poph i524288                  ; restore registers 40..64
+jal  $zero $$reta i0          ; return from call
+.data:
