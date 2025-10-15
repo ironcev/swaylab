@@ -1,0 +1,8 @@
+[[package]]
+name = "sha256_str_array_with_const"
+source = "member"
+dependencies = ["std"]
+
+[[package]]
+name = "std"
+source = "path+from-root-E8DFA5C29FAEBDF8"
