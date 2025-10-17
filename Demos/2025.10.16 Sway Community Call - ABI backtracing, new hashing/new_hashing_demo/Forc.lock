@@ -1,0 +1,8 @@
+[[package]]
+name = "new_hashing_demo"
+source = "member"
+dependencies = ["std"]
+
+[[package]]
+name = "std"
+source = "path+from-root-5BF653DE710DCBE2"

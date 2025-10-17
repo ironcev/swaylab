@@ -1,0 +1,9 @@
+[project]
+authors = ["Kebradalaonda"]
+entry = "lib.sw"
+license = "Apache-2.0"
+name = "demo_lib"
+version = "1.2.3"
+
+[dependencies]
+std = { path = "../sway-lib-std" }

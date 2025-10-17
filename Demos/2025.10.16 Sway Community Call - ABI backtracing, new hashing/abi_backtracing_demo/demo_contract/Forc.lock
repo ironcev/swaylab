@@ -1,0 +1,16 @@
+[[package]]
+name = "demo_contract"
+source = "member"
+dependencies = [
+    "demo_lib",
+    "std",
+]
+
+[[package]]
+name = "demo_lib"
+source = "path+from-root-CF0F2FAE7D7BD91C"
+dependencies = ["std"]
+
+[[package]]
+name = "std"
+source = "path+from-root-CF0F2FAE7D7BD91C"

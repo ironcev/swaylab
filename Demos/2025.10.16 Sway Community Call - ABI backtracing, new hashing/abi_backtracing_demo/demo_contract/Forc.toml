@@ -1,0 +1,14 @@
+[project]
+authors = ["Kebradalaonda"]
+entry = "main.sw"
+license = "Apache-2.0"
+name = "demo_contract"
+version = "0.2.1"
+
+[dependencies]
+std = { path = "../sway-lib-std" }
+demo_lib = { path = "../demo_lib" }
+
+[build-profile.no-trace]
+dump = { }
+backtrace = "all"

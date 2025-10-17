@@ -1,0 +1,9 @@
+[project]
+authors = ["Igor Rončević"]
+entry = "main.sw"
+license = "MIT"
+name = "new_hashing_demo"
+
+[dependencies]
+std = { path = "/home/kebradalaonda/p/sway/sway-lib-std" }
+
