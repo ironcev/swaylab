@@ -1,0 +1,6 @@
+Original:                   Finished release [optimized + fuel] target(s) [86.872 KB] in 8.08s
+Original with old encoding: Finished release [optimized + fuel] target(s) [60.544 KB] in 5.79s
+
+Original with `panic`:      Finished release [optimized + fuel] target(s) [84.168 KB] in 7.02s
+
+86.872 - 60.544 = 26.328 -> ~30%

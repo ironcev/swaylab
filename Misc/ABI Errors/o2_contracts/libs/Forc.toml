@@ -1,0 +1,9 @@
+[project]
+authors = ["Fuel Labs <contact@fuel.sh>"]
+entry = "main.sw"
+license = "Apache-2.0"
+name = "contract_libs"
+
+[dependencies]
+upgradability = "0.26.0"
+contract_schema = { path = "../schema" }

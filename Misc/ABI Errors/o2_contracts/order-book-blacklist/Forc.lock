@@ -1,0 +1,34 @@
+[[package]]
+name = "contract_schema"
+source = "path+from-root-DFEE1E4102EFF382"
+dependencies = ["std"]
+
+[[package]]
+name = "ownership"
+version = "0.26.1"
+source = "registry+ownership?0.26.1#QmcmRuXsD2ZaE74nZ5vGxc1QhYJhjQKMwho6ZfkYt1cs6Q!"
+dependencies = [
+    "src5",
+    "std",
+]
+
+[[package]]
+name = "src5"
+version = "0.8.0"
+source = "registry+src5?0.8.0#QmNRPZrPHFBiEAyWPU8gesdPsD2zb3cMKwEgxJwV1ZEjyD!"
+dependencies = ["std"]
+
+[[package]]
+name = "std"
+version = "0.69.1"
+source = "registry+std?0.69.1#QmbPunScay4xpfHKpxQ71dFKXSiyJuPP8P8YhgX5Dkmzm9!"
+
+[[package]]
+name = "trade-account-blacklist"
+source = "member"
+dependencies = [
+    "contract_schema",
+    "ownership",
+    "src5",
+    "std",
+]

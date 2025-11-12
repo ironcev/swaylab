@@ -1,0 +1,43 @@
+[[package]]
+name = "contract_schema"
+source = "path+from-root-9FFFF2D0984243B2"
+dependencies = ["std"]
+
+[[package]]
+name = "src14"
+version = "0.8.0"
+source = "registry+src14?0.8.0#QmQduNaJgjotgw2tz5KLv18PckFZP6zLH3Wzk7mqLfwgcu!"
+dependencies = [
+    "src5",
+    "std",
+]
+
+[[package]]
+name = "src5"
+version = "0.8.0"
+source = "registry+src5?0.8.0#QmNRPZrPHFBiEAyWPU8gesdPsD2zb3cMKwEgxJwV1ZEjyD!"
+dependencies = ["std"]
+
+[[package]]
+name = "std"
+version = "0.69.0"
+source = "registry+std?0.69.0#QmSeLFUtVXk8i13owCv87Kga1MfsYgfn7sdj6WimxLwq2g!"
+
+[[package]]
+name = "trade-account"
+source = "member"
+dependencies = [
+    "contract_schema",
+    "std",
+    "upgradability",
+]
+
+[[package]]
+name = "upgradability"
+version = "0.26.0"
+source = "registry+upgradability?0.26.0#QmQBf8VPWtYKBM1t5udMovfbaq8j98mq35yLADqrZxsgjo!"
+dependencies = [
+    "src14",
+    "src5",
+    "std",
+]

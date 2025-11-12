@@ -1,0 +1,23 @@
+[[package]]
+name = "contract_libs"
+source = "path+from-root-C51933E0BA44B36F"
+dependencies = ["std"]
+
+[[package]]
+name = "contract_schema"
+source = "path+from-root-C51933E0BA44B36F"
+dependencies = ["std"]
+
+[[package]]
+name = "order-book"
+source = "member"
+dependencies = [
+    "contract_libs",
+    "contract_schema",
+    "std",
+]
+
+[[package]]
+name = "std"
+version = "0.69.0"
+source = "registry+std?0.69.0#QmSeLFUtVXk8i13owCv87Kga1MfsYgfn7sdj6WimxLwq2g!"

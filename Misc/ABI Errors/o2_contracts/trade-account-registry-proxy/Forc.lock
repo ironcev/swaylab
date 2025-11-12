@@ -1,0 +1,55 @@
+[[package]]
+name = "contract_schema"
+source = "path+from-root-367CC5D8C85C0D1F"
+dependencies = ["std"]
+
+[[package]]
+name = "ownership"
+version = "0.26.1"
+source = "registry+ownership?0.26.1#QmcmRuXsD2ZaE74nZ5vGxc1QhYJhjQKMwho6ZfkYt1cs6Q!"
+dependencies = [
+    "src5",
+    "std",
+]
+
+[[package]]
+name = "register-proxy"
+source = "member"
+dependencies = [
+    "contract_schema",
+    "ownership",
+    "src14",
+    "src5",
+    "std",
+    "upgradability",
+]
+
+[[package]]
+name = "src14"
+version = "0.8.0"
+source = "registry+src14?0.8.0#QmQduNaJgjotgw2tz5KLv18PckFZP6zLH3Wzk7mqLfwgcu!"
+dependencies = [
+    "src5",
+    "std",
+]
+
+[[package]]
+name = "src5"
+version = "0.8.0"
+source = "registry+src5?0.8.0#QmNRPZrPHFBiEAyWPU8gesdPsD2zb3cMKwEgxJwV1ZEjyD!"
+dependencies = ["std"]
+
+[[package]]
+name = "std"
+version = "0.69.1"
+source = "registry+std?0.69.1#QmbPunScay4xpfHKpxQ71dFKXSiyJuPP8P8YhgX5Dkmzm9!"
+
+[[package]]
+name = "upgradability"
+version = "0.26.0"
+source = "registry+upgradability?0.26.0#QmQBf8VPWtYKBM1t5udMovfbaq8j98mq35yLADqrZxsgjo!"
+dependencies = [
+    "src14",
+    "src5",
+    "std",
+]

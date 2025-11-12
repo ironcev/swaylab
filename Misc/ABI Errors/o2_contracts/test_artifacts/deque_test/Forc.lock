@@ -1,0 +1,17 @@
+[[package]]
+name = "contract_libs"
+source = "path+from-root-D274E3385E61DA38"
+dependencies = ["std"]
+
+[[package]]
+name = "deque_test"
+source = "member"
+dependencies = [
+    "contract_libs",
+    "std",
+]
+
+[[package]]
+name = "std"
+version = "0.68.9"
+source = "registry+std?0.68.9#QmUaBxMs2JvY1bXgRCdeCsG3o6TN82ftRgv4Tq7ytqUGUT!"
