@@ -1,0 +1,8 @@
+[project]
+authors = ["Kebradalaonda"]
+entry = "lib.sw"
+license = "Apache-2.0"
+name = "init_arrays"
+implicit-std = false
+
+[dependencies]
